@@ -1,0 +1,3 @@
+[submodule "MarsEngine/vendor/spdlog"]
+	path = MarsEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
