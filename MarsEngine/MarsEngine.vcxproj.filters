@@ -34,6 +34,9 @@
     <ClInclude Include="src\MarsEngine\Log.h">
       <Filter>MarsEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\MarsEngine\Window.h" />
+    <ClInclude Include="src\Platform\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Application.cpp">
@@ -42,5 +45,7 @@
     <ClCompile Include="src\MarsEngine\Log.cpp">
       <Filter>MarsEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

@@ -1,3 +1,6 @@
 [submodule "MarsEngine/vendor/spdlog"]
 	path = MarsEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "MarsEngine/vendor/GLFW"]
+	path = MarsEngine/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

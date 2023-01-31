@@ -10,6 +10,11 @@ workspace "MarsEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "MarsEngine/vendor/GLFW/include"
+
+include "MarsEngine/vendor/GLFW"
+
 project "MarsEngine"
 	location "MarsEngine"
 	kind "SharedLib"
@@ -18,6 +23,9 @@ project "MarsEngine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "pch.h"
+	pchsource "MarsEngine/src/pch.cpp"
+
 	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
@@ -25,7 +33,13 @@ project "MarsEngine"
 
 	includedirs {
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

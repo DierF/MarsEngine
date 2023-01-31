@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace MarsEngine {
 
 	class ME_API WindowResizeEvent : public Event {

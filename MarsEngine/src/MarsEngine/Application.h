@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Event/Event.h"
+#include "Window.h"
 
 namespace MarsEngine {
 
@@ -13,6 +14,10 @@ namespace MarsEngine {
 		virtual ~Application();
 
 		void run();
+
+	private:
+		std::unique_ptr<Window> m_window;
+		bool m_running = true;
 	};
 
 	//to be defined in Client

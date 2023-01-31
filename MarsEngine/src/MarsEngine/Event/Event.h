@@ -2,8 +2,7 @@
 
 #include "MarsEngine/Core.h"
 
-#include <string>
-#include <functional>
+#include "pch.h"
 
 namespace MarsEngine {
 
