@@ -162,16 +162,16 @@
     <ClInclude Include="src\MarsEngine\Event\MouseEvent.h" />
     <ClInclude Include="src\MarsEngine\Log.h" />
     <ClInclude Include="src\MarsEngine\Window.h" />
-    <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\Platform\WindowsWindow.h" />
+    <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Application.cpp" />
     <ClCompile Include="src\MarsEngine\Log.cpp" />
+    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

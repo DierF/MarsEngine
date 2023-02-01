@@ -40,4 +40,4 @@ namespace MarsEngine {
 #define ME_FATAL(...)         ::MarsEngine::Log::getClientLogger()->fatal(__VA_ARGS__)
 
 //if dist build
-#define ME_CORE_INFO
+//#define ME_CORE_INFO

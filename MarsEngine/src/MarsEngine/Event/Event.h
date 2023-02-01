@@ -62,7 +62,7 @@ namespace MarsEngine {
 
 		template<typename T>
 		bool dispatch(EventFunc<T> func) {
-			if (m_event.getEventType() == T::GetStaticType()) {
+			if (m_event.getEventType() == T::getStaticType()) {
 				m_event.m_handled = func(*(T*)&m_event);
 				return true;
 			}
