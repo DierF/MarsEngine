@@ -6,6 +6,8 @@
 #include "MarsEngine/Event/KeyEvent.h"
 #include "MarsEngine/Event/MouseEvent.h"
 
+#include "GLAD/glad.h"
+
 
 namespace MarsEngine {
 
@@ -43,6 +45,8 @@ namespace MarsEngine {
 
 		m_window = glfwCreateWindow((int)props.m_width, (int)props.m_height, m_data.m_title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		ME_CORE_ASSERT(status, "Failed to initialize GLAD!\n");
 		glfwSetWindowUserPointer(m_window, &m_data);
 		setVSync(true);
 

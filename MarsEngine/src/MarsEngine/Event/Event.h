@@ -44,6 +44,10 @@ namespace MarsEngine {
 			return getName();
 		}
 
+		inline bool isHandled() const {
+			return m_handled;
+		}
+
 		inline bool isInCategory(EventCategory category) {
 			return getCategoryFlags() & category;
 		}

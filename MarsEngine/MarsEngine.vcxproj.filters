@@ -34,6 +34,12 @@
     <ClInclude Include="src\MarsEngine\Event\MouseEvent.h">
       <Filter>MarsEngine\Event</Filter>
     </ClInclude>
+    <ClInclude Include="src\MarsEngine\Layer.h">
+      <Filter>MarsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\LayerStack.h">
+      <Filter>MarsEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MarsEngine\Log.h">
       <Filter>MarsEngine</Filter>
     </ClInclude>
@@ -47,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Application.cpp">
+      <Filter>MarsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\Layer.cpp">
+      <Filter>MarsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\LayerStack.cpp">
       <Filter>MarsEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\MarsEngine\Log.cpp">

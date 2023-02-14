@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "MarsEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "MarsEngine/vendor/Glad/include"
 
 include "MarsEngine/vendor/GLFW"
+include "MarsEngine/vendor/Glad"
 
 project "MarsEngine"
 	location "MarsEngine"
@@ -34,11 +36,13 @@ project "MarsEngine"
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links {
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -49,7 +53,8 @@ project "MarsEngine"
 
 		defines {
 			"ME_PLATFORM_WINDOWS",
-			"ME_BUILD_DLL"
+			"ME_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
@@ -58,14 +63,17 @@ project "MarsEngine"
 	
 	filter "configurations:Debug"
 		defines "ME_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ME_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ME_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -101,12 +109,15 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "ME_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ME_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ME_DIST"
+		buildoptions "/MD"
 		optimize "On"
