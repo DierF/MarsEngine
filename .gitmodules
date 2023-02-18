@@ -4,3 +4,6 @@
 [submodule "MarsEngine/vendor/GLFW"]
 	path = MarsEngine/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "MarsEngine/vendor/imgui"]
+	path = MarsEngine/vendor/imgui
+	url = https://github.com/TheCherno/imgui

@@ -7,8 +7,14 @@
     <Filter Include="MarsEngine\Event">
       <UniqueIdentifier>{5F25A58E-4B1E-C4E0-7450-A96560A8A3EC}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MarsEngine\ImGui">
+      <UniqueIdentifier>{3819E88E-2412-07E1-4D44-EC65399CE6EC}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +40,9 @@
     <ClInclude Include="src\MarsEngine\Event\MouseEvent.h">
       <Filter>MarsEngine\Event</Filter>
     </ClInclude>
+    <ClInclude Include="src\MarsEngine\ImGui\ImGuiLayer.h">
+      <Filter>MarsEngine\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\MarsEngine\Layer.h">
       <Filter>MarsEngine</Filter>
     </ClInclude>
@@ -46,6 +55,9 @@
     <ClInclude Include="src\MarsEngine\Window.h">
       <Filter>MarsEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\WindowsWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
@@ -55,6 +67,9 @@
     <ClCompile Include="src\MarsEngine\Application.cpp">
       <Filter>MarsEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\MarsEngine\ImGui\ImGuiLayer.cpp">
+      <Filter>MarsEngine\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\MarsEngine\Layer.cpp">
       <Filter>MarsEngine</Filter>
     </ClCompile>
@@ -63,6 +78,9 @@
     </ClCompile>
     <ClCompile Include="src\MarsEngine\Log.cpp">
       <Filter>MarsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\WindowsWindow.cpp">
       <Filter>Platform</Filter>

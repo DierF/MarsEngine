@@ -7,7 +7,12 @@ namespace MarsEngine {
 
 #define BIND_EVENT_FUNC(x) std::bind(&x, this, std::placeholders::_1)
 
+	Application* Application::s_instance = nullptr;
+
 	Application::Application() {
+		ME_CORE_ASSERT(!s_instance, "Application already exists!");
+		s_instance = this;
+
 		m_window = std::unique_ptr<Window>(Window::create());
 		m_window->setEventCallback(BIND_EVENT_FUNC(Application::onEvent));
 	}
@@ -28,10 +33,12 @@ namespace MarsEngine {
 
 	void Application::pushLayer(Layer* layer) {
 		m_layerStack.pushLayer(layer);
+		layer->onAttach();
 	}
 
 	void Application::pushOverlay(Layer* overlay) {
 		m_layerStack.pushOverlay(overlay);
+		overlay->onAttach();
 	}
 
 	void Application::run() {

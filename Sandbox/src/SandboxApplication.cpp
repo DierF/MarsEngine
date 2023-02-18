@@ -19,6 +19,7 @@ class Sandbox : public MarsEngine::Application {
 public:
 	Sandbox() {
 		pushLayer(new ExampleLayer());
+		pushOverlay(new MarsEngine::ImGuiLayer());
 	}
 
 	~Sandbox() {}
