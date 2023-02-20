@@ -4,7 +4,6 @@
 namespace MarsEngine {
 
 	LayerStack::LayerStack() {
-		m_layerIterator = m_layers.begin();
 	}
 
 	LayerStack::~LayerStack() {
@@ -14,7 +13,8 @@ namespace MarsEngine {
 	}
 
 	void LayerStack::pushLayer(Layer* layer) {
-		m_layerIterator = m_layers.emplace(m_layerIterator, layer);
+		m_layers.emplace(m_layers.begin() + m_layerInsertIndex, layer);
+		++m_layerInsertIndex;
 	}
 
 	void LayerStack::pushOverlay(Layer* overlay) {
@@ -23,15 +23,17 @@ namespace MarsEngine {
 
 	void LayerStack::popLayer(Layer* layer) {
 		auto iter = std::find(m_layers.begin(), m_layers.end(), layer);
-		if (iter != m_layers.end()) {
+		if (iter != m_layers.begin() + m_layerInsertIndex) {
+			layer->onDetch();
 			m_layers.erase(iter);
-			--m_layerIterator;
+			--m_layerInsertIndex;
 		}
 	}
 
 	void LayerStack::popOverlay(Layer* overlay) {
 		auto iter = std::find(m_layers.begin(), m_layers.end(), overlay);
 		if (iter != m_layers.end()) {
+			overlay->onDetch();
 			m_layers.erase(iter);
 		}
 	}

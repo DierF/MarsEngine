@@ -3,6 +3,8 @@
 #include "MarsEngine/Log.h"
 #include "GLAD/glad.h"
 
+#include "Input.h"
+
 namespace MarsEngine {
 
 #define BIND_EVENT_FUNC(x) std::bind(&x, this, std::placeholders::_1)
@@ -15,6 +17,9 @@ namespace MarsEngine {
 
 		m_window = std::unique_ptr<Window>(Window::create());
 		m_window->setEventCallback(BIND_EVENT_FUNC(Application::onEvent));
+
+		m_imGuiLayer = new ImGuiLayer();
+		pushOverlay(m_imGuiLayer);
 	}
 
 	Application::~Application() {}
@@ -22,7 +27,7 @@ namespace MarsEngine {
 	void Application::onEvent(Event& event) {
 		EventDispatcher dispatcher(event);
 		dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(Application::onWindowClose));
-		ME_CORE_TRACE("{0}", event);
+		//ME_CORE_TRACE("{0}", event);
 		for (auto iter = m_layerStack.end(); iter != m_layerStack.begin(); ) {
 			(*--iter)->onEvent(event);
 			if (event.isHandled()) {
@@ -49,6 +54,13 @@ namespace MarsEngine {
 			for (auto layer : m_layerStack) {
 				layer->onUpdate();
 			}
+
+			m_imGuiLayer->begin();
+			for (auto layer : m_layerStack) {
+				layer->onImGuiRender();
+			}
+			m_imGuiLayer->end();
+
 			m_window->onUpdate();
 		}
 	}

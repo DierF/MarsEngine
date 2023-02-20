@@ -53,4 +53,18 @@ namespace MarsEngine {
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
+	class ME_API KeyTypedEvent : public KeyEvent {
+
+	public:
+		KeyTypedEvent(int keycode) : KeyEvent(keycode) {}
+
+		std::string toString() const override {
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << m_keyCode << "\n";
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
 }

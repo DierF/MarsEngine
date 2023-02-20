@@ -1,6 +1,9 @@
 #pragma once
 
 #include "MarsEngine/Layer.h"
+#include "MarsEngine/Event/KeyEvent.h"
+#include "MarsEngine/Event/MouseEvent.h"
+#include "MarsEngine/Event/ApplicationEvent.h"
 
 namespace MarsEngine {
 
@@ -11,14 +14,15 @@ namespace MarsEngine {
 
 		~ImGuiLayer();
 
+		virtual void onAttach() override;
 
-		void onAttach();
+		virtual void onDetch() override;
 
-		void onDetch();
+		virtual void onImGuiRender() override;
 
-		void onUpdate();
+		void begin();
 
-		void onEvent(Event& event);
+		void end();
 
 	private:
 		float m_time = 0.0f;

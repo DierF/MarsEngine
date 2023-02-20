@@ -18,6 +18,8 @@ namespace MarsEngine {
 
 		virtual void onUpdate() {}
 
+		virtual void onImGuiRender() {}
+
 		virtual void onEvent(Event& event) {}
 
 		inline std::string const& getName() const {

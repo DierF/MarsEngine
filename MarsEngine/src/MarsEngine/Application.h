@@ -5,6 +5,7 @@
 #include "MarsEngine/Event/ApplicationEvent.h"
 #include "Window.h"
 #include "LayerStack.h"
+#include "ImGui/ImGuiLayer.h"
 
 namespace MarsEngine {
 
@@ -35,6 +36,7 @@ namespace MarsEngine {
 		bool onWindowClose(WindowCloseEvent& event);
 
 		std::unique_ptr<Window> m_window;
+		ImGuiLayer* m_imGuiLayer;
 		bool m_running = true;
 		LayerStack m_layerStack;
 

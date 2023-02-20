@@ -14,6 +14,8 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "MarsEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "MarsEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "MarsEngine/vendor/imgui"
+IncludeDir["glm"] = "MarsEngine/vendor/glm"
+
 
 include "MarsEngine/vendor/GLFW"
 include "MarsEngine/vendor/Glad"
@@ -33,7 +35,10 @@ project "MarsEngine"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
+
 	}
 
 	includedirs {
@@ -41,7 +46,9 @@ project "MarsEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
+
 	}
 
 	links {
@@ -96,7 +103,9 @@ project "Sandbox"
 
 	includedirs {
 		"MarsEngine/vendor/spdlog/include",
-		"MarsEngine/src"
+		"MarsEngine/src",
+		"%{IncludeDir.glm}"
+
 	}
 
 	links {

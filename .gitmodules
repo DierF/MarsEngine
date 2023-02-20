@@ -7,3 +7,6 @@
 [submodule "MarsEngine/vendor/imgui"]
 	path = MarsEngine/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "MarsEngine/vendor/glm"]
+	path = MarsEngine/vendor/glm
+	url = https://github.com/g-truc/glm
