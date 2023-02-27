@@ -6,6 +6,8 @@
 #include "MarsEngine/Event/KeyEvent.h"
 #include "MarsEngine/Event/MouseEvent.h"
 
+#include "Platform/OpenGL/OpenGLContext.h"
+
 #include "GLAD/glad.h"
 
 
@@ -44,9 +46,10 @@ namespace MarsEngine {
 		}
 
 		m_window = glfwCreateWindow((int)props.m_width, (int)props.m_height, m_data.m_title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		ME_CORE_ASSERT(status, "Failed to initialize GLAD!\n");
+
+		m_context = new OpenGLContext(m_window);
+		m_context->init();
+
 		glfwSetWindowUserPointer(m_window, &m_data);
 		setVSync(true);
 
@@ -132,7 +135,7 @@ namespace MarsEngine {
 
 	void WindowsWindow::onUpdate() {
 		glfwPollEvents();
-		glfwSwapBuffers(m_window);
+		m_context->swapBuffers();
 	}
 
 	void WindowsWindow::setVSync(bool enabled) {

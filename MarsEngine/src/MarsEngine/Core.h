@@ -1,10 +1,14 @@
 #pragma once
 
 #ifdef ME_PLATFORM_WINDOWS
-	#ifdef ME_BUILD_DLL
-		#define ME_API __declspec(dllexport)
+	#if ME_DYNAMIC_LINK
+		#ifdef ME_BUILD_DLL
+			#define ME_API __declspec(dllexport)
+		#else
+			#define ME_API __declspec(dllimport)
+		#endif
 	#else
-		#define ME_API __declspec(dllimport)
+		#define ME_API
 	#endif
 #else
 	#error MarsEngine only support Windows!

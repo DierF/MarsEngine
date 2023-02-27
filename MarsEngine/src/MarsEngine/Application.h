@@ -40,6 +40,9 @@ namespace MarsEngine {
 		bool m_running = true;
 		LayerStack m_layerStack;
 
+		unsigned int m_vertexArray, m_vertexBuffer, m_indexBuffer;
+
+	private:
 		static Application* s_instance;
 	};
 
