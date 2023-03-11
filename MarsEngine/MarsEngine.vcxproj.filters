@@ -1350,6 +1350,9 @@
     <ClInclude Include="src\MarsEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Shader.h" />
+    <ClInclude Include="src\MarsEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\MarsEngine\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Application.cpp">
@@ -1381,5 +1384,8 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="src\MarsEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\MarsEngine\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>
