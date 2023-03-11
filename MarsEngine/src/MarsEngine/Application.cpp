@@ -11,6 +11,38 @@ namespace MarsEngine {
 
 	Application* Application::s_instance = nullptr;
 
+	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type) {
+
+		switch (type)
+		{
+		case MarsEngine::ShaderDataType::Float:
+			return GL_FLOAT;
+		case MarsEngine::ShaderDataType::Float2:
+			return GL_FLOAT;
+		case MarsEngine::ShaderDataType::Float3:
+			return GL_FLOAT;
+		case MarsEngine::ShaderDataType::Float4:
+			return GL_FLOAT;
+		case MarsEngine::ShaderDataType::Matrix3:
+			return GL_FLOAT;
+		case MarsEngine::ShaderDataType::Matrix4:
+			return GL_FLOAT;
+		case MarsEngine::ShaderDataType::Int:
+			return GL_INT;
+		case MarsEngine::ShaderDataType::Int2:
+			return GL_INT;
+		case MarsEngine::ShaderDataType::Int3:
+			return GL_INT;
+		case MarsEngine::ShaderDataType::Int4:
+			return GL_INT;
+		case MarsEngine::ShaderDataType::Bool:
+			return GL_BOOL;
+		default:
+			break;
+		}
+		return 0;
+	}
+
 	Application::Application() {
 		ME_CORE_ASSERT(!s_instance, "Application already exists!");
 		s_instance = this;
@@ -24,17 +56,37 @@ namespace MarsEngine {
 		glGenVertexArrays(1, &m_vertexArray);
 		glBindVertexArray(m_vertexArray);
 
-		float vertices[3 * 3] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.0f,  0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f
+		float vertices[7 * 3] = {
+			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
+			 0.0f,  0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
+			 0.5f, -0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
 		m_vertexBuffer.reset(VertexBuffer::create(vertices, sizeof(vertices)));
 
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
+		{
+			BufferLayout layout = {
+				{ShaderDataType::Float3, "a_position"},
+				{ShaderDataType::Float4, "a_color"}
+			};
 
+			m_vertexBuffer->setLayout(layout);
+		}
+
+		auto const& layout = m_vertexBuffer->getLayout();
+		uint32_t index = 0;
+		for (auto const& element : layout) {
+
+			glEnableVertexAttribArray(index);
+			glVertexAttribPointer(
+				index,
+				element.getComponentCount(),
+				ShaderDataTypeToOpenGLBaseType(element.m_type),
+				element.m_normalized ? GL_TRUE : GL_FALSE,
+				layout.getStride(),
+				(void const*)element.m_offset);
+			++index;
+		}
 
 		uint32_t indices[3] = { 0, 1, 2 };
 		m_indexBuffer.reset(IndexBuffer::create(indices, sizeof(indices) / sizeof(uint32_t)));
@@ -43,11 +95,15 @@ namespace MarsEngine {
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_position;
+			layout(location = 1) in vec4 a_color;
 
 			out vec3 v_position;
+			out vec4 v_color;
+
 
 			void main() {
 				v_position = a_position;
+				v_color = a_color;
 				gl_Position = vec4(a_position, 1.0);
 			}
 
@@ -59,9 +115,11 @@ namespace MarsEngine {
 			layout(location = 0) out vec4 color;
 			
 			in vec3 v_position;
+			in vec4 v_color;
 
 			void main() {
 				color = vec4(v_position * 0.5 + 0.5, 1.0);
+				color = v_color;
 			}
 
 		)";

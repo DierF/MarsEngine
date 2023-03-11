@@ -15,8 +15,13 @@ namespace MarsEngine {
 
 		virtual void unbind() const override;
 
+		virtual BufferLayout const& getLayout() const override { return m_layout; }
+
+		virtual void setLayout(BufferLayout const& layout) override { m_layout = layout; }
+
 	private:
 		uint32_t m_rendererID;
+		BufferLayout m_layout;
 	};
 
 	class OpenGLIndexBuffer : public IndexBuffer {
