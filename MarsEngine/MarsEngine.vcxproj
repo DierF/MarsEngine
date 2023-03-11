@@ -162,6 +162,7 @@
     <ClInclude Include="src\MarsEngine\Log.h" />
     <ClInclude Include="src\MarsEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\MarsEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\MarsEngine\Renderer\Shader.h" />
     <ClInclude Include="src\MarsEngine\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
@@ -591,6 +592,7 @@
     <ClCompile Include="src\MarsEngine\Layer.cpp" />
     <ClCompile Include="src\MarsEngine\LayerStack.cpp" />
     <ClCompile Include="src\MarsEngine\Log.cpp" />
+    <ClCompile Include="src\MarsEngine\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />

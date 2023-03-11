@@ -6,6 +6,7 @@
 #include "Window.h"
 #include "LayerStack.h"
 #include "ImGui/ImGuiLayer.h"
+#include "Renderer/Shader.h"
 
 namespace MarsEngine {
 
@@ -41,6 +42,8 @@ namespace MarsEngine {
 		LayerStack m_layerStack;
 
 		unsigned int m_vertexArray, m_vertexBuffer, m_indexBuffer;
+
+		std::unique_ptr<Shader> m_shader;
 
 	private:
 		static Application* s_instance;
