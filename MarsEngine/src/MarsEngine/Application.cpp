@@ -11,38 +11,6 @@ namespace MarsEngine {
 
 	Application* Application::s_instance = nullptr;
 
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type) {
-
-		switch (type)
-		{
-		case MarsEngine::ShaderDataType::Float:
-			return GL_FLOAT;
-		case MarsEngine::ShaderDataType::Float2:
-			return GL_FLOAT;
-		case MarsEngine::ShaderDataType::Float3:
-			return GL_FLOAT;
-		case MarsEngine::ShaderDataType::Float4:
-			return GL_FLOAT;
-		case MarsEngine::ShaderDataType::Matrix3:
-			return GL_FLOAT;
-		case MarsEngine::ShaderDataType::Matrix4:
-			return GL_FLOAT;
-		case MarsEngine::ShaderDataType::Int:
-			return GL_INT;
-		case MarsEngine::ShaderDataType::Int2:
-			return GL_INT;
-		case MarsEngine::ShaderDataType::Int3:
-			return GL_INT;
-		case MarsEngine::ShaderDataType::Int4:
-			return GL_INT;
-		case MarsEngine::ShaderDataType::Bool:
-			return GL_BOOL;
-		default:
-			break;
-		}
-		return 0;
-	}
-
 	Application::Application() {
 		ME_CORE_ASSERT(!s_instance, "Application already exists!");
 		s_instance = this;
@@ -53,43 +21,52 @@ namespace MarsEngine {
 		m_imGuiLayer = new ImGuiLayer();
 		pushOverlay(m_imGuiLayer);
 
-		glGenVertexArrays(1, &m_vertexArray);
-		glBindVertexArray(m_vertexArray);
+		m_vertexArray.reset(VertexArray::create());
 
 		float vertices[7 * 3] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
-			 0.0f,  0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
-			 0.5f, -0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
+			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
+			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		m_vertexBuffer.reset(VertexBuffer::create(vertices, sizeof(vertices)));
+		std::shared_ptr<VertexBuffer> vertexBuffer;
+		vertexBuffer.reset(VertexBuffer::create(vertices, sizeof(vertices)));
 
-		{
-			BufferLayout layout = {
-				{ShaderDataType::Float3, "a_position"},
-				{ShaderDataType::Float4, "a_color"}
-			};
+		BufferLayout layout = {
+			{ShaderDataType::Float3, "a_position"},
+			{ShaderDataType::Float4, "a_color"}
+		};
 
-			m_vertexBuffer->setLayout(layout);
-		}
-
-		auto const& layout = m_vertexBuffer->getLayout();
-		uint32_t index = 0;
-		for (auto const& element : layout) {
-
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(
-				index,
-				element.getComponentCount(),
-				ShaderDataTypeToOpenGLBaseType(element.m_type),
-				element.m_normalized ? GL_TRUE : GL_FALSE,
-				layout.getStride(),
-				(void const*)element.m_offset);
-			++index;
-		}
+		vertexBuffer->setLayout(layout);
+		m_vertexArray->addVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		m_indexBuffer.reset(IndexBuffer::create(indices, sizeof(indices) / sizeof(uint32_t)));
+
+		std::shared_ptr<IndexBuffer> indexBuffer;
+		indexBuffer.reset(IndexBuffer::create(indices, sizeof(indices) / sizeof(uint32_t)));
+		m_vertexArray->setIndexBuffer(indexBuffer);
+
+		m_squareVA.reset(VertexArray::create());
+		float squareVertices[4 * 3] = {
+			-0.75f, -0.75f, 0.0f,
+			 0.75f, -0.75f, 0.0f,
+			 0.75f,  0.75f, 0.0f,
+			-0.75f,  0.75f, 0.0f
+		};
+		std::shared_ptr<VertexBuffer> squareVB;
+		squareVB.reset(VertexBuffer::create(squareVertices, sizeof(squareVertices)));
+
+		BufferLayout squareLayout = {
+			{ShaderDataType::Float3, "a_position"}
+		};
+
+		squareVB->setLayout(squareLayout);
+		m_squareVA->addVertexBuffer(squareVB);
+
+		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
+		std::shared_ptr<IndexBuffer> squareIB;
+		squareIB.reset(IndexBuffer::create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		m_squareVA->setIndexBuffer(squareIB);
 
 		std::string vertexSrc = R"(
 			#version 330 core
@@ -125,6 +102,36 @@ namespace MarsEngine {
 		)";
 
 		m_shader = std::make_unique<Shader>(vertexSrc, fragmentSrc);
+
+		std::string blueVertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_position;
+
+			out vec3 v_position;
+
+
+			void main() {
+				v_position = a_position;
+				gl_Position = vec4(a_position, 1.0);
+			}
+
+		)";
+
+		std::string blueFragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+			
+			in vec3 v_position;
+
+			void main() {
+				color = vec4(0.2, 0.3, 0.8, 0.1);
+			}
+
+		)";
+
+		m_blueShader = std::make_unique<Shader>(blueVertexSrc, blueFragmentSrc);
 	}
 
 	Application::~Application() {}
@@ -157,10 +164,13 @@ namespace MarsEngine {
 			glClearColor(0.1, 0.1, 0.1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			m_shader->bind();
+			m_blueShader->bind();
+			m_squareVA->bind();
+			glDrawElements(GL_TRIANGLES, m_squareVA->getIndexBuffer()->getCount(), GL_UNSIGNED_INT, nullptr);
 
-			glBindVertexArray(m_vertexArray);
-			glDrawElements(GL_TRIANGLES, m_indexBuffer->getCount(), GL_UNSIGNED_INT, nullptr);
+			m_shader->bind();
+			m_vertexArray->bind();
+			glDrawElements(GL_TRIANGLES, m_vertexArray->getIndexBuffer()->getCount(), GL_UNSIGNED_INT, nullptr);
 
 			for (auto layer : m_layerStack) {
 				layer->onUpdate();
