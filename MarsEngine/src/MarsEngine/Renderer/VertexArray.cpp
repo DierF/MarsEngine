@@ -10,10 +10,10 @@ namespace MarsEngine {
 	{
 		switch (Renderer::getAPI())
 		{
-		case RendererAPI::None:
+		case RendererAPI::API::None:
 			ME_CORE_ASSERT(false, "RendererAPI:None!");
 			return nullptr;
-		case RendererAPI::OpenGL:
+		case RendererAPI::API::OpenGL:
 			return new OpenGLVertexArray();
 		default:
 			break;

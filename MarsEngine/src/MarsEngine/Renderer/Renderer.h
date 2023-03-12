@@ -1,18 +1,19 @@
 #pragma once
 
-namespace MarsEngine {
+#include "RenderCommand.h"
+#include "RendererAPI.h"
 
-	enum class RendererAPI
-	{
-		None = 0, OpenGL = 1
-	};
+namespace MarsEngine {
 
 	class Renderer {
 
 	public:
-		inline static RendererAPI getAPI() { return s_rendererAPI; }
+		static void beginScene();
 
-	private:
-		static RendererAPI s_rendererAPI;
+		static void endScene();
+
+		static void submit(std::shared_ptr<VertexArray> const& vertexArray);
+
+		inline static RendererAPI::API getAPI() { return RendererAPI::getAPI(); }
 	};
 }

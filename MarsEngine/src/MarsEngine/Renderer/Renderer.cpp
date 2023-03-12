@@ -1,9 +1,21 @@
 #include "pch.h"
 
 #include "Renderer.h"
+#include "RenderCommand.h"
 
 namespace MarsEngine {
 
-	RendererAPI Renderer::s_rendererAPI = RendererAPI::OpenGL;
+	void Renderer::beginScene()
+	{
+	}
 
+	void Renderer::endScene()
+	{
+	}
+
+	void Renderer::submit(std::shared_ptr<VertexArray> const& vertexArray)
+	{
+		vertexArray->bind();
+		RenderCommand::drawIndexed(vertexArray);
+	}
 }

@@ -9,10 +9,10 @@ namespace MarsEngine {
 	{
 		switch (Renderer::getAPI())
 		{
-		case RendererAPI::None:
+		case RendererAPI::API::None:
 			ME_CORE_ASSERT(false, "RendererAPI::None is not supported!");
 			return nullptr;
-		case RendererAPI::OpenGL:
+		case RendererAPI::API::OpenGL:
 			return new OpenGLVertexBuffer(vertices, size);
 		default:
 			break;
@@ -25,10 +25,10 @@ namespace MarsEngine {
 	{
 		switch (Renderer::getAPI())
 		{
-		case RendererAPI::None:
+		case RendererAPI::API::None:
 			ME_CORE_ASSERT(false, "RendererAPI::None is not supported!");
 			return nullptr;
-		case RendererAPI::OpenGL:
+		case RendererAPI::API::OpenGL:
 			return new OpenGLIndexBuffer(indices, count);
 		default:
 			break;

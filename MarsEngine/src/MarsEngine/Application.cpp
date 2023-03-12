@@ -1,9 +1,8 @@
 #include "pch.h"
 #include "Application.h"
 #include "MarsEngine/Log.h"
-#include "GLAD/glad.h"
-
 #include "Input.h"
+#include "Renderer/Renderer.h"
 
 namespace MarsEngine {
 
@@ -161,16 +160,18 @@ namespace MarsEngine {
 	void Application::run() {
 
 		while (m_running) {
-			glClearColor(0.1, 0.1, 0.1, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+			RenderCommand::clear();
+
+			Renderer::beginScene();
 
 			m_blueShader->bind();
-			m_squareVA->bind();
-			glDrawElements(GL_TRIANGLES, m_squareVA->getIndexBuffer()->getCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::submit(m_squareVA);
 
 			m_shader->bind();
-			m_vertexArray->bind();
-			glDrawElements(GL_TRIANGLES, m_vertexArray->getIndexBuffer()->getCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::submit(m_vertexArray);
+
+			Renderer::endScene();
 
 			for (auto layer : m_layerStack) {
 				layer->onUpdate();
