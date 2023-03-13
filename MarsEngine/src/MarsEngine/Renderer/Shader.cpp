@@ -1,14 +1,15 @@
 #include "pch.h"
 #include "Shader.h"
 #include "glad/glad.h"
+#include "glm/gtc/type_ptr.hpp"
 
 namespace MarsEngine {
 
 	Shader::Shader(std::string const& vertexSrc, std::string const& fragmentSrc)
 	{
 		// Read our shaders into the appropriate buffers
-		std::string vertexSource = vertexSrc;// Get source code for vertex shader.
-		std::string fragmentSource = fragmentSrc;// Get source code for fragment shader.
+		std::string const& vertexSource = vertexSrc;// Get source code for vertex shader.
+		std::string const& fragmentSource = fragmentSrc;// Get source code for fragment shader.
 
 		// Create an empty vertex shader handle
 		GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -129,5 +130,11 @@ namespace MarsEngine {
 	void Shader::unbind() const
 	{
 		glUseProgram(0);
+	}
+
+	void Shader::uploadUniformMat4(std::string const& name, glm::mat4 const& matrix)
+	{
+		GLint location = glGetUniformLocation(m_rendererID, name.c_str());
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
 }

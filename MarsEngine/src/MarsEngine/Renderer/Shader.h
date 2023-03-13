@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "glm/glm.hpp"
+
 namespace MarsEngine {
 
 	class Shader {
@@ -14,6 +16,8 @@ namespace MarsEngine {
 		void bind() const;
 
 		void unbind() const;
+
+		void uploadUniformMat4(std::string const& name, glm::mat4 const& matrix);
 
 	private:
 		uint32_t m_rendererID;

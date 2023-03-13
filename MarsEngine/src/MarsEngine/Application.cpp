@@ -10,7 +10,9 @@ namespace MarsEngine {
 
 	Application* Application::s_instance = nullptr;
 
-	Application::Application() {
+	Application::Application()
+		: m_camera(-1.6f, 1.6f, -0.9f, 0.9f)
+	{
 		ME_CORE_ASSERT(!s_instance, "Application already exists!");
 		s_instance = this;
 
@@ -73,14 +75,15 @@ namespace MarsEngine {
 			layout(location = 0) in vec3 a_position;
 			layout(location = 1) in vec4 a_color;
 
+			uniform mat4 u_viewProjection;
+
 			out vec3 v_position;
 			out vec4 v_color;
-
 
 			void main() {
 				v_position = a_position;
 				v_color = a_color;
-				gl_Position = vec4(a_position, 1.0);
+				gl_Position = u_viewProjection * vec4(a_position, 1.0);
 			}
 
 		)";
@@ -107,12 +110,13 @@ namespace MarsEngine {
 			
 			layout(location = 0) in vec3 a_position;
 
-			out vec3 v_position;
+			uniform mat4 u_viewProjection;
 
+			out vec3 v_position;
 
 			void main() {
 				v_position = a_position;
-				gl_Position = vec4(a_position, 1.0);
+				gl_Position = u_viewProjection * vec4(a_position, 1.0);
 			}
 
 		)";
@@ -163,13 +167,14 @@ namespace MarsEngine {
 			RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::clear();
 
-			Renderer::beginScene();
+			m_camera.setPosition({ 0.5f, 0.5f, 0.0f });
+			m_camera.setRotation(45.0f);
 
-			m_blueShader->bind();
-			Renderer::submit(m_squareVA);
+			Renderer::beginScene(m_camera);
 
-			m_shader->bind();
-			Renderer::submit(m_vertexArray);
+			Renderer::submit(m_blueShader, m_squareVA);
+
+			Renderer::submit(m_shader, m_vertexArray);
 
 			Renderer::endScene();
 

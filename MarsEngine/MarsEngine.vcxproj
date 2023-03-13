@@ -163,6 +163,7 @@
     <ClInclude Include="src\MarsEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Buffer.h" />
     <ClInclude Include="src\MarsEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\MarsEngine\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\MarsEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Renderer.h" />
     <ClInclude Include="src\MarsEngine\Renderer\RendererAPI.h" />
@@ -601,6 +602,7 @@
     <ClCompile Include="src\MarsEngine\LayerStack.cpp" />
     <ClCompile Include="src\MarsEngine\Log.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\MarsEngine\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\RendererAPI.cpp" />
