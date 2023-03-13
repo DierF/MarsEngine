@@ -8,6 +8,12 @@
 #include "MarsEngine/Input.h"
 #include "MarsEngine/MouseButtonCodes.h"
 #include "MarsEngine/KeyCodes.h"
+#include "MarsEngine/Renderer/Renderer.h"
+#include "MarsEngine/Renderer/RenderCommand.h"
+#include "MarsEngine/Renderer/Buffer.h"
+#include "MarsEngine/Renderer/Shader.h"
+#include "MarsEngine/Renderer/VertexArray.h"
+#include "MarsEngine/Renderer/OrthographicCamera.h"
 
 // ---Entry Point
 #include "MarsEngine/EntryPoint.h"

@@ -6,14 +6,10 @@
 #include "Window.h"
 #include "LayerStack.h"
 #include "ImGui/ImGuiLayer.h"
-#include "Renderer/Shader.h"
-#include "Renderer/Buffer.h"
-#include "Renderer/VertexArray.h"
-#include "Renderer/OrthographicCamera.h"
 
 namespace MarsEngine {
 
-	class ME_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -43,14 +39,6 @@ namespace MarsEngine {
 		ImGuiLayer* m_imGuiLayer;
 		bool m_running = true;
 		LayerStack m_layerStack;
-
-		std::shared_ptr<Shader> m_shader;
-		std::shared_ptr<VertexArray> m_vertexArray;
-
-		std::shared_ptr<Shader> m_blueShader;
-		std::shared_ptr<VertexArray> m_squareVA;
-
-		OrthographicCamera m_camera;
 
 	private:
 		static Application* s_instance;
