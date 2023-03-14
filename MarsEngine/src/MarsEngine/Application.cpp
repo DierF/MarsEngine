@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "MarsEngine/Log.h"
 #include "Input.h"
+#include "GLFW/glfw3.h"
 
 namespace MarsEngine {
 
@@ -16,6 +17,7 @@ namespace MarsEngine {
 
 		m_window = std::unique_ptr<Window>(Window::create());
 		m_window->setEventCallback(BIND_EVENT_FUNC(Application::onEvent));
+		//m_window->setVSync(false);
 
 		m_imGuiLayer = new ImGuiLayer();
 		pushOverlay(m_imGuiLayer);
@@ -47,10 +49,13 @@ namespace MarsEngine {
 
 	void Application::run() {
 
-		while (m_running) {
-
+		while (m_running)
+		{
+			float time = (float)glfwGetTime();
+			Timestep timestep = time - m_lastFrameTime;
+			m_lastFrameTime = time;
 			for (auto layer : m_layerStack) {
-				layer->onUpdate();
+				layer->onUpdate(timestep);
 			}
 
 			m_imGuiLayer->begin();

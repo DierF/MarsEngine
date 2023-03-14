@@ -149,6 +149,7 @@
     <ClInclude Include="src\MarsEngine.h" />
     <ClInclude Include="src\MarsEngine\Application.h" />
     <ClInclude Include="src\MarsEngine\Core.h" />
+    <ClInclude Include="src\MarsEngine\Core\Timestep.h" />
     <ClInclude Include="src\MarsEngine\EntryPoint.h" />
     <ClInclude Include="src\MarsEngine\Event\ApplicationEvent.h" />
     <ClInclude Include="src\MarsEngine\Event\Event.h" />

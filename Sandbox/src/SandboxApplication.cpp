@@ -120,24 +120,29 @@ public:
 		m_blueShader = std::make_unique<MarsEngine::Shader>(blueVertexSrc, blueFragmentSrc);
 	}
 
-	void onUpdate() override {
+	void onUpdate(MarsEngine::Timestep ts) override
+	{
+		ME_TRACE("Delta time: {0}s, {1}ms", ts.getSeconds(), ts.getMilliseconds());
+
 		if (MarsEngine::Input::isKeyPressed(ME_KEY_LEFT)) {
-			m_cameraPosition.x -= m_cameraMoveSpeed;
+			m_cameraPosition.x -= m_cameraMoveSpeed * ts;
 		}
 		else if (MarsEngine::Input::isKeyPressed(ME_KEY_RIGHT)) {
-			m_cameraPosition.x += m_cameraMoveSpeed;
+			m_cameraPosition.x += m_cameraMoveSpeed * ts;
 		}
+
 		if (MarsEngine::Input::isKeyPressed(ME_KEY_DOWN)) {
-			m_cameraPosition.y -= m_cameraMoveSpeed;
+			m_cameraPosition.y -= m_cameraMoveSpeed * ts;
 		}
 		else if (MarsEngine::Input::isKeyPressed(ME_KEY_UP)) {
-			m_cameraPosition.y += m_cameraMoveSpeed;
+			m_cameraPosition.y += m_cameraMoveSpeed * ts;
 		}
+
 		if (MarsEngine::Input::isKeyPressed(ME_KEY_A)) {
-			m_cameraRotation += m_cameraRotationSpeed;
+			m_cameraRotation += m_cameraRotationSpeed * ts;
 		}
 		else if (MarsEngine::Input::isKeyPressed(ME_KEY_D)) {
-			m_cameraRotation -= m_cameraRotationSpeed;
+			m_cameraRotation -= m_cameraRotationSpeed * ts;
 		}
 
 		MarsEngine::RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
@@ -171,9 +176,9 @@ private:
 
 	MarsEngine::OrthographicCamera m_camera;
 	glm::vec3 m_cameraPosition;
-	float m_cameraMoveSpeed = 0.1f;
+	float m_cameraMoveSpeed = 5.0f;
 	float m_cameraRotation = 0.0f;
-	float m_cameraRotationSpeed = 0.1f;
+	float m_cameraRotationSpeed = 3.14f;
 };
 
 class Sandbox : public MarsEngine::Application {

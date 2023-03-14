@@ -6,6 +6,7 @@
 #include "Window.h"
 #include "LayerStack.h"
 #include "ImGui/ImGuiLayer.h"
+#include "MarsEngine/Core/Timestep.h"
 
 namespace MarsEngine {
 
@@ -35,10 +36,12 @@ namespace MarsEngine {
 	private:
 		bool onWindowClose(WindowCloseEvent& event);
 
+	private:
 		std::unique_ptr<Window> m_window;
 		ImGuiLayer* m_imGuiLayer;
 		bool m_running = true;
 		LayerStack m_layerStack;
+		float m_lastFrameTime = 0.0f;
 
 	private:
 		static Application* s_instance;

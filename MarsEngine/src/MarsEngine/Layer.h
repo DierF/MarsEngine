@@ -2,6 +2,7 @@
 
 #include "MarsEngine/Core.h"
 #include "MarsEngine/Event/Event.h"
+#include "MarsEngine/Core/Timestep.h"
 
 namespace MarsEngine {
 
@@ -16,7 +17,7 @@ namespace MarsEngine {
 
 		virtual void onDetch() {}
 
-		virtual void onUpdate() {}
+		virtual void onUpdate(Timestep ts) {}
 
 		virtual void onImGuiRender() {}
 
