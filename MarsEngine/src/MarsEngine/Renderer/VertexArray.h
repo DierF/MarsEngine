@@ -15,13 +15,13 @@ namespace MarsEngine {
 
 		virtual void unbind() const = 0;
 
-		virtual void addVertexBuffer(std::shared_ptr<VertexBuffer> const& vertexBuffer) = 0;
+		virtual void addVertexBuffer(Ref<VertexBuffer> const& vertexBuffer) = 0;
 
-		virtual void setIndexBuffer(std::shared_ptr<IndexBuffer> const& indexBuffer) = 0;
+		virtual void setIndexBuffer(Ref<IndexBuffer> const& indexBuffer) = 0;
 
-		virtual std::vector<std::shared_ptr<VertexBuffer>> const& getVertexBuffer() const = 0;
+		virtual std::vector<Ref<VertexBuffer>> const& getVertexBuffer() const = 0;
 
-		virtual std::shared_ptr<IndexBuffer> const& getIndexBuffer() const = 0;
+		virtual Ref<IndexBuffer> const& getIndexBuffer() const = 0;
 
 		static VertexArray* create();
 

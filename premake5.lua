@@ -102,6 +102,7 @@ project "Sandbox"
 	includedirs {
 		"MarsEngine/vendor/spdlog/include",
 		"MarsEngine/src",
+		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}"
 
 	}

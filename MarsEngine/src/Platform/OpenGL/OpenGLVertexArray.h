@@ -17,21 +17,21 @@ namespace MarsEngine {
 
 		virtual void unbind() const override;
 
-		virtual void addVertexBuffer(std::shared_ptr<VertexBuffer> const& vertexBuffer) override;
+		virtual void addVertexBuffer(Ref<VertexBuffer> const& vertexBuffer) override;
 
-		virtual void setIndexBuffer(std::shared_ptr<IndexBuffer> const& indexBuffer) override;
+		virtual void setIndexBuffer(Ref<IndexBuffer> const& indexBuffer) override;
 
-		virtual std::vector<std::shared_ptr<VertexBuffer>> const& getVertexBuffer() const override {
+		virtual std::vector<Ref<VertexBuffer>> const& getVertexBuffer() const override {
 			return m_vertexBuffer;
 		}
 
-		virtual std::shared_ptr<IndexBuffer> const& getIndexBuffer() const override {
+		virtual Ref<IndexBuffer> const& getIndexBuffer() const override {
 			return m_indexBuffer;
 		}
 
 	private:
 		uint32_t m_rendererID;
-		std::vector<std::shared_ptr<VertexBuffer>> m_vertexBuffer;
-		std::shared_ptr<IndexBuffer> m_indexBuffer;
+		std::vector<Ref<VertexBuffer>> m_vertexBuffer;
+		Ref<IndexBuffer> m_indexBuffer;
 	};
 }

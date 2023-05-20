@@ -2,24 +2,18 @@
 
 #include <string>
 
-#include "glm/glm.hpp"
-
 namespace MarsEngine {
 
 	class Shader {
 
 	public:
-		Shader(std::string const& vertexSrc, std::string const& fragmentSrc);
 
-		~Shader();
+		virtual ~Shader() = default;
 
-		void bind() const;
+		virtual void bind() const = 0;
 
-		void unbind() const;
+		virtual void unbind() const = 0;
 
-		void uploadUniformMat4(std::string const& name, glm::mat4 const& matrix);
-
-	private:
-		uint32_t m_rendererID;
+		static Shader* create(std::string const& vertexSrc, std::string const& fragmentSrc);
 	};
 }

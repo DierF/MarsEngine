@@ -11,6 +11,6 @@ namespace MarsEngine {
 
 		virtual void clear() override;
 
-		virtual void drawIndexed(std::shared_ptr<VertexArray> const& vertexArray) override;
+		virtual void drawIndexed(Ref<VertexArray> const& vertexArray) override;
 	};
 }

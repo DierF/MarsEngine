@@ -3,6 +3,8 @@
 #include "Renderer.h"
 #include "RenderCommand.h"
 
+#include "Platform/OpenGL/OpenGLShader.h"
+
 namespace MarsEngine {
 
 	Renderer::SceneData* Renderer::m_sceneData = new Renderer::SceneData();
@@ -16,10 +18,11 @@ namespace MarsEngine {
 	{
 	}
 
-	void Renderer::submit(std::shared_ptr<Shader> const& shader, std::shared_ptr<VertexArray> const& vertexArray)
+	void Renderer::submit(Ref<Shader> const& shader, Ref<VertexArray> const& vertexArray, glm::mat4 const& transform)
 	{
 		shader->bind();
-		shader->uploadUniformMat4("u_viewProjection", m_sceneData->ViewProjectionMatrix);
+		std::dynamic_pointer_cast<OpenGLShader>(shader)->uploadUniformMat4("u_viewProjection", m_sceneData->ViewProjectionMatrix);
+		std::dynamic_pointer_cast<OpenGLShader>(shader)->uploadUniformMat4("u_transform", transform);
 
 		vertexArray->bind();
 		RenderCommand::drawIndexed(vertexArray);

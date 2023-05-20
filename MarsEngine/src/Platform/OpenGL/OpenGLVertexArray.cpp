@@ -57,7 +57,7 @@ namespace MarsEngine {
 		glBindVertexArray(0);
 	}
 
-	void OpenGLVertexArray::addVertexBuffer(std::shared_ptr<VertexBuffer> const& vertexBuffer)
+	void OpenGLVertexArray::addVertexBuffer(Ref<VertexBuffer> const& vertexBuffer)
 	{
 		ME_CORE_ASSERT(vertexBuffer->getLayout().getElement().size(), "VertexBuffer has no layout!");
 
@@ -82,7 +82,7 @@ namespace MarsEngine {
 		m_vertexBuffer.push_back(vertexBuffer);
 	}
 
-	void OpenGLVertexArray::setIndexBuffer(std::shared_ptr<IndexBuffer> const& indexBuffer)
+	void OpenGLVertexArray::setIndexBuffer(Ref<IndexBuffer> const& indexBuffer)
 	{
 		glBindVertexArray(m_rendererID);
 		indexBuffer->bind();

@@ -19,7 +19,7 @@ namespace MarsEngine {
 
 		virtual void clear() = 0;
 
-		virtual void drawIndexed(std::shared_ptr<VertexArray> const& vertexArray) = 0;
+		virtual void drawIndexed(Ref<VertexArray> const& vertexArray) = 0;
 
 		inline static API getAPI() { return s_API; }
 

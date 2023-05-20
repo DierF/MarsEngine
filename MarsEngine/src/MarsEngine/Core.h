@@ -25,3 +25,16 @@
 #define BIT(x) (1 << x)
 
 #define ME_BIND_EVENT_FUNC(func) std::bind(&func, this, std::placeholders::_1)
+
+#include <memory> //can't believe I have to do this to enable the following alias template. >_<
+namespace MarsEngine
+{
+
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+
+
+}
