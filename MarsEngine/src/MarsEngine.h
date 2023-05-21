@@ -13,6 +13,7 @@
 #include "MarsEngine/Renderer/RenderCommand.h"
 #include "MarsEngine/Renderer/Buffer.h"
 #include "MarsEngine/Renderer/Shader.h"
+#include "MarsEngine/Renderer/Texture.h"
 #include "MarsEngine/Renderer/VertexArray.h"
 #include "MarsEngine/Renderer/OrthographicCamera.h"
 

@@ -15,6 +15,7 @@ IncludeDir["GLFW"] = "MarsEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "MarsEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "MarsEngine/vendor/imgui"
 IncludeDir["glm"] = "MarsEngine/vendor/glm"
+IncludeDir["stb_image"] = "MarsEngine/vendor/stb_image"
 
 
 include "MarsEngine/vendor/GLFW"
@@ -38,6 +39,8 @@ project "MarsEngine"
 	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 
@@ -49,7 +52,8 @@ project "MarsEngine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 
 	}
 

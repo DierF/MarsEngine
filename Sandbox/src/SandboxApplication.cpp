@@ -38,17 +38,18 @@ public:
 		m_vertexArray->setIndexBuffer(indexBuffer);
 
 		m_squareVA.reset(MarsEngine::VertexArray::create());
-		float squareVertices[4 * 3] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 		MarsEngine::Ref<MarsEngine::VertexBuffer> squareVB;
 		squareVB.reset(MarsEngine::VertexBuffer::create(squareVertices, sizeof(squareVertices)));
 
 		MarsEngine::BufferLayout squareLayout = {
-			{MarsEngine::ShaderDataType::Float3, "a_position"}
+			{MarsEngine::ShaderDataType::Float3, "a_position"},
+			{MarsEngine::ShaderDataType::Float2, "a_textCoord"}
 		};
 
 		squareVB->setLayout(squareLayout);
@@ -129,6 +130,46 @@ public:
 		)";
 
 		m_flatColorShader.reset(MarsEngine::Shader::create(flatColorVertexSrc, flatColorFragmentSrc));
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_position;
+			layout(location = 1) in vec2 a_textCoord;
+
+			uniform mat4 u_viewProjection;
+			uniform mat4 u_transform;
+
+			out vec2 v_textCoord;
+
+			void main() {
+				v_textCoord = a_textCoord;
+				gl_Position = u_viewProjection * u_transform * vec4(a_position, 1.0);
+			}
+
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+			
+			in vec2 v_textCoord;
+
+			uniform sampler2D u_texture;
+
+			void main() {
+				color = texture(u_texture, v_textCoord);
+			}
+
+		)";
+		m_textureShader.reset(MarsEngine::Shader::create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_texture = MarsEngine::Texture2D::create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<MarsEngine::OpenGLShader>(m_textureShader)->bind();
+		std::dynamic_pointer_cast<MarsEngine::OpenGLShader>(m_textureShader)->uploadUniformInt("u_texture", 0);
+
 	}
 
 	void onUpdate(MarsEngine::Timestep ts) override
@@ -180,9 +221,11 @@ public:
 				MarsEngine::Renderer::submit(m_flatColorShader, m_squareVA, transform);
 			}
 		}
-		
 
-		MarsEngine::Renderer::submit(m_shader, m_vertexArray);
+		m_texture->bind();
+		MarsEngine::Renderer::submit(m_textureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		
+		//MarsEngine::Renderer::submit(m_shader, m_vertexArray);
 
 		MarsEngine::Renderer::endScene();
 	}
@@ -203,8 +246,10 @@ private:
 	MarsEngine::Ref<MarsEngine::Shader> m_shader;
 	MarsEngine::Ref<MarsEngine::VertexArray> m_vertexArray;
 
-	MarsEngine::Ref<MarsEngine::Shader> m_flatColorShader;
+	MarsEngine::Ref<MarsEngine::Shader> m_flatColorShader, m_textureShader;
 	MarsEngine::Ref<MarsEngine::VertexArray> m_squareVA;
+
+	MarsEngine::Ref<MarsEngine::Texture2D> m_texture;
 
 	MarsEngine::OrthographicCamera m_camera;
 	glm::vec3 m_cameraPosition;
