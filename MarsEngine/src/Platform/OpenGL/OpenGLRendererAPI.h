@@ -7,6 +7,8 @@ namespace MarsEngine {
 	class OpenGLRendererAPI : public RendererAPI {
 
 	public:
+		virtual void init() override;
+
 		virtual void setClearColor(glm::vec4 const& color) override;
 
 		virtual void clear() override;

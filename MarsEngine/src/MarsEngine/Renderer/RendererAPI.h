@@ -15,6 +15,8 @@ namespace MarsEngine {
 		};
 
 	public:
+		virtual void init() = 0;
+
 		virtual void setClearColor(glm::vec4 const& color) = 0;
 
 		virtual void clear() = 0;

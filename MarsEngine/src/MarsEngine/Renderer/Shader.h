@@ -14,6 +14,8 @@ namespace MarsEngine {
 
 		virtual void unbind() const = 0;
 
+		static Shader* create(std::string const& filepath);
+
 		static Shader* create(std::string const& vertexSrc, std::string const& fragmentSrc);
 	};
 }

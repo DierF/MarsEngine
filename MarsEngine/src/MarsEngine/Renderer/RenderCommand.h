@@ -7,6 +7,11 @@ namespace MarsEngine {
 	class RenderCommand {
 
 	public:
+		inline static void init()
+		{
+			s_rendererAPI->init();
+		}
+
 		inline static void setClearColor(glm::vec4 const& color) {
 			s_rendererAPI->setClearColor(color);
 		}

@@ -1,88 +1,132 @@
 #include "pch.h"
 #include "OpenGLShader.h"
+#include <fstream>
 #include "glad/glad.h"
 #include "glm/gtc/type_ptr.hpp"
 
 namespace MarsEngine {
 
+	static GLenum ShaderTypeFromString(std::string const& type)
+	{
+		if (type == "vertex")
+		{
+			return GL_VERTEX_SHADER;
+		}
+		else if (type == "fragment" || type == "pixel")
+		{
+			return GL_FRAGMENT_SHADER;
+		}
+		else
+		{
+			ME_CORE_ASSERT(false, "unknown shader type");
+			return 0;
+		}
+	}
+
+	OpenGLShader::OpenGLShader(std::string const& filepath)
+	{
+		std::string source = readFile(filepath);
+		auto shaderSources = preprocess(source);
+		compile(shaderSources);
+	}
+
 	OpenGLShader::OpenGLShader(std::string const& vertexSrc, std::string const& fragmentSrc)
 	{
-		// Read our shaders into the appropriate buffers
-		std::string const& vertexSource = vertexSrc;// Get source code for vertex shader.
-		std::string const& fragmentSource = fragmentSrc;// Get source code for fragment shader.
+		std::unordered_map<GLenum, std::string> sources;
+		sources[GL_VERTEX_SHADER] = vertexSrc;
+		sources[GL_FRAGMENT_SHADER] = fragmentSrc;
+		compile(sources);
+	}
 
-		// Create an empty vertex shader handle
-		GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	OpenGLShader::~OpenGLShader()
+	{
+		glDeleteProgram(m_rendererID);
+	}
 
-		// Send the vertex shader source code to GL
-		// Note that std::string's .c_str is NULL character terminated.
-		const GLchar* source = vertexSource.c_str();
-		glShaderSource(vertexShader, 1, &source, 0);
-
-		// Compile the vertex shader
-		glCompileShader(vertexShader);
-
-		GLint isCompiled = 0;
-		glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &isCompiled);
-		if (isCompiled == GL_FALSE)
+	std::string OpenGLShader::readFile(std::string const& filepath)
+	{
+		std::string result;
+		std::ifstream in(filepath, std::ios::in, std::ios::binary);
+		if (in)
 		{
-			GLint maxLength = 0;
-			glGetShaderiv(vertexShader, GL_INFO_LOG_LENGTH, &maxLength);
-
-			// The maxLength includes the NULL character
-			std::vector<GLchar> infoLog(maxLength);
-			glGetShaderInfoLog(vertexShader, maxLength, &maxLength, &infoLog[0]);
-
-			// We don't need the shader anymore.
-			glDeleteShader(vertexShader);
-
-			// Use the infoLog as you see fit.
-			ME_CORE_ERROR("{0}", infoLog.data());
-			ME_CORE_ASSERT(false, "vertex shader compliation failure!");
-			return;
+			in.seekg(0, std::ios::end);
+			result.resize(in.tellg());
+			in.seekg(0, std::ios::beg);
+			in.read(&result[0], result.size());
+			in.close();
 		}
-
-		// Create an empty fragment shader handle
-		GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-
-		// Send the fragment shader source code to GL
-		// Note that std::string's .c_str is NULL character terminated.
-		source = fragmentSource.c_str();
-		glShaderSource(fragmentShader, 1, &source, 0);
-
-		// Compile the fragment shader
-		glCompileShader(fragmentShader);
-
-		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &isCompiled);
-		if (isCompiled == GL_FALSE)
+		else
 		{
-			GLint maxLength = 0;
-			glGetShaderiv(fragmentShader, GL_INFO_LOG_LENGTH, &maxLength);
-
-			// The maxLength includes the NULL character
-			std::vector<GLchar> infoLog(maxLength);
-			glGetShaderInfoLog(fragmentShader, maxLength, &maxLength, &infoLog[0]);
-
-			// We don't need the shader anymore.
-			glDeleteShader(fragmentShader);
-			// Either of them. Don't leak shaders.
-			glDeleteShader(vertexShader);
-
-			// Use the infoLog as you see fit.
-			ME_CORE_ERROR("{0}", infoLog.data());
-			ME_CORE_ASSERT(false, "fragment shader compliation failure!");
-			return;
+			ME_CORE_ERROR("could not open file '{0}'", filepath);
 		}
+		return result;
+	}
 
-		// Vertex and fragment shaders are successfully compiled.
-		// Now time to link them together into a program.
-		// Get a program object.
+	std::unordered_map<GLenum, std::string> OpenGLShader::preprocess(std::string const& source)
+	{
+		std::unordered_map<GLenum, std::string> shaderSources;
+
+		char const* typeToken = "#type";
+		size_t typeTokenLength = strlen(typeToken);
+		size_t pos = source.find(typeToken, 0);
+		while (pos != std::string::npos)
+		{
+			size_t eol = source.find_first_of("\r\n", pos);
+			ME_CORE_ASSERT(eol != std::string::npos, "shader syntax error");
+			size_t begin = pos + typeTokenLength + 1;
+			std::string type = source.substr(begin, eol - begin);
+			ME_CORE_ASSERT(ShaderTypeFromString(type) != 0, "invalid shader type specified");
+
+			size_t nextLinePos = source.find_first_not_of("\r\n", eol);
+			pos = source.find(typeToken, nextLinePos);
+			shaderSources[ShaderTypeFromString(type)] =
+				source.substr(nextLinePos,
+					pos - (nextLinePos == std::string::npos ? source.size() - 1 : nextLinePos));
+		}
+		return shaderSources;
+	}
+
+	void OpenGLShader::compile(std::unordered_map<GLenum, std::string> const& shaderSources)
+	{
 		GLuint program = glCreateProgram();
-		m_rendererID = program;
+		std::vector<GLenum> glShaderIDs;
 
-		// Attach our shaders to our program
-		glAttachShader(program, vertexShader);
-		glAttachShader(program, fragmentShader);
+		for (auto& [type, source] : shaderSources)
+		{
+			GLuint shader = glCreateShader(type);
+
+			// Send the vertex shader source code to GL
+			// Note that std::string's .c_str is NULL character terminated.
+			const GLchar* sourceCStr = source.c_str();
+			glShaderSource(shader, 1, &sourceCStr, 0);
+
+			// Compile the vertex shader
+			glCompileShader(shader);
+
+			GLint isCompiled = 0;
+			glGetShaderiv(shader, GL_COMPILE_STATUS, &isCompiled);
+			if (isCompiled == GL_FALSE)
+			{
+				GLint maxLength = 0;
+				glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &maxLength);
+
+				// The maxLength includes the NULL character
+				std::vector<GLchar> infoLog(maxLength);
+				glGetShaderInfoLog(shader, maxLength, &maxLength, &infoLog[0]);
+
+				// Use the infoLog as you see fit.
+				ME_CORE_ERROR("{0}", infoLog.data());
+				ME_CORE_ASSERT(false, "shader compliation failure!");
+				break;
+			}
+			glAttachShader(program, shader);
+			glShaderIDs.push_back(shader);
+		}
+
+		// Read our shaders into the appropriate buffers
+		//std::string const& vertexSource = vertexSrc;// Get source code for vertex shader.
+		//std::string const& fragmentSource = fragmentSrc;// Get source code for fragment shader.
+
 
 		// Link our program
 		glLinkProgram(program);
@@ -102,8 +146,10 @@ namespace MarsEngine {
 			// We don't need the program anymore.
 			glDeleteProgram(program);
 			// Don't leak shaders either.
-			glDeleteShader(vertexShader);
-			glDeleteShader(fragmentShader);
+			for (auto id : glShaderIDs)
+			{
+				glDeleteShader(id);
+			}
 
 			// Use the infoLog as you see fit.
 
@@ -112,14 +158,12 @@ namespace MarsEngine {
 			return;
 		}
 
-		// Always detach shaders after a successful link.
-		glDetachShader(program, vertexShader);
-		glDetachShader(program, fragmentShader);
-	}
+		for (auto id : glShaderIDs)
+		{
+			glDeleteShader(id);
+		}
 
-	OpenGLShader::~OpenGLShader()
-	{
-		glDeleteProgram(m_rendererID);
+		m_rendererID = program;
 	}
 
 	void OpenGLShader::bind() const

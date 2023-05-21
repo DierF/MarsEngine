@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "MarsEngine/Log.h"
 #include "Input.h"
+#include "MarsEngine/Renderer/Renderer.h"
 #include "GLFW/glfw3.h"
 
 namespace MarsEngine {
@@ -18,6 +19,8 @@ namespace MarsEngine {
 		m_window = std::unique_ptr<Window>(Window::create());
 		m_window->setEventCallback(BIND_EVENT_FUNC(Application::onEvent));
 		//m_window->setVSync(false);
+
+		Renderer::init();
 
 		m_imGuiLayer = new ImGuiLayer();
 		pushOverlay(m_imGuiLayer);
