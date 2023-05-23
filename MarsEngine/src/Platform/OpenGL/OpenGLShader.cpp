@@ -28,9 +28,16 @@ namespace MarsEngine {
 		std::string source = readFile(filepath);
 		auto shaderSources = preprocess(source);
 		compile(shaderSources);
+
+		auto lastSlash = filepath.find_last_of("/\\");
+		lastSlash = lastSlash == std::string::npos ? 0 : lastSlash + 1;
+		auto lastDot = filepath.rfind('.');
+		auto count = lastDot == std::string::npos ? filepath.size() - lastSlash : lastDot - lastSlash;
+		m_name = filepath.substr(lastSlash, count);
 	}
 
-	OpenGLShader::OpenGLShader(std::string const& vertexSrc, std::string const& fragmentSrc)
+	OpenGLShader::OpenGLShader(std::string const& name, std::string const& vertexSrc, std::string const& fragmentSrc)
+		: m_name(name)
 	{
 		std::unordered_map<GLenum, std::string> sources;
 		sources[GL_VERTEX_SHADER] = vertexSrc;
@@ -46,7 +53,7 @@ namespace MarsEngine {
 	std::string OpenGLShader::readFile(std::string const& filepath)
 	{
 		std::string result;
-		std::ifstream in(filepath, std::ios::in, std::ios::binary);
+		std::ifstream in(filepath, std::ios::in | std::ios::binary);
 		if (in)
 		{
 			in.seekg(0, std::ios::end);
@@ -89,8 +96,9 @@ namespace MarsEngine {
 	void OpenGLShader::compile(std::unordered_map<GLenum, std::string> const& shaderSources)
 	{
 		GLuint program = glCreateProgram();
-		std::vector<GLenum> glShaderIDs;
-
+		ME_CORE_ASSERT(shaderSources.size() != 2, "Only 2 shaders for now");
+		std::array<GLenum, 2> glShaderIDs;
+		int glShaderIDIndex = 0;
 		for (auto& [type, source] : shaderSources)
 		{
 			GLuint shader = glCreateShader(type);
@@ -120,7 +128,7 @@ namespace MarsEngine {
 				break;
 			}
 			glAttachShader(program, shader);
-			glShaderIDs.push_back(shader);
+			glShaderIDs[glShaderIDIndex++] = shader;
 		}
 
 		// Read our shaders into the appropriate buffers

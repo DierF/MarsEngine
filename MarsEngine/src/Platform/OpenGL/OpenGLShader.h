@@ -12,13 +12,15 @@ namespace MarsEngine {
 	public:
 		OpenGLShader(std::string const& filepath);
 
-		OpenGLShader(std::string const& vertexSrc, std::string const& fragmentSrc);
+		OpenGLShader(std::string const& name, std::string const& vertexSrc, std::string const& fragmentSrc);
 
 		virtual ~OpenGLShader();
 
 		virtual void bind() const;
 
 		virtual void unbind() const;
+
+		virtual std::string const& getName() const override { return m_name; }
 
 		void uploadUniformInt(std::string const& name, int value);
 
@@ -43,5 +45,7 @@ namespace MarsEngine {
 
 	private:
 		uint32_t m_rendererID;
+
+		std::string m_name;
 	};
 }

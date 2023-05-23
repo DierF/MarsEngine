@@ -16,6 +16,7 @@
 #include "MarsEngine/Renderer/Texture.h"
 #include "MarsEngine/Renderer/VertexArray.h"
 #include "MarsEngine/Renderer/OrthographicCamera.h"
+#include "MarsEngine/OrthographicCameraController.h"
 
 // ---Entry Point
 #include "MarsEngine/EntryPoint.h"

@@ -10,7 +10,7 @@
 class ExampleLayer : public MarsEngine::Layer {
 
 public:
-	ExampleLayer() : Layer("Example"), m_camera(-1.6f, 1.6f, -0.9f, 0.9f), m_cameraPosition(0.0f) {
+	ExampleLayer() : Layer("Example"), m_cameraController(1920.0f / 1080.0f, true) {
 		
 		m_vertexArray.reset(MarsEngine::VertexArray::create());
 
@@ -95,7 +95,7 @@ public:
 
 		)";
 
-		m_shader.reset(MarsEngine::Shader::create(vertexSrc, fragmentSrc));
+		m_shader = MarsEngine::Shader::create("vertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorVertexSrc = R"(
 			#version 330 core
@@ -129,49 +129,26 @@ public:
 
 		)";
 
-		m_flatColorShader.reset(MarsEngine::Shader::create(flatColorVertexSrc, flatColorFragmentSrc));
+		m_flatColorShader = MarsEngine::Shader::create("flatColor", flatColorVertexSrc, flatColorFragmentSrc);
 
-		m_textureShader.reset(MarsEngine::Shader::create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_shaderLibrary.load("assets/shaders/Texture.glsl");
 
 		m_texture = MarsEngine::Texture2D::create("assets/textures/Checkerboard.png");
 		m_ChernoLogoTexture = MarsEngine::Texture2D::create("assets/textures/ChernoLogo.png");
 
-		std::dynamic_pointer_cast<MarsEngine::OpenGLShader>(m_textureShader)->bind();
-		std::dynamic_pointer_cast<MarsEngine::OpenGLShader>(m_textureShader)->uploadUniformInt("u_texture", 0);
+		std::dynamic_pointer_cast<MarsEngine::OpenGLShader>(textureShader)->bind();
+		std::dynamic_pointer_cast<MarsEngine::OpenGLShader>(textureShader)->uploadUniformInt("u_texture", 0);
 
 	}
 
 	void onUpdate(MarsEngine::Timestep ts) override
 	{
-		ME_TRACE("Delta time: {0}s, {1}ms", ts.getSeconds(), ts.getMilliseconds());
-
-		if (MarsEngine::Input::isKeyPressed(ME_KEY_LEFT)) {
-			m_cameraPosition.x -= m_cameraMoveSpeed * ts;
-		}
-		else if (MarsEngine::Input::isKeyPressed(ME_KEY_RIGHT)) {
-			m_cameraPosition.x += m_cameraMoveSpeed * ts;
-		}
-		if (MarsEngine::Input::isKeyPressed(ME_KEY_DOWN)) {
-			m_cameraPosition.y -= m_cameraMoveSpeed * ts;
-		}
-		else if (MarsEngine::Input::isKeyPressed(ME_KEY_UP)) {
-			m_cameraPosition.y += m_cameraMoveSpeed * ts;
-		}
-
-		if (MarsEngine::Input::isKeyPressed(ME_KEY_A)) {
-			m_cameraRotation += m_cameraRotationSpeed * ts;
-		}
-		else if (MarsEngine::Input::isKeyPressed(ME_KEY_D)) {
-			m_cameraRotation -= m_cameraRotationSpeed * ts;
-		}
+		m_cameraController.onUpdate(ts);
 
 		MarsEngine::RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		MarsEngine::RenderCommand::clear();
 
-		m_camera.setPosition(m_cameraPosition);
-		m_camera.setRotation(m_cameraRotation);
-
-		MarsEngine::Renderer::beginScene(m_camera);
+		MarsEngine::Renderer::beginScene(m_cameraController.getCamera());
 		
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -191,10 +168,12 @@ public:
 			}
 		}
 
+		auto textureShader = m_shaderLibrary.get("Texture");
+
 		m_texture->bind();
-		MarsEngine::Renderer::submit(m_textureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		MarsEngine::Renderer::submit(textureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		m_ChernoLogoTexture->bind();
-		MarsEngine::Renderer::submit(m_textureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		MarsEngine::Renderer::submit(textureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		
 		//MarsEngine::Renderer::submit(m_shader, m_vertexArray);
 
@@ -208,25 +187,22 @@ public:
 		ImGui::End();
 	}
 
-	void onEvent(MarsEngine::Event& event) override
+	void onEvent(MarsEngine::Event& e) override
 	{
-
+		m_cameraController.onEvent(e);
 	}
 
 private:
+	MarsEngine::ShaderLibrary m_shaderLibrary;
 	MarsEngine::Ref<MarsEngine::Shader> m_shader;
 	MarsEngine::Ref<MarsEngine::VertexArray> m_vertexArray;
 
-	MarsEngine::Ref<MarsEngine::Shader> m_flatColorShader, m_textureShader;
+	MarsEngine::Ref<MarsEngine::Shader> m_flatColorShader;
 	MarsEngine::Ref<MarsEngine::VertexArray> m_squareVA;
 
 	MarsEngine::Ref<MarsEngine::Texture2D> m_texture, m_ChernoLogoTexture;
 
-	MarsEngine::OrthographicCamera m_camera;
-	glm::vec3 m_cameraPosition;
-	float m_cameraMoveSpeed = 5.0f;
-	float m_cameraRotation = 0.0f;
-	float m_cameraRotationSpeed = 3.14f;
+	MarsEngine::OrthographicCameraController m_cameraController;
 
 	glm::vec3 m_squareColor = { 0.2f, 0.3f, 0.8f };
 };

@@ -146,6 +146,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\MarsEngine\OrthographicCameraController.h" />
     <ClInclude Include="src\MarsEngine.h" />
     <ClInclude Include="src\MarsEngine\Application.h" />
     <ClInclude Include="src\MarsEngine\Core.h" />
@@ -600,6 +601,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\MarsEngine\OrthographicCameraController.cpp" />
     <ClCompile Include="src\MarsEngine\Application.cpp" />
     <ClCompile Include="src\MarsEngine\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\MarsEngine\ImGui\ImGuiLayer.cpp" />

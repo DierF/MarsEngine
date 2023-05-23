@@ -23,6 +23,8 @@ namespace MarsEngine {
 			recalculateViewMartrix();
 		}
 
+		void setProjection(float left, float right, float bottom, float top);
+
 		auto const& getProjectionMatrix() const { return m_projectionMatrix; }
 
 		auto const& getViewMatrix() const { return m_viewMatrix; }

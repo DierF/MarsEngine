@@ -1410,6 +1410,9 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\MarsEngine\OrthographicCameraController.h">
+      <Filter>src\MarsEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Application.cpp">
@@ -1483,6 +1486,9 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\OrthographicCameraController.cpp">
+      <Filter>src\MarsEngine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
