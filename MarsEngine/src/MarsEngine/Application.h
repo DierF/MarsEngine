@@ -34,12 +34,15 @@ namespace MarsEngine {
 		}
 
 	private:
-		bool onWindowClose(WindowCloseEvent& event);
+		bool onWindowClose(WindowCloseEvent& e);
+
+		bool onWindowResize(WindowResizeEvent& e);
 
 	private:
 		std::unique_ptr<Window> m_window;
 		ImGuiLayer* m_imGuiLayer;
 		bool m_running = true;
+		bool m_minimized = false;
 		LayerStack m_layerStack;
 		float m_lastFrameTime = 0.0f;
 

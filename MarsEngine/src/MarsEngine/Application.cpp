@@ -31,6 +31,7 @@ namespace MarsEngine {
 	void Application::onEvent(Event& event) {
 		EventDispatcher dispatcher(event);
 		dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(Application::onWindowClose));
+		dispatcher.dispatch<WindowResizeEvent>(BIND_EVENT_FUNC(Application::onWindowResize));
 		//ME_CORE_TRACE("{0}", event);
 		for (auto iter = m_layerStack.end(); iter != m_layerStack.begin(); ) {
 			(*--iter)->onEvent(event);
@@ -57,10 +58,12 @@ namespace MarsEngine {
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_lastFrameTime;
 			m_lastFrameTime = time;
-			for (auto layer : m_layerStack) {
-				layer->onUpdate(timestep);
+			if (!m_minimized)
+			{
+				for (auto layer : m_layerStack) {
+					layer->onUpdate(timestep);
+				}
 			}
-
 			m_imGuiLayer->begin();
 			for (auto layer : m_layerStack) {
 				layer->onImGuiRender();
@@ -71,9 +74,22 @@ namespace MarsEngine {
 		}
 	}
 
-	bool Application::onWindowClose(WindowCloseEvent& event) {
+	bool Application::onWindowClose(WindowCloseEvent& e) {
 		m_running = false;
 		return true;
+	}
+
+	bool Application::onWindowResize(WindowResizeEvent& e)
+	{
+		if (e.getWidth() == 0 || e.getHeight() == 0)
+		{
+			m_minimized = true;
+			return false;
+		}
+
+		m_minimized = false;
+		Renderer::onWindowResize(e.getWidth(), e.getHeight());
+		return false;
 	}
 
 }

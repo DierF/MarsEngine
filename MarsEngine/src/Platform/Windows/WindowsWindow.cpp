@@ -124,7 +124,7 @@ namespace MarsEngine {
 		glfwSetCursorPosCallback(m_window,
 			[](GLFWwindow* window, double posX, double posY) {
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				MouseScrolledEvent event((float)posX, (float)posY);
+				MouseMovedEvent event((float)posX, (float)posY);
 				data.m_eventCallback(event);
 			});
 	}

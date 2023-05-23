@@ -20,6 +20,10 @@ namespace MarsEngine
 
 		OrthographicCamera const& getCamera() const { return m_camera; }
 
+		float getZoomLevel() const { return m_zoomLevel; }
+
+		void setZoomLevel(float level) { m_zoomLevel = level; }
+
 	private:
 		bool onMouseScrolled(MouseScrolledEvent& e);
 
