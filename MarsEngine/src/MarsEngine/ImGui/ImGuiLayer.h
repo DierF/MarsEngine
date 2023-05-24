@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MarsEngine/Layer.h"
+#include "MarsEngine/Core/Layer.h"
 #include "MarsEngine/Event/KeyEvent.h"
 #include "MarsEngine/Event/MouseEvent.h"
 #include "MarsEngine/Event/ApplicationEvent.h"
@@ -16,7 +16,7 @@ namespace MarsEngine {
 
 		virtual void onAttach() override;
 
-		virtual void onDetch() override;
+		virtual void onDetach() override;
 
 		virtual void onImGuiRender() override;
 

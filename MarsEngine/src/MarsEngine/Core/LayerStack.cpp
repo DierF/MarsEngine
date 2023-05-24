@@ -24,7 +24,7 @@ namespace MarsEngine {
 	void LayerStack::popLayer(Layer* layer) {
 		auto iter = std::find(m_layers.begin(), m_layers.end(), layer);
 		if (iter != m_layers.begin() + m_layerInsertIndex) {
-			layer->onDetch();
+			layer->onDetach();
 			m_layers.erase(iter);
 			--m_layerInsertIndex;
 		}
@@ -33,7 +33,7 @@ namespace MarsEngine {
 	void LayerStack::popOverlay(Layer* overlay) {
 		auto iter = std::find(m_layers.begin(), m_layers.end(), overlay);
 		if (iter != m_layers.end()) {
-			overlay->onDetch();
+			overlay->onDetach();
 			m_layers.erase(iter);
 		}
 	}

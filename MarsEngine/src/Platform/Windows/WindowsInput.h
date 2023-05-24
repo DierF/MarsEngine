@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MarsEngine/Input.h"
+#include "MarsEngine/Core/Input.h"
 
 namespace MarsEngine {
 

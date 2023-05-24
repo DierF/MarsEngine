@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MarsEngine/Core.h"
+#include "MarsEngine/Core/Core.h"
 #include "MarsEngine/Event/Event.h"
 #include "MarsEngine/Core/Timestep.h"
 
@@ -15,7 +15,7 @@ namespace MarsEngine {
 
 		virtual void onAttach() {}
 
-		virtual void onDetch() {}
+		virtual void onDetach() {}
 
 		virtual void onUpdate(Timestep ts) {}
 

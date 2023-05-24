@@ -57,17 +57,38 @@
     <ClInclude Include="src\MarsEngine.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\Application.h">
-      <Filter>src\MarsEngine</Filter>
+    <ClInclude Include="src\MarsEngine\Core\Application.h">
+      <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\Core.h">
-      <Filter>src\MarsEngine</Filter>
+    <ClInclude Include="src\MarsEngine\Core\Core.h">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Core\EntryPoint.h">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Core\Input.h">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Core\KeyCodes.h">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Core\Layer.h">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Core\LayerStack.h">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Core\Log.h">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Core\MouseButtonCodes.h">
+      <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Core\Timestep.h">
       <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\EntryPoint.h">
-      <Filter>src\MarsEngine</Filter>
+    <ClInclude Include="src\MarsEngine\Core\Window.h">
+      <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Event\ApplicationEvent.h">
       <Filter>src\MarsEngine\Event</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="src\MarsEngine\ImGui\ImGuiLayer.h">
       <Filter>src\MarsEngine\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\Input.h">
-      <Filter>src\MarsEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MarsEngine\KeyCodes.h">
-      <Filter>src\MarsEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MarsEngine\Layer.h">
-      <Filter>src\MarsEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MarsEngine\LayerStack.h">
-      <Filter>src\MarsEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MarsEngine\Log.h">
-      <Filter>src\MarsEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MarsEngine\MouseButtonCodes.h">
-      <Filter>src\MarsEngine</Filter>
-    </ClInclude>
     <ClInclude Include="src\MarsEngine\Renderer\Buffer.h">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Renderer\OrthographicCamera.h">
+      <Filter>src\MarsEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Renderer\OrthographicCameraController.h">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Renderer\RenderCommand.h">
@@ -128,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Renderer\VertexArray.h">
       <Filter>src\MarsEngine\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MarsEngine\Window.h">
-      <Filter>src\MarsEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1410,13 +1413,19 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\OrthographicCameraController.h">
-      <Filter>src\MarsEngine</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\MarsEngine\Application.cpp">
-      <Filter>src\MarsEngine</Filter>
+    <ClCompile Include="src\MarsEngine\Core\Application.cpp">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\Core\Layer.cpp">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\Core\LayerStack.cpp">
+      <Filter>src\MarsEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\Core\Log.cpp">
+      <Filter>src\MarsEngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\MarsEngine\ImGui\ImGuiBuild.cpp">
       <Filter>src\MarsEngine\ImGui</Filter>
@@ -1424,19 +1433,13 @@
     <ClCompile Include="src\MarsEngine\ImGui\ImGuiLayer.cpp">
       <Filter>src\MarsEngine\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\MarsEngine\Layer.cpp">
-      <Filter>src\MarsEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MarsEngine\LayerStack.cpp">
-      <Filter>src\MarsEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MarsEngine\Log.cpp">
-      <Filter>src\MarsEngine</Filter>
-    </ClCompile>
     <ClCompile Include="src\MarsEngine\Renderer\Buffer.cpp">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\MarsEngine\Renderer\OrthographicCamera.cpp">
+      <Filter>src\MarsEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\Renderer\OrthographicCameraController.cpp">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\MarsEngine\Renderer\RenderCommand.cpp">
@@ -1486,9 +1489,6 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MarsEngine\OrthographicCameraController.cpp">
-      <Filter>src\MarsEngine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

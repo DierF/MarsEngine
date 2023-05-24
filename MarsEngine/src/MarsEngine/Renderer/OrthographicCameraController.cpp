@@ -1,8 +1,8 @@
 #include "pch.h"
 
 #include "OrthographicCameraController.h"
-#include "MarsEngine/Input.h"
-#include "MarsEngine/KeyCodes.h"
+#include "MarsEngine/Core/Input.h"
+#include "MarsEngine/Core/KeyCodes.h"
 
 namespace MarsEngine
 {
@@ -52,7 +52,6 @@ namespace MarsEngine
 	{
 		m_zoomLevel -= e.getOffsetY() * 0.25f;
 		m_zoomLevel = std::max(m_zoomLevel, 0.25f);
-		ME_CORE_TRACE("{0}, {1}", e.getOffsetY() * 0.25f, m_zoomLevel);
 		m_camera.setProjection(-m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel);
 		return false;
 	}

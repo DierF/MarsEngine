@@ -6,7 +6,7 @@
 
 namespace MarsEngine {
 
-	VertexArray* VertexArray::create()
+	Ref<VertexArray> VertexArray::create()
 	{
 		switch (Renderer::getAPI())
 		{
@@ -14,7 +14,7 @@ namespace MarsEngine {
 			ME_CORE_ASSERT(false, "RendererAPI:None!");
 			return nullptr;
 		case RendererAPI::API::OpenGL:
-			return new OpenGLVertexArray();
+			return std::make_shared<OpenGLVertexArray>();
 		default:
 			break;
 		}

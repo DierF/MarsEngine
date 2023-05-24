@@ -146,33 +146,33 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\MarsEngine\OrthographicCameraController.h" />
     <ClInclude Include="src\MarsEngine.h" />
-    <ClInclude Include="src\MarsEngine\Application.h" />
-    <ClInclude Include="src\MarsEngine\Core.h" />
+    <ClInclude Include="src\MarsEngine\Core\Application.h" />
+    <ClInclude Include="src\MarsEngine\Core\Core.h" />
+    <ClInclude Include="src\MarsEngine\Core\EntryPoint.h" />
+    <ClInclude Include="src\MarsEngine\Core\Input.h" />
+    <ClInclude Include="src\MarsEngine\Core\KeyCodes.h" />
+    <ClInclude Include="src\MarsEngine\Core\Layer.h" />
+    <ClInclude Include="src\MarsEngine\Core\LayerStack.h" />
+    <ClInclude Include="src\MarsEngine\Core\Log.h" />
+    <ClInclude Include="src\MarsEngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\MarsEngine\Core\Timestep.h" />
-    <ClInclude Include="src\MarsEngine\EntryPoint.h" />
+    <ClInclude Include="src\MarsEngine\Core\Window.h" />
     <ClInclude Include="src\MarsEngine\Event\ApplicationEvent.h" />
     <ClInclude Include="src\MarsEngine\Event\Event.h" />
     <ClInclude Include="src\MarsEngine\Event\KeyEvent.h" />
     <ClInclude Include="src\MarsEngine\Event\MouseEvent.h" />
     <ClInclude Include="src\MarsEngine\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\MarsEngine\Input.h" />
-    <ClInclude Include="src\MarsEngine\KeyCodes.h" />
-    <ClInclude Include="src\MarsEngine\Layer.h" />
-    <ClInclude Include="src\MarsEngine\LayerStack.h" />
-    <ClInclude Include="src\MarsEngine\Log.h" />
-    <ClInclude Include="src\MarsEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Buffer.h" />
     <ClInclude Include="src\MarsEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\MarsEngine\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\MarsEngine\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\MarsEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Renderer.h" />
     <ClInclude Include="src\MarsEngine\Renderer\RendererAPI.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Shader.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Texture.h" />
     <ClInclude Include="src\MarsEngine\Renderer\VertexArray.h" />
-    <ClInclude Include="src\MarsEngine\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -601,15 +601,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\MarsEngine\OrthographicCameraController.cpp" />
-    <ClCompile Include="src\MarsEngine\Application.cpp" />
+    <ClCompile Include="src\MarsEngine\Core\Application.cpp" />
+    <ClCompile Include="src\MarsEngine\Core\Layer.cpp" />
+    <ClCompile Include="src\MarsEngine\Core\LayerStack.cpp" />
+    <ClCompile Include="src\MarsEngine\Core\Log.cpp" />
     <ClCompile Include="src\MarsEngine\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\MarsEngine\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\MarsEngine\Layer.cpp" />
-    <ClCompile Include="src\MarsEngine\LayerStack.cpp" />
-    <ClCompile Include="src\MarsEngine\Log.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\MarsEngine\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="src\MarsEngine\Renderer\RendererAPI.cpp" />

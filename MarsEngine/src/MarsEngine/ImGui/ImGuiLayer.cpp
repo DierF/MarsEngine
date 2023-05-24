@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ImGuiLayer.h"
 #include "imgui.h"
-#include "MarsEngine/Application.h"
+#include "MarsEngine/Core/Application.h"
 
 #define ME_IMPL_API
 #include "backends/imgui_impl_glfw.h"
@@ -41,7 +41,7 @@ namespace MarsEngine {
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
-	void ImGuiLayer::onDetch() {
+	void ImGuiLayer::onDetach() {
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();

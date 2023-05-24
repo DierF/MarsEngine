@@ -2,7 +2,7 @@
 #include "WindowsInput.h"
 
 #include "GLFW/glfw3.h"
-#include "MarsEngine/Application.h"
+#include "MarsEngine/Core/Application.h"
 
 namespace MarsEngine {
 

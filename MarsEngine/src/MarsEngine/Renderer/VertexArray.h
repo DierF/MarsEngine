@@ -23,7 +23,7 @@ namespace MarsEngine {
 
 		virtual Ref<IndexBuffer> const& getIndexBuffer() const = 0;
 
-		static VertexArray* create();
+		static Ref<VertexArray> create();
 
 	};
 }
