@@ -20,6 +20,14 @@ namespace MarsEngine {
 
 		virtual void unbind() const;
 
+		virtual void setInt(std::string const& name, int value) override;
+
+		virtual void setFloat3(std::string const& name, glm::vec3 const& value) override;
+
+		virtual void setFloat4(std::string const& name, glm::vec4 const& value) override;
+
+		virtual void setMat4(std::string const& name, glm::mat4 const& value) override;
+
 		virtual std::string const& getName() const override { return m_name; }
 
 		void uploadUniformInt(std::string const& name, int value);

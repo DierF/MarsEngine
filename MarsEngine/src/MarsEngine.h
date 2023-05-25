@@ -10,6 +10,7 @@
 #include "MarsEngine/Core/KeyCodes.h"
 #include "MarsEngine/ImGui/ImGuiLayer.h"
 #include "MarsEngine/Renderer/Renderer.h"
+#include "MarsEngine/Renderer/Renderer2D.h"
 #include "MarsEngine/Renderer/RenderCommand.h"
 #include "MarsEngine/Renderer/Buffer.h"
 #include "MarsEngine/Renderer/Shader.h"

@@ -184,6 +184,26 @@ namespace MarsEngine {
 		glUseProgram(0);
 	}
 
+	void OpenGLShader::setInt(std::string const& name, int value)
+	{
+		uploadUniformInt(name, value);
+	}
+
+	void OpenGLShader::setFloat3(std::string const& name, glm::vec3 const& value)
+	{
+		uploadUniformFloat3(name, value);
+	}
+
+	void OpenGLShader::setFloat4(std::string const& name, glm::vec4 const& value)
+	{
+		uploadUniformFloat4(name, value);
+	}
+
+	void OpenGLShader::setMat4(std::string const& name, glm::mat4 const& value)
+	{
+		uploadUniformMat4(name, value);
+	}
+
 	void OpenGLShader::uploadUniformInt(std::string const& name, int value)
 	{
 		GLint location = glGetUniformLocation(m_rendererID, name.c_str());

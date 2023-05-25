@@ -3,6 +3,8 @@
 #include <string>
 #include <unordered_map>
 
+#include "glm/glm.hpp"
+
 namespace MarsEngine {
 
 	class Shader {
@@ -14,6 +16,14 @@ namespace MarsEngine {
 		virtual void bind() const = 0;
 
 		virtual void unbind() const = 0;
+
+		virtual void setInt(std::string const& name, int value) = 0;
+
+		virtual void setFloat3(std::string const& name, glm::vec3 const& value) = 0;
+
+		virtual void setFloat4(std::string const& name, glm::vec4 const& value) = 0;
+
+		virtual void setMat4(std::string const& name, glm::mat4 const& value) = 0;
 
 		virtual std::string const& getName() const = 0;
 

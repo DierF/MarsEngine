@@ -25,5 +25,7 @@ private:
 	MarsEngine::Ref<MarsEngine::VertexArray> m_squareVA;
 	MarsEngine::Ref<MarsEngine::Shader> m_flatColorShader;
 
+	MarsEngine::Ref<MarsEngine::Texture2D> m_checkerboardTexture;
+
 	glm::vec4 m_squareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 };
