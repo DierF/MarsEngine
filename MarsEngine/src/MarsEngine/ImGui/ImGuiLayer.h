@@ -18,8 +18,6 @@ namespace MarsEngine {
 
 		virtual void onDetach() override;
 
-		virtual void onImGuiRender() override;
-
 		void begin();
 
 		void end();

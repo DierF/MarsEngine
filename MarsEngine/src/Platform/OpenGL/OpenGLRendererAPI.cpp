@@ -30,5 +30,6 @@ namespace MarsEngine {
 	void OpenGLRendererAPI::drawIndexed(Ref<VertexArray> const& vertexArray)
 	{
 		glDrawElements(GL_TRIANGLES, vertexArray->getIndexBuffer()->getCount(), GL_UNSIGNED_INT, nullptr);
+		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
