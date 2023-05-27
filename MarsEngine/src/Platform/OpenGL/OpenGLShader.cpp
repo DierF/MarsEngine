@@ -25,6 +25,8 @@ namespace MarsEngine {
 
 	OpenGLShader::OpenGLShader(std::string const& filepath)
 	{
+		ME_PROFILE_FUNCTION();
+
 		std::string source = readFile(filepath);
 		auto shaderSources = preprocess(source);
 		compile(shaderSources);
@@ -39,6 +41,8 @@ namespace MarsEngine {
 	OpenGLShader::OpenGLShader(std::string const& name, std::string const& vertexSrc, std::string const& fragmentSrc)
 		: m_name(name)
 	{
+		ME_PROFILE_FUNCTION();
+
 		std::unordered_map<GLenum, std::string> sources;
 		sources[GL_VERTEX_SHADER] = vertexSrc;
 		sources[GL_FRAGMENT_SHADER] = fragmentSrc;
@@ -47,11 +51,15 @@ namespace MarsEngine {
 
 	OpenGLShader::~OpenGLShader()
 	{
+		ME_PROFILE_FUNCTION();
+
 		glDeleteProgram(m_rendererID);
 	}
 
 	std::string OpenGLShader::readFile(std::string const& filepath)
 	{
+		ME_PROFILE_FUNCTION();
+
 		std::string result;
 		std::ifstream in(filepath, std::ios::in | std::ios::binary);
 		if (in)
@@ -71,6 +79,8 @@ namespace MarsEngine {
 
 	std::unordered_map<GLenum, std::string> OpenGLShader::preprocess(std::string const& source)
 	{
+		ME_PROFILE_FUNCTION();
+
 		std::unordered_map<GLenum, std::string> shaderSources;
 
 		char const* typeToken = "#type";
@@ -95,6 +105,8 @@ namespace MarsEngine {
 
 	void OpenGLShader::compile(std::unordered_map<GLenum, std::string> const& shaderSources)
 	{
+		ME_PROFILE_FUNCTION();
+
 		GLuint program = glCreateProgram();
 		ME_CORE_ASSERT(shaderSources.size() != 2, "Only 2 shaders for now");
 		std::array<GLenum, 2> glShaderIDs;
@@ -176,31 +188,43 @@ namespace MarsEngine {
 
 	void OpenGLShader::bind() const
 	{
+		ME_PROFILE_FUNCTION();
+
 		glUseProgram(m_rendererID);
 	}
 
 	void OpenGLShader::unbind() const
 	{
+		ME_PROFILE_FUNCTION();
+
 		glUseProgram(0);
 	}
 
 	void OpenGLShader::setInt(std::string const& name, int value)
 	{
+		ME_PROFILE_FUNCTION();
+
 		uploadUniformInt(name, value);
 	}
 
 	void OpenGLShader::setFloat3(std::string const& name, glm::vec3 const& value)
 	{
+		ME_PROFILE_FUNCTION();
+
 		uploadUniformFloat3(name, value);
 	}
 
 	void OpenGLShader::setFloat4(std::string const& name, glm::vec4 const& value)
 	{
+		ME_PROFILE_FUNCTION();
+
 		uploadUniformFloat4(name, value);
 	}
 
 	void OpenGLShader::setMat4(std::string const& name, glm::mat4 const& value)
 	{
+		ME_PROFILE_FUNCTION();
+
 		uploadUniformMat4(name, value);
 	}
 

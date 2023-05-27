@@ -39,21 +39,29 @@ namespace MarsEngine {
 
 	OpenGLVertexArray::OpenGLVertexArray()
 	{
+		ME_PROFILE_FUNCTION();
+
 		glCreateVertexArrays(1, &m_rendererID);
 	}
 
-	OpenGLVertexArray::~OpenGLVertexArray() {
-		
+	OpenGLVertexArray::~OpenGLVertexArray()
+	{
+		ME_PROFILE_FUNCTION();
+
 		glDeleteVertexArrays(1, &m_rendererID);
 	}
 
 	void OpenGLVertexArray::bind() const
 	{
+		ME_PROFILE_FUNCTION();
+
 		glBindVertexArray(m_rendererID);
 	}
 
 	void OpenGLVertexArray::unbind() const
 	{
+		ME_PROFILE_FUNCTION();
+
 		glBindVertexArray(0);
 	}
 

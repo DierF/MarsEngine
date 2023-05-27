@@ -1414,6 +1414,7 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\MarsEngine\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Core\Application.cpp">

@@ -13,6 +13,8 @@ namespace MarsEngine {
 
 	Application::Application()
 	{
+		ME_PROFILE_FUNCTION();
+
 		ME_CORE_ASSERT(!s_instance, "Application already exists!");
 		s_instance = this;
 
@@ -26,14 +28,21 @@ namespace MarsEngine {
 		pushOverlay(m_imGuiLayer);
 	}
 
-	Application::~Application() {}
+	Application::~Application()
+	{
+		ME_PROFILE_FUNCTION();
+	}
 
-	void Application::onEvent(Event& event) {
+	void Application::onEvent(Event& event)
+	{
+		ME_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(event);
 		dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(Application::onWindowClose));
 		dispatcher.dispatch<WindowResizeEvent>(BIND_EVENT_FUNC(Application::onWindowResize));
 		//ME_CORE_TRACE("{0}", event);
-		for (auto iter = m_layerStack.end(); iter != m_layerStack.begin(); ) {
+		for (auto iter = m_layerStack.end(); iter != m_layerStack.begin(); )
+		{
 			(*--iter)->onEvent(event);
 			if (event.isHandled()) {
 				break;
@@ -41,32 +50,51 @@ namespace MarsEngine {
 		}
 	}
 
-	void Application::pushLayer(Layer* layer) {
+	void Application::pushLayer(Layer* layer)
+	{
+		ME_PROFILE_FUNCTION();
+
 		m_layerStack.pushLayer(layer);
 		layer->onAttach();
 	}
 
-	void Application::pushOverlay(Layer* overlay) {
+	void Application::pushOverlay(Layer* overlay)
+	{
+		ME_PROFILE_FUNCTION();
+
 		m_layerStack.pushOverlay(overlay);
 		overlay->onAttach();
 	}
 
-	void Application::run() {
+	void Application::run()
+	{
+		ME_PROFILE_FUNCTION();
 
 		while (m_running)
 		{
+			ME_PROFILE_SCOPE("Runloop");
+
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_lastFrameTime;
 			m_lastFrameTime = time;
 			if (!m_minimized)
 			{
-				for (auto layer : m_layerStack) {
-					layer->onUpdate(timestep);
+				{
+					ME_PROFILE_SCOPE("LayerStack onUpdate");
+
+					for (auto layer : m_layerStack)
+					{
+						layer->onUpdate(timestep);
+					}
 				}
 			}
 			m_imGuiLayer->begin();
-			for (auto layer : m_layerStack) {
-				layer->onImGuiRender();
+			{
+				ME_PROFILE_SCOPE("LayerStack onImGuiRender");
+				for (auto layer : m_layerStack)
+				{
+					layer->onImGuiRender();
+				}
 			}
 			m_imGuiLayer->end();
 
@@ -74,13 +102,16 @@ namespace MarsEngine {
 		}
 	}
 
-	bool Application::onWindowClose(WindowCloseEvent& e) {
+	bool Application::onWindowClose(WindowCloseEvent& e)
+	{
 		m_running = false;
 		return true;
 	}
 
 	bool Application::onWindowResize(WindowResizeEvent& e)
 	{
+		ME_PROFILE_FUNCTION();
+
 		if (e.getWidth() == 0 || e.getHeight() == 0)
 		{
 			m_minimized = true;

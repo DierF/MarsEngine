@@ -15,6 +15,8 @@ namespace MarsEngine
 
 	void OrthographicCameraController::onUpdate(Timestep ts)
 	{
+		ME_PROFILE_FUNCTION();
+
 		if (Input::isKeyPressed(ME_KEY_A)) {
 			m_cameraPosition.x -= m_cameraTranslationSpeed * ts;
 		}
@@ -43,6 +45,8 @@ namespace MarsEngine
 
 	void OrthographicCameraController::onEvent(Event& e)
 	{
+		ME_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.dispatch<MouseScrolledEvent>(ME_BIND_EVENT_FUNC(OrthographicCameraController::onMouseScrolled));
 		dispatcher.dispatch<WindowResizeEvent>(ME_BIND_EVENT_FUNC(OrthographicCameraController::onWindowResized));
@@ -50,6 +54,8 @@ namespace MarsEngine
 
 	bool OrthographicCameraController::onMouseScrolled(MouseScrolledEvent& e)
 	{
+		ME_PROFILE_FUNCTION();
+
 		m_zoomLevel -= e.getOffsetY() * 0.25f;
 		m_zoomLevel = std::max(m_zoomLevel, 0.25f);
 		m_camera.setProjection(-m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel);
@@ -58,6 +64,8 @@ namespace MarsEngine
 
 	bool OrthographicCameraController::onWindowResized(WindowResizeEvent& e)
 	{
+		ME_PROFILE_FUNCTION();
+
 		m_zoomLevel = (float)e.getWidth() / (float)e.getHeight();
 		m_camera.setProjection(-m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel);
 		return false;

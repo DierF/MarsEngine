@@ -15,23 +15,32 @@ namespace MarsEngine {
 
 	static bool s_GLFWInitialized = false;
 
-	static void GLFWErrorCallback(int error, char const* description) {
+	static void GLFWErrorCallback(int error, char const* description)
+	{
 		ME_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
-	Window* Window::create(const WindowProps& props) {
+	Window* Window::create(const WindowProps& props)
+	{
 		return new WindowsWindow(props);
 	}
 
-	WindowsWindow::WindowsWindow(const WindowProps& props) {
+	WindowsWindow::WindowsWindow(const WindowProps& props)
+	{
+		ME_PROFILE_FUNCTION();
+
 		init(props);
 	}
 
-	WindowsWindow::~WindowsWindow() {
+	WindowsWindow::~WindowsWindow()
+	{
 		shutdown();
 	}
 
-	void WindowsWindow::init(const WindowProps& props) {
+	void WindowsWindow::init(const WindowProps& props)
+	{
+		ME_PROFILE_FUNCTION();
+
 		m_data.m_title = props.m_title;
 		m_data.m_width = props.m_width;
 		m_data.m_height = props.m_height;
@@ -129,16 +138,23 @@ namespace MarsEngine {
 			});
 	}
 
-	void WindowsWindow::shutdown() {
+	void WindowsWindow::shutdown()
+	{
+		ME_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_window);
 	}
 
-	void WindowsWindow::onUpdate() {
+	void WindowsWindow::onUpdate()
+	{
+		ME_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_context->swapBuffers();
 	}
 
-	void WindowsWindow::setVSync(bool enabled) {
+	void WindowsWindow::setVSync(bool enabled)
+	{
 		if (enabled) {
 			glfwSwapInterval(1);
 		}
@@ -148,7 +164,8 @@ namespace MarsEngine {
 		m_data.VSync = enabled;
 	}
 
-	bool WindowsWindow::isVSync() const {
+	bool WindowsWindow::isVSync() const
+	{
 		return m_data.VSync;
 	}
 }

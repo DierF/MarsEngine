@@ -19,6 +19,8 @@ namespace MarsEngine
 
 	void Renderer2D::init()
 	{
+		ME_PROFILE_FUNCTION();
+
 		s_data = new Renderer2DStorage();
 		s_data->quadVertexArray = VertexArray::create();
 		float squareVertices[5 * 4] = {
@@ -55,16 +57,22 @@ namespace MarsEngine
 
 	void Renderer2D::shutdown()
 	{
+		ME_PROFILE_FUNCTION();
+
+		delete s_data;
 	}
 
 	void Renderer2D::beginScene(OrthographicCamera const& camera)
 	{
+		ME_PROFILE_FUNCTION();
+
 		s_data->textureShader->bind();
 		s_data->textureShader->setMat4("u_viewProjection", camera.getViewProjectionMatrix());
 	}
 
 	void Renderer2D::endScene()
 	{
+		ME_PROFILE_FUNCTION();
 	}
 
 	void Renderer2D::drawQuad(glm::vec2 const& position, glm::vec2 const& size, glm::vec4 const& color)
@@ -74,6 +82,8 @@ namespace MarsEngine
 
 	void Renderer2D::drawQuad(glm::vec3 const& position, glm::vec2 const& size, glm::vec4 const& color)
 	{
+		ME_PROFILE_FUNCTION();
+
 		s_data->textureShader->setFloat4("u_color", color);
 		s_data->whiteTexture->bind();
 
@@ -91,6 +101,8 @@ namespace MarsEngine
 
 	void Renderer2D::drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture)
 	{
+		ME_PROFILE_FUNCTION();
+
 		s_data->textureShader->setFloat4("u_color", glm::vec4(1.0f));
 		texture->bind();
 

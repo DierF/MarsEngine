@@ -13,6 +13,7 @@
 #include <unordered_set>
 
 #include "MarsEngine/Core/Log.h"
+#include "MarsEngine/Debug/Instrumentor.h"
 
 
 #ifdef ME_PLATFORM_WINDOWS

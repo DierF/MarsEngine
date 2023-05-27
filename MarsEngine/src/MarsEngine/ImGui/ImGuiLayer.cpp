@@ -17,7 +17,10 @@ namespace MarsEngine {
 
 	ImGuiLayer::~ImGuiLayer() {}
 
-	void ImGuiLayer::onAttach() {
+	void ImGuiLayer::onAttach()
+	{
+		ME_PROFILE_FUNCTION();
+
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO();
 		(void)io;
@@ -41,7 +44,10 @@ namespace MarsEngine {
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
-	void ImGuiLayer::onDetach() {
+	void ImGuiLayer::onDetach()
+	{
+		ME_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -49,6 +55,8 @@ namespace MarsEngine {
 
 	void ImGuiLayer::begin()
 	{
+		ME_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -56,6 +64,8 @@ namespace MarsEngine {
 
 	void ImGuiLayer::end()
 	{
+		ME_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::get();
 		io.DisplaySize = ImVec2(app.getWindow().getWidth(), app.getWindow().getHeight());

@@ -28,12 +28,4 @@ private:
 	MarsEngine::Ref<MarsEngine::Texture2D> m_checkerboardTexture;
 
 	glm::vec4 m_squareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
-
-	struct ProfileResult
-	{
-		char const* name;
-		float time;
-	};
-
-	std::vector<ProfileResult> m_profileResults;
 };
