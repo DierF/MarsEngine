@@ -207,6 +207,13 @@ namespace MarsEngine {
 		uploadUniformInt(name, value);
 	}
 
+	void OpenGLShader::setFloat(std::string const& name, float value)
+	{
+		ME_PROFILE_FUNCTION();
+
+		uploadUniformFloat(name, value);
+	}
+
 	void OpenGLShader::setFloat3(std::string const& name, glm::vec3 const& value)
 	{
 		ME_PROFILE_FUNCTION();
