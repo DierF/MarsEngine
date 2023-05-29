@@ -25,8 +25,8 @@ namespace MarsEngine {
 			s_rendererAPI->clear();
 		}
 
-		inline static void drawIndexed(std::shared_ptr<VertexArray> const& vertexArray) {
-			s_rendererAPI->drawIndexed(vertexArray);
+		inline static void drawIndexed(std::shared_ptr<VertexArray> const& vertexArray, uint32_t indexCount = 0) {
+			s_rendererAPI->drawIndexed(vertexArray, indexCount);
 		}
 
 	private:

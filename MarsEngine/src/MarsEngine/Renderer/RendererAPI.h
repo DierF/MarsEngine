@@ -23,7 +23,7 @@ namespace MarsEngine {
 
 		virtual void clear() = 0;
 
-		virtual void drawIndexed(Ref<VertexArray> const& vertexArray) = 0;
+		virtual void drawIndexed(Ref<VertexArray> const& vertexArray, uint32_t indexCount = 0) = 0;
 
 		inline static API getAPI() { return s_API; }
 

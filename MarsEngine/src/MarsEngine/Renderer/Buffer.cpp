@@ -3,9 +3,9 @@
 #include "Renderer.h"
 #include "Platform/OpenGL/OpenGLBuffer.h"
 
-namespace MarsEngine {
-
-	VertexBuffer* VertexBuffer::create(float* vertices, uint32_t size)
+namespace MarsEngine
+{
+	Ref<VertexBuffer> VertexBuffer::create(uint32_t size)
 	{
 		switch (Renderer::getAPI())
 		{
@@ -13,7 +13,7 @@ namespace MarsEngine {
 			ME_CORE_ASSERT(false, "RendererAPI::None is not supported!");
 			return nullptr;
 		case RendererAPI::API::OpenGL:
-			return new OpenGLVertexBuffer(vertices, size);
+			return createRef<OpenGLVertexBuffer>(size);
 		default:
 			break;
 		}
@@ -21,7 +21,7 @@ namespace MarsEngine {
 		return nullptr;
 	}
 
-	IndexBuffer* IndexBuffer::create(uint32_t* indices, uint32_t count)
+	Ref<VertexBuffer> VertexBuffer::create(float* vertices, uint32_t size)
 	{
 		switch (Renderer::getAPI())
 		{
@@ -29,7 +29,23 @@ namespace MarsEngine {
 			ME_CORE_ASSERT(false, "RendererAPI::None is not supported!");
 			return nullptr;
 		case RendererAPI::API::OpenGL:
-			return new OpenGLIndexBuffer(indices, count);
+			return createRef<OpenGLVertexBuffer>(vertices, size);
+		default:
+			break;
+		}
+		ME_CORE_ASSERT(false, "Unknown RendererAPI!");
+		return nullptr;
+	}
+
+	Ref<IndexBuffer> IndexBuffer::create(uint32_t* indices, uint32_t count)
+	{
+		switch (Renderer::getAPI())
+		{
+		case RendererAPI::API::None:
+			ME_CORE_ASSERT(false, "RendererAPI::None is not supported!");
+			return nullptr;
+		case RendererAPI::API::OpenGL:
+			return createRef<OpenGLIndexBuffer>(indices, count);
 		default:
 			break;
 		}

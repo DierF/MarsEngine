@@ -20,7 +20,7 @@ public:
 		};
 
 		MarsEngine::Ref<MarsEngine::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(MarsEngine::VertexBuffer::create(vertices, sizeof(vertices)));
+		vertexBuffer = MarsEngine::VertexBuffer::create(vertices, sizeof(vertices));
 
 		MarsEngine::BufferLayout layout = {
 			{MarsEngine::ShaderDataType::Float3, "a_position"},
@@ -33,8 +33,7 @@ public:
 		uint32_t indices[3] = { 0, 1, 2 };
 
 		MarsEngine::Ref<MarsEngine::IndexBuffer> indexBuffer;
-		indexBuffer.reset(MarsEngine::IndexBuffer::create(indices,
-			sizeof(indices) / sizeof(uint32_t)));
+		indexBuffer = MarsEngine::IndexBuffer::create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_vertexArray->setIndexBuffer(indexBuffer);
 
 		m_squareVA = MarsEngine::VertexArray::create();
@@ -45,8 +44,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 		MarsEngine::Ref<MarsEngine::VertexBuffer> squareVB;
-		squareVB.reset(MarsEngine::VertexBuffer::create(squareVertices,
-			sizeof(squareVertices)));
+		squareVB = MarsEngine::VertexBuffer::create(squareVertices, sizeof(squareVertices));
 
 		MarsEngine::BufferLayout squareLayout = {
 			{MarsEngine::ShaderDataType::Float3, "a_position"},
@@ -58,8 +56,7 @@ public:
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
 		MarsEngine::Ref<MarsEngine::IndexBuffer> squareIB;
-		squareIB.reset(MarsEngine::IndexBuffer::create(squareIndices,
-			sizeof(squareIndices) / sizeof(uint32_t)));
+		squareIB = MarsEngine::IndexBuffer::create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_squareVA->setIndexBuffer(squareIB);
 
 		

@@ -129,8 +129,8 @@ namespace MarsEngine {
 		uint32_t m_stride = 0;
 	};
 
-	class VertexBuffer {
-
+	class VertexBuffer
+	{
 	public:
 		virtual ~VertexBuffer() {}
 
@@ -138,16 +138,19 @@ namespace MarsEngine {
 
 		virtual void unbind() const = 0;
 
+		virtual void setData(void const* data, uint32_t size) = 0;
+
 		virtual BufferLayout const& getLayout() const = 0;
 
 		virtual void setLayout(BufferLayout const& layout) = 0;
 		
-		static VertexBuffer* create(float* vertices, uint32_t size);
+		static Ref<VertexBuffer> create(uint32_t size);
 
+		static Ref<VertexBuffer> create(float* vertices, uint32_t size);
 	};
 
-	class IndexBuffer {
-
+	class IndexBuffer
+	{
 	public:
 		virtual ~IndexBuffer() {}
 
@@ -157,6 +160,6 @@ namespace MarsEngine {
 
 		virtual uint32_t getCount() const = 0;
 
-		static IndexBuffer* create(uint32_t* indices, uint32_t count);
+		static Ref<IndexBuffer> create(uint32_t* indices, uint32_t count);
 	};
 }

@@ -16,6 +16,8 @@ namespace MarsEngine
 
 		static void endScene();
 
+		static void flush();
+
 		static void drawQuad(glm::vec2 const& position, glm::vec2 const& size, glm::vec4 const& color);
 
 		static void drawQuad(glm::vec3 const& position, glm::vec2 const& size, glm::vec4 const& color);

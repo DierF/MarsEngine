@@ -7,6 +7,8 @@ namespace MarsEngine {
 	class OpenGLVertexBuffer : public VertexBuffer {
 
 	public:
+		OpenGLVertexBuffer(uint32_t size);
+
 		OpenGLVertexBuffer(float* vertices, uint32_t size);
 
 		virtual ~OpenGLVertexBuffer();
@@ -14,6 +16,8 @@ namespace MarsEngine {
 		virtual void bind() const override;
 
 		virtual void unbind() const override;
+
+		virtual void setData(void const* data, uint32_t size) override;
 
 		virtual BufferLayout const& getLayout() const override { return m_layout; }
 
