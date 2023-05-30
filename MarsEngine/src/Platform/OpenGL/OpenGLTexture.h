@@ -22,6 +22,11 @@ namespace MarsEngine
 		virtual void setData(void* data, uint32_t size) override;
 
 		virtual void bind(uint32_t slot = 0) const override;
+		
+		virtual bool operator==(Texture const& other) const override
+		{
+			return m_rendererID == ((OpenGLTexture2D&)other).m_rendererID;
+		}
 
 	private:
 		std::string m_path;

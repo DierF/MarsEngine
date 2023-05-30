@@ -207,6 +207,11 @@ namespace MarsEngine {
 		uploadUniformInt(name, value);
 	}
 
+	void OpenGLShader::setIntArray(std::string const& name, int* values, uint32_t count)
+	{
+		uploadUniformIntArray(name, values, count);
+	}
+
 	void OpenGLShader::setFloat(std::string const& name, float value)
 	{
 		ME_PROFILE_FUNCTION();
@@ -239,6 +244,12 @@ namespace MarsEngine {
 	{
 		GLint location = glGetUniformLocation(m_rendererID, name.c_str());
 		glUniform1i(location, value);
+	}
+
+	void OpenGLShader::uploadUniformIntArray(std::string const& name, int* values, uint32_t count)
+	{
+		GLint location = glGetUniformLocation(m_rendererID, name.c_str());
+		glUniform1iv(location, count, values);
 	}
 
 	void OpenGLShader::uploadUniformFloat(std::string const& name, float value)

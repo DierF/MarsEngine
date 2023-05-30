@@ -22,6 +22,8 @@ namespace MarsEngine {
 
 		virtual void setInt(std::string const& name, int value) override;
 
+		virtual void setIntArray(std::string const& name, int* values, uint32_t count) override;
+
 		virtual void setFloat(std::string const& name, float value) override;
 
 		virtual void setFloat3(std::string const& name, glm::vec3 const& value) override;
@@ -33,6 +35,8 @@ namespace MarsEngine {
 		virtual std::string const& getName() const override { return m_name; }
 
 		void uploadUniformInt(std::string const& name, int value);
+
+		void uploadUniformIntArray(std::string const& name, int* values, uint32_t count);
 
 		void uploadUniformFloat(std::string const& name, float value);
 
