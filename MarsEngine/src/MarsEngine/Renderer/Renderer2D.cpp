@@ -19,9 +19,9 @@ namespace MarsEngine
 
 	struct Renderer2DData
 	{
-		uint32_t const maxQuad = 10'000;
-		uint32_t const maxVertices = maxQuad * 4;
-		uint32_t const maxIndices = maxQuad * 6;
+		static uint32_t const maxQuad = 20'000;
+		static uint32_t const maxVertices = maxQuad * 4;
+		static uint32_t const maxIndices = maxQuad * 6;
 		static uint32_t const maxTextureSlots = 32;
 
 		Ref<VertexArray> quadVertexArray;
@@ -37,6 +37,8 @@ namespace MarsEngine
 		uint32_t textureSlotIndex = 1;
 
 		glm::vec4 quadVertexPositions[4];
+
+		Renderer2D::Statistics stats;
 	};
 
 	static Renderer2DData s_data;
@@ -140,6 +142,17 @@ namespace MarsEngine
 		}
 
 		RenderCommand::drawIndexed(s_data.quadVertexArray, s_data.quadIndexCount);
+		++s_data.stats.drawCalls;
+	}
+
+	void Renderer2D::flushAndReset()
+	{
+		endScene();
+
+		s_data.quadIndexCount = 0;
+		s_data.quadVertexBufferPtr = s_data.quadVertexBufferBase;
+
+		s_data.textureSlotIndex = 1;
 	}
 
 	void Renderer2D::drawQuad(glm::vec2 const& position, glm::vec2 const& size, glm::vec4 const& color)
@@ -150,6 +163,11 @@ namespace MarsEngine
 	void Renderer2D::drawQuad(glm::vec3 const& position, glm::vec2 const& size, glm::vec4 const& color)
 	{
 		ME_PROFILE_FUNCTION();
+
+		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
+		{
+			flushAndReset();
+		}
 
 		float const textureIndex = 0.0f;
 
@@ -187,7 +205,10 @@ namespace MarsEngine
 		++s_data.quadVertexBufferPtr;
 
 		s_data.quadIndexCount += 6;
+
+		++s_data.stats.quadCount;
 	}
+
 	void Renderer2D::drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
 	{
 		drawQuad({ position.x, position.y, 0.0f }, size, texture, tilingFactor, tintColor);
@@ -196,6 +217,11 @@ namespace MarsEngine
 	void Renderer2D::drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
 	{
 		ME_PROFILE_FUNCTION();
+
+		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
+		{
+			flushAndReset();
+		}
 
 		glm::vec4 const color = { 1.0f, 1.0f, 1.0f, 1.0f };
 
@@ -249,6 +275,8 @@ namespace MarsEngine
 		++s_data.quadVertexBufferPtr;
 
 		s_data.quadIndexCount += 6;
+
+		++s_data.stats.quadCount;
 	}
 
 	void Renderer2D::drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, glm::vec4 const& color)
@@ -259,6 +287,11 @@ namespace MarsEngine
 	void Renderer2D::drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, glm::vec4 const& color)
 	{
 		ME_PROFILE_FUNCTION();
+
+		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
+		{
+			flushAndReset();
+		}
 
 		float const textureIndex = 0.0f;
 
@@ -297,6 +330,8 @@ namespace MarsEngine
 		++s_data.quadVertexBufferPtr;
 
 		s_data.quadIndexCount += 6;
+
+		++s_data.stats.quadCount;
 	}
 
 	void Renderer2D::drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
@@ -307,6 +342,11 @@ namespace MarsEngine
 	void Renderer2D::drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
 	{
 		ME_PROFILE_FUNCTION();
+
+		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
+		{
+			flushAndReset();
+		}
 
 		glm::vec4 const color = { 1.0f, 1.0f, 1.0f, 1.0f };
 
@@ -361,5 +401,17 @@ namespace MarsEngine
 		++s_data.quadVertexBufferPtr;
 
 		s_data.quadIndexCount += 6;
+
+		++s_data.stats.quadCount;
+	}
+
+	void Renderer2D::resetStats()
+	{
+		memset(&s_data.stats, 0, sizeof(Statistics));
+	}
+
+	Renderer2D::Statistics Renderer2D::getStats()
+	{
+		return s_data.stats;
 	}
 }

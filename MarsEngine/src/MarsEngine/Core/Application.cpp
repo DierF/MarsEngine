@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "MarsEngine/Renderer/Renderer.h"
 #include "GLFW/glfw3.h"
+#include "glad/glad.h"
 
 namespace MarsEngine {
 
@@ -76,6 +77,7 @@ namespace MarsEngine {
 
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_lastFrameTime;
+			ME_CORE_TRACE("Frametime: {}s, FPS: {}", timestep, (uint32_t)(1.0f / timestep.getSeconds()));
 			m_lastFrameTime = time;
 			if (!m_minimized)
 			{

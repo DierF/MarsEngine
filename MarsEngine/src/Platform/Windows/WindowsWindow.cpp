@@ -60,7 +60,8 @@ namespace MarsEngine {
 		m_context->init();
 
 		glfwSetWindowUserPointer(m_window, &m_data);
-		setVSync(true);
+
+		setVSync(false);
 
 		glfwSetWindowSizeCallback(m_window, [](GLFWwindow* window, int width, int height) {
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
