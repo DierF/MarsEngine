@@ -7,6 +7,15 @@
 
 namespace MarsEngine
 {
+	struct OrthographicCameraBounds
+	{
+		float left, right;
+		float bottom, top;
+
+		float getWidth() { return right - left; }
+		float getHeight() { return top - bottom; }
+	};
+
 	class OrthographicCameraController
 	{
 	public:
@@ -24,6 +33,8 @@ namespace MarsEngine
 
 		void setZoomLevel(float level) { m_zoomLevel = level; }
 
+		OrthographicCameraBounds const& getBounds() const { return m_bounds; }
+
 	private:
 		bool onMouseScrolled(MouseScrolledEvent& e);
 
@@ -33,7 +44,9 @@ namespace MarsEngine
 		float m_aspectRatio;
 		float m_zoomLevel = 1.0f;
 
+		OrthographicCameraBounds m_bounds;
 		OrthographicCamera m_camera;
+
 		bool m_rotation;
 		glm::vec3 m_cameraPosition = { 0.0f, 0.0f, 0.0f };
 		float m_cameraRotation = 0.0f;

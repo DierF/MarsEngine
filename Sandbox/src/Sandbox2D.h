@@ -2,6 +2,8 @@
 
 #include "MarsEngine.h"
 
+#include "ParticleSystem.h"
+
 class Sandbox2D : public MarsEngine::Layer
 {
 public:
@@ -28,4 +30,7 @@ private:
 	MarsEngine::Ref<MarsEngine::Texture2D> m_checkerboardTexture;
 
 	glm::vec4 m_squareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+
+	ParticleSystem m_particleSystem;
+	ParticleProps m_particle;
 };

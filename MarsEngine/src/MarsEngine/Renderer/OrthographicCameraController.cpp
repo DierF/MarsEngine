@@ -8,7 +8,8 @@ namespace MarsEngine
 {
 	OrthographicCameraController::OrthographicCameraController(float aspectRatio, bool rotation)
 		: m_aspectRatio(aspectRatio),
-		m_camera(-m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel),
+		m_bounds({ -m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel }),
+		m_camera(m_bounds.left, m_bounds.right, m_bounds.bottom, m_bounds.top),
 		m_rotation(rotation)
 	{
 	}
@@ -58,7 +59,8 @@ namespace MarsEngine
 
 		m_zoomLevel -= e.getOffsetY() * 0.25f;
 		m_zoomLevel = std::max(m_zoomLevel, 0.25f);
-		m_camera.setProjection(-m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel);
+		m_bounds = { -m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel };
+		m_camera.setProjection(m_bounds.left, m_bounds.right, m_bounds.bottom, m_bounds.top);
 		return false;
 	}
 
@@ -66,8 +68,9 @@ namespace MarsEngine
 	{
 		ME_PROFILE_FUNCTION();
 
-		m_zoomLevel = (float)e.getWidth() / (float)e.getHeight();
-		m_camera.setProjection(-m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel);
+		m_aspectRatio = (float)e.getWidth() / (float)e.getHeight();
+		m_bounds = { -m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel };
+		m_camera.setProjection(m_bounds.left, m_bounds.right, m_bounds.bottom, m_bounds.top);
 		return false;
 	}
 }
