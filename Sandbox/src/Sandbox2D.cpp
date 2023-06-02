@@ -14,6 +14,10 @@ void Sandbox2D::onAttach()
 
 	m_checkerboardTexture = MarsEngine::Texture2D::create("assets/textures/Checkerboard.png");
 
+	m_spriteSheet = MarsEngine::Texture2D::create("assets/textures/Checkerboard.png");
+
+	m_subTexture = MarsEngine::SubTexture2D::createFromCoords(m_spriteSheet, { 2, 1 }, { 128, 128 }, { 1, 2 });
+
 	m_particle.ColorBegin = { 254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f };
 	m_particle.ColorEnd = { 254 / 255.0f, 109 / 255.0f, 41 / 255.0f, 1.0f };
 	m_particle.SizeBegin = 0.5f, m_particle.SizeVariation = 0.3f, m_particle.SizeEnd = 0.0f;
@@ -83,6 +87,10 @@ void Sandbox2D::onUpdate(MarsEngine::Timestep ts)
 
 	m_particleSystem.OnUpdate(ts);
 	m_particleSystem.OnRender(m_cameraController.getCamera());
+
+	MarsEngine::Renderer2D::beginScene(m_cameraController.getCamera());
+	MarsEngine::Renderer2D::drawQuad({ 3.0f, 2.0f, 0.5f }, { 1.0f, 2.0f }, m_subTexture);
+	MarsEngine::Renderer2D::endScene();
 }
 
 void Sandbox2D::onImGuiRender()

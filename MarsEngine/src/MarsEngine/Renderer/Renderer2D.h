@@ -2,6 +2,7 @@
 
 #include "OrthographicCamera.h"
 #include "Texture.h"
+#include "SubTexture2D.h"
 
 namespace MarsEngine
 {
@@ -25,6 +26,10 @@ namespace MarsEngine
 		static void drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
 
 		static void drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
+		
+		static void drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
+
+		static void drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
 	
 		static void drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, glm::vec4 const& color);
 		
@@ -33,6 +38,10 @@ namespace MarsEngine
 		static void drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
 		
 		static void drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
+		
+		static void drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
+		
+		static void drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
 	
 		struct Statistics
 		{

@@ -15,6 +15,7 @@
 #include "MarsEngine/Renderer/Buffer.h"
 #include "MarsEngine/Renderer/Shader.h"
 #include "MarsEngine/Renderer/Texture.h"
+#include "MarsEngine/Renderer/SubTexture2D.h"
 #include "MarsEngine/Renderer/VertexArray.h"
 #include "MarsEngine/Renderer/OrthographicCamera.h"
 #include "MarsEngine/Renderer/OrthographicCameraController.h"

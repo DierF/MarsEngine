@@ -53,14 +53,19 @@ namespace MarsEngine
 		dispatcher.dispatch<WindowResizeEvent>(ME_BIND_EVENT_FUNC(OrthographicCameraController::onWindowResized));
 	}
 
+	void OrthographicCameraController::calculateView()
+	{
+		m_bounds = { -m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel };
+		m_camera.setProjection(m_bounds.left, m_bounds.right, m_bounds.bottom, m_bounds.top);
+	}
+
 	bool OrthographicCameraController::onMouseScrolled(MouseScrolledEvent& e)
 	{
 		ME_PROFILE_FUNCTION();
 
 		m_zoomLevel -= e.getOffsetY() * 0.25f;
 		m_zoomLevel = std::max(m_zoomLevel, 0.25f);
-		m_bounds = { -m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel };
-		m_camera.setProjection(m_bounds.left, m_bounds.right, m_bounds.bottom, m_bounds.top);
+		calculateView();
 		return false;
 	}
 
@@ -69,8 +74,7 @@ namespace MarsEngine
 		ME_PROFILE_FUNCTION();
 
 		m_aspectRatio = (float)e.getWidth() / (float)e.getHeight();
-		m_bounds = { -m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel };
-		m_camera.setProjection(m_bounds.left, m_bounds.right, m_bounds.bottom, m_bounds.top);
+		calculateView();
 		return false;
 	}
 }

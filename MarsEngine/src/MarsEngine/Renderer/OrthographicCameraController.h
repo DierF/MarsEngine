@@ -31,11 +31,13 @@ namespace MarsEngine
 
 		float getZoomLevel() const { return m_zoomLevel; }
 
-		void setZoomLevel(float level) { m_zoomLevel = level; }
+		void setZoomLevel(float level) { m_zoomLevel = level; calculateView(); }
 
 		OrthographicCameraBounds const& getBounds() const { return m_bounds; }
 
 	private:
+		void calculateView();
+
 		bool onMouseScrolled(MouseScrolledEvent& e);
 
 		bool onWindowResized(WindowResizeEvent& e);
