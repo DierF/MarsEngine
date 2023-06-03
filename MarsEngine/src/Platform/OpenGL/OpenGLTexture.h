@@ -19,6 +19,8 @@ namespace MarsEngine
 
 		virtual uint32_t getHeight() const override { return m_height; }
 
+		virtual uint32_t getRendererID() const override { return m_rendererID; }
+
 		virtual void setData(void* data, uint32_t size) override;
 
 		virtual void bind(uint32_t slot = 0) const override;

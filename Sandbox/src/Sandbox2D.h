@@ -26,6 +26,7 @@ private:
 
 	MarsEngine::Ref<MarsEngine::VertexArray> m_squareVA;
 	MarsEngine::Ref<MarsEngine::Shader> m_flatColorShader;
+	MarsEngine::Ref<MarsEngine::Framebuffer> m_framebuffer;
 
 	MarsEngine::Ref<MarsEngine::Texture2D> m_checkerboardTexture;
 	MarsEngine::Ref<MarsEngine::Texture2D> m_spriteSheet;
