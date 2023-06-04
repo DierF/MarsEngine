@@ -4,12 +4,12 @@
 
 #include "ParticleSystem.h"
 
-class Sandbox2D : public MarsEngine::Layer
+class Runtime2D : public MarsEngine::Layer
 {
 public:
-	Sandbox2D();
+	Runtime2D();
 
-	~Sandbox2D() = default;
+	~Runtime2D() = default;
 
 	virtual void onAttach() override;
 
@@ -26,7 +26,6 @@ private:
 
 	MarsEngine::Ref<MarsEngine::VertexArray> m_squareVA;
 	MarsEngine::Ref<MarsEngine::Shader> m_flatColorShader;
-	MarsEngine::Ref<MarsEngine::Framebuffer> m_framebuffer;
 
 	MarsEngine::Ref<MarsEngine::Texture2D> m_checkerboardTexture;
 	MarsEngine::Ref<MarsEngine::Texture2D> m_spriteSheet;

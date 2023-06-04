@@ -4,7 +4,7 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "imgui.h"
 #include "Platform/OpenGL/OpenGLShader.h"
-#include "Sandbox2D.h"
+#include "Runtime2D.h"
 
 class ExampleLayer : public MarsEngine::Layer {
 
@@ -95,19 +95,19 @@ private:
 	glm::vec3 m_squareColor = { 0.2f, 0.3f, 0.8f };
 };
 
-class Sandbox : public MarsEngine::Application {
+class Runtime : public MarsEngine::Application {
 
 public:
-	Sandbox() {
+	Runtime() {
 		//pushLayer(new ExampleLayer());
 		
-		pushLayer(new Sandbox2D());
+		pushLayer(new Runtime2D());
 	}
 
-	~Sandbox() {}
+	~Runtime() {}
 
 };
 
 MarsEngine::Application* MarsEngine::createApplication() {
-	return new Sandbox();
+	return new Runtime();
 }

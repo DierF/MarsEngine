@@ -53,6 +53,12 @@ namespace MarsEngine
 		dispatcher.dispatch<WindowResizeEvent>(ME_BIND_EVENT_FUNC(OrthographicCameraController::onWindowResized));
 	}
 
+	void OrthographicCameraController::onResize(float width, float height)
+	{
+		m_aspectRatio = width / height;
+		calculateView();
+	}
+
 	void OrthographicCameraController::calculateView()
 	{
 		m_bounds = { -m_aspectRatio * m_zoomLevel, m_aspectRatio * m_zoomLevel, -m_zoomLevel, m_zoomLevel };
@@ -73,8 +79,7 @@ namespace MarsEngine
 	{
 		ME_PROFILE_FUNCTION();
 
-		m_aspectRatio = (float)e.getWidth() / (float)e.getHeight();
-		calculateView();
+		onResize((float)e.getWidth(), (float)e.getHeight());
 		return false;
 	}
 }

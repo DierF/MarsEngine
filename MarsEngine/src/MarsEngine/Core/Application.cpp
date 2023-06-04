@@ -12,14 +12,14 @@ namespace MarsEngine {
 
 	Application* Application::s_instance = nullptr;
 
-	Application::Application()
+	Application::Application(std::string const& name)
 	{
 		ME_PROFILE_FUNCTION();
 
 		ME_CORE_ASSERT(!s_instance, "Application already exists!");
 		s_instance = this;
 
-		m_window = std::unique_ptr<Window>(Window::create());
+		m_window = std::unique_ptr<Window>(Window::create(WindowProps(name)));
 		m_window->setEventCallback(BIND_EVENT_FUNC(Application::onEvent));
 		//m_window->setVSync(false);
 

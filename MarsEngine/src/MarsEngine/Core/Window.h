@@ -4,20 +4,20 @@
 #include "Core.h"
 #include "MarsEngine/Event/Event.h"
 
-namespace MarsEngine {
-
-	struct WindowProps {
-
+namespace MarsEngine
+{
+	struct WindowProps
+	{
 		std::string m_title;
-		unsigned int m_width, m_height;
+		uint32_t m_width, m_height;
 
-		WindowProps(const std::string& title = "MarsEngine",
-			unsigned int width = 1920, unsigned int height = 1080)
+		WindowProps(const std::string& title = "Mars Engine",
+			uint32_t width = 1280, uint32_t height = 720)
 			:m_title(title), m_width(width), m_height(height) {}
 	};
 
-	class ME_API Window {
-
+	class ME_API Window
+	{
 	public:
 		using EventCallbackFunc = std::function<void(Event&)>;
 
@@ -25,9 +25,9 @@ namespace MarsEngine {
 
 		virtual void onUpdate() = 0;
 
-		virtual unsigned int getWidth() const = 0;
+		virtual uint32_t getWidth() const = 0;
 
-		virtual unsigned int getHeight() const = 0;
+		virtual uint32_t getHeight() const = 0;
 
 		virtual void setEventCallback(const EventCallbackFunc& callback) = 0;
 

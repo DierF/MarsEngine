@@ -1,6 +1,6 @@
 workspace "MarsEngine"
 	architecture "x64"
-	startproject "Sandbox"
+	startproject "Editor"
 
 	configurations {
 		"Debug",
@@ -17,11 +17,11 @@ IncludeDir["ImGui"] = "MarsEngine/vendor/imgui"
 IncludeDir["glm"] = "MarsEngine/vendor/glm"
 IncludeDir["stb_image"] = "MarsEngine/vendor/stb_image"
 
-
-include "MarsEngine/vendor/GLFW"
-include "MarsEngine/vendor/Glad"
-include "MarsEngine/vendor/imgui"
-
+group "Dependencies"
+	include "MarsEngine/vendor/GLFW"
+	include "MarsEngine/vendor/Glad"
+	include "MarsEngine/vendor/imgui"
+group ""
 
 project "MarsEngine"
 	location "MarsEngine"
@@ -88,8 +88,57 @@ project "MarsEngine"
 		buildoptions "/MD"
 		optimize "on"
 
-project "Sandbox"
-	location "Sandbox"
+project "Runtime"
+	location "Runtime"
+	kind "ConsoleApp"
+	language "C++"
+	staticruntime "on"
+	cppdialect "C++17"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin/" .. outputdir .. "/%{prj.name}")
+
+	files {
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs {
+		"MarsEngine/vendor/spdlog/include",
+		"MarsEngine/src",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
+
+	}
+
+	links {
+		"MarsEngine"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+		defines {
+			"ME_PLATFORM_WINDOWS"
+		}
+	
+	filter "configurations:Debug"
+		defines "ME_DEBUG"
+		buildoptions "/MDd"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "ME_RELEASE"
+		buildoptions "/MD"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "ME_DIST"
+		buildoptions "/MD"
+		optimize "on"
+
+project "Editor"
+	location "Editor"
 	kind "ConsoleApp"
 	language "C++"
 	staticruntime "on"

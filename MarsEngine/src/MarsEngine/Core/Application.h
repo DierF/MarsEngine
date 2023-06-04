@@ -13,7 +13,7 @@ namespace MarsEngine {
 	class Application
 	{
 	public:
-		Application();
+		Application(std::string const& name = "Mars Engine");
 
 		virtual ~Application();
 

@@ -25,6 +25,8 @@ namespace MarsEngine
 
 		void onEvent(Event& e);
 
+		void onResize(float width, float height);
+
 		OrthographicCamera& getCamera() { return m_camera; }
 
 		OrthographicCamera const& getCamera() const { return m_camera; }
