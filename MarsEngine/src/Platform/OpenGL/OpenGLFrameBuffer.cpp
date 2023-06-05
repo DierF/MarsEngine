@@ -6,6 +6,8 @@
 
 namespace MarsEngine
 {
+	static uint32_t const s_maxFramebufferSize = 8192;
+
 	OpenGLFramebuffer::OpenGLFramebuffer(FramebufferSpecification const& spec)
 		: m_specification(spec)
 	{
@@ -69,6 +71,12 @@ namespace MarsEngine
 
 	void OpenGLFramebuffer::resize(uint32_t width, uint32_t height)
 	{
+		if (width == 0 || height == 0 || width > s_maxFramebufferSize || height > s_maxFramebufferSize)
+		{
+			ME_CORE_WARN("Attempt to resize framebuffer to {}, {}", width, height);
+			return;
+		}
+
 		m_specification.width = width;
 		m_specification.height = height;
 

@@ -5,10 +5,10 @@
 #include "MarsEngine/Event/MouseEvent.h"
 #include "MarsEngine/Event/ApplicationEvent.h"
 
-namespace MarsEngine {
-
-	class ME_API ImGuiLayer : public Layer {
-
+namespace MarsEngine
+{
+	class ImGuiLayer : public Layer
+	{
 	public:
 		ImGuiLayer();
 
@@ -18,11 +18,17 @@ namespace MarsEngine {
 
 		virtual void onDetach() override;
 
+		virtual void onEvent(Event& e) override;
+
 		void begin();
 
 		void end();
 
+		void blockEvents(bool block) { m_blockEvents = block; }
+
 	private:
+		bool m_blockEvents = true;
+
 		float m_time = 0.0f;
 	};
 }

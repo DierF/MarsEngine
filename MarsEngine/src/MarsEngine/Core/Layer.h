@@ -4,10 +4,10 @@
 #include "MarsEngine/Event/Event.h"
 #include "MarsEngine/Core/Timestep.h"
 
-namespace MarsEngine {
-
-	class ME_API Layer {
-
+namespace MarsEngine
+{
+	class ME_API Layer
+	{
 	public:
 		Layer(std::string const& name = "Layer");
 
@@ -21,7 +21,7 @@ namespace MarsEngine {
 
 		virtual void onImGuiRender() {}
 
-		virtual void onEvent(Event& event) {}
+		virtual void onEvent(Event& e) {}
 
 		inline std::string const& getName() const {
 			return m_debugName;

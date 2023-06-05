@@ -2,16 +2,14 @@
 #include "ImGuiLayer.h"
 #include "imgui.h"
 #include "MarsEngine/Core/Application.h"
-
 #define ME_IMPL_API
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
-
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
-namespace MarsEngine {
-
+namespace MarsEngine
+{
 	ImGuiLayer::ImGuiLayer()
 		: Layer("ImGuiLayer") {}
 
@@ -51,6 +49,16 @@ namespace MarsEngine {
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
+	}
+
+	void ImGuiLayer::onEvent(Event& e)
+	{
+		if (m_blockEvents)
+		{
+			ImGuiIO& io = ImGui::GetIO();
+			e.m_handled |= e.isInCategory(EventCategoryMouse) & io.WantCaptureMouse;
+			e.m_handled |= e.isInCategory(EventCategoryKeyboard) & io.WantCaptureKeyboard;
+		}
 	}
 
 	void ImGuiLayer::begin()

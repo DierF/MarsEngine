@@ -1,12 +1,12 @@
 #pragma once
+#include "pch.h"
 
 #include "MarsEngine/Core/Core.h"
 
-#include "pch.h"
-
-namespace MarsEngine {
-
-	enum class EventType {
+namespace MarsEngine
+{
+	enum class EventType
+	{
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
@@ -14,7 +14,8 @@ namespace MarsEngine {
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
-	enum EventCategory {
+	enum EventCategory
+	{
 		None = 0,
 		EventCategoryApplication	= BIT(0),
 		EventCategoryInput			= BIT(1),
@@ -29,8 +30,8 @@ namespace MarsEngine {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int getCategoryFlags() const override {return category; }
 
-	class ME_API Event {
-
+	class Event
+	{
 		friend class EventDispatcher;
 
 	public:
@@ -40,24 +41,27 @@ namespace MarsEngine {
 
 		virtual int getCategoryFlags() const = 0;
 
-		virtual std::string toString() const {
+		virtual std::string toString() const
+		{
 			return getName();
 		}
 
-		inline bool isHandled() const {
+		inline bool isHandled() const
+		{
 			return m_handled;
 		}
 
-		inline bool isInCategory(EventCategory category) {
+		inline bool isInCategory(EventCategory category)
+		{
 			return getCategoryFlags() & category;
 		}
 
-	protected:
+	public:
 		bool m_handled = false;
 	};
 
-	class EventDispatcher {
-
+	class EventDispatcher
+	{
 		template<typename T>
 		using EventFunc = std::function<bool(T&)>;
 
@@ -65,8 +69,10 @@ namespace MarsEngine {
 		EventDispatcher(Event& event) : m_event(event) {}
 
 		template<typename T>
-		bool dispatch(EventFunc<T> func) {
-			if (m_event.getEventType() == T::getStaticType()) {
+		bool dispatch(EventFunc<T> func)
+		{
+			if (m_event.getEventType() == T::getStaticType())
+			{
 				m_event.m_handled = func(*(T*)&m_event);
 				return true;
 			}
@@ -76,8 +82,8 @@ namespace MarsEngine {
 		Event& m_event;
 	};
 
-	inline std::ostream& operator<<(std::ostream& os, const Event& e) {
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	{
 		return os << e.toString();
 	}
-
 }

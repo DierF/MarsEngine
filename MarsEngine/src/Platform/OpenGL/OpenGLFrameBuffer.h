@@ -9,7 +9,7 @@ namespace MarsEngine
 	public:
 		OpenGLFramebuffer(FramebufferSpecification const& spec);
 
-		virtual ~OpenGLFramebuffer();
+		virtual ~OpenGLFramebuffer() override;
 
 		void invalidate();
 

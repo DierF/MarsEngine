@@ -31,6 +31,8 @@ namespace MarsEngine {
 
 		void close();
 
+		ImGuiLayer* getImGuiLayer() { return m_imGuiLayer; }
+
 	private:
 		bool onWindowClose(WindowCloseEvent& e);
 

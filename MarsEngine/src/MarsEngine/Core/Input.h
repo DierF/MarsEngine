@@ -2,39 +2,20 @@
 
 #include "Core.h"
 
-namespace MarsEngine {
-
-	class ME_API Input {
-
+namespace MarsEngine
+{
+	class Input
+	{
 	public:
-		inline static bool isKeyPressed(int keyCode) {
-			return s_instance->isKeyPressedImpl(keyCode);
-		}
+		static bool isKeyPressed(int keyCode);
 
-		inline static bool isMouseButtonPressed(int button) {
-			return s_instance->isMouseButtonPressedImpl(button);
-		}
+		static bool isMouseButtonPressed(int button);
 
-		inline static std::pair<float, float> getMousePosition() {
-			return s_instance->getMousePositionImpl();
-		}
+		static std::pair<float, float> getMousePosition();
 
-		inline static float getMouseX() {
-			return s_instance->getMouseXImpl();
-		}
+		static float getMouseX();
 
-		inline static float getMouseY() {
-			return s_instance->getMouseYImpl();
-		}
+		static float getMouseY();
 
-	protected:
-		virtual bool isKeyPressedImpl(int keycode) = 0;
-		virtual bool isMouseButtonPressedImpl(int button) = 0;
-		virtual std::pair<float, float> getMousePositionImpl() = 0;
-		virtual float getMouseXImpl() = 0;
-		virtual float getMouseYImpl() = 0;
-
-	private:
-		static Input* s_instance;
 	};
 }

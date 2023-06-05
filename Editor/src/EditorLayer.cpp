@@ -33,7 +33,10 @@ namespace MarsEngine
 	{
 		ME_PROFILE_FUNCTION();
 
-		m_cameraController.onUpdate(ts);
+		if (m_viewportFocused)
+		{
+			m_cameraController.onUpdate(ts);
+		}
 
 		Renderer2D::resetStats();
 		{
@@ -159,6 +162,11 @@ namespace MarsEngine
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 		ImGui::Begin("Viewport");
+
+		m_viewportFocused = ImGui::IsWindowFocused();
+		m_viewportHovered = ImGui::IsWindowHovered();
+		Application::get().getImGuiLayer()->blockEvents(!m_viewportFocused || !m_viewportHovered);
+
 		ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 		if (m_viewportSize != *(glm::vec2*)(&viewportPanelSize))
 		{

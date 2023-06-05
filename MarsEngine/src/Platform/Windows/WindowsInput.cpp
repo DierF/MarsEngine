@@ -1,40 +1,42 @@
 #include "pch.h"
-#include "WindowsInput.h"
+#include "MarsEngine/Core/Input.h"
 
 #include "GLFW/glfw3.h"
 #include "MarsEngine/Core/Application.h"
 
-namespace MarsEngine {
-
-	Input* Input::s_instance = new WindowsInput();
-
-	bool WindowsInput::isKeyPressedImpl(int keyCode)
+namespace MarsEngine
+{
+	bool Input::isKeyPressed(int keyCode)
 	{
 		auto window = static_cast<GLFWwindow*>(Application::get().getWindow().getNativeWindow());
 		auto state = glfwGetKey(window, keyCode);
 		return state == GLFW_PRESS || state == GLFW_REPEAT;
 	}
-	bool WindowsInput::isMouseButtonPressedImpl(int button)
+
+	bool Input::isMouseButtonPressed(int button)
 	{
 		auto window = static_cast<GLFWwindow*>(Application::get().getWindow().getNativeWindow());
 		auto state = glfwGetMouseButton(window, button);
 		return state == GLFW_PRESS;
 	}
-	std::pair<float, float> WindowsInput::getMousePositionImpl()
+
+	std::pair<float, float> Input::getMousePosition()
 	{
 		auto window = static_cast<GLFWwindow*>(Application::get().getWindow().getNativeWindow());
 		double xpos, ypos;
 		glfwGetCursorPos(window, &xpos, &ypos);
 		return { (float)xpos, (float)ypos };
 	}
-	float WindowsInput::getMouseXImpl()
+
+	float Input::getMouseX()
 	{
-		auto [x, y] = getMousePositionImpl();
+		auto [x, y] = getMousePosition();
 		return x;
 	}
-	float WindowsInput::getMouseYImpl()
+
+	float Input::getMouseY()
 	{
-		auto [x, y] = getMousePositionImpl();
+		auto [x, y] = getMousePosition();
 		return y;
 	}
 }

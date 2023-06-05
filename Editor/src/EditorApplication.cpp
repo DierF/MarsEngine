@@ -13,7 +13,7 @@ namespace MarsEngine
 			pushLayer(new EditorLayer());
 		}
 
-		~Editor() {}
+		~Editor() = default;
 	};
 
 	Application* createApplication()
