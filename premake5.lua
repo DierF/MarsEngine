@@ -16,6 +16,7 @@ IncludeDir["Glad"] = "MarsEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "MarsEngine/vendor/imgui"
 IncludeDir["glm"] = "MarsEngine/vendor/glm"
 IncludeDir["stb_image"] = "MarsEngine/vendor/stb_image"
+IncludeDir["entt"] = "MarsEngine/vendor/entt/include"
 
 group "Dependencies"
 	include "MarsEngine/vendor/GLFW"
@@ -53,7 +54,8 @@ project "MarsEngine"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 
 	}
 
@@ -156,7 +158,8 @@ project "Editor"
 		"MarsEngine/vendor/spdlog/include",
 		"MarsEngine/src",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 
 	}
 
