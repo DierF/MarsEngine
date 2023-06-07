@@ -164,49 +164,10 @@ namespace MarsEngine
 	{
 		ME_PROFILE_FUNCTION();
 
-		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
-		{
-			flushAndReset();
-		}
-
-		float const textureIndex = 0.0f;
-
-		float const tilingFactor = 1.0f;
-
 		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
 			* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
 
-		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[0];;
-		s_data.quadVertexBufferPtr->color = color;
-		s_data.quadVertexBufferPtr->textCoord = { 0.0f, 0.0f };
-		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
-		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
-		++s_data.quadVertexBufferPtr;
-
-		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[1];
-		s_data.quadVertexBufferPtr->color = color;
-		s_data.quadVertexBufferPtr->textCoord = { 1.0f, 0.0f };
-		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
-		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
-		++s_data.quadVertexBufferPtr;
-
-		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[2];
-		s_data.quadVertexBufferPtr->color = color;
-		s_data.quadVertexBufferPtr->textCoord = { 1.0f, 1.0f };
-		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
-		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
-		++s_data.quadVertexBufferPtr;
-
-		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[3];
-		s_data.quadVertexBufferPtr->color = color;
-		s_data.quadVertexBufferPtr->textCoord = { 0.0f, 1.0f };
-		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
-		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
-		++s_data.quadVertexBufferPtr;
-
-		s_data.quadIndexCount += 6;
-
-		++s_data.stats.quadCount;
+		drawQuad(transform, color);
 	}
 
 	void Renderer2D::drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
@@ -216,6 +177,18 @@ namespace MarsEngine
 
 	void Renderer2D::drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
 	{
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
+			* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+		drawQuad(transform, texture, tilingFactor);
+	}
+
+	void Renderer2D::drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor, glm::vec4 const& tintColor)
+	{
+		drawQuad({ position.x, position.y, 0.0f }, size, subTexture, tilingFactor, tintColor);
+	}
+
+	void Renderer2D::drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor, glm::vec4 const& tintColor)
+	{
 		ME_PROFILE_FUNCTION();
 
 		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
@@ -224,6 +197,9 @@ namespace MarsEngine
 		}
 
 		glm::vec4 const color = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+		auto const textureCoords = subTexture->getTextureCoords();
+		auto const texture = subTexture->getTexture();
 
 		float textureIndex = 0.0f;
 
@@ -279,24 +255,58 @@ namespace MarsEngine
 		++s_data.stats.quadCount;
 	}
 
-	void Renderer2D::drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor, glm::vec4 const& tintColor)
+	void Renderer2D::drawQuad(glm::mat4 const& transform, glm::vec4 const& color)
 	{
-		drawQuad({ position.x, position.y, 0.0f }, size, subTexture, tilingFactor, tintColor);
+		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
+		{
+			flushAndReset();
+		}
+
+		float const textureIndex = 0.0f;
+
+		float const tilingFactor = 1.0f;
+
+		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[0];;
+		s_data.quadVertexBufferPtr->color = color;
+		s_data.quadVertexBufferPtr->textCoord = { 0.0f, 0.0f };
+		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
+		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
+		++s_data.quadVertexBufferPtr;
+
+		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[1];
+		s_data.quadVertexBufferPtr->color = color;
+		s_data.quadVertexBufferPtr->textCoord = { 1.0f, 0.0f };
+		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
+		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
+		++s_data.quadVertexBufferPtr;
+
+		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[2];
+		s_data.quadVertexBufferPtr->color = color;
+		s_data.quadVertexBufferPtr->textCoord = { 1.0f, 1.0f };
+		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
+		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
+		++s_data.quadVertexBufferPtr;
+
+		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[3];
+		s_data.quadVertexBufferPtr->color = color;
+		s_data.quadVertexBufferPtr->textCoord = { 0.0f, 1.0f };
+		s_data.quadVertexBufferPtr->textureIndex = textureIndex;
+		s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
+		++s_data.quadVertexBufferPtr;
+
+		s_data.quadIndexCount += 6;
+
+		++s_data.stats.quadCount;
 	}
 
-	void Renderer2D::drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor, glm::vec4 const& tintColor)
+	void Renderer2D::drawQuad(glm::mat4 const& transform, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
 	{
-		ME_PROFILE_FUNCTION();
-
 		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
 		{
 			flushAndReset();
 		}
 
 		glm::vec4 const color = { 1.0f, 1.0f, 1.0f, 1.0f };
-
-		auto const textureCoords = subTexture->getTextureCoords();
-		auto const texture = subTexture->getTexture();
 
 		float textureIndex = 0.0f;
 
@@ -315,9 +325,6 @@ namespace MarsEngine
 			s_data.textureSlots[s_data.textureSlotIndex] = texture;
 			++s_data.textureSlotIndex;
 		}
-
-		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-			* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
 
 		s_data.quadVertexBufferPtr->position = transform * s_data.quadVertexPositions[0];
 		s_data.quadVertexBufferPtr->color = color;

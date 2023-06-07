@@ -12,8 +12,6 @@ namespace MarsEngine
 
 	void EditorLayer::onAttach()
 	{
-		ME_PROFILE_FUNCTION();
-
 		m_checkerboardTexture = Texture2D::create("assets/textures/Checkerboard.png");
 
 		FramebufferSpecification fbSpec;
@@ -21,56 +19,33 @@ namespace MarsEngine
 		fbSpec.height = 1080;
 		m_framebuffer = Framebuffer::create(fbSpec);
 
-		m_spriteSheet = Texture2D::create("assets/textures/Checkerboard.png");
+		m_activeScene = createRef<Scene>();
+		auto square = m_activeScene->createEntity("Square");
+		square.addComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
+		m_squareEntity = square;
 	}
 
 	void EditorLayer::onDetach()
 	{
-		ME_PROFILE_FUNCTION();
 	}
 
 	void EditorLayer::onUpdate(Timestep ts)
 	{
-		ME_PROFILE_FUNCTION();
-
 		if (m_viewportFocused)
 		{
 			m_cameraController.onUpdate(ts);
 		}
 
 		Renderer2D::resetStats();
-		{
-			ME_PROFILE_SCOPE("Renderer Prep");
-			m_framebuffer->bind();
-			RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
-			RenderCommand::clear();
-		}
+		m_framebuffer->bind();
+		RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		RenderCommand::clear();
 
-		{
-			static float rotation = 0.0f;
-			rotation += ts * 50.0f;
+		Renderer2D::beginScene(m_cameraController.getCamera());
+		m_activeScene->onUpdate(ts);
+		Renderer2D::endScene();
 
-			ME_PROFILE_SCOPE("Renderer Draw");
-			Renderer2D::beginScene(m_cameraController.getCamera());
-			Renderer2D::drawRotatedQuad({ 1.0f, 0.0f }, { 0.8f, 0.8f }, glm::radians(-45.0f), { 0.8f, 0.2f, 0.3f, 1.0f });
-			Renderer2D::drawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-			Renderer2D::drawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
-			Renderer2D::drawQuad({ 0.0f, 0.0f, -0.1f }, { 20.0f, 20.0f }, m_checkerboardTexture, 10.0f);
-			Renderer2D::drawRotatedQuad({ -2.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }, glm::radians(rotation), m_checkerboardTexture, 20.0f);
-			Renderer2D::endScene();
-
-			Renderer2D::beginScene(m_cameraController.getCamera());
-			for (float y = -5.0f; y < 5.0f; y += 0.5f)
-			{
-				for (float x = -5.0f; x < 5.0f; x += 0.5f)
-				{
-					glm::vec4 color = { (x + 5.0f) / 10.0f, 0.4f, (y + 0.5f) / 10.0f, 0.7f };
-					Renderer2D::drawQuad({ x, y }, { 0.45f, 0.45f }, color);
-				}
-			}
-			Renderer2D::endScene();
-			m_framebuffer->unbind();
-		}
+		m_framebuffer->unbind();
 	}
 
 	void EditorLayer::onImGuiRender()
@@ -157,7 +132,17 @@ namespace MarsEngine
 		ImGui::Text("Quads           : %d", stats.quadCount);
 		ImGui::Text("Vertices        : %d", stats.getTotalVertexCount());
 		ImGui::Text("Indices         : %d", stats.getTotalIndexCount());
-		ImGui::ColorEdit4("Square Color", glm::value_ptr(m_squareColor));
+
+		if (m_squareEntity)
+		{
+			ImGui::Separator();
+			auto& tag = m_squareEntity.getComponent<TagComponent>().tag;
+			ImGui::Text("%s", tag.c_str());
+
+			auto& squareColor = m_squareEntity.getComponent<SpriteRendererComponent>().color;
+			ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
+			ImGui::Separator();
+		}
 		ImGui::End();
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });

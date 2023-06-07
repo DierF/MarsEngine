@@ -28,9 +28,10 @@ namespace MarsEngine
 		Ref<Shader> m_flatColorShader;
 		Ref<Framebuffer> m_framebuffer;
 
+		Ref<Scene> m_activeScene;
+		Entity m_squareEntity;
+
 		Ref<Texture2D> m_checkerboardTexture;
-		Ref<Texture2D> m_spriteSheet;
-		Ref<SubTexture2D> m_subTexture;
 
 		bool m_viewportFocused = false, m_viewportHovered = false;
 

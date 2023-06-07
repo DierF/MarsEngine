@@ -20,27 +20,20 @@ namespace MarsEngine
 		static void flush();
 
 		static void drawQuad(glm::vec2 const& position, glm::vec2 const& size, glm::vec4 const& color);
-
 		static void drawQuad(glm::vec3 const& position, glm::vec2 const& size, glm::vec4 const& color);
-		
 		static void drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
-
 		static void drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
-		
 		static void drawQuad(glm::vec2 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
-
 		static void drawQuad(glm::vec3 const& position, glm::vec2 const& size, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
-	
+		
+		static void drawQuad(glm::mat4 const& transform, glm::vec4 const& color);
+		static void drawQuad(glm::mat4 const& transform, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
+
 		static void drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, glm::vec4 const& color);
-		
 		static void drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, glm::vec4 const& color);
-		
 		static void drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
-		
 		static void drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, Ref<Texture2D> const& texture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
-		
 		static void drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
-		
 		static void drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
 	
 		struct Statistics

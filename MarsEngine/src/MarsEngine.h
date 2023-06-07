@@ -20,3 +20,6 @@
 #include "MarsEngine/Renderer/VertexArray.h"
 #include "MarsEngine/Renderer/OrthographicCamera.h"
 #include "MarsEngine/Renderer/OrthographicCameraController.h"
+#include "MarsEngine/Scene/Scene.h"
+#include "MarsEngine/Scene/Entity.h"
+#include "MarsEngine/Scene/Components.h"
