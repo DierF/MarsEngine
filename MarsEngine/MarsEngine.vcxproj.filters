@@ -1436,6 +1436,8 @@
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Scene\Components.h" />
     <ClInclude Include="src\MarsEngine\Scene\Entity.h" />
+    <ClInclude Include="src\MarsEngine\Renderer\Camera.h" />
+    <ClInclude Include="src\MarsEngine\Scene\SceneCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Core\Application.cpp">
@@ -1529,5 +1531,6 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\MarsEngine\Scene\Entity.cpp" />
+    <ClCompile Include="src\MarsEngine\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>

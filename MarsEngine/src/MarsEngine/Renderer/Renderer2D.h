@@ -3,6 +3,7 @@
 #include "OrthographicCamera.h"
 #include "Texture.h"
 #include "SubTexture2D.h"
+#include "Camera.h"
 
 namespace MarsEngine
 {
@@ -12,6 +13,8 @@ namespace MarsEngine
 		static void init();
 
 		static void shutdown();
+
+		static void beginScene(Camera const& camera, glm::mat4 const& transform);
 
 		static void beginScene(OrthographicCamera const& camera);
 

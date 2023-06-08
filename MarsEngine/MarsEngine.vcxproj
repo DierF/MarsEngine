@@ -165,6 +165,7 @@
     <ClInclude Include="src\MarsEngine\Event\MouseEvent.h" />
     <ClInclude Include="src\MarsEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\MarsEngine\Renderer\Camera.h" />
     <ClInclude Include="src\MarsEngine\Renderer\FrameBuffer.h" />
     <ClInclude Include="src\MarsEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\MarsEngine\Renderer\OrthographicCamera.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="src\MarsEngine\Scene\Components.h" />
     <ClInclude Include="src\MarsEngine\Scene\Entity.h" />
     <ClInclude Include="src\MarsEngine\Scene\Scene.h" />
+    <ClInclude Include="src\MarsEngine\Scene\SceneCamera.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLFrameBuffer.h" />
@@ -628,6 +630,7 @@
     <ClCompile Include="src\MarsEngine\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\MarsEngine\Scene\Entity.cpp" />
     <ClCompile Include="src\MarsEngine\Scene\Scene.cpp" />
+    <ClCompile Include="src\MarsEngine\Scene\SceneCamera.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLFrameBuffer.cpp" />

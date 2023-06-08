@@ -15,14 +15,20 @@ namespace MarsEngine
 		m_checkerboardTexture = Texture2D::create("assets/textures/Checkerboard.png");
 
 		FramebufferSpecification fbSpec;
-		fbSpec.width = 1920;
-		fbSpec.height = 1080;
+		fbSpec.width = 1280;
+		fbSpec.height = 720;
 		m_framebuffer = Framebuffer::create(fbSpec);
 
 		m_activeScene = createRef<Scene>();
 		auto square = m_activeScene->createEntity("Square");
 		square.addComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
 		m_squareEntity = square;
+
+		m_cameraEntity = m_activeScene->createEntity("Camera Entity");
+		m_cameraEntity.addComponent<CameraComponent>();
+		m_secondCameraEntity = m_activeScene->createEntity("Clip-space Camera Entity");
+		auto& cc = m_secondCameraEntity.addComponent<CameraComponent>();
+		cc.primary = false;
 	}
 
 	void EditorLayer::onDetach()
@@ -31,6 +37,17 @@ namespace MarsEngine
 
 	void EditorLayer::onUpdate(Timestep ts)
 	{
+		FramebufferSpecification spec = m_framebuffer->getSpecification();
+		ME_CORE_TRACE("{}, {}", spec.width, spec.height);
+		if (m_viewportSize.x > 0.0f && m_viewportSize.y > 0.0f &&
+			(spec.width != m_viewportSize.x || spec.height != m_viewportSize.y))
+		{
+			m_framebuffer->resize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
+			m_cameraController.onResize(m_viewportSize.x, m_viewportSize.y);
+
+			m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
+		}
+
 		if (m_viewportFocused)
 		{
 			m_cameraController.onUpdate(ts);
@@ -41,8 +58,8 @@ namespace MarsEngine
 		RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		RenderCommand::clear();
 
-		Renderer2D::beginScene(m_cameraController.getCamera());
 		m_activeScene->onUpdate(ts);
+
 		Renderer2D::endScene();
 
 		m_framebuffer->unbind();
@@ -143,6 +160,25 @@ namespace MarsEngine
 			ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
 			ImGui::Separator();
 		}
+		
+		ImGui::DragFloat3("Camera Transform",
+			glm::value_ptr(m_cameraEntity.getComponent<TransformComponent>().transform[3]));
+
+		if (ImGui::Checkbox("Camera A", &m_primaryCamera))
+		{
+			m_secondCameraEntity.getComponent<CameraComponent>().primary = m_primaryCamera;
+			m_cameraEntity.getComponent<CameraComponent>().primary = !m_primaryCamera;
+		}
+
+		{
+			auto& camera = m_secondCameraEntity.getComponent<CameraComponent>().camera;
+			float orthoSize = camera.getOrthographicSize();
+			if (ImGui::DragFloat("Second Ortho Size", &orthoSize))
+			{
+				camera.setOrthographicSize(orthoSize);
+			}
+		}
+
 		ImGui::End();
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
@@ -155,7 +191,7 @@ namespace MarsEngine
 		ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 		if (m_viewportSize != *(glm::vec2*)(&viewportPanelSize))
 		{
-			m_framebuffer->resize((uint32_t)viewportPanelSize.x, (uint32_t)viewportPanelSize.y);
+			//m_framebuffer->resize((uint32_t)viewportPanelSize.x, (uint32_t)viewportPanelSize.y);
 			m_viewportSize = { viewportPanelSize.x, viewportPanelSize.y };
 
 			m_cameraController.onResize(viewportPanelSize.x, viewportPanelSize.y);

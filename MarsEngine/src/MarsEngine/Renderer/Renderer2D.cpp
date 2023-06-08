@@ -111,10 +111,21 @@ namespace MarsEngine
 		ME_PROFILE_FUNCTION();
 	}
 
+	void Renderer2D::beginScene(Camera const& camera, glm::mat4 const& transform)
+	{
+		glm::mat4 viewProjection = camera.getProjection() * glm::inverse(transform);
+
+		s_data.textureShader->bind();
+		s_data.textureShader->setMat4("u_viewProjection", viewProjection);
+
+		s_data.quadIndexCount = 0;
+		s_data.quadVertexBufferPtr = s_data.quadVertexBufferBase;
+
+		s_data.textureSlotIndex = 1;
+	}
+
 	void Renderer2D::beginScene(OrthographicCamera const& camera)
 	{
-		ME_PROFILE_FUNCTION();
-
 		s_data.textureShader->bind();
 		s_data.textureShader->setMat4("u_viewProjection", camera.getViewProjectionMatrix());
 

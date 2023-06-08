@@ -1,6 +1,7 @@
 #pragma once
 
 #include "glm/glm.hpp"
+#include "SceneCamera.h"
 
 namespace MarsEngine
 {
@@ -39,5 +40,18 @@ namespace MarsEngine
 		SpriteRendererComponent(SpriteRendererComponent const&) = default;
 
 		SpriteRendererComponent(glm::vec4 const& color) : color(color) {}
+	};
+
+	struct CameraComponent
+	{
+		SceneCamera camera;
+
+		bool primary = true;
+
+		bool fixedAspectRatio = false;
+
+		CameraComponent() = default;
+
+		CameraComponent(CameraComponent const&) = default;
 	};
 }
