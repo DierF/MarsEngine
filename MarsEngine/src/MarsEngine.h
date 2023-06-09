@@ -22,4 +22,5 @@
 #include "MarsEngine/Renderer/OrthographicCameraController.h"
 #include "MarsEngine/Scene/Scene.h"
 #include "MarsEngine/Scene/Entity.h"
+#include "MarsEngine/Scene/ScriptableEntity.h"
 #include "MarsEngine/Scene/Components.h"

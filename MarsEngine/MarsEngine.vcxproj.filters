@@ -1438,6 +1438,7 @@
     <ClInclude Include="src\MarsEngine\Scene\Entity.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Camera.h" />
     <ClInclude Include="src\MarsEngine\Scene\SceneCamera.h" />
+    <ClInclude Include="src\MarsEngine\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Core\Application.cpp">

@@ -10,7 +10,6 @@ namespace MarsEngine
 {
 	Scene::Scene()
 	{
-
 	}
 
 	Scene::~Scene()
@@ -28,13 +27,24 @@ namespace MarsEngine
 
 	void Scene::onUpdate(Timestep ts)
 	{
+		m_registry.view<NativeScriptComponent>().each([=](auto entity, auto& nsc)
+			{
+				if (!nsc.instance)
+				{
+					nsc.instance = nsc.instantiateScript();
+					nsc.instance->m_entity = Entity{ entity, this };
+					nsc.instance->onCreate();
+				}
+				nsc.instance->onUpdate(ts);
+			});
+
 		Camera* mainCamera = nullptr;
 		glm::mat4* cameraTransform = nullptr;
 
 		auto view = m_registry.view<TransformComponent, CameraComponent>();
 		for (auto entity : view)
 		{
-			auto& [ transform, cameraC ] = view.get<TransformComponent, CameraComponent>(entity);
+			auto [ transform, cameraC ] = view.get<TransformComponent, CameraComponent>(entity);
 			if (cameraC.primary)
 			{
 				mainCamera = &cameraC.camera;
@@ -50,7 +60,7 @@ namespace MarsEngine
 			auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
 			for (auto entity : group)
 			{
-				auto& [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
 				Renderer2D::drawQuad(transform, sprite.color);
 			}

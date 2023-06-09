@@ -29,6 +29,47 @@ namespace MarsEngine
 		m_secondCameraEntity = m_activeScene->createEntity("Clip-space Camera Entity");
 		auto& cc = m_secondCameraEntity.addComponent<CameraComponent>();
 		cc.primary = false;
+
+		class CameraController : public ScriptableEntity
+		{
+		public:
+			void onCreate()
+			{
+				auto& transform = getComponent<TransformComponent>().transform;
+
+			}
+
+			void onDestroy()
+			{
+
+			}
+
+			void onUpdate(Timestep ts)
+			{
+				auto& transform = getComponent<TransformComponent>().transform;
+				float speed = 5.0f;
+
+				if (Input::isKeyPressed(ME_KEY_A))
+				{
+					transform[3][0] -= speed * ts;
+				}
+				if (Input::isKeyPressed(ME_KEY_D))
+				{
+					transform[3][0] += speed * ts;
+				}
+				if (Input::isKeyPressed(ME_KEY_W))
+				{
+					transform[3][1] += speed * ts;
+				}
+				if (Input::isKeyPressed(ME_KEY_S))
+				{
+					transform[3][1] -= speed * ts;
+				}
+			}
+		};
+
+		m_cameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
+		m_secondCameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
 	}
 
 	void EditorLayer::onDetach()
@@ -38,7 +79,6 @@ namespace MarsEngine
 	void EditorLayer::onUpdate(Timestep ts)
 	{
 		FramebufferSpecification spec = m_framebuffer->getSpecification();
-		ME_CORE_TRACE("{}, {}", spec.width, spec.height);
 		if (m_viewportSize.x > 0.0f && m_viewportSize.y > 0.0f &&
 			(spec.width != m_viewportSize.x || spec.height != m_viewportSize.y))
 		{
@@ -166,8 +206,8 @@ namespace MarsEngine
 
 		if (ImGui::Checkbox("Camera A", &m_primaryCamera))
 		{
-			m_secondCameraEntity.getComponent<CameraComponent>().primary = m_primaryCamera;
-			m_cameraEntity.getComponent<CameraComponent>().primary = !m_primaryCamera;
+			m_cameraEntity.getComponent<CameraComponent>().primary = m_primaryCamera;
+			m_secondCameraEntity.getComponent<CameraComponent>().primary = !m_primaryCamera;
 		}
 
 		{
