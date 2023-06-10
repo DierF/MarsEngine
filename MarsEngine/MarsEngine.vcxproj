@@ -178,7 +178,7 @@
     <ClInclude Include="src\MarsEngine\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Texture.h" />
     <ClInclude Include="src\MarsEngine\Renderer\VertexArray.h" />
-    <ClInclude Include="src\MarsEngine\Scene\Components.h" />
+    <ClInclude Include="src\MarsEngine\Scene\Component.h" />
     <ClInclude Include="src\MarsEngine\Scene\Entity.h" />
     <ClInclude Include="src\MarsEngine\Scene\Scene.h" />
     <ClInclude Include="src\MarsEngine\Scene\SceneCamera.h" />

@@ -23,4 +23,4 @@
 #include "MarsEngine/Scene/Scene.h"
 #include "MarsEngine/Scene/Entity.h"
 #include "MarsEngine/Scene/ScriptableEntity.h"
-#include "MarsEngine/Scene/Components.h"
+#include "MarsEngine/Scene/Component.h"

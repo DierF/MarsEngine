@@ -34,7 +34,7 @@ namespace MarsEngine
 		template<typename T>
 		bool hasComponment()
 		{
-			m_scene->m_registry.any_of<T>(m_entityHandle);
+			return m_scene->m_registry.any_of<T>(m_entityHandle);
 		}
 
 		template<typename T>
@@ -46,6 +46,18 @@ namespace MarsEngine
 		}
 
 		operator bool() const { return m_entityHandle != entt::null; }
+
+		operator uint32_t() const { return (uint32_t)m_entityHandle; }
+
+		bool operator==(Entity const& other) const
+		{
+			return m_entityHandle == other.m_entityHandle && m_scene == other.m_scene;
+		}
+
+		bool operator!=(Entity const& other) const
+		{
+			return !(*this == other);
+		}
 
 	private:
 		entt::entity m_entityHandle = { entt::null };

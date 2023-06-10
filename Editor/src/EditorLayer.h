@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MarsEngine.h"
+#include "Panel/SceneHierarchyPanel.h"
 
 namespace MarsEngine
 {
@@ -42,5 +43,7 @@ namespace MarsEngine
 		glm::vec2 m_viewportSize = { 1.0f, 1.0f };
 
 		glm::vec4 m_squareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+
+		SceneHierarchyPanel m_sceneHierarchyPanel;
 	};
 }

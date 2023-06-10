@@ -67,9 +67,10 @@ namespace MarsEngine
 				}
 			}
 		};
-
 		m_cameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
 		m_secondCameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
+
+		m_sceneHierarchyPanel.setContext(m_activeScene);
 	}
 
 	void EditorLayer::onDetach()
@@ -181,6 +182,8 @@ namespace MarsEngine
 
 			ImGui::EndMenuBar();
 		}
+
+		m_sceneHierarchyPanel.onImGuiRender();
 
 		ImGui::Begin("Settings");
 		auto stats = Renderer2D::getStats();
