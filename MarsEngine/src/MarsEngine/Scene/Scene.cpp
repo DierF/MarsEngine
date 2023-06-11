@@ -39,30 +39,30 @@ namespace MarsEngine
 			});
 
 		Camera* mainCamera = nullptr;
-		glm::mat4* cameraTransform = nullptr;
+		glm::mat4 cameraTransform;
 
 		auto view = m_registry.view<TransformComponent, CameraComponent>();
 		for (auto entity : view)
 		{
-			auto [ transform, cameraC ] = view.get<TransformComponent, CameraComponent>(entity);
+			auto [ transformC, cameraC ] = view.get<TransformComponent, CameraComponent>(entity);
 			if (cameraC.primary)
 			{
 				mainCamera = &cameraC.camera;
-				cameraTransform = &transform.transform;
+				cameraTransform = transformC.getTransform();
 				break;
 			}
 		}
 
 		if (mainCamera)
 		{
-			Renderer2D::beginScene(mainCamera->getProjection(), *cameraTransform);
+			Renderer2D::beginScene(mainCamera->getProjection(), cameraTransform);
 
 			auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
 			for (auto entity : group)
 			{
-				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+				auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-				Renderer2D::drawQuad(transform, sprite.color);
+				Renderer2D::drawQuad(transformC.getTransform(), spriteC.color);
 			}
 
 			Renderer2D::endScene();

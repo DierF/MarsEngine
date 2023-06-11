@@ -1,8 +1,9 @@
 #pragma once
 
-#include "glm/glm.hpp"
 #include "SceneCamera.h"
 #include "ScriptableEntity.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 
 namespace MarsEngine
 {
@@ -19,17 +20,26 @@ namespace MarsEngine
 
 	struct TransformComponent
 	{
-		glm::mat4 transform = glm::mat4(1.0f);
+		glm::vec3 translation = { 0.0f, 0.0f, 0.0f };
+		glm::vec3 rotation = { 0.0f, 0.0f, 0.0f };
+		glm::vec3 scale = { 1.0f, 1.0f, 1.0f };
 
 		TransformComponent() = default;
 
 		TransformComponent(TransformComponent const&) = default;
 
-		TransformComponent(glm::mat4 const& transform) : transform(transform) {}
+		TransformComponent(glm::vec3 const& translation) : translation(translation) {}
 
-		operator glm::mat4& () { return transform; }
+		glm::mat4 getTransform() const
+		{
+			glm::mat4 rotate = glm::rotate(glm::mat4(1.0f), rotation.x, { 1, 0, 0 })
+				* glm::rotate(glm::mat4(1.0f), rotation.y, { 0,1,0 })
+				* glm::rotate(glm::mat4(1.0f), rotation.z, { 0, 0,1 });
 
-		operator glm::mat4 const& () const { return transform; }
+			return glm::translate(glm::mat4(1.0f), translation)
+				* rotate
+				* glm::scale(glm::mat4(1.0f), scale);
+		}
 	};
 	
 	struct SpriteRendererComponent
