@@ -2,7 +2,7 @@
 
 #include "OrthographicCameraController.h"
 #include "MarsEngine/Core/Input.h"
-#include "MarsEngine/Core/KeyCodes.h"
+#include "MarsEngine/Core/KeyCode.h"
 
 namespace MarsEngine
 {

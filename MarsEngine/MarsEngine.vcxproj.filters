@@ -75,7 +75,7 @@
     <ClInclude Include="src\MarsEngine\Core\Input.h">
       <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\Core\KeyCodes.h">
+    <ClInclude Include="src\MarsEngine\Core\KeyCode.h">
       <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Core\Layer.h">
@@ -87,7 +87,7 @@
     <ClInclude Include="src\MarsEngine\Core\Log.h">
       <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\Core\MouseButtonCodes.h">
+    <ClInclude Include="src\MarsEngine\Core\MouseButtonCode.h">
       <Filter>src\MarsEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\MarsEngine\Core\Timestep.h">

@@ -151,11 +151,11 @@
     <ClInclude Include="src\MarsEngine\Core\Core.h" />
     <ClInclude Include="src\MarsEngine\Core\EntryPoint.h" />
     <ClInclude Include="src\MarsEngine\Core\Input.h" />
-    <ClInclude Include="src\MarsEngine\Core\KeyCodes.h" />
+    <ClInclude Include="src\MarsEngine\Core\KeyCode.h" />
     <ClInclude Include="src\MarsEngine\Core\Layer.h" />
     <ClInclude Include="src\MarsEngine\Core\LayerStack.h" />
     <ClInclude Include="src\MarsEngine\Core\Log.h" />
-    <ClInclude Include="src\MarsEngine\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\MarsEngine\Core\MouseButtonCode.h" />
     <ClInclude Include="src\MarsEngine\Core\Timestep.h" />
     <ClInclude Include="src\MarsEngine\Core\Window.h" />
     <ClInclude Include="src\MarsEngine\Debug\Instrumentor.h" />

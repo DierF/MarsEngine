@@ -20,13 +20,17 @@ namespace MarsEngine
 		m_framebuffer = Framebuffer::create(fbSpec);
 
 		m_activeScene = createRef<Scene>();
-		auto square = m_activeScene->createEntity("Square");
+
+		auto square = m_activeScene->createEntity("Green Square");
 		square.addComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
+		auto redSquare = m_activeScene->createEntity("Red Square");
+		redSquare.addComponent<SpriteRendererComponent>(glm::vec4{ 1.0f, 0.0f, 0.0f, 1.0f });
+		
 		m_squareEntity = square;
 
-		m_cameraEntity = m_activeScene->createEntity("Camera Entity");
+		m_cameraEntity = m_activeScene->createEntity("Camera A");
 		m_cameraEntity.addComponent<CameraComponent>();
-		m_secondCameraEntity = m_activeScene->createEntity("Clip-space Camera Entity");
+		m_secondCameraEntity = m_activeScene->createEntity("Camera B");
 		auto& cc = m_secondCameraEntity.addComponent<CameraComponent>();
 		cc.primary = false;
 
@@ -185,42 +189,13 @@ namespace MarsEngine
 
 		m_sceneHierarchyPanel.onImGuiRender();
 
-		ImGui::Begin("Settings");
+		ImGui::Begin("Stats");
 		auto stats = Renderer2D::getStats();
 		ImGui::Text("Renderer2D Stats:");
 		ImGui::Text("Draw Calls      : %d", stats.drawCalls);
 		ImGui::Text("Quads           : %d", stats.quadCount);
 		ImGui::Text("Vertices        : %d", stats.getTotalVertexCount());
 		ImGui::Text("Indices         : %d", stats.getTotalIndexCount());
-
-		if (m_squareEntity)
-		{
-			ImGui::Separator();
-			auto& tag = m_squareEntity.getComponent<TagComponent>().tag;
-			ImGui::Text("%s", tag.c_str());
-
-			auto& squareColor = m_squareEntity.getComponent<SpriteRendererComponent>().color;
-			ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
-			ImGui::Separator();
-		}
-		
-		ImGui::DragFloat3("Camera Transform",
-			glm::value_ptr(m_cameraEntity.getComponent<TransformComponent>().transform[3]));
-
-		if (ImGui::Checkbox("Camera A", &m_primaryCamera))
-		{
-			m_cameraEntity.getComponent<CameraComponent>().primary = m_primaryCamera;
-			m_secondCameraEntity.getComponent<CameraComponent>().primary = !m_primaryCamera;
-		}
-
-		{
-			auto& camera = m_secondCameraEntity.getComponent<CameraComponent>().camera;
-			float orthoSize = camera.getOrthographicSize();
-			if (ImGui::DragFloat("Second Ortho Size", &orthoSize))
-			{
-				camera.setOrthographicSize(orthoSize);
-			}
-		}
 
 		ImGui::End();
 

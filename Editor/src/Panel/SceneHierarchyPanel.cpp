@@ -75,6 +75,7 @@ namespace MarsEngine
 
 			}
 		}
+
 		if (entity.hasComponment<TransformComponent>())
 		{
 			if (ImGui::TreeNodeEx((void*)typeid(TransformComponent).hash_code(),
@@ -82,6 +83,96 @@ namespace MarsEngine
 			{
 				auto& transform = entity.getComponent<TransformComponent>().transform;
 				ImGui::DragFloat3("Position", glm::value_ptr(transform[3]), 0.1f);
+
+				ImGui::TreePop();
+			}
+		}
+
+		if (entity.hasComponment<CameraComponent>())
+		{
+			if (ImGui::TreeNodeEx((void*)typeid(CameraComponent).hash_code(),
+				ImGuiTreeNodeFlags_DefaultOpen, "Camera"))
+			{
+				auto& cameraC = entity.getComponent<CameraComponent>();
+				auto& camera = cameraC.camera;
+
+				ImGui::Checkbox("Primary", &cameraC.primary);
+
+				char const* projectionTypeStrings[] = { "Perspective", "Orthographic" };
+				char const* currentProjectionTypeString = projectionTypeStrings[(int)camera.getProjectionType()];
+				if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
+				{
+					for (int i = 0; i < 2; ++i)
+					{
+						bool isSelected = currentProjectionTypeString == projectionTypeStrings[i];
+						if (ImGui::Selectable(projectionTypeStrings[i], isSelected))
+						{
+							currentProjectionTypeString = projectionTypeStrings[i];
+							camera.setProjectionType((SceneCamera::ProjectionType)i);
+						}
+
+						if (isSelected)
+						{
+							ImGui::SetItemDefaultFocus();
+						}
+					}
+
+					ImGui::EndCombo();
+				}
+				
+				if (camera.getProjectionType() == SceneCamera::ProjectionType::Perspective)
+				{
+					float fov = glm::degrees(camera.getPerspectiveVerticalFOV());
+					if (ImGui::DragFloat("Vertical FOV", &fov))
+					{
+						camera.setPerspectiveVerticalFOV(glm::radians(fov));
+					}
+
+					float near = camera.getPerspectiveNearClip();
+					if (ImGui::DragFloat("NearClip", &near))
+					{
+						camera.setPerspectiveNearClip(near);
+					}
+
+					float far = camera.getPerspectiveFarClip();
+					if (ImGui::DragFloat("FarClip", &far))
+					{
+						camera.setPerspectiveFarClip(far);
+					}
+				}
+				if (camera.getProjectionType() == SceneCamera::ProjectionType::Orthographic)
+				{
+					float Size = camera.getOrthographicSize();
+					if (ImGui::DragFloat("Size", &Size))
+					{
+						camera.setOrthographicSize(Size);
+					}
+
+					float near = camera.getOrthographicNearClip();
+					if (ImGui::DragFloat("NearClip", &near))
+					{
+						camera.setOrthographicNearClip(near);
+					}
+
+					float far = camera.getOrthographicFarClip();
+					if (ImGui::DragFloat("FarClip", &far))
+					{
+						camera.setOrthographicFarClip(far);
+					}
+
+					ImGui::Checkbox("Fixed Aspect Ratio", &cameraC.fixedAspectRatio);
+				}
+				ImGui::TreePop();
+			}
+		}
+
+		if (entity.hasComponment<SpriteRendererComponent>())
+		{
+			if (ImGui::TreeNodeEx((void*)typeid(SpriteRendererComponent).hash_code(),
+				ImGuiTreeNodeFlags_DefaultOpen, "Sprite Renderer"))
+			{
+				auto& spriteRendererC = entity.getComponent<SpriteRendererComponent>();
+				ImGui::ColorEdit4("Color", glm::value_ptr(spriteRendererC.color));
 
 				ImGui::TreePop();
 			}
