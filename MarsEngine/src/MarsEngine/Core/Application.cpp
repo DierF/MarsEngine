@@ -21,7 +21,7 @@ namespace MarsEngine {
 
 		m_window = std::unique_ptr<Window>(Window::create(WindowProps(name)));
 		m_window->setEventCallback(BIND_EVENT_FUNC(Application::onEvent));
-		//m_window->setVSync(false);
+		m_window->setVSync(true);
 
 		Renderer::init();
 

@@ -12,7 +12,7 @@ namespace MarsEngine
 		uint32_t m_width, m_height;
 
 		WindowProps(const std::string& title = "Mars Engine",
-			uint32_t width = 1280, uint32_t height = 720)
+			uint32_t width = 1920, uint32_t height = 1080)
 			:m_title(title), m_width(width), m_height(height) {}
 	};
 

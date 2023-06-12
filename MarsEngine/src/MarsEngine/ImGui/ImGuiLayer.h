@@ -26,6 +26,8 @@ namespace MarsEngine
 
 		void blockEvents(bool block) { m_blockEvents = block; }
 
+		void setDarkThemeColors();
+
 	private:
 		bool m_blockEvents = true;
 

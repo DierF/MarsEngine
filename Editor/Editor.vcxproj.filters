@@ -9,4 +9,33 @@
     <ClInclude Include="src\EditorLayer.h" />
     <ClInclude Include="src\Panel\SceneHierarchyPanel.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-Black.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-Bold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-ExtraBold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-ExtraLight.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-Light.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-Medium.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-Regular.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-SemiBold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Auto-Thin.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Black.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Bold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-ExtraBold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-ExtraLight.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Light.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Medium.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Regular.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-SemiBold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Thin.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-Black.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-Bold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-ExtraBold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-ExtraLight.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-Light.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-Medium.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-Regular.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-SemiBold.ttf" />
+    <Font Include="assets\fonts\Geologica\Geologica-Thin.ttf" />
+  </ItemGroup>
 </Project>

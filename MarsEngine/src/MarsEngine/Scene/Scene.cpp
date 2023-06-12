@@ -25,6 +25,11 @@ namespace MarsEngine
 		return entity;
 	}
 
+	void Scene::destroyEntity(Entity entity)
+	{
+		m_registry.destroy(entity);
+	}
+
 	void Scene::onUpdate(Timestep ts)
 	{
 		m_registry.view<NativeScriptComponent>().each([=](auto entity, auto& nsc)

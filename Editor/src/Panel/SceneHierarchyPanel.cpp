@@ -32,6 +32,16 @@ namespace MarsEngine
 			m_selectionContext = {};
 		}
 
+		if (ImGui::BeginPopupContextWindow(0,
+			ImGuiPopupFlags_MouseButtonRight | ImGuiPopupFlags_NoOpenOverItems))
+		{
+			if (ImGui::MenuItem("Create Empty Entity"))
+			{
+				m_context->createEntity("Empty Entity");
+			}
+			ImGui::EndPopup();
+		}
+
 		ImGui::End();
 
 		ImGui::Begin("Properties");
@@ -48,21 +58,43 @@ namespace MarsEngine
 		auto& tag = entity.getComponent<TagComponent>().tag;
 
 		ImGuiTreeNodeFlags flags = (m_selectionContext == entity ? ImGuiTreeNodeFlags_Selected : 0)
-			| ImGuiTreeNodeFlags_OpenOnArrow;
+			| ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_SpanAvailWidth;
 		auto opened = ImGui::TreeNodeEx((void*)(uint64_t)(uint32_t)entity, flags, tag.c_str());
 		if (ImGui::IsItemClicked())
 		{
 			m_selectionContext = entity;
 		}
 
+		bool entityDeleted = false;
+		if (ImGui::BeginPopupContextItem())
+		{
+			if (ImGui::MenuItem("Delete Entity"))
+			{
+				entityDeleted = true;
+			}
+			ImGui::EndPopup();
+		}
+
 		if (opened)
 		{
 			ImGui::TreePop();
+		}
+
+		if (entityDeleted)
+		{
+			m_context->destroyEntity(entity);
+			if (m_selectionContext == entity)
+			{
+				m_selectionContext = {};
+			}
 		}
 	}
 
 	static void drawVec3Control(std::string const& label, glm::vec3& values, float resetValue = 0.0f, float columnWidth = 100.0f)
 	{
+		ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+
 		ImGui::PushID(label.c_str());
 
 		ImGui::Columns(2);
@@ -79,10 +111,12 @@ namespace MarsEngine
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
 		if (ImGui::Button("X", buttonSize))
 		{
 			values.x = resetValue;
 		}
+		ImGui::PopFont();
 		ImGui::PopStyleColor(3);
 		ImGui::SameLine();
 		ImGui::DragFloat("##X", &values.x, 0.1f, 0.0f, 0.0f, "%.2f");
@@ -92,10 +126,12 @@ namespace MarsEngine
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.2f, 0.7f, 0.2f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.3f, 0.8f, 0.3f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.2f, 0.7f, 0.2f, 1.0f });
+		ImGui::PushFont(boldFont);
 		if (ImGui::Button("Y", buttonSize))
 		{
 			values.y = resetValue;
 		}
+		ImGui::PopFont();
 		ImGui::PopStyleColor(3);
 		ImGui::SameLine();
 		ImGui::DragFloat("##Y", &values.y, 0.1f, 0.0f, 0.0f, "%.2f");
@@ -105,21 +141,66 @@ namespace MarsEngine
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.1f, 0.25f, 0.8f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.2f, 0.35f, 0.9f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.1f, 0.25f, 0.8f, 1.0f });
+		ImGui::PushFont(boldFont);
 		if (ImGui::Button("Z", buttonSize))
 		{
 			values.z = resetValue;
 		}
+		ImGui::PopFont();
 		ImGui::PopStyleColor(3);
 		ImGui::SameLine();
 		ImGui::DragFloat("##Z", &values.z, 0.1f, 0.0f, 0.0f, "%.2f");
 		ImGui::PopItemWidth();
-		ImGui::SameLine();
 
 		ImGui::PopStyleVar();
 
 		ImGui::Columns(1);
 
 		ImGui::PopID();
+	}
+
+	template<typename T, typename UIFunction>
+	static void drawComponent(std::string const& name, Entity entity, UIFunction uifunction)
+	{
+		ImGuiTreeNodeFlags const treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen
+			| ImGuiTreeNodeFlags_Framed | ImGuiTreeNodeFlags_SpanAvailWidth
+			| ImGuiTreeNodeFlags_AllowItemOverlap | ImGuiTreeNodeFlags_FramePadding;
+
+		if (entity.hasComponment<T>())
+		{
+			auto& component = entity.getComponent<T>();
+
+			ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
+			ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2{ 4, 4 });
+			float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+			ImGui::Separator();
+			bool open = ImGui::TreeNodeEx((void*)typeid(T).hash_code(),
+				treeNodeFlags, name.c_str());
+			ImGui::PopStyleVar();
+			ImGui::SameLine(contentRegionAvailable.x - lineHeight * 0.5f);
+			if (ImGui::Button("+", ImVec2{ lineHeight, lineHeight }))
+			{
+				ImGui::OpenPopup("Component Settings");
+			}
+			bool removeComponent = false;
+			if (ImGui::BeginPopup("Component Settings"))
+			{
+				if (ImGui::MenuItem("Remove Component"))
+				{
+					removeComponent = true;
+				}
+				ImGui::EndPopup();
+			}
+			if (open)
+			{
+				uifunction(component);
+				ImGui::TreePop();
+			}
+			if (removeComponent)
+			{
+				entity.removeComponent<T>();
+			}
+		}
 	}
 
 	void SceneHierarchyPanel::drawComponents(Entity entity)
@@ -131,38 +212,52 @@ namespace MarsEngine
 			char buffer[256];
 			memset(buffer, 0, sizeof(buffer));
 			strcpy_s(buffer, sizeof(buffer), tag.c_str());
-			if (ImGui::InputText("Tag", buffer, sizeof(buffer)))
+			if (ImGui::InputText("##Tag", buffer, sizeof(buffer)))
 			{
 				tag = std::string(buffer);
 
 			}
 		}
 
-		if (entity.hasComponment<TransformComponent>())
-		{
-			if (ImGui::TreeNodeEx((void*)typeid(TransformComponent).hash_code(),
-				ImGuiTreeNodeFlags_DefaultOpen, "Transform"))
-			{
-				auto& transformC = entity.getComponent<TransformComponent>();
-				drawVec3Control("Translation", transformC.translation);
-				glm::vec3 rotation = glm::degrees(transformC.rotation);
-				drawVec3Control("Rotation", rotation);
-				transformC.rotation = glm::radians(rotation);
-				drawVec3Control("Scale", transformC.scale, 1.0f);
+		ImGui::SameLine();
+		ImGui::PushItemWidth(-1);
 
-				ImGui::TreePop();
+		if (ImGui::Button("Add Component"))
+		{
+			ImGui::OpenPopup("AddComponent");
+		}
+		if (ImGui::BeginPopup("AddComponent"))
+		{
+			if (ImGui::MenuItem("Camera"))
+			{
+				m_selectionContext.addComponent<CameraComponent>();
+				ImGui::CloseCurrentPopup();
 			}
+			if (ImGui::MenuItem("Sprite Renderer"))
+			{
+				m_selectionContext.addComponent<SpriteRendererComponent>();
+				ImGui::CloseCurrentPopup();
+			}
+
+			ImGui::EndPopup();
 		}
 
-		if (entity.hasComponment<CameraComponent>())
-		{
-			if (ImGui::TreeNodeEx((void*)typeid(CameraComponent).hash_code(),
-				ImGuiTreeNodeFlags_DefaultOpen, "Camera"))
-			{
-				auto& cameraC = entity.getComponent<CameraComponent>();
-				auto& camera = cameraC.camera;
+		ImGui::PopItemWidth();
 
-				ImGui::Checkbox("Primary", &cameraC.primary);
+		drawComponent<TransformComponent>("Transform", entity, [](auto& component)
+			{
+				drawVec3Control("Translation", component.translation);
+				glm::vec3 rotation = glm::degrees(component.rotation);
+				drawVec3Control("Rotation", rotation);
+				component.rotation = glm::radians(rotation);
+				drawVec3Control("Scale", component.scale, 1.0f);
+			});
+
+		drawComponent<CameraComponent>("Camera", entity, [](auto& component)
+			{
+				auto& camera = component.camera;
+
+				ImGui::Checkbox("Primary", &component.primary);
 
 				char const* projectionTypeStrings[] = { "Perspective", "Orthographic" };
 				char const* currentProjectionTypeString = projectionTypeStrings[(int)camera.getProjectionType()];
@@ -185,7 +280,7 @@ namespace MarsEngine
 
 					ImGui::EndCombo();
 				}
-				
+
 				if (camera.getProjectionType() == SceneCamera::ProjectionType::Perspective)
 				{
 					float fov = glm::degrees(camera.getPerspectiveVerticalFOV());
@@ -226,22 +321,13 @@ namespace MarsEngine
 						camera.setOrthographicFarClip(far);
 					}
 
-					ImGui::Checkbox("Fixed Aspect Ratio", &cameraC.fixedAspectRatio);
+					ImGui::Checkbox("Fixed Aspect Ratio", &component.fixedAspectRatio);
 				}
-				ImGui::TreePop();
-			}
-		}
+			});
 
-		if (entity.hasComponment<SpriteRendererComponent>())
-		{
-			if (ImGui::TreeNodeEx((void*)typeid(SpriteRendererComponent).hash_code(),
-				ImGuiTreeNodeFlags_DefaultOpen, "Sprite Renderer"))
+		drawComponent<SpriteRendererComponent>("Sprite Renderer", entity, [](auto& component)
 			{
-				auto& spriteRendererC = entity.getComponent<SpriteRendererComponent>();
-				ImGui::ColorEdit4("Color", glm::value_ptr(spriteRendererC.color));
-
-				ImGui::TreePop();
-			}
-		}
+				ImGui::ColorEdit4("Color", glm::value_ptr(component.color));
+			});
 	}
 }
