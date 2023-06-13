@@ -79,11 +79,11 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ME_PLATFORM_WINDOWS;ME_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\MarsEngine\vendor\spdlog\include;..\MarsEngine\src;..\MarsEngine\vendor\imgui;..\MarsEngine\vendor\glm;..\MarsEngine\vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\MarsEngine\vendor\spdlog\include;..\MarsEngine\src;..\MarsEngine\vendor\imgui;..\MarsEngine\vendor\glm;..\MarsEngine\vendor\entt\include;..\MarsEngine\vendor\yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/MTd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -97,14 +97,14 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ME_PLATFORM_WINDOWS;ME_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\MarsEngine\vendor\spdlog\include;..\MarsEngine\src;..\MarsEngine\vendor\imgui;..\MarsEngine\vendor\glm;..\MarsEngine\vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\MarsEngine\vendor\spdlog\include;..\MarsEngine\src;..\MarsEngine\vendor\imgui;..\MarsEngine\vendor\glm;..\MarsEngine\vendor\entt\include;..\MarsEngine\vendor\yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/MT %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -119,14 +119,14 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ME_PLATFORM_WINDOWS;ME_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\MarsEngine\vendor\spdlog\include;..\MarsEngine\src;..\MarsEngine\vendor\imgui;..\MarsEngine\vendor\glm;..\MarsEngine\vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\MarsEngine\vendor\spdlog\include;..\MarsEngine\src;..\MarsEngine\vendor\imgui;..\MarsEngine\vendor\glm;..\MarsEngine\vendor\entt\include;..\MarsEngine\vendor\yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/MT %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -149,35 +149,6 @@
     <ProjectReference Include="..\MarsEngine\MarsEngine.vcxproj">
       <Project>{8E31B102-7AE9-F24F-E3F0-CBABCFC78D40}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="assets\fonts\Geologica\Geologica-Black.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-Bold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-ExtraBold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-ExtraLight.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-Light.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-Medium.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-Regular.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-SemiBold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica-Thin.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-Black.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-Bold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-ExtraBold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-ExtraLight.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-Light.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-Medium.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-Regular.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-SemiBold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Auto-Thin.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Black.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Bold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-ExtraBold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-ExtraLight.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Light.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Medium.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Regular.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-SemiBold.ttf" />
-    <Font Include="assets\fonts\Geologica\Geologica_Cursive-Thin.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

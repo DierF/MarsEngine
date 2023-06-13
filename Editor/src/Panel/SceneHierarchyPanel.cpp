@@ -15,6 +15,7 @@ namespace MarsEngine
 	void SceneHierarchyPanel::setContext(Ref<Scene> const& scene)
 	{
 		m_context = scene;
+		m_selectionContext = {};
 	}
 
 	void SceneHierarchyPanel::onImGuiRender()

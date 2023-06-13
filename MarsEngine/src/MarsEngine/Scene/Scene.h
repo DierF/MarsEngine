@@ -24,9 +24,7 @@ namespace MarsEngine
 
 	private:
 		template<typename T>
-		void onComponentAdded(Entity entity, T& component)
-		{
-		}
+		void onComponentAdded(Entity entity, T& component);
 
 	private:
 		entt::registry m_registry;
@@ -34,6 +32,8 @@ namespace MarsEngine
 		uint32_t m_viewportWidth = 0, m_viewportHeight = 0;
 
 		friend class Entity;
+
+		friend class SceneSerializer;
 
 		friend class SceneHierarchyPanel;
 	};

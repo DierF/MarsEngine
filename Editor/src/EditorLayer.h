@@ -23,6 +23,15 @@ namespace MarsEngine
 		virtual void onEvent(Event& e) override;
 
 	private:
+		bool onKeyPressed(KeyPressedEvent& e);
+
+		void newScene();
+
+		void openScene();
+
+		void saveAsScene();
+
+	private:
 		OrthographicCameraController m_cameraController;
 
 		Ref<VertexArray> m_squareVA;

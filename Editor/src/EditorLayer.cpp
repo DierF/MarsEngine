@@ -2,6 +2,9 @@
 #include "imgui.h"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
+#include "MarsEngine/Scene/SceneSerializer.h"
+#include "MarsEngine/Util/PlatformUtil.h"
+
 
 namespace MarsEngine
 {
@@ -21,6 +24,7 @@ namespace MarsEngine
 
 		m_activeScene = createRef<Scene>();
 
+#if 0
 		auto square = m_activeScene->createEntity("Green Square");
 		square.addComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
 		auto redSquare = m_activeScene->createEntity("Red Square");
@@ -72,6 +76,7 @@ namespace MarsEngine
 		};
 		m_cameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
 		m_secondCameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
+#endif
 
 		m_sceneHierarchyPanel.setContext(m_activeScene);
 	}
@@ -176,9 +181,22 @@ namespace MarsEngine
 			{
 				// Disabling fullscreen would allow the window to be moved to the front of other windows,
 				// which we can't undo at the moment without finer window depth/z control.
-				ImGui::MenuItem("Fullscreen", NULL, &opt_fullscreen);
-				ImGui::MenuItem("Padding", NULL, &opt_padding);
-				ImGui::Separator();
+				//ImGui::MenuItem("Fullscreen", NULL, &opt_fullscreen);
+
+				if (ImGui::MenuItem("New", "Ctrl+N"))
+				{
+					newScene();
+				}
+
+				if (ImGui::MenuItem("Open...", "Ctrl+O"))
+				{
+					openScene();
+				}
+
+				if (ImGui::MenuItem("Save As...", "Ctrl+Shift+S"))
+				{
+					saveAsScene();
+				}
 
 				if (ImGui::MenuItem("Exit"))
 				{
@@ -228,5 +246,78 @@ namespace MarsEngine
 	void EditorLayer::onEvent(Event& e)
 	{
 		m_cameraController.onEvent(e);
+
+		EventDispatcher dispatcher(e);
+		dispatcher.dispatch<KeyPressedEvent>(ME_BIND_EVENT_FUNC(EditorLayer::onKeyPressed));
+	}
+
+	bool EditorLayer::onKeyPressed(KeyPressedEvent& e)
+	{
+		if (e.getRepeatCount() > 0)
+		{
+			return false;
+		}
+		bool control = Input::isKeyPressed(ME_KEY_LEFT_CONTROL)
+			|| Input::isKeyPressed(ME_KEY_RIGHT_CONTROL);
+		bool shift = Input::isKeyPressed(ME_KEY_LEFT_SHIFT)
+			|| Input::isKeyPressed(ME_KEY_RIGHT_SHIFT);
+		switch (e.getKeyCode())
+		{
+		case ME_KEY_N:
+		{
+			if (control)
+			{
+				newScene();
+			}
+		break;
+		}
+		case ME_KEY_O:
+		{
+			if (control)
+			{
+				openScene();
+			}
+			break;
+		}
+		case ME_KEY_S:
+		{
+			if (control && shift)
+			{
+				saveAsScene();
+			}
+			break;
+		}
+		}
+	}
+
+	void EditorLayer::newScene()
+	{
+		m_activeScene = createRef<Scene>();
+		m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
+		m_sceneHierarchyPanel.setContext(m_activeScene);
+	}
+
+	void EditorLayer::openScene()
+	{
+		std::string filepath = FileDialog::openFile("MarsEngine Scene (*.mars)\0*.mars\0");
+		if (!filepath.empty())
+		{
+			m_activeScene = createRef<Scene>();
+			m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
+			m_sceneHierarchyPanel.setContext(m_activeScene);
+
+			SceneSerializer serializer(m_activeScene);
+			serializer.deserialize(filepath);
+		}
+	}
+
+	void EditorLayer::saveAsScene()
+	{
+		std::string filepath = FileDialog::saveFile("MarsEngine Scene (*.mars)\0*.mars\0");
+		if (!filepath.empty())
+		{
+			SceneSerializer serializer(m_activeScene);
+			serializer.serialize(filepath);
+		}
 	}
 }

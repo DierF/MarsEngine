@@ -2,7 +2,8 @@ workspace "MarsEngine"
 	architecture "x64"
 	startproject "Editor"
 
-	configurations {
+	configurations
+	{
 		"Debug",
 		"Release",
 		"Dist"
@@ -17,11 +18,13 @@ IncludeDir["ImGui"] = "MarsEngine/vendor/imgui"
 IncludeDir["glm"] = "MarsEngine/vendor/glm"
 IncludeDir["stb_image"] = "MarsEngine/vendor/stb_image"
 IncludeDir["entt"] = "MarsEngine/vendor/entt/include"
+IncludeDir["yaml_cpp"] = "MarsEngine/vendor/yaml-cpp/include"
 
 group "Dependencies"
 	include "MarsEngine/vendor/GLFW"
 	include "MarsEngine/vendor/Glad"
 	include "MarsEngine/vendor/imgui"
+	include "MarsEngine/vendor/yaml-cpp"
 group ""
 
 project "MarsEngine"
@@ -55,7 +58,8 @@ project "MarsEngine"
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml_cpp}"
 
 	}
 
@@ -63,6 +67,7 @@ project "MarsEngine"
 		"GLFW",
 		"Glad",
 		"ImGui",
+		"yaml-cpp",
 		"opengl32.lib"
 	}
 
@@ -77,18 +82,19 @@ project "MarsEngine"
 	
 	filter "configurations:Debug"
 		defines "ME_DEBUG"
-		buildoptions "/MDd"
+		buildoptions "/MTd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "ME_RELEASE"
-		buildoptions "/MD"
+		buildoptions "/MT"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "ME_DIST"
-		buildoptions "/MD"
+		buildoptions "/MT"
 		optimize "on"
+
 
 project "Runtime"
 	location "Runtime"
@@ -126,18 +132,19 @@ project "Runtime"
 	
 	filter "configurations:Debug"
 		defines "ME_DEBUG"
-		buildoptions "/MDd"
+		buildoptions "/MTd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "ME_RELEASE"
-		buildoptions "/MD"
+		buildoptions "/MT"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "ME_DIST"
-		buildoptions "/MD"
+		buildoptions "/MT"
 		optimize "on"
+
 
 project "Editor"
 	location "Editor"
@@ -159,7 +166,8 @@ project "Editor"
 		"MarsEngine/src",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml_cpp}"
 
 	}
 
@@ -176,15 +184,15 @@ project "Editor"
 	
 	filter "configurations:Debug"
 		defines "ME_DEBUG"
-		buildoptions "/MDd"
+		buildoptions "/MTd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "ME_RELEASE"
-		buildoptions "/MD"
+		buildoptions "/MT"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "ME_DIST"
-		buildoptions "/MD"
+		buildoptions "/MT"
 		optimize "on"

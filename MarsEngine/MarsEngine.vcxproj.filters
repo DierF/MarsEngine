@@ -25,6 +25,9 @@
     <Filter Include="src\MarsEngine\Scene">
       <UniqueIdentifier>{221B05F7-0EAA-8EC0-B7C8-A2BBA3369F66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MarsEngine\Util">
+      <UniqueIdentifier>{B2983F0F-1EFA-1C1D-A767-63CF13C853DC}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
@@ -117,6 +120,9 @@
     <ClInclude Include="src\MarsEngine\Renderer\Buffer.h">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\MarsEngine\Renderer\Camera.h">
+      <Filter>src\MarsEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\MarsEngine\Renderer\FrameBuffer.h">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClInclude>
@@ -153,8 +159,26 @@
     <ClInclude Include="src\MarsEngine\Renderer\VertexArray.h">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\MarsEngine\Scene\Component.h">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Scene\Entity.h">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\MarsEngine\Scene\Scene.h">
       <Filter>src\MarsEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Scene\SceneCamera.h">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Scene\SceneSerializer.h">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Scene\ScriptableEntity.h">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MarsEngine\Util\PlatformUtil.h">
+      <Filter>src\MarsEngine\Util</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1434,11 +1458,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\MarsEngine\Scene\Component.h" />
-    <ClInclude Include="src\MarsEngine\Scene\Entity.h" />
-    <ClInclude Include="src\MarsEngine\Renderer\Camera.h" />
-    <ClInclude Include="src\MarsEngine\Scene\SceneCamera.h" />
-    <ClInclude Include="src\MarsEngine\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Core\Application.cpp">
@@ -1495,7 +1514,16 @@
     <ClCompile Include="src\MarsEngine\Renderer\VertexArray.cpp">
       <Filter>src\MarsEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\MarsEngine\Scene\Entity.cpp">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\MarsEngine\Scene\Scene.cpp">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\Scene\SceneCamera.cpp">
+      <Filter>src\MarsEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsEngine\Scene\SceneSerializer.cpp">
       <Filter>src\MarsEngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1522,6 +1550,9 @@
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsPlatformUtil.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1531,7 +1562,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\MarsEngine\Scene\Entity.cpp" />
-    <ClCompile Include="src\MarsEngine\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>
