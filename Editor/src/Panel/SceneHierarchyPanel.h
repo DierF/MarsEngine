@@ -17,6 +17,8 @@ namespace MarsEngine
 
 		void onImGuiRender();
 
+		Entity getSelectedEntity() const { return m_selectionContext; }
+
 	private:
 		void drawEntityNode(Entity entity);
 	

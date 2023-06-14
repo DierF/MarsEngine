@@ -13,3 +13,6 @@
 [submodule "MarsEngine/vendor/yaml-cpp"]
 	path = MarsEngine/vendor/yaml-cpp
 	url = https://github.com/TheCherno/yaml-cpp.git
+[submodule "MarsEngine/vendor/ImGuizmo"]
+	path = MarsEngine/vendor/ImGuizmo
+	url = https://github.com/TheCherno/ImGuizmo.git

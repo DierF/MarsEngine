@@ -2,6 +2,7 @@
 
 #include "MarsEngine.h"
 #include "Panel/SceneHierarchyPanel.h"
+#include "MarsEngine/Renderer/EditorCamera.h"
 
 namespace MarsEngine
 {
@@ -45,6 +46,8 @@ namespace MarsEngine
 
 		bool m_primaryCamera = true;
 
+		EditorCamera m_editorCamera;
+
 		Ref<Texture2D> m_checkerboardTexture;
 
 		bool m_viewportFocused = false, m_viewportHovered = false;
@@ -52,6 +55,8 @@ namespace MarsEngine
 		glm::vec2 m_viewportSize = { 1.0f, 1.0f };
 
 		glm::vec4 m_squareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+
+		int m_gizmoType = -1;
 
 		SceneHierarchyPanel m_sceneHierarchyPanel;
 	};

@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "SubTexture2D.h"
 #include "Camera.h"
+#include "EditorCamera.h"
 
 namespace MarsEngine
 {
@@ -15,6 +16,8 @@ namespace MarsEngine
 		static void shutdown();
 
 		static void beginScene(Camera const& camera, glm::mat4 const& transform);
+
+		static void beginScene(EditorCamera const& camera);
 
 		static void beginScene(OrthographicCamera const& camera);
 
@@ -54,5 +57,7 @@ namespace MarsEngine
 
 	private:
 		static void flushAndReset();
+
+		static void startBatch();
 	};
 }

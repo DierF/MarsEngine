@@ -2,6 +2,7 @@
 
 #include "entt.hpp"
 #include "MarsEngine/Core/Timestep.h"
+#include "MarsEngine/Renderer/EditorCamera.h"
 
 namespace MarsEngine
 {
@@ -18,9 +19,13 @@ namespace MarsEngine
 
 		void destroyEntity(Entity entity);
 
-		void onUpdate(Timestep ts);
+		void onUpdateEditor(Timestep ts, EditorCamera& camera);
+
+		void onUpdateRuntime(Timestep ts);
 
 		void onViewportResize(uint32_t width, uint32_t height);
+
+		Entity getPrimaryCameraEntity();
 
 	private:
 		template<typename T>

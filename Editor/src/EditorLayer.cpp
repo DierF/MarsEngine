@@ -1,10 +1,11 @@
 #include "EditorLayer.h"
 #include "imgui.h"
+#include "ImGuizmo.h"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "MarsEngine/Scene/SceneSerializer.h"
 #include "MarsEngine/Util/PlatformUtil.h"
-
+#include "MarsEngine/Math/Math.h"
 
 namespace MarsEngine
 {
@@ -23,6 +24,8 @@ namespace MarsEngine
 		m_framebuffer = Framebuffer::create(fbSpec);
 
 		m_activeScene = createRef<Scene>();
+
+		m_editorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
 
 #if 0
 		auto square = m_activeScene->createEntity("Green Square");
@@ -93,23 +96,23 @@ namespace MarsEngine
 		{
 			m_framebuffer->resize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
 			m_cameraController.onResize(m_viewportSize.x, m_viewportSize.y);
-
+			m_editorCamera.setViewportSize(m_viewportSize.x, m_viewportSize.y);
 			m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
 		}
 
 		if (m_viewportFocused)
 		{
 			m_cameraController.onUpdate(ts);
+			m_editorCamera.onUpdate(ts);
 		}
+
 
 		Renderer2D::resetStats();
 		m_framebuffer->bind();
 		RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		RenderCommand::clear();
 
-		m_activeScene->onUpdate(ts);
-
-		Renderer2D::endScene();
+		m_activeScene->onUpdateEditor(ts, m_editorCamera);
 
 		m_framebuffer->unbind();
 	}
@@ -225,18 +228,58 @@ namespace MarsEngine
 
 		m_viewportFocused = ImGui::IsWindowFocused();
 		m_viewportHovered = ImGui::IsWindowHovered();
-		Application::get().getImGuiLayer()->blockEvents(!m_viewportFocused || !m_viewportHovered);
+		Application::get().getImGuiLayer()->blockEvents(!m_viewportFocused && !m_viewportHovered);
 
 		ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
-		if (m_viewportSize != *(glm::vec2*)(&viewportPanelSize))
-		{
-			//m_framebuffer->resize((uint32_t)viewportPanelSize.x, (uint32_t)viewportPanelSize.y);
-			m_viewportSize = { viewportPanelSize.x, viewportPanelSize.y };
+		m_viewportSize = { viewportPanelSize.x, viewportPanelSize.y };
 
-			m_cameraController.onResize(viewportPanelSize.x, viewportPanelSize.y);
-		}
 		auto textureID = m_framebuffer->getColorAttachmentRendererID();
-		ImGui::Image((void*)textureID, ImVec2{ m_viewportSize.x, m_viewportSize.y }, ImVec2{ 0,1 }, ImVec2{ 1,0 });
+		ImGui::Image((void*)textureID, ImVec2{ m_viewportSize.x, m_viewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1,0 });
+		
+		//Gizmos
+		Entity selectedEntity = m_sceneHierarchyPanel.getSelectedEntity();
+		if (selectedEntity && m_gizmoType != -1)
+		{
+			ImGuizmo::SetOrthographic(false);
+			ImGuizmo::SetDrawlist();
+			ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y,
+				ImGui::GetWindowWidth(), ImGui::GetWindowHeight());
+
+			//auto cameraEntity = m_activeScene->getPrimaryCameraEntity();
+			//auto const& camera = cameraEntity.getComponent<CameraComponent>().camera;
+			//glm::mat4 const& cameraProjection = camera.getProjection();
+			//glm::mat4 cameraView = glm::inverse(cameraEntity.getComponent<TransformComponent>().getTransform());
+
+			glm::mat4 const& cameraProjection = m_editorCamera.getProjection();
+			glm::mat4 cameraView = m_editorCamera.getViewMatrix();
+
+			auto& tc = selectedEntity.getComponent<TransformComponent>();
+			glm::mat4 transform = tc.getTransform();
+
+			bool snap = Input::isKeyPressed(ME_KEY_LEFT_CONTROL);
+			float snapValue = 0.5f;
+			if (m_gizmoType == ImGuizmo::OPERATION::ROTATE)
+			{
+				snapValue = 45.0f;
+			}
+			float snapValues[3] = { snapValue, snapValue, snapValue };
+
+			ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
+				(ImGuizmo::OPERATION)m_gizmoType, ImGuizmo::LOCAL, glm::value_ptr(transform),
+				nullptr, snap ? snapValues : nullptr);
+
+			if (ImGuizmo::IsUsing())
+			{
+				glm::vec3 translation, rotation, scale;
+				Math::decomposeTransform(transform, translation, rotation, scale);
+
+				glm::vec3 deltaRotation = rotation - tc.rotation;
+				tc.translation = translation;
+				tc.rotation += deltaRotation;
+				tc.scale = scale;
+			}
+		}
+
 		ImGui::End();
 		ImGui::PopStyleVar();
 
@@ -246,6 +289,7 @@ namespace MarsEngine
 	void EditorLayer::onEvent(Event& e)
 	{
 		m_cameraController.onEvent(e);
+		m_editorCamera.onEvent(e);
 
 		EventDispatcher dispatcher(e);
 		dispatcher.dispatch<KeyPressedEvent>(ME_BIND_EVENT_FUNC(EditorLayer::onKeyPressed));
@@ -269,7 +313,7 @@ namespace MarsEngine
 			{
 				newScene();
 			}
-		break;
+			break;
 		}
 		case ME_KEY_O:
 		{
@@ -285,6 +329,28 @@ namespace MarsEngine
 			{
 				saveAsScene();
 			}
+			break;
+		}
+
+		//Gizmos
+		case ME_KEY_Q:
+		{
+			m_gizmoType = -1;
+			break;
+		}
+		case ME_KEY_W:
+		{
+			m_gizmoType = ImGuizmo::OPERATION::TRANSLATE;
+			break;
+		}
+		case ME_KEY_E:
+		{
+			m_gizmoType = ImGuizmo::OPERATION::ROTATE;
+			break;
+		}
+		case ME_KEY_R:
+		{
+			m_gizmoType = ImGuizmo::OPERATION::SCALE;
 			break;
 		}
 		}

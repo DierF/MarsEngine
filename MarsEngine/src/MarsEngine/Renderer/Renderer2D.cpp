@@ -118,10 +118,17 @@ namespace MarsEngine
 		s_data.textureShader->bind();
 		s_data.textureShader->setMat4("u_viewProjection", viewProjection);
 
-		s_data.quadIndexCount = 0;
-		s_data.quadVertexBufferPtr = s_data.quadVertexBufferBase;
+		startBatch();
+	}
 
-		s_data.textureSlotIndex = 1;
+	void Renderer2D::beginScene(EditorCamera const& camera)
+	{
+		glm::mat4 viewProjection = camera.getViewProjection();
+
+		s_data.textureShader->bind();
+		s_data.textureShader->setMat4("u_viewProjection", viewProjection);
+
+		startBatch();
 	}
 
 	void Renderer2D::beginScene(OrthographicCamera const& camera)
@@ -129,18 +136,15 @@ namespace MarsEngine
 		s_data.textureShader->bind();
 		s_data.textureShader->setMat4("u_viewProjection", camera.getViewProjectionMatrix());
 
-		s_data.quadIndexCount = 0;
-		s_data.quadVertexBufferPtr = s_data.quadVertexBufferBase;
-
-		s_data.textureSlotIndex = 1;
+		startBatch();
 	}
 
 	void Renderer2D::endScene()
 	{
 		ME_PROFILE_FUNCTION();
 
-		uint32_t dataSize = (uint8_t*)s_data.quadVertexBufferPtr - (uint8_t*)s_data.quadVertexBufferBase;
-		if (s_data.quadVertexBufferPtr != nullptr)
+		uint32_t dataSize = (uint32_t)((uint8_t*)s_data.quadVertexBufferPtr - (uint8_t*)s_data.quadVertexBufferBase);
+		if (dataSize)
 		{
 			s_data.quadVertexBuffer->setData(s_data.quadVertexBufferBase, dataSize);
 			flush();
@@ -163,6 +167,11 @@ namespace MarsEngine
 	{
 		endScene();
 
+		startBatch();
+	}
+
+	void Renderer2D::startBatch()
+	{
 		s_data.quadIndexCount = 0;
 		s_data.quadVertexBufferPtr = s_data.quadVertexBufferBase;
 

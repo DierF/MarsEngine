@@ -30,7 +30,22 @@ namespace MarsEngine
 		m_registry.destroy(entity);
 	}
 
-	void Scene::onUpdate(Timestep ts)
+	void Scene::onUpdateEditor(Timestep ts, EditorCamera& camera)
+	{
+		Renderer2D::beginScene(camera);
+
+		auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+		for (auto entity : group)
+		{
+			auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+
+			Renderer2D::drawQuad(transformC.getTransform(), spriteC.color);
+		}
+
+		Renderer2D::endScene();
+	}
+
+	void Scene::onUpdateRuntime(Timestep ts)
 	{
 		m_registry.view<NativeScriptComponent>().each([=](auto entity, auto& nsc)
 			{
@@ -87,6 +102,20 @@ namespace MarsEngine
 			{
 				cameraC.camera.setViewportSize(width, height);
 			}
+		}
+	}
+
+	Entity Scene::getPrimaryCameraEntity()
+	{
+		auto view = m_registry.view<CameraComponent>();
+		for (auto entity : view)
+		{
+			auto const& camera = view.get<CameraComponent>(entity);
+			if (camera.primary)
+			{
+				return Entity{ entity, this };
+			}
+			return {};
 		}
 	}
 

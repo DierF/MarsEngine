@@ -290,16 +290,16 @@ namespace MarsEngine
 						camera.setPerspectiveVerticalFOV(glm::radians(fov));
 					}
 
-					float near = camera.getPerspectiveNearClip();
-					if (ImGui::DragFloat("NearClip", &near))
+					float nearC = camera.getPerspectiveNearClip();
+					if (ImGui::DragFloat("NearClip", &nearC))
 					{
-						camera.setPerspectiveNearClip(near);
+						camera.setPerspectiveNearClip(nearC);
 					}
 
-					float far = camera.getPerspectiveFarClip();
-					if (ImGui::DragFloat("FarClip", &far))
+					float farC = camera.getPerspectiveFarClip();
+					if (ImGui::DragFloat("FarClip", &farC))
 					{
-						camera.setPerspectiveFarClip(far);
+						camera.setPerspectiveFarClip(farC);
 					}
 				}
 				if (camera.getProjectionType() == SceneCamera::ProjectionType::Orthographic)
@@ -310,16 +310,16 @@ namespace MarsEngine
 						camera.setOrthographicSize(Size);
 					}
 
-					float near = camera.getOrthographicNearClip();
-					if (ImGui::DragFloat("NearClip", &near))
+					float nearC = camera.getOrthographicNearClip();
+					if (ImGui::DragFloat("NearClip", &nearC))
 					{
-						camera.setOrthographicNearClip(near);
+						camera.setOrthographicNearClip(nearC);
 					}
 
-					float far = camera.getOrthographicFarClip();
-					if (ImGui::DragFloat("FarClip", &far))
+					float farC = camera.getOrthographicFarClip();
+					if (ImGui::DragFloat("FarClip", &farC))
 					{
-						camera.setOrthographicFarClip(far);
+						camera.setOrthographicFarClip(farC);
 					}
 
 					ImGui::Checkbox("Fixed Aspect Ratio", &component.fixedAspectRatio);
