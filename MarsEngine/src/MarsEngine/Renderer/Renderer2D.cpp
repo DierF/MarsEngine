@@ -15,6 +15,9 @@ namespace MarsEngine
 		glm::vec2 textCoord;
 		float textureIndex;
 		float tilingFactor;
+
+		//Editor-only
+		int entityID;
 	};
 
 	struct Renderer2DData
@@ -56,7 +59,8 @@ namespace MarsEngine
 			{ ShaderDataType::Float4, "a_color" },
 			{ ShaderDataType::Float2, "a_textCoord" },
 			{ ShaderDataType::Float, "a_textIndex" },
-			{ ShaderDataType::Float, "a_tilingFactor" }
+			{ ShaderDataType::Float, "a_tilingFactor" },
+			{ ShaderDataType::Int, "a_entityID" }
 		};
 
 		s_data.quadVertexBuffer->setLayout(quadLayout);
@@ -264,7 +268,7 @@ namespace MarsEngine
 		++s_data.stats.quadCount;
 	}
 
-	void Renderer2D::drawQuad(glm::mat4 const& transform, glm::vec4 const& color)
+	void Renderer2D::drawQuad(glm::mat4 const& transform, glm::vec4 const& color, int entityID)
 	{
 		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
 		{
@@ -285,6 +289,7 @@ namespace MarsEngine
 			s_data.quadVertexBufferPtr->textCoord = textureCoordss[i];
 			s_data.quadVertexBufferPtr->textureIndex = textureIndex;
 			s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
+			s_data.quadVertexBufferPtr->entityID = entityID;
 			++s_data.quadVertexBufferPtr;
 		}
 
@@ -293,7 +298,7 @@ namespace MarsEngine
 		++s_data.stats.quadCount;
 	}
 
-	void Renderer2D::drawQuad(glm::mat4 const& transform, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor)
+	void Renderer2D::drawQuad(glm::mat4 const& transform, Ref<Texture2D> const& texture, float tilingFactor, glm::vec4 const& tintColor, int entityID)
 	{
 		if (s_data.quadIndexCount >= Renderer2DData::maxIndices)
 		{
@@ -330,6 +335,7 @@ namespace MarsEngine
 			s_data.quadVertexBufferPtr->textCoord = textureCoordss[i];
 			s_data.quadVertexBufferPtr->textureIndex = textureIndex;
 			s_data.quadVertexBufferPtr->tilingFactor = tilingFactor;
+			s_data.quadVertexBufferPtr->entityID = entityID;
 			++s_data.quadVertexBufferPtr;
 		}
 
@@ -491,6 +497,11 @@ namespace MarsEngine
 		s_data.quadIndexCount += 6;
 
 		++s_data.stats.quadCount;
+	}
+
+	void Renderer2D::drawSprite(glm::mat4 const& transform, SpriteRendererComponent& spriteC, int entityID)
+	{
+		drawQuad(transform, spriteC.color, entityID);
 	}
 
 	void Renderer2D::resetStats()

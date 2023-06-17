@@ -39,7 +39,7 @@ namespace MarsEngine
 		{
 			auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-			Renderer2D::drawQuad(transformC.getTransform(), spriteC.color);
+			Renderer2D::drawSprite(transformC.getTransform(), spriteC, (int)entity);
 		}
 
 		Renderer2D::endScene();

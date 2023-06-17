@@ -31,6 +31,7 @@ namespace MarsEngine {
 
 	private:
 		uint32_t m_rendererID;
+		uint32_t m_vertexBufferIndex = 0;
 		std::vector<Ref<VertexBuffer>> m_vertexBuffer;
 		Ref<IndexBuffer> m_indexBuffer;
 	};

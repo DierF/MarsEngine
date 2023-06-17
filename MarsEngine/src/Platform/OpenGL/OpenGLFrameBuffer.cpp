@@ -78,6 +78,40 @@ namespace MarsEngine
 			}
 			return false;
 		}
+
+		static GLenum ME_FramebufferTextureFormatToGL(FramebufferTextureFormat format)
+		{
+			switch (format)
+			{
+			case FramebufferTextureFormat::RGBA8:
+			{
+				return GL_RGBA8;
+			}
+			case FramebufferTextureFormat::RED_INTEGER:
+			{
+				return GL_RED_INTEGER;
+			}
+			}
+			ME_CORE_ASSERT(false);
+			return 0;
+		}
+
+		static GLenum GLDateType(FramebufferTextureFormat format)
+		{
+			switch (format)
+			{
+			case FramebufferTextureFormat::RGBA8:
+			{
+				return GL_UNSIGNED_BYTE;
+			}
+			case FramebufferTextureFormat::RED_INTEGER:
+			{
+				return GL_RED_INTEGER;
+			}
+			}
+			ME_CORE_ASSERT(false);
+			return 0;
+		}
 	}
 
 	OpenGLFramebuffer::OpenGLFramebuffer(FramebufferSpecification const& spec)
@@ -184,6 +218,9 @@ namespace MarsEngine
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, m_rendererID);
 		glViewport(0, 0, m_specification.width, m_specification.height);
+
+		int value = -1;
+		glClearTexImage(m_colorAttachments[1], 0, GL_RED_INTEGER, GL_INT, &value);
 	}
 
 	void OpenGLFramebuffer::unbind()
@@ -212,5 +249,14 @@ namespace MarsEngine
 		int pixelData;
 		glReadPixels(x, y, 1, 1, GL_RED_INTEGER, GL_INT, &pixelData);
 		return pixelData;
+	}
+
+	void OpenGLFramebuffer::clearAttachment(uint32_t attachmentIndex, int value)
+	{
+		ME_CORE_ASSERT(attachmentIndex < m_colorAttachments.size());
+
+		auto& spec = m_colorAttachmentSpecifications[attachmentIndex];
+		glClearTexImage(m_colorAttachments[attachmentIndex], 0,
+			Util::ME_FramebufferTextureFormatToGL(spec.textureFormat), GL_INT, &value);
 	}
 }

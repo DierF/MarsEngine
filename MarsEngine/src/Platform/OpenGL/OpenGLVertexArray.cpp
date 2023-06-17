@@ -73,18 +73,64 @@ namespace MarsEngine {
 		vertexBuffer->bind();
 
 		auto const& layout = vertexBuffer->getLayout();
-		uint32_t index = 0;
-		for (auto const& element : layout) {
-
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(
-				index,
-				element.getComponentCount(),
-				ShaderDataTypeToOpenGLBaseType(element.m_type),
-				element.m_normalized ? GL_TRUE : GL_FALSE,
-				layout.getStride(),
-				(void const*)element.m_offset);
-			++index;
+		for (auto const& element : layout)
+		{
+			switch (element.m_type)
+			{
+			case ShaderDataType::Float:
+			case ShaderDataType::Float2:
+			case ShaderDataType::Float3:
+			case ShaderDataType::Float4:
+			{
+				glEnableVertexAttribArray(m_vertexBufferIndex);
+				glVertexAttribPointer(
+					m_vertexBufferIndex,
+					element.getComponentCount(),
+					ShaderDataTypeToOpenGLBaseType(element.m_type),
+					element.m_normalized ? GL_TRUE : GL_FALSE,
+					layout.getStride(),
+					(void const*)element.m_offset);
+				++m_vertexBufferIndex;
+				break;
+			}
+			case ShaderDataType::Int:
+			case ShaderDataType::Int2:
+			case ShaderDataType::Int3:
+			case ShaderDataType::Int4:
+			case ShaderDataType::Bool:
+			{
+				glEnableVertexAttribArray(m_vertexBufferIndex);
+				glVertexAttribIPointer(
+					m_vertexBufferIndex,
+					element.getComponentCount(),
+					ShaderDataTypeToOpenGLBaseType(element.m_type),
+					layout.getStride(),
+					(void const*)element.m_offset);
+				++m_vertexBufferIndex;
+				break;
+			}
+			case ShaderDataType::Matrix3:
+			case ShaderDataType::Matrix4:
+			{
+				uint8_t count = element.getComponentCount();
+				for (uint8_t i = 0; i < count; ++i)
+				{
+					glEnableVertexAttribArray(m_vertexBufferIndex);
+					glVertexAttribPointer(
+						m_vertexBufferIndex,
+						count,
+						ShaderDataTypeToOpenGLBaseType(element.m_type),
+						element.m_normalized ? GL_TRUE : GL_FALSE,
+						layout.getStride(),
+						(void const*)(element.m_offset + sizeof(float) * count * i));
+					glVertexAttribDivisor(m_vertexBufferIndex, 1);
+					++m_vertexBufferIndex;
+				}
+				break;
+			}
+			default:
+				ME_CORE_ASSERT(false, "unknown shaderType");
+			}
 		}
 
 		m_vertexBuffer.push_back(vertexBuffer);

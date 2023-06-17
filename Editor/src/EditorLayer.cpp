@@ -114,6 +114,8 @@ namespace MarsEngine
 		RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		RenderCommand::clear();
 
+		m_framebuffer->clearAttachment(1, -1);
+
 		m_activeScene->onUpdateEditor(ts, m_editorCamera);
 
 		auto [mx, my] = ImGui::GetMousePos();
@@ -127,7 +129,14 @@ namespace MarsEngine
 		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
 		{
 			auto pixelData = m_framebuffer->readPixel(1, mouseX, mouseY);
-			ME_CORE_WARN("{}", pixelData);
+			if (pixelData < 0)
+			{
+				m_hoveredEntity = {};
+			}
+			else
+			{
+				m_hoveredEntity = { (entt::entity)pixelData, m_activeScene.get() };
+			}
 		}
 
 		m_framebuffer->unbind();
@@ -230,6 +239,14 @@ namespace MarsEngine
 		m_sceneHierarchyPanel.onImGuiRender();
 
 		ImGui::Begin("Stats");
+
+		std::string name("None");
+		if (m_hoveredEntity)
+		{
+			name = m_hoveredEntity.getComponent<TagComponent>().tag;
+		}
+		ImGui::Text("Hovered Entity: %s", name.c_str());
+
 		auto stats = Renderer2D::getStats();
 		ImGui::Text("Renderer2D Stats:");
 		ImGui::Text("Draw Calls      : %d", stats.drawCalls);

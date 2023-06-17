@@ -44,6 +44,8 @@ namespace MarsEngine
 		Entity m_cameraEntity;
 		Entity m_secondCameraEntity;
 
+		Entity m_hoveredEntity;
+
 		bool m_primaryCamera = true;
 
 		EditorCamera m_editorCamera;

@@ -21,6 +21,8 @@ namespace MarsEngine
 
 		virtual int readPixel(uint32_t attachmentIndex, int x, int y) override;
 
+		virtual void clearAttachment(uint32_t attachmentIndex, int value) override;
+
 		virtual uint32_t getColorAttachmentRendererID(uint32_t index = 0) const override
 		{
 			ME_CORE_ASSERT(index < m_colorAttachments.size());
