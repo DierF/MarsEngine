@@ -19,6 +19,8 @@ namespace MarsEngine
 
 		Entity getSelectedEntity() const { return m_selectionContext; }
 
+		void setSelectedEntity(Entity entity);
+
 	private:
 		void drawEntityNode(Entity entity);
 	

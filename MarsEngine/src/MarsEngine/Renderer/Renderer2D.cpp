@@ -54,7 +54,8 @@ namespace MarsEngine
 
 		s_data.quadVertexBuffer = VertexBuffer::create(s_data.maxVertices * sizeof(QuadVertex));
 
-		BufferLayout quadLayout = {
+		BufferLayout quadLayout =
+		{
 			{ ShaderDataType::Float3, "a_position" },
 			{ ShaderDataType::Float4, "a_color" },
 			{ ShaderDataType::Float2, "a_textCoord" },

@@ -26,6 +26,8 @@ namespace MarsEngine
 	private:
 		bool onKeyPressed(KeyPressedEvent& e);
 
+		bool onMouseButtonPressed(MouseButtonPressedEvent& e);
+
 		void newScene();
 
 		void openScene();

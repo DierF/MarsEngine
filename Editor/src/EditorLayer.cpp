@@ -129,7 +129,7 @@ namespace MarsEngine
 		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
 		{
 			auto pixelData = m_framebuffer->readPixel(1, mouseX, mouseY);
-			if (pixelData < 0)
+			if (pixelData == -1)
 			{
 				m_hoveredEntity = {};
 			}
@@ -258,27 +258,25 @@ namespace MarsEngine
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 		ImGui::Begin("Viewport");
-		auto viewportOffset = ImGui::GetCursorPos();
 
+		auto viewportMinRegion = ImGui::GetWindowContentRegionMin();
+		auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
+		auto viewportOffset = ImGui::GetWindowPos();
 		m_viewportFocused = ImGui::IsWindowFocused();
 		m_viewportHovered = ImGui::IsWindowHovered();
-		Application::get().getImGuiLayer()->blockEvents(!m_viewportFocused && !m_viewportHovered);
+		m_viewportBounds[0] = { viewportMinRegion.x + viewportOffset.x,
+								viewportMinRegion.y + viewportOffset.y };
+		m_viewportBounds[1] = { viewportMaxRegion.x + viewportOffset.x,
+								viewportMaxRegion.y + viewportOffset.y };
 
+
+		Application::get().getImGuiLayer()->blockEvents(!m_viewportFocused && !m_viewportHovered);
+		
 		ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 		m_viewportSize = { viewportPanelSize.x, viewportPanelSize.y };
-
 		auto textureID = m_framebuffer->getColorAttachmentRendererID();
 		ImGui::Image((void*)textureID, ImVec2{ m_viewportSize.x, m_viewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1,0 });
-		
-		auto windowSize = ImGui::GetWindowSize();
-		auto minBound = ImGui::GetWindowPos();
-		minBound.x += viewportOffset.x;
-		minBound.y += viewportOffset.y;
-
-		ImVec2 maxBound = { minBound.x + windowSize.x, minBound.y + windowSize.y };
-		m_viewportBounds[0] = { minBound.x, minBound.y };
-		m_viewportBounds[1] = { maxBound.x, maxBound.y };
-
+	
 		//Gizmos
 		Entity selectedEntity = m_sceneHierarchyPanel.getSelectedEntity();
 		if (selectedEntity && m_gizmoType != -1)
@@ -336,6 +334,7 @@ namespace MarsEngine
 
 		EventDispatcher dispatcher(e);
 		dispatcher.dispatch<KeyPressedEvent>(ME_BIND_EVENT_FUNC(EditorLayer::onKeyPressed));
+		dispatcher.dispatch<MouseButtonPressedEvent>(ME_BIND_EVENT_FUNC(EditorLayer::onMouseButtonPressed));
 	}
 
 	bool EditorLayer::onKeyPressed(KeyPressedEvent& e)
@@ -397,6 +396,18 @@ namespace MarsEngine
 			break;
 		}
 		}
+	}
+
+	bool EditorLayer::onMouseButtonPressed(MouseButtonPressedEvent& e)
+	{
+		if (e.getMouseButton() == ME_MOUSE_BUTTON_LEFT)
+		{
+			if (m_viewportHovered && !ImGuizmo::IsOver() && !Input::isKeyPressed(ME_KEY_LEFT_ALT))
+			{
+				m_sceneHierarchyPanel.setSelectedEntity(m_hoveredEntity);
+			}
+		}
+		return false;
 	}
 
 	void EditorLayer::newScene()
