@@ -237,6 +237,7 @@ namespace MarsEngine
 		}
 
 		m_sceneHierarchyPanel.onImGuiRender();
+		m_contentBrowserPanel.onImGuiRender();
 
 		ImGui::Begin("Stats");
 
@@ -269,7 +270,6 @@ namespace MarsEngine
 		m_viewportBounds[1] = { viewportMaxRegion.x + viewportOffset.x,
 								viewportMaxRegion.y + viewportOffset.y };
 
-
 		Application::get().getImGuiLayer()->blockEvents(!m_viewportFocused && !m_viewportHovered);
 		
 		ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
@@ -277,6 +277,16 @@ namespace MarsEngine
 		auto textureID = m_framebuffer->getColorAttachmentRendererID();
 		ImGui::Image((void*)textureID, ImVec2{ m_viewportSize.x, m_viewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1,0 });
 	
+		if (ImGui::BeginDragDropTarget())
+		{
+			if (ImGuiPayload const* payload = ImGui::AcceptDragDropPayload("CONTENT_BROWSER_ITEM"))
+			{
+				auto path = (wchar_t const*)payload->Data;
+				openScene(path);
+			}
+			ImGui::EndDragDropTarget();
+		}
+
 		//Gizmos
 		Entity selectedEntity = m_sceneHierarchyPanel.getSelectedEntity();
 		if (selectedEntity && m_gizmoType != -1)
@@ -422,13 +432,18 @@ namespace MarsEngine
 		std::string filepath = FileDialog::openFile("MarsEngine Scene (*.mars)\0*.mars\0");
 		if (!filepath.empty())
 		{
-			m_activeScene = createRef<Scene>();
-			m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
-			m_sceneHierarchyPanel.setContext(m_activeScene);
-
-			SceneSerializer serializer(m_activeScene);
-			serializer.deserialize(filepath);
+			openScene(filepath);
 		}
+	}
+
+	void EditorLayer::openScene(std::filesystem::path const& path)
+	{
+		m_activeScene = createRef<Scene>();
+		m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
+		m_sceneHierarchyPanel.setContext(m_activeScene);
+
+		SceneSerializer serializer(m_activeScene);
+		serializer.deserialize(path.string());
 	}
 
 	void EditorLayer::saveAsScene()

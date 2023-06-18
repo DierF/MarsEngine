@@ -2,6 +2,7 @@
 
 #include "MarsEngine.h"
 #include "Panel/SceneHierarchyPanel.h"
+#include "Panel/ContentBrowserPanel.h"
 #include "MarsEngine/Renderer/EditorCamera.h"
 
 namespace MarsEngine
@@ -31,6 +32,8 @@ namespace MarsEngine
 		void newScene();
 
 		void openScene();
+
+		void openScene(std::filesystem::path const& path);
 
 		void saveAsScene();
 
@@ -64,5 +67,6 @@ namespace MarsEngine
 		int m_gizmoType = -1;
 
 		SceneHierarchyPanel m_sceneHierarchyPanel;
+		ContentBrowserPanel m_contentBrowserPanel;
 	};
 }
