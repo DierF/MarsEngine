@@ -2,6 +2,7 @@
 
 #include "SceneCamera.h"
 #include "ScriptableEntity.h"
+#include "MarsEngine/Renderer/Texture.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
@@ -45,6 +46,10 @@ namespace MarsEngine
 	struct SpriteRendererComponent
 	{
 		glm::vec4 color{ 1.0f, 1.0f, 1.0f, 1.0f };
+		
+		Ref<Texture2D> texture;
+
+		float tilingFactor = 1.0f;
 
 		SpriteRendererComponent() = default;
 

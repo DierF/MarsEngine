@@ -1,12 +1,16 @@
 #include "SceneHierarchyPanel.h"
 #include "MarsEngine/Scene/Entity.h"
 #include "MarsEngine/Scene/Component.h"
+#include "MarsEngine/Renderer/Texture.h"
 #include "imgui.h"
 #include "imgui_internal.h"
 #include "glm/gtc/type_ptr.hpp"
+#include <filesystem>
 
 namespace MarsEngine
 {
+	extern std::filesystem::path const s_assetPath;
+
 	SceneHierarchyPanel::SceneHierarchyPanel(Ref<Scene> const& scene)
 	{
 		setContext(scene);
@@ -334,6 +338,22 @@ namespace MarsEngine
 		drawComponent<SpriteRendererComponent>("Sprite Renderer", entity, [](auto& component)
 			{
 				ImGui::ColorEdit4("Color", glm::value_ptr(component.color));
+
+				ImGui::Button("Texture", ImVec2(100.0f, 0.0f));
+
+				if (ImGui::BeginDragDropTarget())
+				{
+					if (auto payload = ImGui::AcceptDragDropPayload("CONTENT_BROWSER_ITEM"))
+					{
+						auto path = (wchar_t const*)payload->Data;
+						auto texturePath = std::filesystem::path(path);
+						ME_CORE_TRACE("{}", texturePath);
+						component.texture = Texture2D::create(texturePath.string());
+					}
+					ImGui::EndDragDropTarget();
+				}
+
+				ImGui::DragFloat("Tiling Factor", &component.tilingFactor, 0.1f, 0.0f, 100.0f);
 			});
 	}
 }

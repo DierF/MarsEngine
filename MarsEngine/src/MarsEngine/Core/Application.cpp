@@ -77,7 +77,7 @@ namespace MarsEngine {
 
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_lastFrameTime;
-			ME_CORE_TRACE("Frametime: {}s, FPS: {}", timestep, (uint32_t)(1.0f / timestep.getSeconds()));
+			//ME_CORE_TRACE("Frametime: {}s, FPS: {}", timestep, (uint32_t)(1.0f / timestep.getSeconds()));
 			m_lastFrameTime = time;
 			if (!m_minimized)
 			{

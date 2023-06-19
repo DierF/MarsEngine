@@ -502,7 +502,14 @@ namespace MarsEngine
 
 	void Renderer2D::drawSprite(glm::mat4 const& transform, SpriteRendererComponent& spriteC, int entityID)
 	{
-		drawQuad(transform, spriteC.color, entityID);
+		if (spriteC.texture)
+		{
+			drawQuad(transform, spriteC.texture, spriteC.tilingFactor, spriteC.color, entityID);
+		}
+		else
+		{
+			drawQuad(transform, spriteC.color, entityID);
+		}
 	}
 
 	void Renderer2D::resetStats()
