@@ -4,6 +4,8 @@
 #include "MarsEngine/Core/Timestep.h"
 #include "MarsEngine/Renderer/EditorCamera.h"
 
+class b2World;
+
 namespace MarsEngine
 {
 	class Entity;
@@ -18,6 +20,9 @@ namespace MarsEngine
 		Entity createEntity(std::string const& name = std::string());
 
 		void destroyEntity(Entity entity);
+
+		void onRuntimeStart();
+		void onRuntimeStop();
 
 		void onUpdateEditor(Timestep ts, EditorCamera& camera);
 
@@ -36,10 +41,10 @@ namespace MarsEngine
 
 		uint32_t m_viewportWidth = 0, m_viewportHeight = 0;
 
+		b2World* m_physicsWorld = nullptr;
+
 		friend class Entity;
-
 		friend class SceneSerializer;
-
 		friend class SceneHierarchyPanel;
 	};
 }

@@ -17,6 +17,8 @@ namespace MarsEngine
 	void EditorLayer::onAttach()
 	{
 		m_checkerboardTexture = Texture2D::create("assets/textures/Checkerboard.png");
+		m_playIcon = Texture2D::create("assets/icons/PlayButton.png");
+		m_stopIcon = Texture2D::create("assets/icons/StopButton.png");
 
 		FramebufferSpecification fbSpec;
 		fbSpec.attachment = { FramebufferTextureFormat::RGBA8, FramebufferTextureFormat::RED_INTEGER,
@@ -102,13 +104,6 @@ namespace MarsEngine
 			m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
 		}
 
-		if (m_viewportFocused)
-		{
-			m_cameraController.onUpdate(ts);
-			m_editorCamera.onUpdate(ts);
-		}
-
-
 		Renderer2D::resetStats();
 		m_framebuffer->bind();
 		RenderCommand::setClearColor({ 0.1f, 0.1f, 0.1f, 1 });
@@ -116,7 +111,24 @@ namespace MarsEngine
 
 		m_framebuffer->clearAttachment(1, -1);
 
-		m_activeScene->onUpdateEditor(ts, m_editorCamera);
+		switch (m_sceneState)
+		{
+			case SceneState::Edit:
+			{
+				if (m_viewportFocused)
+				{
+					m_cameraController.onUpdate(ts);
+				}
+				m_editorCamera.onUpdate(ts);
+				m_activeScene->onUpdateEditor(ts, m_editorCamera);
+				break;
+			}
+			case SceneState::Play:
+			{
+				m_activeScene->onUpdateRuntime(ts);
+				break;
+			}
+		}
 
 		auto [mx, my] = ImGui::GetMousePos();
 		mx -= m_viewportBounds[0].x;
@@ -334,6 +346,49 @@ namespace MarsEngine
 		ImGui::End();
 		ImGui::PopStyleVar();
 
+		UI_toolbar();
+
+		ImGui::End();
+	}
+
+	void EditorLayer::UI_toolbar()
+	{
+		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 2));
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemInnerSpacing, ImVec2(0, 0));
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0, 0, 0));
+
+		auto& colors = ImGui::GetStyle().Colors;
+		auto const& buttonHovered = colors[ImGuiCol_ButtonHovered];
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered,
+			ImVec4(buttonHovered.x, buttonHovered.y, buttonHovered.z, 0.5f));
+
+		auto const& buttonActive = colors[ImGuiCol_ButtonActive];
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive,
+			ImVec4(buttonActive.x, buttonActive.y, buttonActive.z, 0.5f));
+
+		
+		ImGui::Begin("##toolbar", nullptr, ImGuiWindowFlags_NoDecoration
+			| ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);
+
+		auto size = ImGui::GetWindowHeight() - 4.0f;
+		auto icon = m_sceneState == SceneState::Edit ? m_playIcon : m_stopIcon;
+		ImGui::SetCursorPosX((ImGui::GetWindowContentRegionMax().x * 0.5f) - (size * 0.5f));
+
+		if (ImGui::ImageButton((ImTextureID)icon->getRendererID(),
+			ImVec2(size, size), ImVec2(0, 0), ImVec2(1, 1), 0))
+		{
+			if (m_sceneState == SceneState::Edit)
+			{
+				onScenePlay();
+			}
+			else if (m_sceneState == SceneState::Play)
+			{
+				onSceneStop();
+			}
+		}
+
+		ImGui::PopStyleVar(2);
+		ImGui::PopStyleColor(3);
 		ImGui::End();
 	}
 
@@ -455,4 +510,17 @@ namespace MarsEngine
 			serializer.serialize(filepath);
 		}
 	}
+
+	void EditorLayer::onScenePlay()
+	{
+		m_activeScene->onRuntimeStart();
+		m_sceneState = SceneState::Play;
+	}
+
+	void EditorLayer::onSceneStop()
+	{
+		m_activeScene->onRuntimeStop();
+		m_sceneState = SceneState::Edit;
+	}
+
 }

@@ -18,7 +18,7 @@ namespace MarsEngine
 		template<typename T, typename ...Args>
 		T& addComponent(Args&&... args)
 		{
-			ME_CORE_ASSERT(hasComponment<T>(), "Entity already has component!");
+			ME_CORE_ASSERT(hasComponent<T>(), "Entity already has component!");
 			T& component = m_scene->m_registry.emplace<T>(m_entityHandle, std::forward<Args>(args)...);
 			m_scene->onComponentAdded<T>(*this, component);
 			return component;
@@ -27,13 +27,13 @@ namespace MarsEngine
 		template<typename T>
 		T& getComponent()
 		{
-			ME_CORE_ASSERT(hasComponment<T>(), "Entity does not have component!");
+			ME_CORE_ASSERT(hasComponent<T>(), "Entity does not have component!");
 
 			return m_scene->m_registry.get<T>(m_entityHandle);
 		}
 
 		template<typename T>
-		bool hasComponment()
+		bool hasComponent()
 		{
 			return m_scene->m_registry.any_of<T>(m_entityHandle);
 		}
@@ -41,7 +41,7 @@ namespace MarsEngine
 		template<typename T>
 		void removeComponent()
 		{
-			ME_CORE_ASSERT(hasComponment<T>(), "Entity does not have component!");
+			ME_CORE_ASSERT(hasComponent<T>(), "Entity does not have component!");
 
 			m_scene->m_registry.remove<T>(m_entityHandle);
 		}

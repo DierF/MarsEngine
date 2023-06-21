@@ -16,3 +16,6 @@
 [submodule "MarsEngine/vendor/ImGuizmo"]
 	path = MarsEngine/vendor/ImGuizmo
 	url = https://github.com/TheCherno/ImGuizmo.git
+[submodule "MarsEngine/vendor/box2d"]
+	path = MarsEngine/vendor/box2d
+	url = https://github.com/TheCherno/box2d.git

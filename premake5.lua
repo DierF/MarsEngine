@@ -20,12 +20,14 @@ IncludeDir["stb_image"] = "MarsEngine/vendor/stb_image"
 IncludeDir["entt"] = "MarsEngine/vendor/entt/include"
 IncludeDir["yaml_cpp"] = "MarsEngine/vendor/yaml-cpp/include"
 IncludeDir["ImGuizmo"] = "MarsEngine/vendor/ImGuizmo"
+IncludeDir["box2d"] = "MarsEngine/vendor/box2d/include"
 
 group "Dependencies"
 	include "MarsEngine/vendor/GLFW"
 	include "MarsEngine/vendor/Glad"
 	include "MarsEngine/vendor/imgui"
 	include "MarsEngine/vendor/yaml-cpp"
+	include "MarsEngine/vendor/box2d"
 group ""
 
 project "MarsEngine"
@@ -41,7 +43,8 @@ project "MarsEngine"
 	pchheader "pch.h"
 	pchsource "MarsEngine/src/pch.cpp"
 
-	files {
+	files
+	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/stb_image/**.h",
@@ -50,10 +53,10 @@ project "MarsEngine"
 		"%{prj.name}/vendor/glm/glm/**.inl",
 		"%{prj.name}/vendor/ImGuizmo/ImGuizmo.h",
 		"%{prj.name}/vendor/ImGuizmo/ImGuizmo.cpp"
-
 	}
 
-	includedirs {
+	includedirs
+	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
@@ -63,16 +66,18 @@ project "MarsEngine"
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
 		"%{IncludeDir.yaml_cpp}",
-		"%{IncludeDir.ImGuizmo}"
-
+		"%{IncludeDir.ImGuizmo}",
+		"%{IncludeDir.box2d}"
 	}
 
-	links {
+	links
+	{
 		"GLFW",
 		"Glad",
 		"ImGui",
 		"yaml-cpp",
-		"opengl32.lib"
+		"opengl32.lib",
+		"box2d"
 	}
 
 	filter "MarsEngine/vendor/ImGuizmo/**.cpp"
@@ -81,7 +86,8 @@ project "MarsEngine"
 	filter "system:windows"
 		systemversion "latest"
 
-		defines {
+		defines
+		{
 			"ME_PLATFORM_WINDOWS",
 			"ME_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
@@ -113,27 +119,30 @@ project "Runtime"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin/" .. outputdir .. "/%{prj.name}")
 
-	files {
+	files
+	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	includedirs {
+	includedirs
+	{
 		"MarsEngine/vendor/spdlog/include",
 		"MarsEngine/src",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}"
-
 	}
 
-	links {
+	links
+	{
 		"MarsEngine"
 	}
 
 	filter "system:windows"
 		systemversion "latest"
 
-		defines {
+		defines
+		{
 			"ME_PLATFORM_WINDOWS"
 		}
 	
@@ -163,12 +172,14 @@ project "Editor"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin/" .. outputdir .. "/%{prj.name}")
 
-	files {
+	files
+	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	includedirs {
+	includedirs
+	{
 		"MarsEngine/vendor/spdlog/include",
 		"MarsEngine/src",
 		"%{IncludeDir.ImGui}",
@@ -179,14 +190,16 @@ project "Editor"
 
 	}
 
-	links {
+	links
+	{
 		"MarsEngine"
 	}
 
 	filter "system:windows"
 		systemversion "latest"
 
-		defines {
+		defines
+		{
 			"ME_PLATFORM_WINDOWS"
 		}
 	

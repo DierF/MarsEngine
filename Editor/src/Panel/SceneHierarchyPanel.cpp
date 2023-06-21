@@ -176,7 +176,7 @@ namespace MarsEngine
 			| ImGuiTreeNodeFlags_Framed | ImGuiTreeNodeFlags_SpanAvailWidth
 			| ImGuiTreeNodeFlags_AllowItemOverlap | ImGuiTreeNodeFlags_FramePadding;
 
-		if (entity.hasComponment<T>())
+		if (entity.hasComponent<T>())
 		{
 			auto& component = entity.getComponent<T>();
 
@@ -215,7 +215,7 @@ namespace MarsEngine
 
 	void SceneHierarchyPanel::drawComponents(Entity entity)
 	{
-		if (entity.hasComponment<TagComponent>())
+		if (entity.hasComponent<TagComponent>())
 		{
 			auto& tag = entity.getComponent<TagComponent>().tag;
 			
@@ -238,15 +238,37 @@ namespace MarsEngine
 		}
 		if (ImGui::BeginPopup("AddComponent"))
 		{
-			if (ImGui::MenuItem("Camera"))
+			if (!m_selectionContext.hasComponent<CameraComponent>())
 			{
-				m_selectionContext.addComponent<CameraComponent>();
-				ImGui::CloseCurrentPopup();
+				if (ImGui::MenuItem("Camera"))
+				{
+					m_selectionContext.addComponent<CameraComponent>();
+					ImGui::CloseCurrentPopup();
+				}
 			}
-			if (ImGui::MenuItem("Sprite Renderer"))
+			if (!m_selectionContext.hasComponent<SpriteRendererComponent>())
 			{
-				m_selectionContext.addComponent<SpriteRendererComponent>();
-				ImGui::CloseCurrentPopup();
+				if (ImGui::MenuItem("Sprite Renderer"))
+				{
+					m_selectionContext.addComponent<SpriteRendererComponent>();
+					ImGui::CloseCurrentPopup();
+				}
+			}
+			if (!m_selectionContext.hasComponent<Rigidbody2DComponent>())
+			{
+				if (ImGui::MenuItem("Rigidbody 2D"))
+				{
+					m_selectionContext.addComponent<Rigidbody2DComponent>();
+					ImGui::CloseCurrentPopup();
+				}
+			}
+			if (!m_selectionContext.hasComponent<BoxCollider2DComponent>())
+			{
+				if (ImGui::MenuItem("Box Collider 2D"))
+				{
+					m_selectionContext.addComponent<BoxCollider2DComponent>();
+					ImGui::CloseCurrentPopup();
+				}
 			}
 
 			ImGui::EndPopup();
@@ -254,7 +276,8 @@ namespace MarsEngine
 
 		ImGui::PopItemWidth();
 
-		drawComponent<TransformComponent>("Transform", entity, [](auto& component)
+		drawComponent<TransformComponent>("Transform", entity,
+			[](TransformComponent& component)
 			{
 				drawVec3Control("Translation", component.translation);
 				glm::vec3 rotation = glm::degrees(component.rotation);
@@ -263,7 +286,8 @@ namespace MarsEngine
 				drawVec3Control("Scale", component.scale, 1.0f);
 			});
 
-		drawComponent<CameraComponent>("Camera", entity, [](auto& component)
+		drawComponent<CameraComponent>("Camera", entity,
+			[](CameraComponent& component)
 			{
 				auto& camera = component.camera;
 
@@ -335,7 +359,8 @@ namespace MarsEngine
 				}
 			});
 
-		drawComponent<SpriteRendererComponent>("Sprite Renderer", entity, [](auto& component)
+		drawComponent<SpriteRendererComponent>("Sprite Renderer", entity,
+			[](SpriteRendererComponent& component)
 			{
 				ImGui::ColorEdit4("Color", glm::value_ptr(component.color));
 
@@ -354,6 +379,45 @@ namespace MarsEngine
 				}
 
 				ImGui::DragFloat("Tiling Factor", &component.tilingFactor, 0.1f, 0.0f, 100.0f);
+			});
+
+		drawComponent<Rigidbody2DComponent>("Rigidbody 2D", entity,
+			[](Rigidbody2DComponent& component)
+			{
+				char const* bodyTypeStrings[] = { "Static", "Dynamic", "Kinematic"};
+				char const* currentBodyTypeString = bodyTypeStrings[(int)component.type];
+				if (ImGui::BeginCombo("Projection", currentBodyTypeString))
+				{
+					for (int i = 0; i < 2; ++i)
+					{
+						bool isSelected = currentBodyTypeString == bodyTypeStrings[i];
+						if (ImGui::Selectable(bodyTypeStrings[i], isSelected))
+						{
+							currentBodyTypeString = bodyTypeStrings[i];
+							component.type = (Rigidbody2DComponent::BodyType)i;
+						}
+
+						if (isSelected)
+						{
+							ImGui::SetItemDefaultFocus();
+						}
+					}
+
+					ImGui::EndCombo();
+				}
+
+				ImGui::Checkbox("Fixed Rotation", &component.fixedRotation);
+			});
+
+		drawComponent<BoxCollider2DComponent>("Box Collider 2D", entity,
+			[](BoxCollider2DComponent& component)
+			{
+				ImGui::DragFloat2("Offset", glm::value_ptr(component.offset));
+				ImGui::DragFloat2("Size", glm::value_ptr(component.size));
+				ImGui::DragFloat("Density", &component.density, 0.01f, 0.0f, 1.0f);
+				ImGui::DragFloat("Friction", &component.friction, 0.01f, 0.0f, 1.0f);
+				ImGui::DragFloat("Restitution", &component.restitution, 0.01f, 0.0f, 1.0f);
+				ImGui::DragFloat("Restitution Threshold", &component.restitutionThreshold, 0.01f, 0.0f);
 			});
 	}
 }

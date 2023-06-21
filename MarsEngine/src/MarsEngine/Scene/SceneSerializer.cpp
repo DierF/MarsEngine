@@ -8,6 +8,29 @@
 namespace YAML
 {
 	template<>
+	struct convert<glm::vec2>
+	{
+		static Node encode(glm::vec2 const& rhs)
+		{
+			Node node;
+			node.push_back(rhs.x);
+			node.push_back(rhs.y);
+			return node;
+		}
+
+		static bool decode(Node const& node, glm::vec2& rhs)
+		{
+			if (!node.IsSequence() || node.size() != 2)
+			{
+				return false;
+			}
+			rhs.x = node[0].as<float>();
+			rhs.y = node[1].as<float>();
+			return true;
+		}
+	};
+
+	template<>
 	struct convert<glm::vec3>
 	{
 		static Node encode(glm::vec3 const& rhs)
@@ -62,17 +85,64 @@ namespace YAML
 
 namespace MarsEngine
 {
+	YAML::Emitter& operator<<(YAML::Emitter& out, glm::vec2 const& v)
+	{
+		out << YAML::Flow;
+		out << YAML::BeginSeq << v.x << v.y << YAML::EndSeq;
+		return out;
+	}
+	
 	YAML::Emitter& operator<<(YAML::Emitter& out, glm::vec3 const& v)
 	{
 		out << YAML::Flow;
 		out << YAML::BeginSeq << v.x << v.y << v.z << YAML::EndSeq;
 		return out;
 	}
+
 	YAML::Emitter& operator<<(YAML::Emitter& out, glm::vec4 const& v)
 	{
 		out << YAML::Flow;
 		out << YAML::BeginSeq << v.x << v.y << v.z << v.w << YAML::EndSeq;
 		return out;
+	}
+
+	static std::string ME_RigidBody2DBodyTypeToString(Rigidbody2DComponent::BodyType bodyType)
+	{
+		switch (bodyType)
+		{
+			case Rigidbody2DComponent::BodyType::Static:
+			{
+				return "Static";
+			}
+			case Rigidbody2DComponent::BodyType::Dynamic:
+			{
+				return "Dynamic";
+			}
+			case Rigidbody2DComponent::BodyType::Kinematic:
+			{
+				return "Kinematic";
+			}
+		}
+		ME_CORE_ASSERT(false);
+		return {};
+	}
+
+	static Rigidbody2DComponent::BodyType ME_StringToRigidBody2DBodyType(std::string bodyTypeString)
+	{
+		if (bodyTypeString == "Static")
+		{
+			return Rigidbody2DComponent::BodyType::Static;
+		}
+		if (bodyTypeString == "Dynamic")
+		{
+			return Rigidbody2DComponent::BodyType::Dynamic;
+		}
+		if (bodyTypeString == "Kinematic")
+		{
+			return Rigidbody2DComponent::BodyType::Kinematic;
+		}
+		ME_CORE_ASSERT(false);
+		return Rigidbody2DComponent::BodyType::Static;
 	}
 
 	SceneSerializer::SceneSerializer(Ref<Scene> const& scene)
@@ -86,7 +156,7 @@ namespace MarsEngine
 		out << YAML::Key << "Entity";
 		out << YAML::Value << "1145141919818"; //TODO: Entity ID goes here
 
-		if (entity.hasComponment<TagComponent>())
+		if (entity.hasComponent<TagComponent>())
 		{
 			out << YAML::Key << "TagComponent";
 			out << YAML::BeginMap;
@@ -97,7 +167,7 @@ namespace MarsEngine
 			out << YAML::EndMap;
 		}
 
-		if (entity.hasComponment<TransformComponent>())
+		if (entity.hasComponent<TransformComponent>())
 		{
 			out << YAML::Key << "TransformComponent";
 			out << YAML::BeginMap;
@@ -110,7 +180,7 @@ namespace MarsEngine
 			out << YAML::EndMap;
 		}
 
-		if (entity.hasComponment<CameraComponent>())
+		if (entity.hasComponent<CameraComponent>())
 		{
 			out << YAML::Key << "CameraComponent";
 			out << YAML::BeginMap;
@@ -135,13 +205,44 @@ namespace MarsEngine
 			out << YAML::EndMap;
 		}
 
-		if (entity.hasComponment<SpriteRendererComponent>())
+		if (entity.hasComponent<SpriteRendererComponent>())
 		{
 			out << YAML::Key << "SpriteRendererComponent";
 			out << YAML::BeginMap;
 
 			auto& sc = entity.getComponent<SpriteRendererComponent>();
 			out << YAML::Key << "Color" << YAML::Value << sc.color;
+
+			out << YAML::EndMap;
+		}
+
+		if (entity.hasComponent<Rigidbody2DComponent>())
+		{
+			out << YAML::Key << "Rigidbody2DComponent";
+			out << YAML::BeginMap;
+
+			auto& rb2dc = entity.getComponent<Rigidbody2DComponent>();
+			out << YAML::Key << "BodyType" << YAML::Value
+				<< ME_RigidBody2DBodyTypeToString(rb2dc.type);
+
+			out << YAML::Key << "FixedRotation" << YAML::Value << rb2dc.fixedRotation;
+
+			out << YAML::EndMap;
+		}
+
+		if (entity.hasComponent<BoxCollider2DComponent>())
+		{
+			out << YAML::Key << "BoxCollider2DComponent";
+			out << YAML::BeginMap;
+
+			auto& bc2dc = entity.getComponent<BoxCollider2DComponent>();
+			out << YAML::Key << "Offset" << YAML::Value << bc2dc.offset;
+			out << YAML::Key << "Size" << YAML::Value << bc2dc.size;
+			out << YAML::Key << "Density" << YAML::Value << bc2dc.density;
+			out << YAML::Key << "Friction" << YAML::Value << bc2dc.friction;
+			out << YAML::Key << "Restitution" << YAML::Value << bc2dc.restitution;
+			out << YAML::Key << "RestitutionThreshold" << YAML::Value
+				<< bc2dc.restitutionThreshold;
 
 			out << YAML::EndMap;
 		}
@@ -241,6 +342,26 @@ namespace MarsEngine
 				{
 					auto& src = deserializedEntity.addComponent<SpriteRendererComponent>();
 					src.color = spriteRendererC["Color"].as<glm::vec4>();
+				}
+
+				auto rigidbody2DC = entity["Rigidbody2DComponent"];
+				if (rigidbody2DC)
+				{
+					auto& rb2dc = deserializedEntity.addComponent<Rigidbody2DComponent>();
+					rb2dc.type = ME_StringToRigidBody2DBodyType(rigidbody2DC["BodyType"].as<std::string>());
+					rb2dc.fixedRotation = rigidbody2DC["FixedRotation"].as<bool>();
+				}
+
+				auto boxCollider2DC = entity["BoxCollider2DComponent"];
+				if (boxCollider2DC)
+				{
+					auto& bc2dc = deserializedEntity.addComponent<BoxCollider2DComponent>();
+					bc2dc.offset = boxCollider2DC["Offset"].as<glm::vec2>();
+					bc2dc.size = boxCollider2DC["Size"].as<glm::vec2>();
+					bc2dc.density = boxCollider2DC["Density"].as<float>();
+					bc2dc.friction = boxCollider2DC["Friction"].as<float>();
+					bc2dc.restitution = boxCollider2DC["Restitution"].as<float>();
+					bc2dc.restitutionThreshold = boxCollider2DC["RestitutionThreshold"].as<float>();
 				}
 			}
 		}

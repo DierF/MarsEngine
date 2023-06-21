@@ -37,6 +37,12 @@ namespace MarsEngine
 
 		void saveAsScene();
 
+		void onScenePlay();
+
+		void onSceneStop();
+
+		void UI_toolbar();
+
 	private:
 		OrthographicCameraController m_cameraController;
 
@@ -68,5 +74,12 @@ namespace MarsEngine
 
 		SceneHierarchyPanel m_sceneHierarchyPanel;
 		ContentBrowserPanel m_contentBrowserPanel;
+
+		Ref<Texture2D> m_playIcon, m_stopIcon;
+
+		enum class SceneState
+		{
+			Edit = 0, Play = 1
+		} m_sceneState = SceneState::Edit;
 	};
 }
