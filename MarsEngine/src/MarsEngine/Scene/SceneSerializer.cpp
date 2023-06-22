@@ -152,9 +152,11 @@ namespace MarsEngine
 
 	static void serializeEntity(YAML::Emitter& out, Entity entity)
 	{
+		ME_CORE_ASSERT(entity.hasComponent<IDComponent>());
+
 		out << YAML::BeginMap;
 		out << YAML::Key << "Entity";
-		out << YAML::Value << "1145141919818"; //TODO: Entity ID goes here
+		out << YAML::Value << entity.getGUID();
 
 		if (entity.hasComponent<TagComponent>())
 		{
@@ -296,7 +298,7 @@ namespace MarsEngine
 		{
 			for (auto entity : entities)
 			{
-				uint64_t uuid = entity["Entity"].as<uint64_t>();
+				uint64_t guid = entity["Entity"].as<uint64_t>();
 
 				std::string name;
 				auto tagC = entity["TagComponent"];
@@ -304,9 +306,9 @@ namespace MarsEngine
 				{
 					name = tagC["Tag"].as<std::string>();
 				}
-				ME_CORE_TRACE("Deserializing entity with ID = {}, name = {}", uuid, name);
+				ME_CORE_TRACE("Deserializing entity with ID = {}, name = {}", guid, name);
 
-				Entity deserializedEntity = m_scene->createEntity(name);
+				Entity deserializedEntity = m_scene->createEntityWithGUID(guid, name);
 
 				auto transformC = entity["TransformComponent"];
 				if (transformC)

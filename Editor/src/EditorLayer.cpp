@@ -233,6 +233,11 @@ namespace MarsEngine
 					openScene();
 				}
 
+				if (ImGui::MenuItem("Save", "Ctrl+S"))
+				{
+					saveScene();
+				}
+
 				if (ImGui::MenuItem("Save As...", "Ctrl+Shift+S"))
 				{
 					saveAsScene();
@@ -412,54 +417,69 @@ namespace MarsEngine
 			|| Input::isKeyPressed(ME_KEY_RIGHT_CONTROL);
 		bool shift = Input::isKeyPressed(ME_KEY_LEFT_SHIFT)
 			|| Input::isKeyPressed(ME_KEY_RIGHT_SHIFT);
+
 		switch (e.getKeyCode())
 		{
-		case ME_KEY_N:
-		{
-			if (control)
+			case ME_KEY_N:
 			{
-				newScene();
+				if (control)
+				{
+					newScene();
+				}
+				break;
 			}
-			break;
-		}
-		case ME_KEY_O:
-		{
-			if (control)
+			case ME_KEY_O:
 			{
-				openScene();
+				if (control)
+				{
+					openScene();
+				}
+				break;
 			}
-			break;
-		}
-		case ME_KEY_S:
-		{
-			if (control && shift)
+			case ME_KEY_S:
 			{
-				saveAsScene();
+				if (control && shift)
+				{
+					saveAsScene();
+				}
+				else if (control)
+				{
+					saveScene();
+				}
+				break;
 			}
-			break;
-		}
 
-		//Gizmos
-		case ME_KEY_Q:
-		{
-			m_gizmoType = -1;
-			break;
-		}
-		case ME_KEY_W:
-		{
-			m_gizmoType = ImGuizmo::OPERATION::TRANSLATE;
-			break;
-		}
-		case ME_KEY_E:
-		{
-			m_gizmoType = ImGuizmo::OPERATION::ROTATE;
-			break;
-		}
-		case ME_KEY_R:
-		{
-			m_gizmoType = ImGuizmo::OPERATION::SCALE;
-			break;
-		}
+			//duplicate
+			case ME_KEY_D:
+			{
+				if (control)
+				{
+					onDuplicateEntity();
+				}
+				break;
+			}
+
+			//Gizmos
+			case ME_KEY_Q:
+			{
+				m_gizmoType = -1;
+				break;
+			}
+			case ME_KEY_W:
+			{
+				m_gizmoType = ImGuizmo::OPERATION::TRANSLATE;
+				break;
+			}
+			case ME_KEY_E:
+			{
+				m_gizmoType = ImGuizmo::OPERATION::ROTATE;
+				break;
+			}
+			case ME_KEY_R:
+			{
+				m_gizmoType = ImGuizmo::OPERATION::SCALE;
+				break;
+			}
 		}
 	}
 
@@ -480,6 +500,7 @@ namespace MarsEngine
 		m_activeScene = createRef<Scene>();
 		m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
 		m_sceneHierarchyPanel.setContext(m_activeScene);
+		m_editorScenePath = std::filesystem::path();
 	}
 
 	void EditorLayer::openScene()
@@ -493,12 +514,38 @@ namespace MarsEngine
 
 	void EditorLayer::openScene(std::filesystem::path const& path)
 	{
-		m_activeScene = createRef<Scene>();
-		m_activeScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
-		m_sceneHierarchyPanel.setContext(m_activeScene);
+		if (m_sceneState != SceneState::Edit)
+		{
+			onSceneStop();
+		}
+		if (path.extension().string() != ".mars")
+		{
+			ME_WARN("Not a scene file", path.filename().string());
+			return;
+		}
 
-		SceneSerializer serializer(m_activeScene);
-		serializer.deserialize(path.string());
+		auto newScene = createRef<Scene>();
+		SceneSerializer serializer(newScene);
+		if (serializer.deserialize(path.string()))
+		{
+			m_editorScene = newScene;
+			m_editorScene->onViewportResize((uint32_t)m_viewportSize.x, (uint32_t)m_viewportSize.y);
+			m_sceneHierarchyPanel.setContext(m_editorScene);
+			m_activeScene = m_editorScene;
+			m_editorScenePath = path;
+		}
+	}
+
+	void EditorLayer::saveScene()
+	{
+		if (m_editorScenePath.empty())
+		{
+			saveAsScene();
+		}
+		else
+		{
+			serializeScene(m_activeScene, m_editorScenePath);
+		}
 	}
 
 	void EditorLayer::saveAsScene()
@@ -506,21 +553,45 @@ namespace MarsEngine
 		std::string filepath = FileDialog::saveFile("MarsEngine Scene (*.mars)\0*.mars\0");
 		if (!filepath.empty())
 		{
-			SceneSerializer serializer(m_activeScene);
-			serializer.serialize(filepath);
+			serializeScene(m_activeScene, filepath);
+			
+			m_editorScenePath = filepath;
 		}
+	}
+
+	void EditorLayer::serializeScene(Ref<Scene> scene, std::filesystem::path const& path)
+	{
+		SceneSerializer serializer(m_activeScene);
+		serializer.serialize(path.string());
 	}
 
 	void EditorLayer::onScenePlay()
 	{
-		m_activeScene->onRuntimeStart();
 		m_sceneState = SceneState::Play;
+		m_activeScene = Scene::copy(m_editorScene);
+		m_activeScene->onRuntimeStart();
+		m_sceneHierarchyPanel.setContext(m_activeScene);
 	}
 
 	void EditorLayer::onSceneStop()
 	{
-		m_activeScene->onRuntimeStop();
 		m_sceneState = SceneState::Edit;
+		m_activeScene->onRuntimeStop();
+		m_activeScene = m_editorScene;
+		m_sceneHierarchyPanel.setContext(m_activeScene);
+	}
+
+	void EditorLayer::onDuplicateEntity()
+	{
+		if (m_sceneState != SceneState::Edit)
+		{
+			return;
+		}
+		auto selectedEntity = m_sceneHierarchyPanel.getSelectedEntity();
+		if (selectedEntity)
+		{
+			m_editorScene->duplicateEntity(selectedEntity);
+		}
 	}
 
 }

@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "Component.h"
 #include "Entity.h"
+#include "ScriptableEntity.h"
 #include "glm/glm.hpp"
 #include "box2d/b2_world.h"
 #include "box2d/b2_body.h"
@@ -42,9 +43,67 @@ namespace MarsEngine
 	{
 	}
 
+	template<typename Component>
+	static void copyComponent(entt::registry& copy, entt::registry& src, std::unordered_map<GUID, entt::entity> const& enttMap)
+	{
+		auto view = src.view<Component>();
+		for (auto e : view)
+		{
+			auto guid = src.get<IDComponent>(e).id;
+			auto dstenttID = enttMap.at(guid);
+
+			auto& component = src.get<Component>(e);
+			copy.emplace_or_replace<Component>(dstenttID, component);
+		}
+	}
+
+	template<typename Component>
+	static void copyComponentIfExists(Entity dst, Entity src)
+	{
+		if (src.hasComponent<Component>())
+		{
+			dst.addOrReplaceComponent<Component>(src.getComponent<Component>());
+		}
+	}
+
+	Ref<Scene> Scene::copy(Ref<Scene> src)
+	{
+		auto copy = createRef<Scene>();
+		copy->m_viewportWidth = src->m_viewportWidth;
+		copy->m_viewportHeight = src->m_viewportHeight;
+
+		auto& srcSceneRegistry = src->m_registry;
+		auto& copySceneRegistry = copy->m_registry;
+		std::unordered_map<GUID, entt::entity> enttMap;
+		
+		auto idview = srcSceneRegistry.view<IDComponent>();
+		for (auto e : idview)
+		{
+			auto guid = srcSceneRegistry.get<IDComponent>(e).id;
+			auto const& name = srcSceneRegistry.get<TagComponent>(e).tag;
+			auto newEntity = copy->createEntityWithGUID(guid, name);
+			enttMap[guid] = (entt::entity)newEntity;
+		}
+
+		copyComponent<TransformComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+		copyComponent<SpriteRendererComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+		copyComponent<CameraComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+		copyComponent<NativeScriptComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+		copyComponent<Rigidbody2DComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+		copyComponent<BoxCollider2DComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+
+		return copy;
+	}
+
 	Entity Scene::createEntity(std::string const& name)
 	{
+		return createEntityWithGUID(GUID(), name);
+	}
+
+	Entity Scene::createEntityWithGUID(GUID guid, std::string const& name)
+	{
 		Entity entity = { m_registry.create(), this };
+		entity.addComponent<IDComponent>(guid);
 		entity.addComponent<TransformComponent>();
 		auto& tag = entity.addComponent<TagComponent>();
 		tag.tag = name.empty() ? "Entity" : name;
@@ -193,6 +252,19 @@ namespace MarsEngine
 		}
 	}
 
+	void Scene::duplicateEntity(Entity entity)
+	{
+		auto name = entity.getName();
+		auto newEntity = createEntity(name);
+
+		copyComponentIfExists<TransformComponent>(newEntity, entity);
+		copyComponentIfExists<SpriteRendererComponent>(newEntity, entity);
+		copyComponentIfExists<CameraComponent>(newEntity, entity);
+		copyComponentIfExists<NativeScriptComponent>(newEntity, entity);
+		copyComponentIfExists<Rigidbody2DComponent>(newEntity, entity);
+		copyComponentIfExists<BoxCollider2DComponent>(newEntity, entity);
+	}
+
 	Entity Scene::getPrimaryCameraEntity()
 	{
 		auto view = m_registry.view<CameraComponent>();
@@ -245,6 +317,11 @@ namespace MarsEngine
 
 	template<>
 	void Scene::onComponentAdded<BoxCollider2DComponent>(Entity entity, BoxCollider2DComponent& component)
+	{
+	}
+
+	template<>
+	void Scene::onComponentAdded<IDComponent>(Entity entity, IDComponent& component)
 	{
 	}
 }

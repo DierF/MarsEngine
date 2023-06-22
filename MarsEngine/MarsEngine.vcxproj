@@ -150,6 +150,7 @@
     <ClInclude Include="src\MarsEngine\Core\Application.h" />
     <ClInclude Include="src\MarsEngine\Core\Core.h" />
     <ClInclude Include="src\MarsEngine\Core\EntryPoint.h" />
+    <ClInclude Include="src\MarsEngine\Core\GUID.h" />
     <ClInclude Include="src\MarsEngine\Core\Input.h" />
     <ClInclude Include="src\MarsEngine\Core\KeyCode.h" />
     <ClInclude Include="src\MarsEngine\Core\Layer.h" />
@@ -617,6 +618,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Core\Application.cpp" />
+    <ClCompile Include="src\MarsEngine\Core\GUID.cpp" />
     <ClCompile Include="src\MarsEngine\Core\Layer.cpp" />
     <ClCompile Include="src\MarsEngine\Core\LayerStack.cpp" />
     <ClCompile Include="src\MarsEngine\Core\Log.cpp" />

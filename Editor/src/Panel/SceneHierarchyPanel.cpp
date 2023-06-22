@@ -26,25 +26,28 @@ namespace MarsEngine
 	{
 		ImGui::Begin("Scene Hierarchy");
 
-		m_context->m_registry.each([&](auto entityID)
-			{
-				Entity entity{ entityID, m_context.get() };
-				drawEntityNode(entity);
-			});
-
-		if (ImGui::IsMouseDown(0) && ImGui::IsWindowHovered())
+		if (m_context)
 		{
-			m_selectionContext = {};
-		}
+			m_context->m_registry.each([&](auto entityID)
+				{
+					Entity entity{ entityID, m_context.get() };
+					drawEntityNode(entity);
+				});
 
-		if (ImGui::BeginPopupContextWindow(0,
-			ImGuiPopupFlags_MouseButtonRight | ImGuiPopupFlags_NoOpenOverItems))
-		{
-			if (ImGui::MenuItem("Create Empty Entity"))
+			if (ImGui::IsMouseDown(0) && ImGui::IsWindowHovered())
 			{
-				m_context->createEntity("Empty Entity");
+				m_selectionContext = {};
 			}
-			ImGui::EndPopup();
+
+			if (ImGui::BeginPopupContextWindow(0,
+				ImGuiPopupFlags_MouseButtonRight | ImGuiPopupFlags_NoOpenOverItems))
+			{
+				if (ImGui::MenuItem("Create Empty Entity"))
+				{
+					m_context->createEntity("Empty Entity");
+				}
+				ImGui::EndPopup();
+			}
 		}
 
 		ImGui::End();

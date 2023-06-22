@@ -1,13 +1,22 @@
 #pragma once
 
 #include "SceneCamera.h"
-#include "ScriptableEntity.h"
+#include "MarsEngine/Core/GUID.h"
 #include "MarsEngine/Renderer/Texture.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
 namespace MarsEngine
 {
+	struct IDComponent
+	{
+		GUID id;
+
+		IDComponent() = default;
+
+		IDComponent(IDComponent const&) = default;
+	};
+
 	struct TagComponent
 	{
 		std::string tag;
@@ -70,6 +79,8 @@ namespace MarsEngine
 
 		CameraComponent(CameraComponent const&) = default;
 	};
+
+	class ScriptableEntity;
 
 	struct NativeScriptComponent
 	{

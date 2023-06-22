@@ -35,11 +35,17 @@ namespace MarsEngine
 
 		void openScene(std::filesystem::path const& path);
 
+		void saveScene();
+
 		void saveAsScene();
+
+		void serializeScene(Ref<Scene> scene, std::filesystem::path const& path);
 
 		void onScenePlay();
 
 		void onSceneStop();
+
+		void onDuplicateEntity();
 
 		void UI_toolbar();
 
@@ -51,6 +57,10 @@ namespace MarsEngine
 		Ref<Framebuffer> m_framebuffer;
 
 		Ref<Scene> m_activeScene;
+		Ref<Scene> m_editorScene;
+
+		std::filesystem::path m_editorScenePath;
+
 		Entity m_squareEntity;
 		Entity m_cameraEntity;
 		Entity m_secondCameraEntity;

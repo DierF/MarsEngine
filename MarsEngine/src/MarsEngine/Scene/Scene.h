@@ -2,6 +2,8 @@
 
 #include "entt.hpp"
 #include "MarsEngine/Core/Timestep.h"
+#include "MarsEngine/Core/GUID.h"
+#include "MarsEngine/Core/Core.h"
 #include "MarsEngine/Renderer/EditorCamera.h"
 
 class b2World;
@@ -17,7 +19,11 @@ namespace MarsEngine
 
 		~Scene();
 
+		static Ref<Scene> copy(Ref<Scene> scene);
+
 		Entity createEntity(std::string const& name = std::string());
+
+		Entity createEntityWithGUID(GUID guid, std::string const& name = std::string());
 
 		void destroyEntity(Entity entity);
 
@@ -29,6 +35,8 @@ namespace MarsEngine
 		void onUpdateRuntime(Timestep ts);
 
 		void onViewportResize(uint32_t width, uint32_t height);
+
+		void duplicateEntity(Entity entity);
 
 		Entity getPrimaryCameraEntity();
 
