@@ -5,10 +5,10 @@
 #include "OrthographicCamera.h"
 #include "Shader.h"
 
-namespace MarsEngine {
-
-	class Renderer {
-
+namespace MarsEngine
+{
+	class Renderer
+	{
 	public:
 		static void init();
 
@@ -23,10 +23,9 @@ namespace MarsEngine {
 		inline static RendererAPI::API getAPI() { return RendererAPI::getAPI(); }
 
 	private:
-		struct SceneData {
-
+		struct SceneData
+		{
 			glm::mat4 ViewProjectionMatrix;
-
 		};
 
 		static SceneData* m_sceneData;

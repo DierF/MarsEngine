@@ -2,10 +2,10 @@
 
 #include "MarsEngine/Renderer/RendererAPI.h"
 
-namespace MarsEngine {
-
-	class OpenGLRendererAPI : public RendererAPI {
-
+namespace MarsEngine
+{
+	class OpenGLRendererAPI : public RendererAPI
+	{
 	public:
 		virtual void init() override;
 
@@ -16,5 +16,9 @@ namespace MarsEngine {
 		virtual void clear() override;
 
 		virtual void drawIndexed(Ref<VertexArray> const& vertexArray, uint32_t indexCount = 0) override;
+		
+		virtual void drawLines(Ref<VertexArray> const& vertexArray, uint32_t vertexCount) override;
+		
+		virtual void setLineWidth(float width) override;
 	};
 }

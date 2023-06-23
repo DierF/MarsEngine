@@ -87,6 +87,7 @@ namespace MarsEngine
 
 		copyComponent<TransformComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
 		copyComponent<SpriteRendererComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+		copyComponent<CircleRendererComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
 		copyComponent<CameraComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
 		copyComponent<NativeScriptComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
 		copyComponent<Rigidbody2DComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
@@ -162,13 +163,24 @@ namespace MarsEngine
 	void Scene::onUpdateEditor(Timestep ts, EditorCamera& camera)
 	{
 		Renderer2D::beginScene(camera);
-
-		auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
-		for (auto entity : group)
 		{
-			auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+			auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+			for (auto entity : group)
+			{
+				auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-			Renderer2D::drawSprite(transformC.getTransform(), spriteC, (int)entity);
+				Renderer2D::drawSprite(transformC.getTransform(), spriteC, (int)entity);
+			}
+		}
+
+		{
+			auto view = m_registry.view<TransformComponent, CircleRendererComponent>();
+			for (auto entity : view)
+			{
+				auto [transformC, circleC] = view.get<TransformComponent, CircleRendererComponent>(entity);
+
+				Renderer2D::drawCircle(transformC.getTransform(), circleC.color, circleC.thickness, circleC.fade, (int)entity);
+			}
 		}
 
 		Renderer2D::endScene();
@@ -223,15 +235,25 @@ namespace MarsEngine
 		if (mainCamera)
 		{
 			Renderer2D::beginScene(mainCamera->getProjection(), cameraTransform);
-
-			auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
-			for (auto entity : group)
 			{
-				auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+				auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+				for (auto entity : group)
+				{
+					auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-				Renderer2D::drawQuad(transformC.getTransform(), spriteC.color);
+					Renderer2D::drawSprite(transformC.getTransform(), spriteC, (int)entity);
+				}
 			}
 
+			{
+				auto view = m_registry.view<TransformComponent, CircleRendererComponent>();
+				for (auto entity : view)
+				{
+					auto [transformC, circleC] = view.get<TransformComponent, CircleRendererComponent>(entity);
+
+					Renderer2D::drawCircle(transformC.getTransform(), circleC.color, circleC.thickness, circleC.fade, (int)entity);
+				}
+			}
 			Renderer2D::endScene();
 		}
 	}
@@ -259,6 +281,7 @@ namespace MarsEngine
 
 		copyComponentIfExists<TransformComponent>(newEntity, entity);
 		copyComponentIfExists<SpriteRendererComponent>(newEntity, entity);
+		copyComponentIfExists<CircleRendererComponent>(newEntity, entity);
 		copyComponentIfExists<CameraComponent>(newEntity, entity);
 		copyComponentIfExists<NativeScriptComponent>(newEntity, entity);
 		copyComponentIfExists<Rigidbody2DComponent>(newEntity, entity);
@@ -297,6 +320,11 @@ namespace MarsEngine
 
 	template<>
 	void Scene::onComponentAdded<SpriteRendererComponent>(Entity entity, SpriteRendererComponent& component)
+	{
+	}
+
+	template<>
+	void Scene::onComponentAdded<CircleRendererComponent>(Entity entity, CircleRendererComponent& component)
 	{
 	}
 

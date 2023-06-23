@@ -218,6 +218,19 @@ namespace MarsEngine
 			out << YAML::EndMap;
 		}
 
+		if (entity.hasComponent<CircleRendererComponent>())
+		{
+			out << YAML::Key << "CircleRendererComponent";
+			out << YAML::BeginMap;
+
+			auto& cc = entity.getComponent<CircleRendererComponent>();
+			out << YAML::Key << "Color" << YAML::Value << cc.color;
+			out << YAML::Key << "Thickness" << YAML::Value << cc.thickness;
+			out << YAML::Key << "Fade" << YAML::Value << cc.fade;
+
+			out << YAML::EndMap;
+		}
+
 		if (entity.hasComponent<Rigidbody2DComponent>())
 		{
 			out << YAML::Key << "Rigidbody2DComponent";
@@ -344,6 +357,15 @@ namespace MarsEngine
 				{
 					auto& src = deserializedEntity.addComponent<SpriteRendererComponent>();
 					src.color = spriteRendererC["Color"].as<glm::vec4>();
+				}
+
+				auto circleRendererC = entity["CircleRendererComponent"];
+				if (circleRendererC)
+				{
+					auto& crc = deserializedEntity.addComponent<CircleRendererComponent>();
+					crc.color = circleRendererC["Color"].as<glm::vec4>();
+					crc.thickness = circleRendererC["Thickness"].as<float>();
+					crc.fade = circleRendererC["Fade"].as<float>();
 				}
 
 				auto rigidbody2DC = entity["Rigidbody2DComponent"];

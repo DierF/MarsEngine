@@ -43,7 +43,17 @@ namespace MarsEngine
 		static void drawRotatedQuad(glm::vec2 const& position, glm::vec2 const& size, float rotation, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
 		static void drawRotatedQuad(glm::vec3 const& position, glm::vec2 const& size, float rotation, Ref<SubTexture2D> const& subTexture, float tilingFactor = 1.0f, glm::vec4 const& tintColor = glm::vec4(1.0f));
 	
+		static void drawCircle(glm::mat4 const& transform, glm::vec4 const& color, float thickness = 1.0f, float fade = 0.005f, int entityID = -1);
+		
+		static void drawLine(glm::vec3 const& position0, glm::vec3 const& position1, glm::vec4 const& color, int entityID = -1);
+		
+		static void drawRect(glm::vec3 const& position, glm::vec2 const& size, glm::vec4 const& color, int entityID = -1);
+		static void drawRect(glm::mat4 const& transform, glm::vec4 const& color, int entityID = -1);
+
 		static void drawSprite(glm::mat4 const& transform, SpriteRendererComponent& spriteC, int entityID);
+		
+		static float getLineWidth();
+		static void setLineWidth(float width);
 		
 		struct Statistics
 		{

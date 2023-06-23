@@ -544,7 +544,7 @@ namespace MarsEngine
 		}
 		else
 		{
-			serializeScene(m_activeScene, m_editorScenePath);
+			serializeScene(m_editorScene, m_editorScenePath);
 		}
 	}
 
@@ -553,15 +553,14 @@ namespace MarsEngine
 		std::string filepath = FileDialog::saveFile("MarsEngine Scene (*.mars)\0*.mars\0");
 		if (!filepath.empty())
 		{
-			serializeScene(m_activeScene, filepath);
-			
+			serializeScene(m_editorScene, filepath);
 			m_editorScenePath = filepath;
 		}
 	}
 
 	void EditorLayer::serializeScene(Ref<Scene> scene, std::filesystem::path const& path)
 	{
-		SceneSerializer serializer(m_activeScene);
+		SceneSerializer serializer(scene);
 		serializer.serialize(path.string());
 	}
 

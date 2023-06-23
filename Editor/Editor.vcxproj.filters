@@ -24,4 +24,7 @@
       <Filter>Panel</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\LineTexture.glsl" />
+  </ItemGroup>
 </Project>

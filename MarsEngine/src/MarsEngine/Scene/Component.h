@@ -67,6 +67,16 @@ namespace MarsEngine
 		SpriteRendererComponent(glm::vec4 const& color) : color(color) {}
 	};
 
+	struct CircleRendererComponent
+	{
+		glm::vec4 color{ 1.0f, 1.0f, 1.0f, 1.0f };
+		float thickness = 1.0f;
+		float fade = 0.005f;
+
+		CircleRendererComponent() = default;
+		CircleRendererComponent(CircleRendererComponent const&) = default;
+	};
+
 	struct CameraComponent
 	{
 		SceneCamera camera;

@@ -257,6 +257,14 @@ namespace MarsEngine
 					ImGui::CloseCurrentPopup();
 				}
 			}
+			if (!m_selectionContext.hasComponent<CircleRendererComponent>())
+			{
+				if (ImGui::MenuItem("Circle Renderer"))
+				{
+					m_selectionContext.addComponent<CircleRendererComponent>();
+					ImGui::CloseCurrentPopup();
+				}
+			}
 			if (!m_selectionContext.hasComponent<Rigidbody2DComponent>())
 			{
 				if (ImGui::MenuItem("Rigidbody 2D"))
@@ -382,6 +390,14 @@ namespace MarsEngine
 				}
 
 				ImGui::DragFloat("Tiling Factor", &component.tilingFactor, 0.1f, 0.0f, 100.0f);
+			});
+
+		drawComponent<CircleRendererComponent>("Circle Renderer", entity,
+			[](CircleRendererComponent& component)
+			{
+				ImGui::ColorEdit4("Color", glm::value_ptr(component.color));
+				ImGui::DragFloat("Thickness", &component.thickness, 0.025f, 0.0f, 1.0f);
+				ImGui::DragFloat("Fade", &component.fade, 0.00025f, 0.0f, 1.0f);
 			});
 
 		drawComponent<Rigidbody2DComponent>("Rigidbody 2D", entity,

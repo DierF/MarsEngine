@@ -2,31 +2,44 @@
 
 #include "RendererAPI.h"
 
-namespace MarsEngine {
-
-	class RenderCommand {
-
+namespace MarsEngine
+{
+	class RenderCommand
+	{
 	public:
-		inline static void init()
+		static void init()
 		{
 			s_rendererAPI->init();
 		}
 
-		inline static void setViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height)
+		static void setViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height)
 		{
 			s_rendererAPI->setViewport(x, y, width, height);
 		}
 
-		inline static void setClearColor(glm::vec4 const& color) {
+		static void setClearColor(glm::vec4 const& color)
+		{
 			s_rendererAPI->setClearColor(color);
 		}
 
-		inline static void clear() {
+		static void clear()
+		{
 			s_rendererAPI->clear();
 		}
 
-		inline static void drawIndexed(std::shared_ptr<VertexArray> const& vertexArray, uint32_t indexCount = 0) {
+		static void drawIndexed(std::shared_ptr<VertexArray> const& vertexArray, uint32_t indexCount = 0)
+		{
 			s_rendererAPI->drawIndexed(vertexArray, indexCount);
+		}
+
+		static void drawLines(std::shared_ptr<VertexArray> const& vertexArray, uint32_t vertexCount)
+		{
+			s_rendererAPI->drawLines(vertexArray, vertexCount);
+		}
+
+		static void setLineWidth(float width)
+		{
+			s_rendererAPI->setLineWidth(width);
 		}
 
 	private:

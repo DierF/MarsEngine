@@ -4,10 +4,10 @@
 #include <memory>
 #include "VertexArray.h"
 
-namespace MarsEngine {
-
-	class RendererAPI {
-
+namespace MarsEngine
+{
+	class RendererAPI
+	{
 	public:
 		enum class API
 		{
@@ -24,6 +24,10 @@ namespace MarsEngine {
 		virtual void clear() = 0;
 
 		virtual void drawIndexed(Ref<VertexArray> const& vertexArray, uint32_t indexCount = 0) = 0;
+
+		virtual void drawLines(Ref<VertexArray> const& vertexArray, uint32_t vertexCount) = 0;
+
+		virtual void setLineWidth(float width) = 0;
 
 		inline static API getAPI() { return s_API; }
 
