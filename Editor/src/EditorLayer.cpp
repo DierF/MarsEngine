@@ -18,6 +18,7 @@ namespace MarsEngine
 	{
 		m_checkerboardTexture = Texture2D::create("assets/textures/Checkerboard.png");
 		m_playIcon = Texture2D::create("assets/icons/PlayButton.png");
+		m_simulateIcon = Texture2D::create("assets/icons/SimulateButton.png");
 		m_stopIcon = Texture2D::create("assets/icons/StopButton.png");
 
 		FramebufferSpecification fbSpec;
@@ -27,7 +28,8 @@ namespace MarsEngine
 		fbSpec.height = 720;
 		m_framebuffer = Framebuffer::create(fbSpec);
 
-		m_activeScene = createRef<Scene>();
+		m_editorScene = createRef<Scene>();
+		m_activeScene = m_editorScene;
 
 		m_editorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
 
@@ -123,6 +125,12 @@ namespace MarsEngine
 				m_activeScene->onUpdateEditor(ts, m_editorCamera);
 				break;
 			}
+			case SceneState::Simulate:
+			{
+				m_editorCamera.onUpdate(ts);
+				m_activeScene->onUpdateSimulation(ts, m_editorCamera);
+				break;
+			}
 			case SceneState::Play:
 			{
 				m_activeScene->onUpdateRuntime(ts);
@@ -150,6 +158,8 @@ namespace MarsEngine
 				m_hoveredEntity = { (entt::entity)pixelData, m_activeScene.get() };
 			}
 		}
+
+		onOverlayRender();
 
 		m_framebuffer->unbind();
 	}
@@ -274,6 +284,10 @@ namespace MarsEngine
 
 		ImGui::End();
 
+		ImGui::Begin("Settings");
+		ImGui::Checkbox("Show physics colliders", &m_showPhysicsColliders);
+		ImGui::End();
+
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 		ImGui::Begin("Viewport");
 
@@ -375,23 +389,58 @@ namespace MarsEngine
 		ImGui::Begin("##toolbar", nullptr, ImGuiWindowFlags_NoDecoration
 			| ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);
 
-		auto size = ImGui::GetWindowHeight() - 4.0f;
-		auto icon = m_sceneState == SceneState::Edit ? m_playIcon : m_stopIcon;
-		ImGui::SetCursorPosX((ImGui::GetWindowContentRegionMax().x * 0.5f) - (size * 0.5f));
+		bool toolbarEnabled = (bool)m_activeScene;
 
-		if (ImGui::ImageButton((ImTextureID)icon->getRendererID(),
-			ImVec2(size, size), ImVec2(0, 0), ImVec2(1, 1), 0))
+		ImVec4 tintColor = ImVec4(1, 1, 1, 1);
+		if (!toolbarEnabled)
 		{
-			if (m_sceneState == SceneState::Edit)
-			{
-				onScenePlay();
-			}
-			else if (m_sceneState == SceneState::Play)
-			{
-				onSceneStop();
-			}
+			tintColor.w = 0.5f;
 		}
 
+		auto size = ImGui::GetWindowHeight() - 4.0f;
+		ImGui::SetCursorPosX((ImGui::GetWindowContentRegionMax().x * 0.5f) - (size * 0.5f));
+
+		bool hasPlayButton = m_sceneState == SceneState::Edit || m_sceneState == SceneState::Play;
+		bool hasSimulateButton = m_sceneState == SceneState::Edit || m_sceneState == SceneState::Simulate;
+
+		if (hasPlayButton)
+		{
+			Ref<Texture2D> icon = (m_sceneState == SceneState::Edit || m_sceneState == SceneState::Simulate) ? m_playIcon : m_stopIcon;
+			if (ImGui::ImageButton((ImTextureID)(uint64_t)icon->getRendererID(),
+				ImVec2(size, size), ImVec2(0, 0), ImVec2(1, 1), 0,
+				ImVec4(0.0f, 0.0f, 0.0f, 0.0f), tintColor) && toolbarEnabled)
+			{
+				if (m_sceneState == SceneState::Edit || m_sceneState == SceneState::Simulate)
+				{
+					onScenePlay();
+				}
+				else if (m_sceneState == SceneState::Play)
+				{
+					onSceneStop();
+				}
+			}
+		}
+		if (hasSimulateButton)
+		{
+			if (hasPlayButton)
+			{
+				ImGui::SameLine();
+			}
+			Ref<Texture2D> icon = (m_sceneState == SceneState::Edit || m_sceneState == SceneState::Play) ? m_simulateIcon : m_stopIcon;
+			if (ImGui::ImageButton((ImTextureID)(uint64_t)icon->getRendererID(),
+				ImVec2(size, size), ImVec2(0, 0), ImVec2(1, 1), 0,
+				ImVec4(0.0f, 0.0f, 0.0f, 0.0f), tintColor) && toolbarEnabled)
+			{
+				if (m_sceneState == SceneState::Edit || m_sceneState == SceneState::Play)
+				{
+					onSceneSimulate();
+				}
+				else if (m_sceneState == SceneState::Simulate)
+				{
+					onSceneStop();
+				}
+			}
+		}
 		ImGui::PopStyleVar(2);
 		ImGui::PopStyleColor(3);
 		ImGui::End();
@@ -495,6 +544,62 @@ namespace MarsEngine
 		return false;
 	}
 
+	void EditorLayer::onOverlayRender()
+	{
+		if (m_sceneState == SceneState::Play)
+		{
+			auto camera = m_activeScene->getPrimaryCameraEntity();
+			if (!camera)
+			{
+				return;
+			}
+			Renderer2D::beginScene(camera.getComponent<CameraComponent>().camera,
+				camera.getComponent<TransformComponent>().getTransform());
+		}
+		else
+		{
+			Renderer2D::beginScene(m_editorCamera);
+		}
+
+		if (m_showPhysicsColliders)
+		{
+			{
+				auto view = m_activeScene->getAllEntitiesWith<TransformComponent, BoxCollider2DComponent>();
+				for (auto entity : view)
+				{
+					auto [tc, bc2dc] = view.get<TransformComponent, BoxCollider2DComponent>(entity);
+
+					auto translation = tc.translation + glm::vec3(bc2dc.offset, 0.001f);
+					auto scale = tc.scale * glm::vec3(bc2dc.size * 2.0f, 1.0f);
+
+					auto transform = glm::translate(glm::mat4(1.0f), translation)
+						* glm::rotate(glm::mat4(1.0f), tc.rotation.z, glm::vec3(0.0f, 0.0f, 1.0f))
+						* glm::scale(glm::mat4(1.0f), scale);
+
+					Renderer2D::drawRect(transform, glm::vec4(0, 1, 0, 1));
+				}
+			}
+
+			{
+				auto view = m_activeScene->getAllEntitiesWith<TransformComponent, CircleCollider2DComponent>();
+				for (auto entity : view)
+				{
+					auto [tc, cc2dc] = view.get<TransformComponent, CircleCollider2DComponent>(entity);
+
+					auto translation = tc.translation + glm::vec3(cc2dc.offset, 0.001f);
+					auto scale = tc.scale * glm::vec3(cc2dc.radius * 2.0f);
+
+					auto transform = glm::translate(glm::mat4(1.0f), translation)
+						* glm::scale(glm::mat4(1.0f), scale);
+
+					Renderer2D::drawCircle(transform, glm::vec4(0, 1, 0, 1), 0.01f);
+				}
+			}
+		}
+
+		Renderer2D::endScene();
+	}
+
 	void EditorLayer::newScene()
 	{
 		m_activeScene = createRef<Scene>();
@@ -566,16 +671,39 @@ namespace MarsEngine
 
 	void EditorLayer::onScenePlay()
 	{
+		if (m_sceneState == SceneState::Simulate)
+		{
+			onSceneStop();
+		}
 		m_sceneState = SceneState::Play;
 		m_activeScene = Scene::copy(m_editorScene);
 		m_activeScene->onRuntimeStart();
 		m_sceneHierarchyPanel.setContext(m_activeScene);
 	}
 
+	void EditorLayer::onSceneSimulate()
+	{
+		if (m_sceneState == SceneState::Play)
+		{
+			onSceneStop();
+		}
+		m_sceneState = SceneState::Simulate;
+		m_activeScene = Scene::copy(m_editorScene);
+		m_activeScene->onSimulationStart();
+		m_sceneHierarchyPanel.setContext(m_activeScene);
+	}
+
 	void EditorLayer::onSceneStop()
 	{
+		if (m_sceneState == SceneState::Play)
+		{
+			m_activeScene->onRuntimeStop();
+		}
+		else // m_sceneState == SceneState::Simulate
+		{
+			m_activeScene->onSimulationStop();
+		}
 		m_sceneState = SceneState::Edit;
-		m_activeScene->onRuntimeStop();
 		m_activeScene = m_editorScene;
 		m_sceneHierarchyPanel.setContext(m_activeScene);
 	}

@@ -28,9 +28,16 @@ namespace MarsEngine
 		void destroyEntity(Entity entity);
 
 		void onRuntimeStart();
+
 		void onRuntimeStop();
 
+		void onSimulationStart();
+
+		void onSimulationStop();
+
 		void onUpdateEditor(Timestep ts, EditorCamera& camera);
+
+		void onUpdateSimulation(Timestep ts, EditorCamera& camera);
 
 		void onUpdateRuntime(Timestep ts);
 
@@ -40,9 +47,21 @@ namespace MarsEngine
 
 		Entity getPrimaryCameraEntity();
 
+		template<typename... Components>
+		auto getAllEntitiesWith()
+		{
+			return m_registry.view<Components...>();
+		}
+
 	private:
 		template<typename T>
 		void onComponentAdded(Entity entity, T& component);
+
+		void onPhysics2DStart();
+
+		void onPhysics2DStop();
+
+		void renderScene(EditorCamera& camera);
 
 	private:
 		entt::registry m_registry;

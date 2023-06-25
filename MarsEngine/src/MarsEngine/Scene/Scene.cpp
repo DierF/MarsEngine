@@ -10,6 +10,7 @@
 #include "box2d/b2_body.h"
 #include "box2d/b2_fixture.h"
 #include "box2d/b2_polygon_shape.h"
+#include "box2d/b2_circle_shape.h"
 
 namespace MarsEngine
 {
@@ -41,6 +42,7 @@ namespace MarsEngine
 
 	Scene::~Scene()
 	{
+		delete m_physicsWorld;
 	}
 
 	template<typename Component>
@@ -92,6 +94,7 @@ namespace MarsEngine
 		copyComponent<NativeScriptComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
 		copyComponent<Rigidbody2DComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
 		copyComponent<BoxCollider2DComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
+		copyComponent<CircleCollider2DComponent>(copySceneRegistry, srcSceneRegistry, enttMap);
 
 		return copy;
 	}
@@ -118,7 +121,36 @@ namespace MarsEngine
 
 	void Scene::onRuntimeStart()
 	{
-		m_physicsWorld = new b2World({ 0.0f, -9.8f });
+		onPhysics2DStart();
+	}
+
+	void Scene::onRuntimeStop()
+	{
+		onPhysics2DStop();
+	}
+
+	void Scene::onSimulationStart()
+	{
+		onPhysics2DStart();
+	}
+
+	void Scene::onSimulationStop()
+	{
+		onPhysics2DStop();
+	}
+
+	void Scene::onUpdateEditor(Timestep ts, EditorCamera& camera)
+	{
+		renderScene(camera);
+	}
+
+	void Scene::onUpdateSimulation(Timestep ts, EditorCamera& camera)
+	{
+		//physics
+		int32_t const velocityIterations = 6;
+		int32_t const positionIterations = 2;
+		m_physicsWorld->Step(ts, velocityIterations, positionIterations);
+
 		auto view = m_registry.view<Rigidbody2DComponent>();
 		for (auto e : view)
 		{
@@ -126,64 +158,14 @@ namespace MarsEngine
 			auto& transformC = entity.getComponent<TransformComponent>();
 			auto& rb2dC = entity.getComponent<Rigidbody2DComponent>();
 
-			b2BodyDef bodyDef;
-			bodyDef.type = ME_Rigidbody2DBodyTypeToBox2DBodyType(rb2dC.type);
-			bodyDef.position.Set(transformC.translation.x, transformC.translation.y);
-			bodyDef.angle = transformC.rotation.z;
-			
-			b2Body* body = m_physicsWorld->CreateBody(&bodyDef);
-			body->SetFixedRotation(rb2dC.fixedRotation);
-			rb2dC.runtimeBody = body;
-
-			if (entity.hasComponent<BoxCollider2DComponent>())
-			{
-				auto& bc2dC = entity.getComponent<BoxCollider2DComponent>();
-
-				b2PolygonShape boxShape;
-				boxShape.SetAsBox(bc2dC.size.x * transformC.scale.x,
-					bc2dC.size.y * transformC.scale.y);
-
-				b2FixtureDef fixtureDef;
-				fixtureDef.shape = &boxShape;
-				fixtureDef.density = bc2dC.density;
-				fixtureDef.friction = bc2dC.friction;
-				fixtureDef.restitution = bc2dC.restitution;
-				fixtureDef.restitutionThreshold = bc2dC.restitutionThreshold;
-				body->CreateFixture(&fixtureDef);
-			}
-		}
-	}
-
-	void Scene::onRuntimeStop()
-	{
-		delete m_physicsWorld;
-		m_physicsWorld = nullptr;
-	}
-
-	void Scene::onUpdateEditor(Timestep ts, EditorCamera& camera)
-	{
-		Renderer2D::beginScene(camera);
-		{
-			auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
-			for (auto entity : group)
-			{
-				auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
-
-				Renderer2D::drawSprite(transformC.getTransform(), spriteC, (int)entity);
-			}
+			b2Body* body = (b2Body*)rb2dC.runtimeBody;
+			auto const& position = body->GetPosition();
+			transformC.translation.x = position.x;
+			transformC.translation.y = position.y;
+			transformC.rotation.z = body->GetAngle();
 		}
 
-		{
-			auto view = m_registry.view<TransformComponent, CircleRendererComponent>();
-			for (auto entity : view)
-			{
-				auto [transformC, circleC] = view.get<TransformComponent, CircleRendererComponent>(entity);
-
-				Renderer2D::drawCircle(transformC.getTransform(), circleC.color, circleC.thickness, circleC.fade, (int)entity);
-			}
-		}
-
-		Renderer2D::endScene();
+		renderScene(camera);
 	}
 
 	void Scene::onUpdateRuntime(Timestep ts)
@@ -199,6 +181,7 @@ namespace MarsEngine
 				nsc.instance->onUpdate(ts);
 			});
 
+		//physics
 		int32_t const velocityIterations = 6;
 		int32_t const positionIterations = 2;
 		m_physicsWorld->Step(ts, velocityIterations, positionIterations);
@@ -286,6 +269,7 @@ namespace MarsEngine
 		copyComponentIfExists<NativeScriptComponent>(newEntity, entity);
 		copyComponentIfExists<Rigidbody2DComponent>(newEntity, entity);
 		copyComponentIfExists<BoxCollider2DComponent>(newEntity, entity);
+		copyComponentIfExists<CircleCollider2DComponent>(newEntity, entity);
 	}
 
 	Entity Scene::getPrimaryCameraEntity()
@@ -302,8 +286,99 @@ namespace MarsEngine
 		}
 	}
 
+	void Scene::onPhysics2DStart()
+	{
+		m_physicsWorld = new b2World({ 0.0f, -9.8f });
+		auto view = m_registry.view<Rigidbody2DComponent>();
+		for (auto e : view)
+		{
+			Entity entity = { e, this };
+			auto& transformC = entity.getComponent<TransformComponent>();
+			auto& rb2dC = entity.getComponent<Rigidbody2DComponent>();
+
+			b2BodyDef bodyDef;
+			bodyDef.type = ME_Rigidbody2DBodyTypeToBox2DBodyType(rb2dC.type);
+			bodyDef.position.Set(transformC.translation.x, transformC.translation.y);
+			bodyDef.angle = transformC.rotation.z;
+
+			b2Body* body = m_physicsWorld->CreateBody(&bodyDef);
+			body->SetFixedRotation(rb2dC.fixedRotation);
+			rb2dC.runtimeBody = body;
+
+			if (entity.hasComponent<BoxCollider2DComponent>())
+			{
+				auto& bc2dC = entity.getComponent<BoxCollider2DComponent>();
+
+				b2PolygonShape boxShape;
+				boxShape.SetAsBox(bc2dC.size.x * transformC.scale.x,
+					bc2dC.size.y * transformC.scale.y);
+
+				b2FixtureDef fixtureDef;
+				fixtureDef.shape = &boxShape;
+				fixtureDef.density = bc2dC.density;
+				fixtureDef.friction = bc2dC.friction;
+				fixtureDef.restitution = bc2dC.restitution;
+				fixtureDef.restitutionThreshold = bc2dC.restitutionThreshold;
+				body->CreateFixture(&fixtureDef);
+			}
+			if (entity.hasComponent<CircleCollider2DComponent>())
+			{
+				auto& cc2dC = entity.getComponent<CircleCollider2DComponent>();
+
+				b2CircleShape circleShape;
+				circleShape.m_p.Set(cc2dC.offset.x, cc2dC.offset.y);
+				circleShape.m_radius = transformC.scale.x * cc2dC.radius;
+
+				b2FixtureDef fixtureDef;
+				fixtureDef.shape = &circleShape;
+				fixtureDef.density = cc2dC.density;
+				fixtureDef.friction = cc2dC.friction;
+				fixtureDef.restitution = cc2dC.restitution;
+				fixtureDef.restitutionThreshold = cc2dC.restitutionThreshold;
+				body->CreateFixture(&fixtureDef);
+			}
+		}
+	}
+
+	void Scene::onPhysics2DStop()
+	{
+		delete m_physicsWorld;
+		m_physicsWorld = nullptr;
+	}
+
+	void Scene::renderScene(EditorCamera& camera)
+	{
+		Renderer2D::beginScene(camera);
+		{
+			auto group = m_registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+			for (auto entity : group)
+			{
+				auto [transformC, spriteC] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+
+				Renderer2D::drawSprite(transformC.getTransform(), spriteC, (int)entity);
+			}
+		}
+
+		{
+			auto view = m_registry.view<TransformComponent, CircleRendererComponent>();
+			for (auto entity : view)
+			{
+				auto [transformC, circleC] = view.get<TransformComponent, CircleRendererComponent>(entity);
+
+				Renderer2D::drawCircle(transformC.getTransform(), circleC.color, circleC.thickness, circleC.fade, (int)entity);
+			}
+		}
+
+		Renderer2D::endScene();
+	}
+
 	template<typename T>
 	void Scene::onComponentAdded(Entity entity, T& component)
+	{
+	}
+
+	template<>
+	void Scene::onComponentAdded<IDComponent>(Entity entity, IDComponent& component)
 	{
 	}
 
@@ -349,7 +424,7 @@ namespace MarsEngine
 	}
 
 	template<>
-	void Scene::onComponentAdded<IDComponent>(Entity entity, IDComponent& component)
+	void Scene::onComponentAdded<CircleCollider2DComponent>(Entity entity, CircleCollider2DComponent& component)
 	{
 	}
 }

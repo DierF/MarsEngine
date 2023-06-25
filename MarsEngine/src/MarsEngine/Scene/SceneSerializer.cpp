@@ -261,6 +261,22 @@ namespace MarsEngine
 
 			out << YAML::EndMap;
 		}
+		if (entity.hasComponent<CircleCollider2DComponent>())
+		{
+			out << YAML::Key << "CircleCollider2DComponent";
+			out << YAML::BeginMap;
+
+			auto& cc2dc = entity.getComponent<CircleCollider2DComponent>();
+			out << YAML::Key << "Offset" << YAML::Value << cc2dc.offset;
+			out << YAML::Key << "Radius" << YAML::Value << cc2dc.radius;
+			out << YAML::Key << "Density" << YAML::Value << cc2dc.density;
+			out << YAML::Key << "Friction" << YAML::Value << cc2dc.friction;
+			out << YAML::Key << "Restitution" << YAML::Value << cc2dc.restitution;
+			out << YAML::Key << "RestitutionThreshold" << YAML::Value
+				<< cc2dc.restitutionThreshold;
+
+			out << YAML::EndMap;
+		}
 
 		out << YAML::EndMap;
 	}
@@ -386,6 +402,18 @@ namespace MarsEngine
 					bc2dc.friction = boxCollider2DC["Friction"].as<float>();
 					bc2dc.restitution = boxCollider2DC["Restitution"].as<float>();
 					bc2dc.restitutionThreshold = boxCollider2DC["RestitutionThreshold"].as<float>();
+				}
+				
+				auto circleCollider2DC = entity["CircleCollider2DComponent"];
+				if (circleCollider2DC)
+				{
+					auto& cc2dc = deserializedEntity.addComponent<CircleCollider2DComponent>();
+					cc2dc.offset = circleCollider2DC["Offset"].as<glm::vec2>();
+					cc2dc.radius = circleCollider2DC["Radius"].as<float>();
+					cc2dc.density = circleCollider2DC["Density"].as<float>();
+					cc2dc.friction = circleCollider2DC["Friction"].as<float>();
+					cc2dc.restitution = circleCollider2DC["Restitution"].as<float>();
+					cc2dc.restitutionThreshold = circleCollider2DC["RestitutionThreshold"].as<float>();
 				}
 			}
 		}

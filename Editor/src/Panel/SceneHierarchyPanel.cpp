@@ -281,6 +281,14 @@ namespace MarsEngine
 					ImGui::CloseCurrentPopup();
 				}
 			}
+			if (!m_selectionContext.hasComponent<CircleCollider2DComponent>())
+			{
+				if (ImGui::MenuItem("Circle Collider 2D"))
+				{
+					m_selectionContext.addComponent<CircleCollider2DComponent>();
+					ImGui::CloseCurrentPopup();
+				}
+			}
 
 			ImGui::EndPopup();
 		}
@@ -433,6 +441,17 @@ namespace MarsEngine
 			{
 				ImGui::DragFloat2("Offset", glm::value_ptr(component.offset));
 				ImGui::DragFloat2("Size", glm::value_ptr(component.size));
+				ImGui::DragFloat("Density", &component.density, 0.01f, 0.0f, 1.0f);
+				ImGui::DragFloat("Friction", &component.friction, 0.01f, 0.0f, 1.0f);
+				ImGui::DragFloat("Restitution", &component.restitution, 0.01f, 0.0f, 1.0f);
+				ImGui::DragFloat("Restitution Threshold", &component.restitutionThreshold, 0.01f, 0.0f);
+			});
+		
+		drawComponent<CircleCollider2DComponent>("Circle Collider 2D", entity,
+			[](CircleCollider2DComponent& component)
+			{
+				ImGui::DragFloat2("Offset", glm::value_ptr(component.offset));
+				ImGui::DragFloat("Radius", &component.radius);
 				ImGui::DragFloat("Density", &component.density, 0.01f, 0.0f, 1.0f);
 				ImGui::DragFloat("Friction", &component.friction, 0.01f, 0.0f, 1.0f);
 				ImGui::DragFloat("Restitution", &component.restitution, 0.01f, 0.0f, 1.0f);

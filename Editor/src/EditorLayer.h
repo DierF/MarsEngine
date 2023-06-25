@@ -29,6 +29,8 @@ namespace MarsEngine
 
 		bool onMouseButtonPressed(MouseButtonPressedEvent& e);
 
+		void onOverlayRender();
+
 		void newScene();
 
 		void openScene();
@@ -42,6 +44,8 @@ namespace MarsEngine
 		void serializeScene(Ref<Scene> scene, std::filesystem::path const& path);
 
 		void onScenePlay();
+
+		void onSceneSimulate();
 
 		void onSceneStop();
 
@@ -82,14 +86,16 @@ namespace MarsEngine
 
 		int m_gizmoType = -1;
 
+		bool m_showPhysicsColliders = false;
+
 		SceneHierarchyPanel m_sceneHierarchyPanel;
 		ContentBrowserPanel m_contentBrowserPanel;
 
-		Ref<Texture2D> m_playIcon, m_stopIcon;
+		Ref<Texture2D> m_playIcon, m_simulateIcon, m_stopIcon;
 
 		enum class SceneState
 		{
-			Edit = 0, Play = 1
+			Edit = 0, Play = 1, Simulate = 2
 		} m_sceneState = SceneState::Edit;
 	};
 }
