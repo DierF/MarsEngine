@@ -39,85 +39,85 @@ namespace Math
     };
 
     // angle units used by the api
-    static AngleUnit s_AngleUnit = AngleUnit::AU_DEGREE;
+    static AngleUnit s_AngleUnit;
 
-    static const float Math_POS_INFINITY = std::numeric_limits<float>::infinity();
-    static const float Math_NEG_INFINITY = -std::numeric_limits<float>::infinity();
-    static const float Math_PI = 3.14159265358979323846264338327950288f;
-    static const float Math_ONE_OVER_PI = 1.0f / Math_PI;
-    static const float Math_TWO_PI = 2.0f * Math_PI;
-    static const float Math_HALF_PI = 0.5f * Math_PI;
-    static const float Math_fDeg2Rad = Math_PI / 180.0f;
-    static const float Math_fRad2Deg = 180.0f / Math_PI;
-    static const float Math_LOG2 = log(2.0f);
-    static const float Math_EPSILON = 1e-6f;
+    float const Math_POS_INFINITY = std::numeric_limits<float>::infinity();
+    float const Math_NEG_INFINITY = -std::numeric_limits<float>::infinity();
+    float const Math_PI = 3.14159265358979323846264338327950288f;
+    float const Math_ONE_OVER_PI = 1.0f / Math_PI;
+    float const Math_TWO_PI = 2.0f * Math_PI;
+    float const Math_HALF_PI = 0.5f * Math_PI;
+    float const Math_fDeg2Rad = Math_PI / 180.0f;
+    float const Math_fRad2Deg = 180.0f / Math_PI;
+    float const Math_LOG2 = log(2.0f);
+    float const Math_EPSILON = 1e-6f;
 
-    static const float Float_EPSILON = FLT_EPSILON;
-    static const float Double_EPSILON = DBL_EPSILON;
+    float const Float_EPSILON = FLT_EPSILON;
+    float const Double_EPSILON = DBL_EPSILON;
 
-    static float abs(float value) { return std::fabs(value); }
-    static bool  isNan(float f) { return std::isnan(f); }
-    static float sqr(float value) { return value * value; }
-    static float sqrt(float fValue) { return std::sqrt(fValue); }
-    static float invSqrt(float value) { return 1.f / sqrt(value); }
-    static bool  realEqual(float a, float b, float tolerance = std::numeric_limits<float>::epsilon());
-    static float clamp(float v, float min, float max) { return std::clamp(v, min, max); }
-    static float getMaxElement(float x, float y, float z) { return std::max({ x, y, z }); }
+    float abs(float value);
+    bool  isNan(float f);
+    float sqr(float value);
+    float sqrt(float fValue);
+    float invSqrt(float value);
+    bool  realEqual(float a, float b, float tolerance = std::numeric_limits<float>::epsilon());
+    float clamp(float v, float min, float max);
+    float getMaxElement(float x, float y, float z);
 
-    static float degreesToRadians(float degrees);
-    static float radiansToDegrees(float radians);
-    static float angleUnitsToRadians(float units);
-    static float radiansToAngleUnits(float radians);
-    static float angleUnitsToDegrees(float units);
-    static float degreesToAngleUnits(float degrees);
+    float degreesToRadians(float degrees);
+    float radiansToDegrees(float radians);
+    float angleUnitsToRadians(float units);
+    float radiansToAngleUnits(float radians);
+    float angleUnitsToDegrees(float units);
+    float degreesToAngleUnits(float degrees);
 
-    static float  sin(const Radian& rad);
-    static float  sin(float value) { return std::sin(value); }
-    static float  cos(const Radian& rad);
-    static float  cos(float value) { return std::cos(value); }
-    static float  tan(const Radian& rad);
-    static float  tan(float value) { return std::tan(value); }
-    static Radian acos(float value);
-    static Radian asin(float value);
-    static Radian atan(float value);
-    static Radian atan2(float y_v, float x_v);
+    float  sin(const Radian& rad);
+    float  sin(float value);
+    float  cos(const Radian& rad);
+    float  cos(float value);
+    float  tan(const Radian& rad);
+    float  tan(float value);
+    Radian acos(float value);
+    Radian asin(float value);
+    Radian atan(float value);
+    Radian atan2(float y_v, float x_v);
 
     template<class T>
-    static constexpr T max(const T A, const T B)
+    constexpr T max(const T A, const T B)
     {
         return std::max(A, B);
     }
 
     template<class T>
-    static constexpr T min(const T A, const T B)
+    constexpr T min(const T A, const T B)
     {
         return std::min(A, B);
     }
 
     template<class T>
-    static constexpr T max3(const T A, const T B, const T C)
+    constexpr T max3(const T A, const T B, const T C)
     {
         return std::max({ A, B, C });
     }
 
     template<class T>
-    static constexpr T min3(const T A, const T B, const T C)
+    constexpr T min3(const T A, const T B, const T C)
     {
         return std::min({ A, B, C });
     }
 
-    static Mat4
-        makeViewMatrix(const Vec3& position, const Quaternion& orientation, const Mat4* reflect_matrix = nullptr);
+    Mat4
+    makeViewMatrix(Vec3 const& position, Quaternion const& orientation, Mat4 const* reflect_matrix = nullptr);
 
-    static Mat4
-        makeLookAtMatrix(const Vec3& eye_position, const Vec3& target_position, const Vec3& up_dir);
+    Mat4
+    makeLookAtMatrix(Vec3 const& eye_position, Vec3 const& target_position, Vec3 const& up_dir);
 
-    static Mat4 makePerspectiveMatrix(Radian fovy, float aspect, float znear, float zfar);
+    Mat4 makePerspectiveMatrix(Radian fovy, float aspect, float znear, float zfar);
 
-    static Mat4
-        makeOrthographicProjectionMatrix(float left, float right, float bottom, float top, float znear, float zfar);
+    Mat4
+    makeOrthographicProjectionMatrix(float left, float right, float bottom, float top, float znear, float zfar);
 
-    static Mat4
-        makeOrthographicProjectionMatrix01(float left, float right, float bottom, float top, float znear, float zfar);
+    Mat4
+    makeOrthographicProjectionMatrix01(float left, float right, float bottom, float top, float znear, float zfar);
 } // namespace Math
 } // namespace MarsEngine

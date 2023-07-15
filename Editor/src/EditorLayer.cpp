@@ -5,7 +5,6 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "MarsEngine/Scene/SceneSerializer.h"
 #include "MarsEngine/Util/PlatformUtil.h"
-#include "MarsEngine/Math/Math.h"
 
 namespace MarsEngine
 {
@@ -264,49 +263,8 @@ namespace MarsEngine
 			ImGui::EndDragDropTarget();
 		}
 
-		//Gizmos
-		Entity selectedEntity = m_sceneHierarchyPanel.getSelectedEntity();
-		if (selectedEntity && m_gizmoType != -1)
-		{
-			ImGuizmo::SetOrthographic(false);
-			ImGuizmo::SetDrawlist();
-			ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y,
-				ImGui::GetWindowWidth(), ImGui::GetWindowHeight());
-
-			//auto cameraEntity = m_activeScene->getPrimaryCameraEntity();
-			//auto const& camera = cameraEntity.getComponent<CameraComponent>().camera;
-			//glm::mat4 const& cameraProjection = camera.getProjection();
-			//glm::mat4 cameraView = glm::inverse(cameraEntity.getComponent<TransformComponent>().getTransform());
-
-			glm::mat4 const& cameraProjection = m_editorCamera.getProjection();
-			glm::mat4 cameraView = m_editorCamera.getViewMatrix();
-
-			auto& tc = selectedEntity.getComponent<TransformComponent>();
-			glm::mat4 transform = tc.getTransform();
-
-			bool snap = Input::isKeyPressed(ME_KEY_LEFT_CONTROL);
-			float snapValue = 0.5f;
-			if (m_gizmoType == ImGuizmo::OPERATION::ROTATE)
-			{
-				snapValue = 45.0f;
-			}
-			float snapValues[3] = { snapValue, snapValue, snapValue };
-
-			ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
-				(ImGuizmo::OPERATION)m_gizmoType, ImGuizmo::LOCAL, glm::value_ptr(transform),
-				nullptr, snap ? snapValues : nullptr);
-
-			if (ImGuizmo::IsUsing())
-			{
-				glm::vec3 translation, rotation, scale;
-				Math::decomposeTransform(transform, translation, rotation, scale);
-
-				glm::vec3 deltaRotation = rotation - tc.rotation;
-				tc.translation = translation;
-				tc.rotation += deltaRotation;
-				tc.scale = scale;
-			}
-		}
+		Math::Mat4 testMat4;
+		std::cout << testMat4[1][2] << std::endl;
 
 		ImGui::End();
 		ImGui::PopStyleVar();

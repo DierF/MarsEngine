@@ -1,4 +1,7 @@
+#include "pch.h"
+
 #include "Radian.h"
+#include "Degree.h"
 #include "Math.h"
 
 namespace MarsEngine

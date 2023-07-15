@@ -1,6 +1,9 @@
+#include "pch.h"
+
 #include "Math.h"
 #include "Radian.h"
 #include "Degree.h"
+#include "Matrix4.h"
 
 namespace MarsEngine
 {
@@ -16,14 +19,55 @@ namespace Math
         return Degree(angleUnitsToDegrees(m_angle));
     }
 
+    float abs(float value)
+    {
+        return std::fabs(value);
+    }
+
+    bool isNan(float f)
+    {
+        return std::isnan(f);
+    }
+
+    float sqr(float value)
+    {
+        return value * value;
+    }
+
+    float sqrt(float fValue)
+    {
+        return std::sqrt(fValue);
+    }
+
+    float invSqrt(float value)
+    {
+        return 1.f / sqrt(value);
+    }
+
     bool realEqual(float a, float b, float tolerance /* = std::numeric_limits<float>::epsilon() */)
     {
         return std::fabs(b - a) <= tolerance;
     }
 
-    float degreesToRadians(float degrees) { return degrees * Math_fDeg2Rad; }
+    float clamp(float v, float min, float max)
+    {
+        return std::clamp(v, min, max);
+    }
 
-    float radiansToDegrees(float radians) { return radians * Math_fRad2Deg; }
+    float getMaxElement(float x, float y, float z)
+    {
+        return std::max({ x, y, z });
+    }
+
+    float degreesToRadians(float degrees)
+    {
+        return degrees * Math_fDeg2Rad;
+    }
+
+    float radiansToDegrees(float radians)
+    {
+        return radians * Math_fRad2Deg;
+    }
 
     float angleUnitsToRadians(float angleunits)
     {
@@ -62,14 +106,29 @@ namespace Math
         return std::sin((float)rad);
     }
 
+    float sin(float value)
+    {
+        return std::sin(value);
+    }
+
     float cos(Radian const& rad)
     {
         return std::cos((float)rad);
     }
 
+    float cos(float value)
+    {
+        return std::cos(value);
+    }
+
     float tan(Radian const& rad)
     {
         return std::tan((float)rad);
+    }
+
+    float tan(float value)
+    {
+        return std::tan(value);
     }
 
     Radian acos(float value)
@@ -108,10 +167,10 @@ namespace Math
         return Radian(std::atan2(y_v, x_v));
     }
 
-    Matrix4x4
-        makeViewMatrix(const Vector3& position, const Quaternion& orientation, const Matrix4x4* reflect_matrix)
+    Mat4
+    makeViewMatrix(Vec3 const& position, Quaternion const& orientation, Mat4 const* reflect_matrix)
     {
-        Matrix4x4 viewMatrix;
+        Mat4 viewMatrix;
 
         // View matrix is:
         //
@@ -123,16 +182,16 @@ namespace Math
         // Where T = -(Transposed(Rot) * Pos)
 
         // This is most efficiently done using 3x3 Matrices
-        Matrix3x3 rot;
+        Mat3 rot;
         orientation.toRotationMatrix(rot);
 
         // Make the translation relative to new axes
-        Matrix3x3 rotT = rot.transpose();
-        Vector3   trans = -rotT * position;
+        Mat3 rotT = rot.transpose();
+        Vec3   trans = -rotT * position;
 
         // Make final matrix
-        viewMatrix = Matrix4x4::IDENTITY;
-        viewMatrix.setMatrix3x3(rotT); // fills upper 3x3
+        viewMatrix = Mat4::IDENTITY;
+        viewMatrix.setMat3(rotT); // fills upper 3x3
         viewMatrix[0][3] = trans.x;
         viewMatrix[1][3] = trans.y;
         viewMatrix[2][3] = trans.z;
@@ -146,15 +205,15 @@ namespace Math
         return viewMatrix;
     }
 
-    Matrix4x4 makeLookAtMatrix(const Vector3& eye_position, const Vector3& target_position, const Vector3& up_dir)
+    Mat4 makeLookAtMatrix(Vec3 const& eye_position, Vec3 const& target_position, Vec3 const& up_dir)
     {
-        const Vector3& up = up_dir.normalisedCopy();
+        Vec3 const& up = up_dir.normalisedCopy();
 
-        Vector3 f = (target_position - eye_position).normalisedCopy();
-        Vector3 s = f.crossProduct(up).normalisedCopy();
-        Vector3 u = s.crossProduct(f);
+        Vec3 f = (target_position - eye_position).normalisedCopy();
+        Vec3 s = f.crossProduct(up).normalisedCopy();
+        Vec3 u = s.crossProduct(f);
 
-        Matrix4x4 view_mat = Matrix4x4::IDENTITY;
+        Mat4 view_mat = Mat4::IDENTITY;
 
         view_mat[0][0] = s.x;
         view_mat[0][1] = s.y;
@@ -171,11 +230,11 @@ namespace Math
         return view_mat;
     }
 
-    Matrix4x4 makePerspectiveMatrix(Radian fovy, float aspect, float znear, float zfar)
+    Mat4 makePerspectiveMatrix(Radian fovy, float aspect, float znear, float zfar)
     {
         float tan_half_fovy = tan(fovy / 2.f);
 
-        Matrix4x4 ret = Matrix4x4::ZERO;
+        Mat4 ret = Mat4::ZERO;
         ret[0][0] = 1.f / (aspect * tan_half_fovy);
         ret[1][1] = 1.f / tan_half_fovy;
         ret[2][2] = zfar / (znear - zfar);
@@ -185,8 +244,8 @@ namespace Math
         return ret;
     }
 
-    Matrix4x4
-        makeOrthographicProjectionMatrix(float left, float right, float bottom, float top, float znear, float zfar)
+    Mat4
+    makeOrthographicProjectionMatrix(float left, float right, float bottom, float top, float znear, float zfar)
     {
         float inv_width = 1.0f / (right - left);
         float inv_height = 1.0f / (top - bottom);
@@ -214,7 +273,7 @@ namespace Math
         // q = - 2 / (far - near)
         // qn = - (far + near) / (far - near)
 
-        Matrix4x4 proj_matrix = Matrix4x4::ZERO;
+        Mat4 proj_matrix = Mat4::ZERO;
         proj_matrix[0][0] = A;
         proj_matrix[0][3] = C;
         proj_matrix[1][1] = B;
@@ -226,8 +285,8 @@ namespace Math
         return proj_matrix;
     }
 
-    Matrix4x4
-        makeOrthographicProjectionMatrix01(float left, float right, float bottom, float top, float znear, float zfar)
+    Mat4
+    makeOrthographicProjectionMatrix01(float left, float right, float bottom, float top, float znear, float zfar)
     {
         float inv_width = 1.0f / (right - left);
         float inv_height = 1.0f / (top - bottom);
@@ -255,7 +314,7 @@ namespace Math
         // q = - 1 / (far - near)
         // qn = - near / (far - near)
 
-        Matrix4x4 proj_matrix = Matrix4x4::ZERO;
+        Mat4 proj_matrix = Mat4::ZERO;
         proj_matrix[0][0] = A;
         proj_matrix[0][3] = C;
         proj_matrix[1][1] = B;
