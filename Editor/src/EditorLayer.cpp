@@ -33,60 +33,6 @@ namespace MarsEngine
 
 		m_editorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
 
-#if 0
-		auto square = m_activeScene->createEntity("Green Square");
-		square.addComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
-		auto redSquare = m_activeScene->createEntity("Red Square");
-		redSquare.addComponent<SpriteRendererComponent>(glm::vec4{ 1.0f, 0.0f, 0.0f, 1.0f });
-		
-		m_squareEntity = square;
-
-		m_cameraEntity = m_activeScene->createEntity("Camera A");
-		m_cameraEntity.addComponent<CameraComponent>();
-		m_secondCameraEntity = m_activeScene->createEntity("Camera B");
-		auto& cc = m_secondCameraEntity.addComponent<CameraComponent>();
-		cc.primary = false;
-
-		class CameraController : public ScriptableEntity
-		{
-		public:
-			void onCreate()
-			{
-				auto& translation = getComponent<TransformComponent>().translation;
-				translation.x = rand() % 10 - 5.0f;
-			}
-
-			void onDestroy()
-			{
-			}
-
-			void onUpdate(Timestep ts)
-			{
-				auto& translation = getComponent<TransformComponent>().translation;
-				float speed = 5.0f;
-
-				if (Input::isKeyPressed(ME_KEY_A))
-				{
-					translation.x -= speed * ts;
-				}
-				if (Input::isKeyPressed(ME_KEY_D))
-				{
-					translation.x += speed * ts;
-				}
-				if (Input::isKeyPressed(ME_KEY_W))
-				{
-					translation.y += speed * ts;
-				}
-				if (Input::isKeyPressed(ME_KEY_S))
-				{
-					translation.y -= speed * ts;
-				}
-			}
-		};
-		m_cameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
-		m_secondCameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
-#endif
-
 		m_sceneHierarchyPanel.setContext(m_activeScene);
 	}
 
