@@ -6,16 +6,14 @@
 #include "GLFW/glfw3.h"
 #include "glad/glad.h"
 
-namespace MarsEngine {
-
+namespace MarsEngine
+{
 #define BIND_EVENT_FUNC(x) std::bind(&x, this, std::placeholders::_1)
 
 	Application* Application::s_instance = nullptr;
 
 	Application::Application(std::string const& name)
 	{
-		ME_PROFILE_FUNCTION();
-
 		ME_CORE_ASSERT(!s_instance, "Application already exists!");
 		s_instance = this;
 
@@ -31,13 +29,10 @@ namespace MarsEngine {
 
 	Application::~Application()
 	{
-		ME_PROFILE_FUNCTION();
 	}
 
 	void Application::onEvent(Event& event)
 	{
-		ME_PROFILE_FUNCTION();
-
 		EventDispatcher dispatcher(event);
 		dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(Application::onWindowClose));
 		dispatcher.dispatch<WindowResizeEvent>(BIND_EVENT_FUNC(Application::onWindowResize));
@@ -45,7 +40,8 @@ namespace MarsEngine {
 		for (auto iter = m_layerStack.end(); iter != m_layerStack.begin(); )
 		{
 			(*--iter)->onEvent(event);
-			if (event.isHandled()) {
+			if (event.isHandled())
+			{
 				break;
 			}
 		}
@@ -53,50 +49,35 @@ namespace MarsEngine {
 
 	void Application::pushLayer(Layer* layer)
 	{
-		ME_PROFILE_FUNCTION();
-
 		m_layerStack.pushLayer(layer);
 		layer->onAttach();
 	}
 
 	void Application::pushOverlay(Layer* overlay)
 	{
-		ME_PROFILE_FUNCTION();
-
 		m_layerStack.pushOverlay(overlay);
 		overlay->onAttach();
 	}
 
 	void Application::run()
 	{
-		ME_PROFILE_FUNCTION();
-
 		while (m_running)
 		{
-			ME_PROFILE_SCOPE("Runloop");
-
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_lastFrameTime;
 			//ME_CORE_TRACE("Frametime: {}s, FPS: {}", timestep, (uint32_t)(1.0f / timestep.getSeconds()));
 			m_lastFrameTime = time;
 			if (!m_minimized)
 			{
+				for (auto layer : m_layerStack)
 				{
-					ME_PROFILE_SCOPE("LayerStack onUpdate");
-
-					for (auto layer : m_layerStack)
-					{
-						layer->onUpdate(timestep);
-					}
+					layer->onUpdate(timestep);
 				}
 			}
 			m_imGuiLayer->begin();
+			for (auto layer : m_layerStack)
 			{
-				ME_PROFILE_SCOPE("LayerStack onImGuiRender");
-				for (auto layer : m_layerStack)
-				{
-					layer->onImGuiRender();
-				}
+				layer->onImGuiRender();
 			}
 			m_imGuiLayer->end();
 
@@ -117,8 +98,6 @@ namespace MarsEngine {
 
 	bool Application::onWindowResize(WindowResizeEvent& e)
 	{
-		ME_PROFILE_FUNCTION();
-
 		if (e.getWidth() == 0 || e.getHeight() == 0)
 		{
 			m_minimized = true;
@@ -129,5 +108,4 @@ namespace MarsEngine {
 		Renderer::onWindowResize(e.getWidth(), e.getHeight());
 		return false;
 	}
-
 }
