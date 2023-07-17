@@ -24,3 +24,4 @@
 #include "MarsEngine/Scene/Entity.h"
 #include "MarsEngine/Scene/ScriptableEntity.h"
 #include "MarsEngine/Scene/Component.h"
+#include "MarsEngine/Math/MathHeaders.h"

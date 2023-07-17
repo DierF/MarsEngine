@@ -5,7 +5,6 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "MarsEngine/Scene/SceneSerializer.h"
 #include "MarsEngine/Util/PlatformUtil.h"
-#include "MarsEngine/Math/Math.h"
 
 namespace MarsEngine
 {
@@ -32,60 +31,6 @@ namespace MarsEngine
 		m_activeScene = m_editorScene;
 
 		m_editorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
-
-#if 0
-		auto square = m_activeScene->createEntity("Green Square");
-		square.addComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
-		auto redSquare = m_activeScene->createEntity("Red Square");
-		redSquare.addComponent<SpriteRendererComponent>(glm::vec4{ 1.0f, 0.0f, 0.0f, 1.0f });
-		
-		m_squareEntity = square;
-
-		m_cameraEntity = m_activeScene->createEntity("Camera A");
-		m_cameraEntity.addComponent<CameraComponent>();
-		m_secondCameraEntity = m_activeScene->createEntity("Camera B");
-		auto& cc = m_secondCameraEntity.addComponent<CameraComponent>();
-		cc.primary = false;
-
-		class CameraController : public ScriptableEntity
-		{
-		public:
-			void onCreate()
-			{
-				auto& translation = getComponent<TransformComponent>().translation;
-				translation.x = rand() % 10 - 5.0f;
-			}
-
-			void onDestroy()
-			{
-			}
-
-			void onUpdate(Timestep ts)
-			{
-				auto& translation = getComponent<TransformComponent>().translation;
-				float speed = 5.0f;
-
-				if (Input::isKeyPressed(ME_KEY_A))
-				{
-					translation.x -= speed * ts;
-				}
-				if (Input::isKeyPressed(ME_KEY_D))
-				{
-					translation.x += speed * ts;
-				}
-				if (Input::isKeyPressed(ME_KEY_W))
-				{
-					translation.y += speed * ts;
-				}
-				if (Input::isKeyPressed(ME_KEY_S))
-				{
-					translation.y -= speed * ts;
-				}
-			}
-		};
-		m_cameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
-		m_secondCameraEntity.addComponent<NativeScriptComponent>().bind<CameraController>();
-#endif
 
 		m_sceneHierarchyPanel.setContext(m_activeScene);
 	}
@@ -318,49 +263,8 @@ namespace MarsEngine
 			ImGui::EndDragDropTarget();
 		}
 
-		//Gizmos
-		Entity selectedEntity = m_sceneHierarchyPanel.getSelectedEntity();
-		if (selectedEntity && m_gizmoType != -1)
-		{
-			ImGuizmo::SetOrthographic(false);
-			ImGuizmo::SetDrawlist();
-			ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y,
-				ImGui::GetWindowWidth(), ImGui::GetWindowHeight());
-
-			//auto cameraEntity = m_activeScene->getPrimaryCameraEntity();
-			//auto const& camera = cameraEntity.getComponent<CameraComponent>().camera;
-			//glm::mat4 const& cameraProjection = camera.getProjection();
-			//glm::mat4 cameraView = glm::inverse(cameraEntity.getComponent<TransformComponent>().getTransform());
-
-			glm::mat4 const& cameraProjection = m_editorCamera.getProjection();
-			glm::mat4 cameraView = m_editorCamera.getViewMatrix();
-
-			auto& tc = selectedEntity.getComponent<TransformComponent>();
-			glm::mat4 transform = tc.getTransform();
-
-			bool snap = Input::isKeyPressed(ME_KEY_LEFT_CONTROL);
-			float snapValue = 0.5f;
-			if (m_gizmoType == ImGuizmo::OPERATION::ROTATE)
-			{
-				snapValue = 45.0f;
-			}
-			float snapValues[3] = { snapValue, snapValue, snapValue };
-
-			ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
-				(ImGuizmo::OPERATION)m_gizmoType, ImGuizmo::LOCAL, glm::value_ptr(transform),
-				nullptr, snap ? snapValues : nullptr);
-
-			if (ImGuizmo::IsUsing())
-			{
-				glm::vec3 translation, rotation, scale;
-				Math::decomposeTransform(transform, translation, rotation, scale);
-
-				glm::vec3 deltaRotation = rotation - tc.rotation;
-				tc.translation = translation;
-				tc.rotation += deltaRotation;
-				tc.scale = scale;
-			}
-		}
+		Math::Mat4 testMat4;
+		std::cout << testMat4[1][2] << std::endl;
 
 		ImGui::End();
 		ImGui::PopStyleVar();
