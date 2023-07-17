@@ -1486,6 +1486,8 @@
     <ClInclude Include="src\MarsEngine\Math\Random.h" />
     <ClInclude Include="src\MarsEngine\Math\Transform.h" />
     <ClInclude Include="src\MarsEngine\Math\AxisAligned.h" />
+    <ClInclude Include="src\MarsEngine\Resource\ResType\Common\World.h" />
+    <ClInclude Include="src\MarsEngine\Resource\ResType\Common\Object.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MarsEngine\Core\Application.cpp">

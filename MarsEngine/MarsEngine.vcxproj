@@ -193,6 +193,8 @@
     <ClInclude Include="src\MarsEngine\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\MarsEngine\Renderer\Texture.h" />
     <ClInclude Include="src\MarsEngine\Renderer\VertexArray.h" />
+    <ClInclude Include="src\MarsEngine\Resource\ResType\Common\Object.h" />
+    <ClInclude Include="src\MarsEngine\Resource\ResType\Common\World.h" />
     <ClInclude Include="src\MarsEngine\Scene\Component.h" />
     <ClInclude Include="src\MarsEngine\Scene\Entity.h" />
     <ClInclude Include="src\MarsEngine\Scene\Scene.h" />
