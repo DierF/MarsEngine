@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\axis.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\axis_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\axis.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\axis_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\color_grading.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\color_grading_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\combine_ui.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\combine_ui_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\debugdraw.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\debugdraw_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\debugdraw.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\debugdraw_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\deferred_lighting.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\deferred_lighting_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\deferred_lighting.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\deferred_lighting_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\fxaa.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\fxaa_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\fxaa.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\fxaa_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_directional_light_shadow.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_directional_light_shadow_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_directional_light_shadow.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_directional_light_shadow_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_gbuffer.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_gbuffer_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_inefficient_pick.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_inefficient_pick_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_inefficient_pick.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_inefficient_pick_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_point_light_shadow.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_point_light_shadow_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_point_light_shadow.geom.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_point_light_shadow_geom.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh_point_light_shadow.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_point_light_shadow_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\mesh.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\mesh_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\particle_emit.comp.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\particle_emit_comp.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\particle_kickoff.comp.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\particle_kickoff_comp.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\particle_simulate.comp.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\particle_simulate_comp.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\particlebillboard.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\particlebillboard_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\particlebillboard.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\particlebillboard_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\post_process.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\post_process_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\skybox.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\skybox_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\skybox.vert.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\skybox_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\e0936cbc9e90cb392b7ede48098dcc5d\tone_mapping.frag.spv.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\b88c078636bb01d90bd2d346a55cf84e\tone_mapping_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\3dbd12b311f7e2c275e48a084445e9f0\ShaderCompile.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\Shader\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\axis.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\axis.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\color_grading.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\combine_ui.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\debugdraw.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\debugdraw.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\deferred_lighting.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\deferred_lighting.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\fxaa.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\fxaa.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_directional_light_shadow.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_directional_light_shadow.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_gbuffer.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_inefficient_pick.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_inefficient_pick.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_point_light_shadow.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_point_light_shadow.geom">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\mesh_point_light_shadow.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\particle_emit.comp">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\particle_kickoff.comp">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\particle_simulate.comp">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\particlebillboard.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\particlebillboard.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\post_process.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\skybox.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\skybox.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\glsl\tone_mapping.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\build\Shader\CMakeFiles\ShaderCompile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F4E92DD0-FC97-3499-8A2B-7EF200AD4DC7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{ED78A0F3-82B0-3BB8-94E6-C128A32DC5A9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

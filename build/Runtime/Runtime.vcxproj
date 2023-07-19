@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{92818D8D-608D-3480-A7A0-C9D529191F5C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>Runtime</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\MarsEngine\build\Runtime\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Runtime.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Runtime</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\MarsEngine\build\Runtime\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Runtime.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Runtime</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\MarsEngine\build\Runtime\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Runtime.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Runtime</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\MarsEngine\build\Runtime\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Runtime.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Runtime</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Projects/MarsEngine/3rdParty/sol2-3.3.0/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;_DEBUG;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Projects/MarsEngine/3rdParty/sol2-3.3.0/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Projects/MarsEngine/3rdParty/sol2-3.3.0/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Projects/MarsEngine/3rdParty/sol2-3.3.0/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\MarsEngine\Runtime\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Projects/MarsEngine/Runtime/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/MarsEngine -BD:/Projects/MarsEngine/build --check-stamp-file D:/Projects/MarsEngine/build/Runtime/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\MarsEngine\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\MarsEngine\build\Runtime\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Projects/MarsEngine/Runtime/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/MarsEngine -BD:/Projects/MarsEngine/build --check-stamp-file D:/Projects/MarsEngine/build/Runtime/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\MarsEngine\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\MarsEngine\build\Runtime\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Projects/MarsEngine/Runtime/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/MarsEngine -BD:/Projects/MarsEngine/build --check-stamp-file D:/Projects/MarsEngine/build/Runtime/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\MarsEngine\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\MarsEngine\build\Runtime\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Projects/MarsEngine/Runtime/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/MarsEngine -BD:/Projects/MarsEngine/build --check-stamp-file D:/Projects/MarsEngine/build/Runtime/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\MarsEngine\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\MarsEngine\build\Runtime\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Application.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Core.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\EntryPoint.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\GUID.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Input.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\KeyCode.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Layer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\LayerStack.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Log.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\MouseButtonCode.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Timestep.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Window.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Debug\Instrumentor.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\ApplicationEvent.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\Event.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\KeyEvent.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\MouseEvent.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\AxisAligned.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Degree.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Math.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\MathHeaders.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix3.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix4.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Quaternion.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Radian.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Random.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Transform.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector2.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector3.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector4.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Buffer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Camera.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\EditorCamera.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\FrameBuffer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\GraphicsContext.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCameraController.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RenderCommand.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer2D.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RendererAPI.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Shader.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\SubTexture2D.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Texture.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\VertexArray.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Component.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Entity.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Scene.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneCamera.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneSerializer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\ScriptableEntity.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Util\PlatformUtil.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\MarsEngine.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLFrameBuffer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Common\Level.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Common\Object.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Common\World.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\pch.h" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Application.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\GUID.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Layer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\LayerStack.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Log.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\ImGui\ImGuiBuild.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\AxisAligned.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Degree.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Math.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix3.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix4.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Quaternion.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Radian.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector2.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector3.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector4.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Buffer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\EditorCamera.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\FrameBuffer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCameraController.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer2D.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Shader.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\SubTexture2D.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Texture.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\VertexArray.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Entity.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Scene.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneCamera.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneSerializer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLFrameBuffer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsPlatformUtil.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\pch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\ZERO_CHECK.vcxproj">
+      <Project>{A1343C79-D429-33C7-B5E9-A555985DEF3B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\JoltPhysics\Build\Jolt.vcxproj">
+      <Project>{B84A7431-310E-3038-88BC-20F84DA4450C}</Project>
+      <Name>Jolt</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\Shader\ShaderCompile.vcxproj">
+      <Project>{D7127E06-AE79-376F-8B27-3C1158EDB444}</Project>
+      <Name>ShaderCompile</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\glfw\src\glfw.vcxproj">
+      <Project>{F0599506-268B-3DE0-93A3-FB0BEF4884B4}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\imgui.vcxproj">
+      <Project>{DBFB3559-30B0-3434-89F1-5164827A4D61}</Project>
+      <Name>imgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\Runtime\json11.vcxproj">
+      <Project>{49D2B044-2CC2-3069-A2EF-835035245E56}</Project>
+      <Name>json11</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\lua_static.vcxproj">
+      <Project>{6A612D1C-55BD-3D54-B16F-45719A421B1C}</Project>
+      <Name>lua_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\spdlog\spdlog.vcxproj">
+      <Project>{C2C1099A-3D63-38AD-A209-4C0C5EB3F078}</Project>
+      <Name>spdlog</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\stb.vcxproj">
+      <Project>{444B59B7-7B8E-332D-9EB8-ACA6BA172E95}</Project>
+      <Name>stb</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\tinyobjloader\tinyobjloader.vcxproj">
+      <Project>{AC92EED5-D3EE-313F-9397-A420A436251B}</Project>
+      <Name>tinyobjloader</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

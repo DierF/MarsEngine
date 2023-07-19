@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Application.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\GUID.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Layer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\LayerStack.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Log.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\ImGui\ImGuiBuild.cpp">
+      <Filter>Function\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\ImGui\ImGuiLayer.cpp">
+      <Filter>Function\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\AxisAligned.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Degree.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Math.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix3.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix4.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Quaternion.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Radian.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector2.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector3.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector4.cpp">
+      <Filter>Function\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Buffer.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\EditorCamera.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\FrameBuffer.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCamera.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCameraController.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RenderCommand.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer2D.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RendererAPI.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Shader.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\SubTexture2D.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Texture.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\VertexArray.cpp">
+      <Filter>Function\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Entity.cpp">
+      <Filter>Function\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Scene.cpp">
+      <Filter>Function\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneCamera.cpp">
+      <Filter>Function\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneSerializer.cpp">
+      <Filter>Function\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLFrameBuffer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsPlatformUtil.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\pch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Application.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Core.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\EntryPoint.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\GUID.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Input.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\KeyCode.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Layer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\LayerStack.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Log.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\MouseButtonCode.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Timestep.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Window.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Debug\Instrumentor.h">
+      <Filter>Function\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\ApplicationEvent.h">
+      <Filter>Function\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\Event.h">
+      <Filter>Function\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\KeyEvent.h">
+      <Filter>Function\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Event\MouseEvent.h">
+      <Filter>Function\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\ImGui\ImGuiLayer.h">
+      <Filter>Function\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\AxisAligned.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Degree.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Math.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\MathHeaders.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix3.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Matrix4.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Quaternion.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Radian.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Random.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Transform.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector2.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector3.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Math\Vector4.h">
+      <Filter>Function\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Buffer.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Camera.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\EditorCamera.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\FrameBuffer.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\GraphicsContext.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCamera.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\OrthographicCameraController.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RenderCommand.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Renderer2D.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\RendererAPI.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Shader.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\SubTexture2D.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\Texture.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Renderer\VertexArray.h">
+      <Filter>Function\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Component.h">
+      <Filter>Function\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Entity.h">
+      <Filter>Function\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\Scene.h">
+      <Filter>Function\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneCamera.h">
+      <Filter>Function\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\SceneSerializer.h">
+      <Filter>Function\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Scene\ScriptableEntity.h">
+      <Filter>Function\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Util\PlatformUtil.h">
+      <Filter>Function\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\MarsEngine.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLContext.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLFrameBuffer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLShader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Common\Level.h">
+      <Filter>Resource\ResType\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Common\Object.h">
+      <Filter>Resource\ResType\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Common\World.h">
+      <Filter>Resource\ResType\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\MarsEngine\Runtime\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{536357A8-D2B3-3BB3-8508-89E7D51B1F8C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function">
+      <UniqueIdentifier>{02937D52-CEC9-320F-B62B-E8D2846FF0F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function\Debug">
+      <UniqueIdentifier>{E32BCB48-76DF-3358-ADE2-7230BC73D328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function\Event">
+      <UniqueIdentifier>{FF30BEDB-B4CA-336B-8DA6-19F76711066C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function\ImGui">
+      <UniqueIdentifier>{B4D289E8-D7C5-34BC-98EA-E556F820465C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function\Math">
+      <UniqueIdentifier>{670FDC99-B915-3922-AD87-5D82EEA3089C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function\Renderer">
+      <UniqueIdentifier>{5DFACBFA-94B5-3335-A444-8FC58F2CC58B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function\Scene">
+      <UniqueIdentifier>{CB8D2895-B21F-3A3A-9336-124FBB56B8A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function\Util">
+      <UniqueIdentifier>{9946D48D-BB5A-3357-B32E-201C241C16BD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{FCA6CDB2-CEF3-3CA0-B773-013F5A60D6C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{781BAB06-87F8-3B78-AA07-8333F85849FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{368BCA19-446A-3D95-80DA-74E545F5B980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{5D29C844-72CC-311F-8FEB-626232E138DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\ResType">
+      <UniqueIdentifier>{51FF9F09-1F28-3AA4-9A87-5A073E3D1F73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\ResType\Common">
+      <UniqueIdentifier>{3921900E-3AA0-30D0-A2BB-16DA7F16763C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,20 +1,16 @@
 #pragma once
 
-#ifdef ME_PLATFORM_WINDOWS
+#include <iostream>
 
-extern MarsEngine::Application* MarsEngine::createApplication();
+//extern MarsEngine::Application* MarsEngine::createApplication();
 
 int main(int argc, char** argv)
 {
-	MarsEngine::Log::init();
+	//MarsEngine::Log::init();
 
-	auto app = MarsEngine::createApplication();
-
-	app->run();
-
-	delete app;
+#ifdef WIN32
+	std::cout << "Main() success!\n";
+#endif
 
 	return 0;
 }
-
-#endif

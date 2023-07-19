@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\axis.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_file_service.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_global_context.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_input_manager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_scene_manager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_ui.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\axis.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_file_service.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_global_context.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_input_manager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_scene_manager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_ui.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\MarsEngine\Editor\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{ADF64DB8-1F19-3E01-9415-7417EE729669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{06EE95ED-33A7-3AF3-96DF-E847C85993A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

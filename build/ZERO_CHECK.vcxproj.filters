@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\c7474b35e784416591c19ea5ae34a70f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Projects\MarsEngine\3rdParty\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\3rdParty</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\3rdParty\JoltPhysics\Build</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Jolt.cmake">
+      <Filter>Buildsystem Input Files\3rdParty\JoltPhysics\Jolt</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\glfw\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\3rdParty\glfw</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\glfw\src\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\3rdParty\glfw\src</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\glfw\src\glfw3.pc.in">
+      <Filter>Buildsystem Input Files\3rdParty\glfw\src</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\glfw\src\glfw3Config.cmake.in">
+      <Filter>Buildsystem Input Files\3rdParty\glfw\src</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\glfw\src\glfw_config.h.in">
+      <Filter>Buildsystem Input Files\3rdParty\glfw\src</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\imgui.cmake">
+      <Filter>Buildsystem Input Files\3rdParty</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\lua.cmake">
+      <Filter>Buildsystem Input Files\3rdParty</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\3rdParty\sol2-3.3.0</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\cmake\Includes\Project.cmake">
+      <Filter>Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake\Includes</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\cmake\Modules\CheckCompilerDiagnostic.cmake">
+      <Filter>Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake\Modules</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\cmake\Modules\CheckCompilerFlag.cmake">
+      <Filter>Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake\Modules</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\cmake\Modules\FindVersion.cmake">
+      <Filter>Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake\Modules</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\cmake\sol2-config.cmake.in">
+      <Filter>Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\spdlog\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\3rdParty\spdlog</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\spdlog\cmake\ide.cmake">
+      <Filter>Buildsystem Input Files\3rdParty\spdlog\cmake</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\spdlog\cmake\utils.cmake">
+      <Filter>Buildsystem Input Files\3rdParty\spdlog\cmake</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\stb.cmake">
+      <Filter>Buildsystem Input Files\3rdParty</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\tinyobjloader\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\3rdParty\tinyobjloader</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\tinyobjloader\cmake_uninstall.cmake.in">
+      <Filter>Buildsystem Input Files\3rdParty\tinyobjloader</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\tinyobjloader\tinyobjloader-config.cmake.in">
+      <Filter>Buildsystem Input Files\3rdParty\tinyobjloader</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\3rdParty\tinyobjloader\tinyobjloader.pc.in">
+      <Filter>Buildsystem Input Files\3rdParty\tinyobjloader</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Editor\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\Editor</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Runtime\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\Runtime</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Shader\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\Shader</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\cmake\ShaderCompile.cmake">
+      <Filter>Buildsystem Input Files\cmake</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F4E92DD0-FC97-3499-8A2B-7EF200AD4DC7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C977A751-B631-3601-96CC-D9594C3CB813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty">
+      <UniqueIdentifier>{6ABB1147-6823-37C7-96CF-904A685AE558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\JoltPhysics\Build">
+      <UniqueIdentifier>{F18D09CF-AD55-3C07-94FF-A7F027C43419}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\JoltPhysics\Jolt">
+      <UniqueIdentifier>{A971D37B-0EB3-3E8F-BA7A-A255AD6653B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\glfw">
+      <UniqueIdentifier>{4F9FB2CD-D6B2-3D86-B499-2157BE004BBA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\glfw\src">
+      <UniqueIdentifier>{F8F565EE-0519-3F57-9BEC-D2DEE64FC57A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\sol2-3.3.0">
+      <UniqueIdentifier>{626B286C-9A74-3707-8AA9-5AF46D2D908B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake">
+      <UniqueIdentifier>{3A101B89-D0C9-3AAB-B3F5-29F5F949D5E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake\Includes">
+      <UniqueIdentifier>{91A3D94B-0F4E-3FA9-9AD8-981D3EF2ECB0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\sol2-3.3.0\cmake\Modules">
+      <UniqueIdentifier>{7F6E984C-4DBF-3BB6-87DF-90EA229BC9CA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\spdlog">
+      <UniqueIdentifier>{2685EF5D-1D47-3CA7-A08D-074021BAF550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\spdlog\cmake">
+      <UniqueIdentifier>{ABAECDC4-F45D-35BC-88F7-01D0DC5CF6C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\3rdParty\tinyobjloader">
+      <UniqueIdentifier>{BD904BC0-8B02-321A-BCA4-1C150F249DA6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\Editor">
+      <UniqueIdentifier>{2F00BFCA-74C4-302B-B8A5-906DC7E83C5D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\Runtime">
+      <UniqueIdentifier>{928992C3-893E-31C0-A994-788D35721447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\Shader">
+      <UniqueIdentifier>{72C4FD8C-9E83-3F33-B76C-3B669881D512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\cmake">
+      <UniqueIdentifier>{81B2B6E0-FB76-3495-A4B4-0DA7A7028DFD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

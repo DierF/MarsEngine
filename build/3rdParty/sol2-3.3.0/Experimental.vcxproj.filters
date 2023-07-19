@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\MarsEngine\build\CMakeFiles\5d70a987873bc9593f86b20b129216a0\Experimental.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Projects\MarsEngine\build\3rdParty\sol2-3.3.0\CMakeFiles\Experimental" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F4E92DD0-FC97-3499-8A2B-7EF200AD4DC7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

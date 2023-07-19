@@ -1,0 +1,830 @@
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\AXIS.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/axis.frag.spv D:/Projects/MarsEngine/Shader/glsl/axis.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\AXIS_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/axis.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/axis_frag.h" -DGLOBAL="AXIS_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\AXIS.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/axis.vert.spv D:/Projects/MarsEngine/Shader/glsl/axis.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\AXIS_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/axis.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/axis_vert.h" -DGLOBAL="AXIS_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\COLOR_GRADING.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/color_grading.frag.spv D:/Projects/MarsEngine/Shader/glsl/color_grading.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\COLOR_GRADING_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/color_grading.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/color_grading_frag.h" -DGLOBAL="COLOR_GRADING_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\COMBINE_UI.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/combine_ui.frag.spv D:/Projects/MarsEngine/Shader/glsl/combine_ui.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\COMBINE_UI_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/combine_ui.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/combine_ui_frag.h" -DGLOBAL="COMBINE_UI_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\DEBUGDRAW.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/debugdraw.frag.spv D:/Projects/MarsEngine/Shader/glsl/debugdraw.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\DEBUGDRAW_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/debugdraw.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/debugdraw_frag.h" -DGLOBAL="DEBUGDRAW_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\DEBUGDRAW.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/debugdraw.vert.spv D:/Projects/MarsEngine/Shader/glsl/debugdraw.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\DEBUGDRAW_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/debugdraw.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/debugdraw_vert.h" -DGLOBAL="DEBUGDRAW_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\DEFERRED_LIGHTING.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/deferred_lighting.frag.spv D:/Projects/MarsEngine/Shader/glsl/deferred_lighting.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\DEFERRED_LIGHTING_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/deferred_lighting.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/deferred_lighting_frag.h" -DGLOBAL="DEFERRED_LIGHTING_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\DEFERRED_LIGHTING.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/deferred_lighting.vert.spv D:/Projects/MarsEngine/Shader/glsl/deferred_lighting.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\DEFERRED_LIGHTING_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/deferred_lighting.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/deferred_lighting_vert.h" -DGLOBAL="DEFERRED_LIGHTING_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\FXAA.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/fxaa.frag.spv D:/Projects/MarsEngine/Shader/glsl/fxaa.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\FXAA_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/fxaa.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/fxaa_frag.h" -DGLOBAL="FXAA_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\FXAA.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/fxaa.vert.spv D:/Projects/MarsEngine/Shader/glsl/fxaa.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\FXAA_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/fxaa.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/fxaa_vert.h" -DGLOBAL="FXAA_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_DIRECTIONAL_LIGHT_SHADOW.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_directional_light_shadow.frag.spv D:/Projects/MarsEngine/Shader/glsl/mesh_directional_light_shadow.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_DIRECTIONAL_LIGHT_SHADOW_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_directional_light_shadow.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_directional_light_shadow_frag.h" -DGLOBAL="MESH_DIRECTIONAL_LIGHT_SHADOW_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_DIRECTIONAL_LIGHT_SHADOW.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_directional_light_shadow.vert.spv D:/Projects/MarsEngine/Shader/glsl/mesh_directional_light_shadow.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_DIRECTIONAL_LIGHT_SHADOW_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_directional_light_shadow.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_directional_light_shadow_vert.h" -DGLOBAL="MESH_DIRECTIONAL_LIGHT_SHADOW_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh.frag.spv D:/Projects/MarsEngine/Shader/glsl/mesh.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_frag.h" -DGLOBAL="MESH_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_GBUFFER.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_gbuffer.frag.spv D:/Projects/MarsEngine/Shader/glsl/mesh_gbuffer.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_GBUFFER_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_gbuffer.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_gbuffer_frag.h" -DGLOBAL="MESH_GBUFFER_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_INEFFICIENT_PICK.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_inefficient_pick.frag.spv D:/Projects/MarsEngine/Shader/glsl/mesh_inefficient_pick.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_INEFFICIENT_PICK_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_inefficient_pick.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_inefficient_pick_frag.h" -DGLOBAL="MESH_INEFFICIENT_PICK_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_INEFFICIENT_PICK.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_inefficient_pick.vert.spv D:/Projects/MarsEngine/Shader/glsl/mesh_inefficient_pick.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_INEFFICIENT_PICK_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_inefficient_pick.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_inefficient_pick_vert.h" -DGLOBAL="MESH_INEFFICIENT_PICK_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_POINT_LIGHT_SHADOW.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_point_light_shadow.frag.spv D:/Projects/MarsEngine/Shader/glsl/mesh_point_light_shadow.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_POINT_LIGHT_SHADOW_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_point_light_shadow.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_point_light_shadow_frag.h" -DGLOBAL="MESH_POINT_LIGHT_SHADOW_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_POINT_LIGHT_SHADOW.GEOM.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_point_light_shadow.geom.spv D:/Projects/MarsEngine/Shader/glsl/mesh_point_light_shadow.geom
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_POINT_LIGHT_SHADOW_GEOM.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_point_light_shadow.geom.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_point_light_shadow_geom.h" -DGLOBAL="MESH_POINT_LIGHT_SHADOW_GEOM" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH_POINT_LIGHT_SHADOW.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh_point_light_shadow.vert.spv D:/Projects/MarsEngine/Shader/glsl/mesh_point_light_shadow.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_POINT_LIGHT_SHADOW_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh_point_light_shadow.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_point_light_shadow_vert.h" -DGLOBAL="MESH_POINT_LIGHT_SHADOW_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\MESH.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/mesh.vert.spv D:/Projects/MarsEngine/Shader/glsl/mesh.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\MESH_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/mesh.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/mesh_vert.h" -DGLOBAL="MESH_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\PARTICLE_EMIT.COMP.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/particle_emit.comp.spv D:/Projects/MarsEngine/Shader/glsl/particle_emit.comp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\PARTICLE_EMIT_COMP.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/particle_emit.comp.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/particle_emit_comp.h" -DGLOBAL="PARTICLE_EMIT_COMP" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\PARTICLE_KICKOFF.COMP.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/particle_kickoff.comp.spv D:/Projects/MarsEngine/Shader/glsl/particle_kickoff.comp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\PARTICLE_KICKOFF_COMP.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/particle_kickoff.comp.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/particle_kickoff_comp.h" -DGLOBAL="PARTICLE_KICKOFF_COMP" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\PARTICLE_SIMULATE.COMP.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/particle_simulate.comp.spv D:/Projects/MarsEngine/Shader/glsl/particle_simulate.comp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\PARTICLE_SIMULATE_COMP.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/particle_simulate.comp.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/particle_simulate_comp.h" -DGLOBAL="PARTICLE_SIMULATE_COMP" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\PARTICLEBILLBOARD.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/particlebillboard.frag.spv D:/Projects/MarsEngine/Shader/glsl/particlebillboard.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\PARTICLEBILLBOARD_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/particlebillboard.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/particlebillboard_frag.h" -DGLOBAL="PARTICLEBILLBOARD_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\PARTICLEBILLBOARD.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/particlebillboard.vert.spv D:/Projects/MarsEngine/Shader/glsl/particlebillboard.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\PARTICLEBILLBOARD_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/particlebillboard.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/particlebillboard_vert.h" -DGLOBAL="PARTICLEBILLBOARD_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\POST_PROCESS.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/post_process.vert.spv D:/Projects/MarsEngine/Shader/glsl/post_process.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\POST_PROCESS_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/post_process.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/post_process_vert.h" -DGLOBAL="POST_PROCESS_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\SKYBOX.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/skybox.frag.spv D:/Projects/MarsEngine/Shader/glsl/skybox.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\SKYBOX_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/skybox.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/skybox_frag.h" -DGLOBAL="SKYBOX_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\SKYBOX.VERT.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/skybox.vert.spv D:/Projects/MarsEngine/Shader/glsl/skybox.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\SKYBOX_VERT.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/skybox.vert.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/skybox_vert.h" -DGLOBAL="SKYBOX_VERT" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\E0936CBC9E90CB392B7EDE48098DCC5D\TONE_MAPPING.FRAG.SPV.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Projects\MarsEngine\3rdParty\VulkanSDK\bin\Win32\glslangValidator.exe -ID:/Projects/MarsEngine/Shader/include -V100 -o D:/Projects/MarsEngine/Shader/generated/spv/tone_mapping.frag.spv D:/Projects/MarsEngine/Shader/glsl/tone_mapping.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\B88C078636BB01D90BD2D346A55CF84E\TONE_MAPPING_FRAG.H.RULE
+setlocal
+cd D:\Projects\MarsEngine\Shader
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DPATH=D:/Projects/MarsEngine/Shader/generated/spv/tone_mapping.frag.spv -DHEADER="D:/Projects/MarsEngine/Shader/generated/cpp/tone_mapping_frag.h" -DGLOBAL="TONE_MAPPING_FRAG" -P /cmake/GenerateShaderCPPFile.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\3DBD12B311F7E2C275E48A084445E9F0\SHADERCOMPILE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROJECTS\MARSENGINE\SHADER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/MarsEngine -BD:/Projects/MarsEngine/build --check-stamp-file D:/Projects/MarsEngine/build/Shader/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

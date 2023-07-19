@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 project(MarsEngine)
 
@@ -24,12 +24,12 @@ set(BINARY_ROOT_DIR "${CMAKE_INSTALL_PREFIX}/")
 set(THIRD_PARTY_DIR "${ENGINE_ROOT_DIR}/3rdParty")
 set(ENGINE_ASSET_DIR "/Asset")
 
-set(DEPLOY_CONFIG_DIR "configs/deployment")
-set(DEVELOP_CONFIG_DIR "configs/development")
+# set(DEPLOY_CONFIG_DIR "configs/deployment")
+# set(DEVELOP_CONFIG_DIR "configs/development")
 
 option(ENABLE_PHYSICS_DEBUG_RENDERER "Enable Physics Debug Renderer" OFF)
 
-only support physics debug render at windows platform
+# only support physics debug render at windows platform
 if(NOT WIN32)
   if(ENABLE_PHYSICS_DEBUG_RENDERER)
     message(WARNING "Disable Physics Debug Renderer")
