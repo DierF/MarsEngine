@@ -5,8 +5,7 @@ workspace "MarsEngine"
 	configurations
 	{
 		"Debug",
-		"Release",
-		"Dist"
+		"Release"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
@@ -34,7 +33,7 @@ project "MarsEngine"
 	location "MarsEngine"
 	kind "StaticLib"
 	language "C++"
-	staticruntime "on"
+	staticruntime "off"
 	cppdialect "C++17"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -103,65 +102,6 @@ project "MarsEngine"
 		buildoptions "/MT"
 		optimize "on"
 
-	filter "configurations:Dist"
-		defines "ME_DIST"
-		buildoptions "/MT"
-		optimize "on"
-
-
-project "Runtime"
-	location "Runtime"
-	kind "ConsoleApp"
-	language "C++"
-	staticruntime "on"
-	cppdialect "C++17"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin/" .. outputdir .. "/%{prj.name}")
-
-	files
-	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
-	}
-
-	includedirs
-	{
-		"MarsEngine/vendor/spdlog/include",
-		"MarsEngine/src",
-		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
-	}
-
-	links
-	{
-		"MarsEngine"
-	}
-
-	filter "system:windows"
-		systemversion "latest"
-
-		defines
-		{
-			"ME_PLATFORM_WINDOWS"
-		}
-	
-	filter "configurations:Debug"
-		defines "ME_DEBUG"
-		buildoptions "/MTd"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "ME_RELEASE"
-		buildoptions "/MT"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "ME_DIST"
-		buildoptions "/MT"
-		optimize "on"
-
-
 project "Editor"
 	location "Editor"
 	kind "ConsoleApp"
@@ -210,10 +150,5 @@ project "Editor"
 
 	filter "configurations:Release"
 		defines "ME_RELEASE"
-		buildoptions "/MT"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "ME_DIST"
 		buildoptions "/MT"
 		optimize "on"
