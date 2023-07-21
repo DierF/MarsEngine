@@ -1,5 +1,4 @@
-﻿  Building Custom Rule D:/Projects/MarsEngine/3rdParty/JoltPhysics/Build/CMakeLists.txt
-  pch.cpp
+﻿  pch.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xlocale(2014): error C2220: 以下警告被视为错误
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xlocale(2010): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]]
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xlocale(2010): note: 要简化迁移，请考虑暂时对用于生成且不引发警告的编译器版本使用 /Wv:18 标记
