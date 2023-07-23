@@ -1,10 +1,9 @@
 #pragma once
 
-#include "runtime/resource/res_type/components/animation.h"
+#include "Runtime/Function/Animation/Node.h"
+#include "Runtime/Resource/ResType/Components/Animation.h"
 
-#include "runtime/function/animation/node.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     class SkeletonData;
     class BlendStateWithClipData;
@@ -19,11 +18,11 @@ namespace Piccolo
     public:
         ~Skeleton();
 
-        void            buildSkeleton(const SkeletonData& skeleton_definition);
-        void            applyAnimation(const BlendStateWithClipData& blend_state);
+        void            buildSkeleton(SkeletonData const& skeleton_definition);
+        void            applyAnimation(BlendStateWithClipData const& blend_state);
         AnimationResult outputAnimationResult();
         void            resetSkeleton();
-        const Bone*     getBones() const;
+        Bone const*     getBones() const;
         int32_t         getBonesCount() const;
     };
-} // namespace Piccolo
+} // namespace MarsEngine

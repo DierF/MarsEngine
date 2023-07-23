@@ -1,8 +1,7 @@
-#include "runtime/function/animation/utilities.h"
+#include "Runtime/Function/Animation/Utilities.h"
+#include "Runtime/Function/Animation/Node.h"
 
-#include "runtime/function/animation/node.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     Bone* find_by_index(Bone* bones, int key, int size, bool is_flat)
     {
@@ -36,19 +35,19 @@ namespace Piccolo
         }
         else
         {
-            const auto it = std::find_if(bones.begin(), bones.end(), [&](const auto& i) { return i->index == key; });
+            auto const it = std::find_if(bones.begin(), bones.end(), [&](auto const& i) { return i->index == key; });
             if (it != bones.end())
                 return *it;
         }
         return nullptr;
     }
 
-    int find_index_by_name(const SkeletonData& skeleton, const std::string& name)
+    int find_index_by_name(SkeletonData const& skeleton, std::string const& name)
     {
-        const auto it = std::find_if(
-            skeleton.bones_map.begin(), skeleton.bones_map.end(), [&](const auto& i) { return i.name == name; });
+        auto const it = std::find_if(
+            skeleton.bones_map.begin(), skeleton.bones_map.end(), [&](auto const& i) { return i.name == name; });
         if (it != skeleton.bones_map.end())
             return it->index;
         return std::numeric_limits<int>::max();
     }
-} // namespace Piccolo
+} // namespace MarsEngine

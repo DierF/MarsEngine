@@ -261,7 +261,7 @@ namespace MarsEngine
             ReflectionPtr(ReflectionPtr const& dest) : m_type_name(dest.m_type_name), m_instance(dest.m_instance) {}
 
             template<typename U /*, typename = typename std::enable_if<std::is_safely_castable<T*, U*>::value>::type */>
-            ReflectionPtr<T>& operator=(ReflectionPtr const<U>& dest)
+            ReflectionPtr<T>& operator=(ReflectionPtr<U> const& dest)
             {
                 if (this == static_cast<void*>(&dest))
                 {
@@ -284,7 +284,7 @@ namespace MarsEngine
                 return *this;
             }
 
-            ReflectionPtr<T>& operator=(ReflectionPtr const<T>& dest)
+            ReflectionPtr<T>& operator=(ReflectionPtr<T> const& dest)
             {
                 if (this == &dest)
                 {
@@ -314,9 +314,9 @@ namespace MarsEngine
 
             bool operator!=(T const* ptr) const { return (m_instance != ptr); }
 
-            bool operator==(ReflectionPtr const<T>& rhs_ptr) const { return (m_instance == rhs_ptr.m_instance); }
+            bool operator==(ReflectionPtr<T> const& rhs_ptr) const { return (m_instance == rhs_ptr.m_instance); }
 
-            bool operator!=(ReflectionPtr const<T>& rhs_ptr) const { return (m_instance != rhs_ptr.m_instance); }
+            bool operator!=(ReflectionPtr<T> const& rhs_ptr) const { return (m_instance != rhs_ptr.m_instance); }
 
             template<
                 typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
@@ -341,7 +341,7 @@ namespace MarsEngine
 
             template<
                 typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
-            operator ReflectionPtr const<T1>() const
+            operator ReflectionPtr<T1> const() const
             {
                 return ReflectionPtr<T1>(m_type_name, (T1*)(m_instance));
             }

@@ -1,11 +1,10 @@
-#include "runtime/function/animation/node.h"
+#include "Runtime/Function/Animation/Node.h"
+#include "Runtime/Core/Math/Math.h"
 
-#include "runtime/core/math/math.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     //-----------------------------------------------------------------------
-    Node::Node(const std::string name) { m_name = name; }
+    Node::Node(std::string const name) { m_name = name; }
     Node::~Node()
     {
         // clear();
@@ -34,7 +33,7 @@ namespace Piccolo
         if (m_parent)
         {
             // Update orientation
-            const Quaternion& parentOrientation = m_parent->_getDerivedOrientation();
+            Math::Quaternion const& parentOrientation = m_parent->_getDerivedOrientation();
             {
                 // Combine orientation with that of parent
                 m_derived_orientation = parentOrientation * m_orientation;
@@ -42,7 +41,7 @@ namespace Piccolo
             }
 
             // Update scale
-            const Vector3& parentScale = m_parent->_getDerivedScale();
+            Math::Vec3 const& parentScale = m_parent->_getDerivedScale();
             {
                 // Scale own position by parent scale, NB just combine
                 // as equivalent axes, no shearing
@@ -65,16 +64,16 @@ namespace Piccolo
     }
 
     //-----------------------------------------------------------------------
-    const Quaternion& Node::getOrientation() const { return m_orientation; }
+    Math::Quaternion const& Node::getOrientation() const { return m_orientation; }
 
     //-----------------------------------------------------------------------
-    void Node::setOrientation(const Quaternion& q)
+    void Node::setOrientation(Math::Quaternion const& q)
     {
         // ASSERT(!q.isNaN() && "Invalid orientation supplied as parameter");
         if (q.isNaN())
         {
             // LOG_ERROR(__FUNCTION__, "Invalid orientation supplied as parameter");
-            m_orientation = Quaternion::IDENTITY;
+            m_orientation = Math::Quaternion::IDENTITY;
         }
         else
         {
@@ -86,12 +85,12 @@ namespace Piccolo
     //-----------------------------------------------------------------------
     void Node::resetOrientation(void)
     {
-        m_orientation = Quaternion::IDENTITY;
+        m_orientation = Math::Quaternion::IDENTITY;
         setDirty();
     }
 
     //-----------------------------------------------------------------------
-    void Node::setPosition(const Vector3& pos)
+    void Node::setPosition(Math::Vec3 const& pos)
     {
         if (pos.isNaN())
         {
@@ -102,9 +101,9 @@ namespace Piccolo
     }
 
     //-----------------------------------------------------------------------
-    const Vector3& Node::getPosition(void) const { return m_position; }
+    Math::Vec3 const& Node::getPosition(void) const { return m_position; }
     //-----------------------------------------------------------------------
-    void Node::translate(const Vector3& d, TransformSpace relativeTo)
+    void Node::translate(Math::Vec3 const& d, TransformSpace relativeTo)
     {
         switch (relativeTo)
         {
@@ -132,10 +131,10 @@ namespace Piccolo
     }
 
     //-----------------------------------------------------------------------
-    void Node::rotate(const Quaternion& q, TransformSpace relativeTo)
+    void Node::rotate(Math::Quaternion const& q, TransformSpace relativeTo)
     {
-        // Normalize Quaternionernion to avoid drift
-        Quaternion qnorm = q;
+        // Normalize Math::Quaternionernion to avoid drift
+        Math::Quaternion qnorm = q;
         qnorm.normalise();
 
         switch (relativeTo)
@@ -158,16 +157,16 @@ namespace Piccolo
 
     //-----------------------------------------------------------------------
     //-----------------------------------------------------------------------
-    const Quaternion& Node::_getDerivedOrientation(void) const { return m_derived_orientation; }
+    Math::Quaternion const& Node::_getDerivedOrientation(void) const { return m_derived_orientation; }
     //-----------------------------------------------------------------------
-    const Vector3& Node::_getDerivedPosition(void) const { return m_derived_position; }
+    Math::Vec3 const& Node::_getDerivedPosition(void) const { return m_derived_position; }
     //-----------------------------------------------------------------------
-    const Vector3& Node::_getDerivedScale(void) const { return m_derived_scale; }
+    Math::Vec3 const& Node::_getDerivedScale(void) const { return m_derived_scale; }
 
-    const Matrix4x4& Node::_getInverseTpose(void) const { return m_inverse_Tpose; }
+    Math::Mat4 const& Node::_getInverseTpose(void) const { return m_inverse_Tpose; }
 
     //-----------------------------------------------------------------------
-    void Node::setScale(const Vector3& inScale)
+    void Node::setScale(Math::Vec3 const& inScale)
     {
         if (inScale.isNaN())
         {
@@ -177,15 +176,15 @@ namespace Piccolo
         setDirty();
     }
     //-----------------------------------------------------------------------
-    const Vector3& Node::getScale(void) const { return m_scale; }
+    Math::Vec3 const& Node::getScale(void) const { return m_scale; }
     //-----------------------------------------------------------------------
-    void Node::scale(const Vector3& inScale)
+    void Node::scale(Math::Vec3 const& inScale)
     {
         m_scale = m_scale * inScale;
         setDirty();
     }
     //-----------------------------------------------------------------------
-    const std::string& Node::getName(void) const { return m_name; }
+    std::string const& Node::getName(void) const { return m_name; }
     //-----------------------------------------------------------------------
     void Node::setAsInitialPose(void)
     {
@@ -205,11 +204,11 @@ namespace Piccolo
         setDirty();
     }
     //-----------------------------------------------------------------------
-    const Vector3& Node::getInitialPosition(void) const { return m_initial_position; }
+    Math::Vec3 const& Node::getInitialPosition(void) const { return m_initial_position; }
     //-----------------------------------------------------------------------
-    const Quaternion& Node::getInitialOrientation(void) const { return m_initial_orientation; }
+    Math::Quaternion const& Node::getInitialOrientation(void) const { return m_initial_orientation; }
     //-----------------------------------------------------------------------
-    const Vector3& Node::getInitialScale(void) const { return m_initial_scale; }
+    Math::Vec3 const& Node::getInitialScale(void) const { return m_initial_scale; }
     //-----------------------------------------------------------------------
     void Node::setDirty() { m_is_dirty = true; }
 
@@ -242,4 +241,4 @@ namespace Piccolo
         }
         return std::numeric_limits<size_t>().max();
     }
-} // namespace Piccolo
+} // namespace MarsEngine

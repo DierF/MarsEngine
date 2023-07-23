@@ -6,7 +6,7 @@
 #include <string>
 #include <unordered_set>
 
-namespace Piccolo
+namespace MarsEngine
 {
     extern bool                            g_is_editor_mode;
     extern std::unordered_set<std::string> g_editor_tick_component_types;
@@ -15,10 +15,10 @@ namespace Piccolo
     {
         friend class PiccoloEditor;
 
-        static const float s_fps_alpha;
+        static float const s_fps_alpha;
 
     public:
-        void startEngine(const std::string& config_file_path);
+        void startEngine(std::string const& config_file_path);
         void shutdownEngine();
 
         void initialize();
@@ -51,4 +51,4 @@ namespace Piccolo
         int   m_fps {0};
     };
 
-} // namespace Piccolo
+} // namespace MarsEngine

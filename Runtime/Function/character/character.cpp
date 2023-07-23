@@ -1,12 +1,11 @@
-#include "runtime/function/character/character.h"
+#include "Runtime/Function/Character/Character.h"
+#include "Runtime/Function/Framework/Component/Motor/MotorComponent.h"
+#include "Runtime/Function/Framework/Component/Transform/TransformComponent.h"
+#include "Runtime/Function/Global/GlobalContext.h"
+#include "Runtime/Function/Input/InputSystem.h"
+#include "Runtime/Engine.h"
 
-#include "runtime/engine.h"
-#include "runtime/function/framework/component/motor/motor_component.h"
-#include "runtime/function/framework/component/transform/transform_component.h"
-#include "runtime/function/global/global_context.h"
-#include "runtime/function/input/input_system.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     Character::Character(std::shared_ptr<GObject> character_object) { setObject(character_object); }
 
@@ -25,16 +24,16 @@ namespace Piccolo
         m_character_object = gobject;
         if (m_character_object)
         {
-            const TransformComponent* transform_component =
+            TransformComponent const* transform_component =
                 m_character_object->tryGetComponentConst(TransformComponent);
-            const Transform& transform = transform_component->getTransformConst();
+            Math::Transform const& transform = transform_component->getTransformConst();
             m_position                 = transform.m_position;
             m_rotation                 = transform.m_rotation;
         }
         else
         {
-            m_position = Vector3::ZERO;
-            m_rotation = Quaternion::IDENTITY;
+            m_position = Math::Vec3::ZERO;
+            m_rotation = Math::Quaternion::IDENTITY;
         }
     }
 
@@ -60,7 +59,7 @@ namespace Piccolo
             m_rotation_dirty = false;
         }
 
-        const MotorComponent* motor_component = m_character_object->tryGetComponentConst(MotorComponent);
+        MotorComponent const* motor_component = m_character_object->tryGetComponentConst(MotorComponent);
         if (motor_component == nullptr)
         {
             return;
@@ -73,7 +72,7 @@ namespace Piccolo
             m_rotation_dirty = true;
         }
 
-        const Vector3& new_position = motor_component->getTargetPosition();
+        Math::Vec3 const& new_position = motor_component->getTargetPosition();
 
         m_position = new_position;
 
@@ -103,4 +102,4 @@ namespace Piccolo
             camera_component->setCameraMode(m_original_camera_mode);
         }
     }
-} // namespace Piccolo
+} // namespace MarsEngine

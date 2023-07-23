@@ -1,23 +1,21 @@
-﻿#include "runtime/engine.h"
+﻿#include "Runtime/Engine.h"
+#include "Runtime/Core/Base/Macro.h"
+#include "Runtime/Core/Meta/Reflection/ReflectionRegister.h"
+#include "Runtime/Function/Framework/World/WorldManager.h"
+#include "Runtime/Function/Global/GlobalContext.h"
+#include "Runtime/Function/Input/InputSystem.h"
+#include "Runtime/Function/Particle/ParticleManager.h"
+#include "Runtime/Function/Physics/PhysicsManager.h"
+#include "Runtime/Function/Render/RenderSystem.h"
+#include "Runtime/Function/Render/WindowSystem.h"
+#include "Runtime/Function/Render/Debugdraw/DebugDrawManager.h"
 
-#include "runtime/core/base/macro.h"
-#include "runtime/core/meta/reflection/reflection_register.h"
-
-#include "runtime/function/framework/world/world_manager.h"
-#include "runtime/function/global/global_context.h"
-#include "runtime/function/input/input_system.h"
-#include "runtime/function/particle/particle_manager.h"
-#include "runtime/function/physics/physics_manager.h"
-#include "runtime/function/render/render_system.h"
-#include "runtime/function/render/window_system.h"
-#include "runtime/function/render/debugdraw/debug_draw_manager.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     bool                            g_is_editor_mode {false};
     std::unordered_set<std::string> g_editor_tick_component_types {};
 
-    void PiccoloEngine::startEngine(const std::string& config_file_path)
+    void PiccoloEngine::startEngine(std::string const& config_file_path)
     {
         Reflection::TypeMetaRegister::metaRegister();
 
@@ -86,7 +84,7 @@ namespace Piccolo
         g_runtime_global_context.m_window_system->setTitle(
             std::string("Piccolo - " + std::to_string(getFPS()) + " FPS").c_str());
 
-        const bool should_window_close = g_runtime_global_context.m_window_system->shouldClose();
+        bool const should_window_close = g_runtime_global_context.m_window_system->shouldClose();
         return !should_window_close;
     }
 
@@ -102,7 +100,7 @@ namespace Piccolo
         return true;
     }
 
-    const float PiccoloEngine::s_fps_alpha = 1.f / 100;
+    float const PiccoloEngine::s_fps_alpha = 1.f / 100;
     void        PiccoloEngine::calculateFPS(float delta_time)
     {
         m_frame_count++;
@@ -118,4 +116,4 @@ namespace Piccolo
 
         m_fps = static_cast<int>(1.f / m_average_duration);
     }
-} // namespace Piccolo
+} // namespace MarsEngine

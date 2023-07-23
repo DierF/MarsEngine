@@ -5,19 +5,19 @@
 #include <tuple>
 #include <vector>
 
-namespace Piccolo
+namespace MarsEngine
 {
     class Path
     {
     public:
-        static const std::filesystem::path getRelativePath(const std::filesystem::path& directory,
-                                                    const std::filesystem::path& file_path) ;
+        static std::filesystem::path const getRelativePath(std::filesystem::path const& directory,
+                                                           std::filesystem::path const& file_path);
 
-        static const std::vector<std::string> getPathSegments(const std::filesystem::path& file_path) ;
+        static std::vector<std::string> const getPathSegments(std::filesystem::path const& file_path);
 
-        static const std::tuple<std::string, std::string, std::string>
-        getFileExtensions(const std::filesystem::path& file_path);
+        static std::tuple<std::string, std::string, std::string> const
+        getFileExtensions(std::filesystem::path const& file_path);
 
-        static const std::string getFilePureName(const std::string);
+        static std::string const getFilePureName(std::string const);
     };
-} // namespace Piccolo
+} // namespace MarsEngine
