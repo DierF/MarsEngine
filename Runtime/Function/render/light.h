@@ -1,18 +1,17 @@
 #pragma once
 
-#include "runtime/core/math/vector3.h"
-
-#include "runtime/function/render/render_type.h"
+#include "Runtime/Core/Math/Vector3.h"
+#include "Runtime/Function/Render/RenderType.h"
 
 #include <vector>
 
-namespace Piccolo
+namespace MarsEngine
 {
     struct PointLight
     {
-        Vector3 m_position;
+        Math::Vec3 m_position;
         // radiant flux in W
-        Vector3 m_flux;
+        Math::Vec3 m_flux;
 
         // calculate an appropriate radius for light culling
         // a windowing function in the shader will perform a smooth transition to zero
@@ -20,10 +19,10 @@ namespace Piccolo
         float calculateRadius() const
         {
             // radius = where attenuation would lead to an intensity of 1W/m^2
-            const float INTENSITY_CUTOFF    = 1.0f;
-            const float ATTENTUATION_CUTOFF = 0.05f;
-            Vector3     intensity           = m_flux / (4.0f * Math_PI);
-            float       maxIntensity        = Vector3::getMaxElement(intensity);
+            float const INTENSITY_CUTOFF = 1.0f;
+            float const ATTENTUATION_CUTOFF = 0.05f;
+            Math::Vec3     intensity           = m_flux / (4.0f * Math::PI);
+            float       maxIntensity        = Math::Vec3::getMaxElement(intensity);
             float       attenuation = Math::max(INTENSITY_CUTOFF, ATTENTUATION_CUTOFF * maxIntensity) / maxIntensity;
             return 1.0f / sqrtf(attenuation);
         }
@@ -31,13 +30,13 @@ namespace Piccolo
 
     struct AmbientLight
     {
-        Vector3 m_irradiance;
+        Math::Vec3 m_irradiance;
     };
 
     struct PDirectionalLight
     {
-        Vector3 m_direction;
-        Vector3 m_color;
+        Math::Vec3 m_direction;
+        Math::Vec3 m_color;
     };
 
     struct LightList
@@ -45,11 +44,11 @@ namespace Piccolo
         // vertex buffers seem to be aligned to 16 bytes
         struct PointLightVertex
         {
-            Vector3 m_position;
+            Math::Vec3 m_position;
             float   m_padding;
             // radiant intensity in W/sr
             // can be calculated from radiant flux
-            Vector3 m_intensity;
+            Math::Vec3 m_intensity;
             float   m_radius;
         };
     };
@@ -68,4 +67,4 @@ namespace Piccolo
         std::shared_ptr<BufferData> m_buffer;
     };
 
-} // namespace Piccolo
+} // namespace MarsEngine
