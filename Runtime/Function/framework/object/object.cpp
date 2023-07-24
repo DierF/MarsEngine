@@ -1,21 +1,17 @@
-#include "runtime/function/framework/object/object.h"
+#include "Runtime/Function/Framework/Object/Object.h"
+#include "Runtime/Function/Framework/Component/Component.h"
+#include "Runtime/Function/Framework/Component/Transform/TransformComponent.h"
+#include "Runtime/Function/Global/GlobalContext.h"
+#include "Runtime/Core/Meta/Reflection/Reflection.h"
+#include "Runtime/Resource/AssetManager/AssetManager.h"
+#include "Runtime/Engine.h"
 
-#include "runtime/engine.h"
-
-#include "runtime/core/meta/reflection/reflection.h"
-
-#include "runtime/resource/asset_manager/asset_manager.h"
-
-#include "runtime/function/framework/component/component.h"
-#include "runtime/function/framework/component/transform/transform_component.h"
-#include "runtime/function/global/global_context.h"
+#include "_generated/serializer/all_serializer.h"
 
 #include <cassert>
 #include <unordered_set>
 
-#include "_generated/serializer/all_serializer.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     bool shouldComponentTick(std::string component_type_name)
     {
@@ -33,7 +29,7 @@ namespace Piccolo
     {
         for (auto& component : m_components)
         {
-            PICCOLO_REFLECTION_DELETE(component);
+            MARS_REFLECTION_DELETE(component);
         }
         m_components.clear();
     }
@@ -49,9 +45,9 @@ namespace Piccolo
         }
     }
 
-    bool GObject::hasComponent(const std::string& compenent_type_name) const
+    bool GObject::hasComponent(std::string const& compenent_type_name) const
     {
-        for (const auto& component : m_components)
+        for (auto const& component : m_components)
         {
             if (component.getTypeName() == compenent_type_name)
                 return true;
@@ -60,7 +56,7 @@ namespace Piccolo
         return false;
     }
 
-    bool GObject::load(const ObjectInstanceRes& object_instance_res)
+    bool GObject::load(ObjectInstanceRes const& object_instance_res)
     {
         // clear old components
         m_components.clear();
@@ -82,13 +78,13 @@ namespace Piccolo
 
         ObjectDefinitionRes definition_res;
 
-        const bool is_loaded_success = g_runtime_global_context.m_asset_manager->loadAsset(m_definition_url, definition_res);
+        bool const is_loaded_success = g_runtime_global_context.m_asset_manager->loadAsset(m_definition_url, definition_res);
         if (!is_loaded_success)
             return false;
 
         for (auto loaded_component : definition_res.m_components)
         {
-            const std::string type_name = loaded_component.getTypeName();
+            std::string const type_name = loaded_component.getTypeName();
             // don't create component if it has been instanced
             if (hasComponent(type_name))
                 continue;
@@ -109,4 +105,4 @@ namespace Piccolo
         out_object_instance_res.m_instanced_components = m_components;
     }
 
-} // namespace Piccolo
+} // namespace MarsEngine

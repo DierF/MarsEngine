@@ -41,16 +41,16 @@ namespace Math
     // angle units used by the api
     static AngleUnit s_AngleUnit;
 
-    float const Math_POS_INFINITY = std::numeric_limits<float>::infinity();
-    float const Math_NEG_INFINITY = -std::numeric_limits<float>::infinity();
-    float const Math_PI = 3.14159265358979323846264338327950288f;
-    float const Math_ONE_OVER_PI = 1.0f / Math_PI;
-    float const Math_TWO_PI = 2.0f * Math_PI;
-    float const Math_HALF_PI = 0.5f * Math_PI;
-    float const Math_fDeg2Rad = Math_PI / 180.0f;
-    float const Math_fRad2Deg = 180.0f / Math_PI;
-    float const Math_LOG2 = log(2.0f);
-    float const Math_EPSILON = 1e-6f;
+    float const POS_INFINITY = std::numeric_limits<float>::infinity();
+    float const NEG_INFINITY = -std::numeric_limits<float>::infinity();
+    float const PI = 3.14159265358979323846264338327950288f;
+    float const ONE_OVER_PI = 1.0f / Math_PI;
+    float const TWO_PI = 2.0f * Math_PI;
+    float const HALF_PI = 0.5f * Math_PI;
+    float const fDeg2Rad = Math_PI / 180.0f;
+    float const fRad2Deg = 180.0f / Math_PI;
+    float const LOG2 = log(2.0f);
+    float const EPSILON = 1e-6f;
 
     float const Float_EPSILON = FLT_EPSILON;
     float const Double_EPSILON = DBL_EPSILON;

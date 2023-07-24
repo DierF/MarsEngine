@@ -1,16 +1,15 @@
 #pragma once
 
-#include "runtime/function/framework/component/component.h"
-#include "runtime/function/framework/object/object_id_allocator.h"
-
-#include "runtime/resource/res_type/common/object.h"
+#include "Runtime/Function/Framework/Component/Component.h"
+#include "Runtime/Function/Framework/Object/ObjectIdAllocator.h"
+#include "Runtime/Resource/ResType/Common/Object.h"
 
 #include <memory>
 #include <string>
 #include <unordered_set>
 #include <vector>
 
-namespace Piccolo
+namespace MarsEngine
 {
     /// GObject : Game Object base class
     class GObject : public std::enable_shared_from_this<GObject>
@@ -23,20 +22,20 @@ namespace Piccolo
 
         virtual void tick(float delta_time);
 
-        bool load(const ObjectInstanceRes& object_instance_res);
+        bool load(ObjectInstanceRes const& object_instance_res);
         void save(ObjectInstanceRes& out_object_instance_res);
 
         GObjectID getID() const { return m_id; }
 
         void               setName(std::string name) { m_name = name; }
-        const std::string& getName() const { return m_name; }
+        std::string const& getName() const { return m_name; }
 
-        bool hasComponent(const std::string& compenent_type_name) const;
+        bool hasComponent(std::string const& compenent_type_name) const;
 
         std::vector<Reflection::ReflectionPtr<Component>> getComponents() { return m_components; }
 
         template<typename TComponent>
-        TComponent* tryGetComponent(const std::string& compenent_type_name)
+        TComponent* tryGetComponent(std::string const& compenent_type_name)
         {
             for (auto& component : m_components)
             {
@@ -50,20 +49,20 @@ namespace Piccolo
         }
 
         template<typename TComponent>
-        const TComponent* tryGetComponentConst(const std::string& compenent_type_name) const
+        TComponent const* tryGetComponentConst(std::string const& compenent_type_name) const
         {
-            for (const auto& component : m_components)
+            for (auto const& component : m_components)
             {
                 if (component.getTypeName() == compenent_type_name)
                 {
-                    return static_cast<const TComponent*>(component.operator->());
+                    return static_cast<TComponent const*>(component.operator->());
                 }
             }
             return nullptr;
         }
 
 #define tryGetComponent(COMPONENT_TYPE) tryGetComponent<COMPONENT_TYPE>(#COMPONENT_TYPE)
-#define tryGetComponentConst(COMPONENT_TYPE) tryGetComponentConst<const COMPONENT_TYPE>(#COMPONENT_TYPE)
+#define tryGetComponentConst(COMPONENT_TYPE) tryGetComponentConst<COMPONENT_TYPE const>(#COMPONENT_TYPE)
 
     protected:
         GObjectID   m_id {k_invalid_gobject_id};
@@ -74,4 +73,4 @@ namespace Piccolo
         // in editor, and it's polymorphism
         std::vector<Reflection::ReflectionPtr<Component>> m_components;
     };
-} // namespace Piccolo
+} // namespace MarsEngine

@@ -1,13 +1,12 @@
-#include "runtime/function/physics/jolt/utils.h"
+#include "Runtime/Function/Physics/Jolt/Utils.h"
+#include "Runtime/Resource/ResType/Components/RigidBody.h"
 
-#include "runtime/resource/res_type/components/rigid_body.h"
+#include <Jolt/Physics/Collision/Shape/BoxShape.h>
+#include <Jolt/Physics/Collision/Shape/CapsuleShape.h>
+#include <Jolt/Physics/Collision/Shape/SphereShape.h>
+#include <Jolt/Physics/Collision/Shape/StaticCompoundShape.h>
 
-#include "Jolt/Physics/Collision/Shape/BoxShape.h"
-#include "Jolt/Physics/Collision/Shape/CapsuleShape.h"
-#include "Jolt/Physics/Collision/Shape/SphereShape.h"
-#include "Jolt/Physics/Collision/Shape/StaticCompoundShape.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     BPLayerInterfaceImpl::BPLayerInterfaceImpl()
     {
@@ -23,7 +22,7 @@ namespace Piccolo
     }
 
 #if defined(JPH_EXTERNAL_PROFILE) || defined(JPH_PROFILE_ENABLED)
-    const char* BPLayerInterfaceImpl::GetBroadPhaseLayerName(JPH::BroadPhaseLayer inLayer) const
+    char const* BPLayerInterfaceImpl::GetBroadPhaseLayerName(JPH::BroadPhaseLayer inLayer) const
     {
         switch ((JPH::BroadPhaseLayer::Type)inLayer)
         {
@@ -90,7 +89,7 @@ namespace Piccolo
         }
     }
 
-    JPH::Mat44 toMat44(const Matrix4x4& m)
+    JPH::Mat44 toMat44(Math::Mat4 const& m)
     {
         JPH::Vec4 cols[4];
         for (int i = 0; i < 4; i++)
@@ -101,25 +100,25 @@ namespace Piccolo
         return {cols[0], cols[1], cols[2], cols[3]};
     }
 
-    Matrix4x4 toMat44(const JPH::Mat44& m)
+    Math::Mat4 toMat44(JPH::Mat44 const& m)
     {
-        Vector4 cols[4];
+        Math::Vec4 cols[4];
         for (int i = 0; i < 4; i++)
         {
             cols[i] = toVec4(m.GetColumn4(i));
         }
 
-        return Matrix4x4(cols[0], cols[1], cols[2], cols[3]).transpose();
+        return Math::Mat4(cols[0], cols[1], cols[2], cols[3]).transpose();
     }
 
-    JPH::Shape* toShape(const RigidBodyShape& shape, const Vector3& scale)
+    JPH::Shape* toShape(RigidBodyShape const& shape, Math::Vec3 const& scale)
     {
         JPH::Shape* jph_shape = nullptr;
 
-        const std::string shape_type_str = shape.m_geometry.getTypeName();
+        std::string const shape_type_str = shape.m_geometry.getTypeName();
         if (shape_type_str == "Box")
         {
-            const Box* box_geometry = static_cast<const Box*>(shape.m_geometry.getPtr());
+            Box const* box_geometry = static_cast<Box const*>(shape.m_geometry.getPtr());
             if (box_geometry)
             {
                 JPH::Vec3 jph_box(scale.x * box_geometry->m_half_extents.x,
@@ -130,7 +129,7 @@ namespace Piccolo
         }
         else if (shape_type_str == "Sphere")
         {
-            const Sphere* sphere_geometry = static_cast<const Sphere*>(shape.m_geometry.getPtr());
+            Sphere const* sphere_geometry = static_cast<Sphere const*>(shape.m_geometry.getPtr());
             if (sphere_geometry)
             {
                 jph_shape = new JPH::SphereShape((scale.x + scale.y + scale.z) / 3 *
@@ -139,7 +138,7 @@ namespace Piccolo
         }
         else if (shape_type_str == "Capsule")
         {
-            const Capsule* capsule_geometry = static_cast<const Capsule*>(shape.m_geometry.getPtr());
+            Capsule const* capsule_geometry = static_cast<Capsule const*>(shape.m_geometry.getPtr());
             if (capsule_geometry)
             {
                 jph_shape = new JPH::CapsuleShape(scale.z * capsule_geometry->m_half_height,
@@ -153,5 +152,4 @@ namespace Piccolo
 
         return jph_shape;
     }
-
-} // namespace Piccolo
+} // namespace MarsEngine
