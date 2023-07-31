@@ -2,7 +2,7 @@
 
 #include "Runtime/Function/Render/RenderPass.h"
 #include "Runtime/Function/Render/Passes/ColorGradingPass.h"
-#include "Runtime/Function/Render/Passes/CombineIiPass.h"
+#include "Runtime/Function/Render/Passes/CombineUiPass.h"
 #include "Runtime/Function/Render/Passes/FxaaPass.h"
 #include "Runtime/Function/Render/Passes/ToneMappingPass.h"
 #include "Runtime/Function/Render/Passes/UiPass.h"

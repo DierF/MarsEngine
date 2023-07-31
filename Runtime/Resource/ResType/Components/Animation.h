@@ -16,7 +16,7 @@ namespace MarsEngine
 
     public:
         int        index;
-        Matrix4x4_ transform;
+        Math::Mat4_ transform;
     };
 
     REFLECTION_TYPE(AnimationResult)

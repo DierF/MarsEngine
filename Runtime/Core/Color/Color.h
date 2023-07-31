@@ -11,6 +11,7 @@ namespace MarsEngine
     {
         REFLECTION_BODY(Color);
 
+    public:
         Math::Vec3 toVec3() const { return Math::Vec3(r, g, b); }
 
     public:

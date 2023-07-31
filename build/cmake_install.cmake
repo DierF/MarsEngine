@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "D:/Projects/MarsEngine/Bin")
+  set(CMAKE_INSTALL_PREFIX "D:/Projects/MarsEngine/bin")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -36,8 +36,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("D:/Projects/MarsEngine/build/Shader/cmake_install.cmake")
   include("D:/Projects/MarsEngine/build/3rdParty/cmake_install.cmake")
-  include("D:/Projects/MarsEngine/build/Editor/cmake_install.cmake")
   include("D:/Projects/MarsEngine/build/Runtime/cmake_install.cmake")
+  include("D:/Projects/MarsEngine/build/Editor/cmake_install.cmake")
+  include("D:/Projects/MarsEngine/build/MetaParser/cmake_install.cmake")
 
 endif()
 

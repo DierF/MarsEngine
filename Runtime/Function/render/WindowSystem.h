@@ -13,7 +13,7 @@ namespace MarsEngine
     {
         int         width {1280};
         int         height {720};
-        char const* title {"Piccolo"};
+        char const* title {"MarsEngine"};
         bool        is_fullscreen {false};
     };
 

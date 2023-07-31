@@ -1,13 +1,13 @@
-#include "editor/include/axis.h"
+#include "Editor/Include/Axis.h"
 
-namespace Piccolo
+namespace MarsEngine
 {
     EditorTranslationAxis::EditorTranslationAxis()
     {
         // create translation axis render mesh
 
-        const float radius = 0.031f;
-        const int   segments = 12;
+        float const radius = 0.031f;
+        int const   segments = 12;
 
         uint32_t stride = sizeof(MeshVertexDataDefinition);
 
@@ -22,8 +22,8 @@ namespace Piccolo
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (0 * segments + i) * stride);
             vertex.x = 0.0f;
-            vertex.y = sin(i * 2 * Math_PI / segments) * radius;
-            vertex.z = cos(i * 2 * Math_PI / segments) * radius;
+            vertex.y = sin(i * 2 * Math::PI / segments) * radius;
+            vertex.z = cos(i * 2 * Math::PI / segments) * radius;
             vertex.u = 0.0f;
 
             vertex.nx = vertex.ny = vertex.nz = 0.0f;
@@ -154,9 +154,9 @@ namespace Piccolo
     {
         // create rotation axis render mesh
 
-        const float inner_radius = 0.9f;
-        const float outer_radius = 1.0f;
-        const int   segments = 24;
+        float const inner_radius = 0.9f;
+        float const outer_radius = 1.0f;
+        int const   segments = 24;
 
         uint32_t stride = sizeof(MeshVertexDataDefinition);
 
@@ -170,8 +170,8 @@ namespace Piccolo
         {
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (0 * segments + i) * stride);
-            vertex.x = cos(2 * Math_PI / segments * i) * inner_radius;
-            vertex.y = sin(2 * Math_PI / segments * i) * inner_radius;
+            vertex.x = cos(2 * Math::PI / segments * i) * inner_radius;
+            vertex.y = sin(2 * Math::PI / segments * i) * inner_radius;
             vertex.z = 0.0f;
             vertex.u = 2.0f;
 
@@ -184,8 +184,8 @@ namespace Piccolo
         {
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (1 * segments + i) * stride);
-            vertex.x = cos(2 * Math_PI / segments * i) * outer_radius;
-            vertex.y = sin(2 * Math_PI / segments * i) * outer_radius;
+            vertex.x = cos(2 * Math::PI / segments * i) * outer_radius;
+            vertex.y = sin(2 * Math::PI / segments * i) * outer_radius;
             vertex.z = 0.0f;
             vertex.u = 2.0f;
 
@@ -199,8 +199,8 @@ namespace Piccolo
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (2 * segments + i) * stride);
             vertex.x = 0.0f;
-            vertex.y = cos(2 * Math_PI / segments * i) * inner_radius;
-            vertex.z = sin(2 * Math_PI / segments * i) * inner_radius;
+            vertex.y = cos(2 * Math::PI / segments * i) * inner_radius;
+            vertex.z = sin(2 * Math::PI / segments * i) * inner_radius;
             vertex.u = 0.0f;
 
             vertex.nx = vertex.ny = vertex.nz = 0.0f;
@@ -213,8 +213,8 @@ namespace Piccolo
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (3 * segments + i) * stride);
             vertex.x = 0.0f;
-            vertex.y = cos(2 * Math_PI / segments * i) * outer_radius;
-            vertex.z = sin(2 * Math_PI / segments * i) * outer_radius;
+            vertex.y = cos(2 * Math::PI / segments * i) * outer_radius;
+            vertex.z = sin(2 * Math::PI / segments * i) * outer_radius;
             vertex.u = 0.0f;
 
             vertex.nx = vertex.ny = vertex.nz = 0.0f;
@@ -226,9 +226,9 @@ namespace Piccolo
         {
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (4 * segments + i) * stride);
-            vertex.x = cos(2 * Math_PI / segments * i) * inner_radius;
+            vertex.x = cos(2 * Math::PI / segments * i) * inner_radius;
             vertex.y = 0.0f;
-            vertex.z = sin(2 * Math_PI / segments * i) * inner_radius;
+            vertex.z = sin(2 * Math::PI / segments * i) * inner_radius;
             vertex.u = 1.0f;
 
             vertex.nx = vertex.ny = vertex.nz = 0.0f;
@@ -240,9 +240,9 @@ namespace Piccolo
         {
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (5 * segments + i) * stride);
-            vertex.x = cos(2 * Math_PI / segments * i) * outer_radius;
+            vertex.x = cos(2 * Math::PI / segments * i) * outer_radius;
             vertex.y = 0.0f;
-            vertex.z = sin(2 * Math_PI / segments * i) * outer_radius;
+            vertex.z = sin(2 * Math::PI / segments * i) * outer_radius;
             vertex.u = 1.0f;
 
             vertex.nx = vertex.ny = vertex.nz = 0.0f;
@@ -301,8 +301,8 @@ namespace Piccolo
 
     EditorScaleAxis::EditorScaleAxis()
     {
-        const float radius = 0.031f;
-        const int   segments = 12;
+        float const radius = 0.031f;
+        int const   segments = 12;
 
         uint32_t stride = sizeof(MeshVertexDataDefinition);
 
@@ -316,8 +316,8 @@ namespace Piccolo
             MeshVertexDataDefinition& vertex =
                 *(MeshVertexDataDefinition*)(vertex_data + (0 * segments + i) * stride);
             vertex.x = 0.0f;
-            vertex.y = sin(i * 2 * Math_PI / segments) * radius;
-            vertex.z = cos(i * 2 * Math_PI / segments) * radius;
+            vertex.y = sin(i * 2 * Math::PI / segments) * radius;
+            vertex.z = cos(i * 2 * Math::PI / segments) * radius;
             vertex.u = 0.0f;
 
             vertex.nx = vertex.ny = vertex.nz = 0.0f;
@@ -652,4 +652,4 @@ namespace Piccolo
         index_data[start_index + 11 * 3 + 2] = (uint16_t)(start_vertex_index + 2);
     }
 
-} // namespace Piccolo
+} // namespace MarsEngine

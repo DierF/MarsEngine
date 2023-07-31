@@ -5,7 +5,7 @@
 #include "Runtime/Resource/ResType/Data/AnimationClip.h"
 #include "Runtime/Resource/ResType/Data/SkeletonMask.h"
 
-#include "_generated/serializer/all_serializer.h"
+#include <_generated/serializer/all_serializer.h>
 
 namespace MarsEngine
 {

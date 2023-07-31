@@ -6,7 +6,7 @@
 #include "Runtime/Resource/AssetManager/AssetManager.h"
 #include "Runtime/Resource/ConfigManager/ConfigManager.h"
 
-#include "_generated/serializer/all_serializer.h"
+#include <_generated/serializer/all_serializer.h>
 
 namespace MarsEngine
 {

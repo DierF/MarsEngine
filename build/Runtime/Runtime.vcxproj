@@ -91,14 +91,16 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;_DEBUG;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;_DEBUG;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -126,16 +128,18 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -163,16 +167,18 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -201,14 +207,16 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\tinyobjloader;D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -281,7 +289,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\ColorGradingPass.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Base\Hash.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Base\Macro.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Core\Color\Color.h" />
@@ -340,47 +347,48 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Physics\PhysicsConfig.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Physics\PhysicsManager.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Physics\PhysicsScene.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawContext.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawFont.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawGroup.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawManager.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanRhiResource.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Rhi.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\RhiStruct.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\CombineUiPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\DirectionalLightPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\FxaaPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\MainCameraPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\ParticlePass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\PickPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\PointLightPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\ToneMappingPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\UiPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\Light.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderCamera.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderCommon.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderDebugConfig.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderEntity.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderGuidAllocator.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderHelper.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderMesh.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderObject.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPass.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPassBase.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPipeline.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPipelineBase.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderResource.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderResourceBase.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderScene.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderSwapContext.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderSystem.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderType.h" />
-    <ClInclude Include="..\..\Runtime\Function\Render\WindowSystem.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawContext.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawFont.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawGroup.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawManager.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Rhi.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\RhiStruct.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanRhiResource.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Light.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ColorGradingPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\CombineUiPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\DirectionalLightPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\FxaaPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\MainCameraPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ParticlePass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PickPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PointLightPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ToneMappingPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\UiPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderCamera.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderCommon.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderDebugConfig.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderEntity.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderGuidAllocator.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderHelper.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderMesh.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderObject.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPass.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPassBase.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipeline.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipelineBase.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResource.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResourceBase.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderScene.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSwapContext.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSystem.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderType.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\WindowSystem.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Ui\WindowUi.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\FileService\FileService.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Platform\Path\Path.h" />
@@ -406,7 +414,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Data\SkeletonMask.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Global\GlobalParticle.h" />
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Global\GlobalRendering.h" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanVma.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Log\LogSystem.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Math\AxisAligned.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Core\Math\Degree.cpp" />
@@ -450,37 +457,38 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Physics\Jolt\Utils.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Physics\PhysicsManager.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Physics\PhysicsScene.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawContext.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawFont.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawGroup.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawManager.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\ColorGradingPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\CombineUiPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\DirectionalLightPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\FxaaPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\MainCameraPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\ParticlePass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\PickPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\PointLightPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\ToneMappingPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\UiPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderCamera.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderHelper.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPass.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPassBase.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPipeline.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPipelineBase.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderResource.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderResourceBase.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderScene.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderSwapContext.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderSystem.cpp" />
-    <ClCompile Include="..\..\Runtime\Function\Render\WindowSystem.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawContext.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawFont.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawGroup.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawManager.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanVma.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ColorGradingPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\CombineUiPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\DirectionalLightPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\FxaaPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\MainCameraPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ParticlePass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PickPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PointLightPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ToneMappingPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\UiPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderCamera.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderHelper.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPass.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPassBase.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipeline.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipelineBase.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResource.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResourceBase.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderScene.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSwapContext.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSystem.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\WindowSystem.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Ui\WindowUi.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\FileService\FileService.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Platform\Path\Path.cpp" />
@@ -500,6 +508,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="D:\Projects\MarsEngine\build\3rdParty\JoltPhysics\Build\Jolt.vcxproj">
       <Project>{B84A7431-310E-3038-88BC-20F84DA4450C}</Project>
       <Name>Jolt</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\MarsEngine\build\PreCompile.vcxproj">
+      <Project>{93973D39-CCFD-3150-849A-4C153EC34FEC}</Project>
+      <Name>PreCompile</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
     <ProjectReference Include="D:\Projects\MarsEngine\build\Shader\ShaderCompile.vcxproj">
       <Project>{D7127E06-AE79-376F-8B27-3C1158EDB444}</Project>

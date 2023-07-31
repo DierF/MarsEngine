@@ -1,9 +1,9 @@
 #pragma once
 
-#include "runtime/function/render/render_entity.h"
-#include "runtime/function/render/render_type.h"
+#include "Runtime/Function/Render/RenderEntity.h"
+#include "Runtime/Function/Render/RenderType.h"
 
-namespace Piccolo
+namespace MarsEngine
 {
     class EditorTranslationAxis : public RenderEntity
     {
@@ -25,4 +25,4 @@ namespace Piccolo
         EditorScaleAxis();
         RenderMeshData m_mesh_data;
     };
-} // namespace Piccolo
+} // namespace MarsEngine

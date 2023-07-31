@@ -51,7 +51,7 @@ namespace MarsEngine
         texture->m_depth        = 1;
         texture->m_array_layers = 1;
         texture->m_mip_levels   = 1;
-        texture->m_type         = PICCOLO_IMAGE_TYPE::PICCOLO_IMAGE_TYPE_2D;
+        texture->m_type         = MARS_IMAGE_TYPE::MARS_IMAGE_TYPE_2D;
 
         return texture;
     }
@@ -76,7 +76,7 @@ namespace MarsEngine
         texture->m_depth        = 1;
         texture->m_array_layers = 1;
         texture->m_mip_levels   = 1;
-        texture->m_type         = PICCOLO_IMAGE_TYPE::PICCOLO_IMAGE_TYPE_2D;
+        texture->m_type         = MARS_IMAGE_TYPE::MARS_IMAGE_TYPE_2D;
 
         return texture;
     }

@@ -200,4 +200,4 @@ namespace MarsEngine
         camera_swap_data.m_view_matrix = desired_mat;
         swap_context.getLogicSwapData().m_camera_swap_data = camera_swap_data;
     }
-} // namespace Piccolo
+} // namespace MarsEngine

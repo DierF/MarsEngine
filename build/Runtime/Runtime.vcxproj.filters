@@ -128,97 +128,100 @@
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Physics\PhysicsScene.cpp">
       <Filter>Function\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.cpp">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawContext.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawContext.cpp">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawFont.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawFont.cpp">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawGroup.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawGroup.cpp">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawManager.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawManager.cpp">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.cpp">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.cpp">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.cpp">
       <Filter>Function\Render\Interface\Vulkan</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.cpp">
       <Filter>Function\Render\Interface\Vulkan</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\ColorGradingPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanVma.cpp">
+      <Filter>Function\Render\Interface\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ColorGradingPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\CombineUiPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\CombineUiPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\DirectionalLightPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\DirectionalLightPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\FxaaPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\FxaaPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\MainCameraPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\MainCameraPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\ParticlePass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ParticlePass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\PickPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PickPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\PointLightPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PointLightPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\ToneMappingPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ToneMappingPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Passes\UiPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\UiPass.cpp">
       <Filter>Function\Render\Passes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderCamera.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderCamera.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderHelper.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderHelper.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPass.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPass.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPassBase.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPassBase.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPipeline.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipeline.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderPipelineBase.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipelineBase.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderResource.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResource.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderResourceBase.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResourceBase.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderScene.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderScene.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderSwapContext.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSwapContext.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\RenderSystem.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSystem.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\WindowSystem.cpp">
+    <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Render\WindowSystem.cpp">
       <Filter>Function\Render</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Function\Ui\WindowUi.cpp">
@@ -244,9 +247,6 @@
     </ClCompile>
     <ClCompile Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Components\RigidBody.cpp">
       <Filter>Resource\ResType\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanVma.cpp">
-      <Filter>Function\Render\Interface\Vulkan</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -422,127 +422,130 @@
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Physics\PhysicsScene.h">
       <Filter>Function\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawBuffer.h">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawContext.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawContext.h">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawFont.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawFont.h">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawGroup.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawGroup.h">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawManager.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawManager.h">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPipeline.h">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\DebugDraw\DebugDrawPrimitive.h">
       <Filter>Function\Render\DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.h">
-      <Filter>Function\Render\Interface\Vulkan</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanRhiResource.h">
-      <Filter>Function\Render\Interface\Vulkan</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.h">
-      <Filter>Function\Render\Interface\Vulkan</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\Rhi.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Rhi.h">
       <Filter>Function\Render\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Interface\RhiStruct.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\RhiStruct.h">
       <Filter>Function\Render\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\CombineUiPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanRhi.h">
+      <Filter>Function\Render\Interface\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanRhiResource.h">
+      <Filter>Function\Render\Interface\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Interface\Vulkan\VulkanUtil.h">
+      <Filter>Function\Render\Interface\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Light.h">
+      <Filter>Function\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ColorGradingPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\DirectionalLightPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\CombineUiPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\FxaaPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\DirectionalLightPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\MainCameraPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\FxaaPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\ParticlePass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\MainCameraPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\PickPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ParticlePass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\PointLightPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PickPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\ToneMappingPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\PointLightPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\UiPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\ToneMappingPass.h">
       <Filter>Function\Render\Passes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Light.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\Passes\UiPass.h">
+      <Filter>Function\Render\Passes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderCamera.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderCamera.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderCommon.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderCommon.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderDebugConfig.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderDebugConfig.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderEntity.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderEntity.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderGuidAllocator.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderGuidAllocator.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderHelper.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderHelper.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderMesh.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderMesh.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderObject.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderObject.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPass.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPass.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPassBase.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPassBase.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipeline.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPipeline.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderPipelineBase.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderPipelineBase.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResource.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderResource.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderResourceBase.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderResourceBase.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderScene.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderScene.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSwapContext.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderSwapContext.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderSystem.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderSystem.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\RenderType.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\RenderType.h">
-      <Filter>Function\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\WindowSystem.h">
+    <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Render\WindowSystem.h">
       <Filter>Function\Render</Filter>
     </ClInclude>
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Function\Ui\WindowUi.h">
@@ -619,9 +622,6 @@
     </ClInclude>
     <ClInclude Include="D:\Projects\MarsEngine\Runtime\Resource\ResType\Global\GlobalRendering.h">
       <Filter>Resource\ResType\Global</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Runtime\Function\Render\Passes\ColorGradingPass.h">
-      <Filter>Function\Render\Passes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

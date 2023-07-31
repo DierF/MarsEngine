@@ -212,7 +212,7 @@ namespace MarsEngine
                 break;
         }
 
-        // Piccolo-hack: motor level simulating jump, character always above z-plane
+        // hack: motor level simulating jump, character always above z-plane
         if (m_jump_state == JumpState::falling && final_position.z + m_desired_displacement.z <= 0.f)
         {
             final_position.z = 0.f;

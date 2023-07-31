@@ -20,6 +20,6 @@ namespace MarsEngine
         float       m_max_life;
         Math::Vec3  m_gravity;
         std::string m_particle_billboard_texture_path;
-        std::string m_piccolo_logo_texture_path;
+        std::string m_mars_logo_texture_path;
     };
 } // namespace MarsEngine

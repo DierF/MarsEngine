@@ -136,7 +136,7 @@ namespace MarsEngine
         {
             Math::Vec3 point_light_position  = render_scene->m_point_light_list.m_lights[i].m_position;
             Math::Vec3 point_light_intensity =
-                render_scene->m_point_light_list.m_lights[i].m_flux / (4.0f * Math_PI);
+                render_scene->m_point_light_list.m_lights[i].m_flux / (4.0f * Math::PI);
 
             float radius = render_scene->m_point_light_list.m_lights[i].calculateRadius();
 

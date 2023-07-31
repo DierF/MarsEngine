@@ -371,7 +371,7 @@ namespace Math
                 if (fallback_axis != Vec3::ZERO)
                 {
                     // rotate 180 degrees about the fall back axis
-                    q.fromAngleAxis(Radian(Math_PI), fallback_axis);
+                    q.fromAngleAxis(Radian(PI), fallback_axis);
                 }
                 else
                 {
@@ -380,7 +380,7 @@ namespace Math
                     if (axis.isZeroLength()) // pick another if collinear
                         axis = Vec3::UNIT_Y.crossProduct(*this);
                     axis.normalise();
-                    q.fromAngleAxis(Radian(Math_PI), axis);
+                    q.fromAngleAxis(Radian(PI), axis);
                 }
             }
             else

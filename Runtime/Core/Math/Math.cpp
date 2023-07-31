@@ -59,18 +59,18 @@ namespace Math
 
     float degreesToRadians(float degrees)
     {
-        return degrees * Math_fDeg2Rad;
+        return degrees * fDeg2Rad;
     }
 
     float radiansToDegrees(float radians)
     {
-        return radians * Math_fRad2Deg;
+        return radians * fRad2Deg;
     }
 
     float angleUnitsToRadians(float angleunits)
     {
         if (s_AngleUnit == AngleUnit::AU_DEGREE)
-            return angleunits * Math_fDeg2Rad;
+            return angleunits * fDeg2Rad;
 
         return angleunits;
     }
@@ -78,7 +78,7 @@ namespace Math
     float radiansToAngleUnits(float radians)
     {
         if (s_AngleUnit == AngleUnit::AU_DEGREE)
-            return radians * Math_fRad2Deg;
+            return radians * fRad2Deg;
 
         return radians;
     }
@@ -86,7 +86,7 @@ namespace Math
     float angleUnitsToDegrees(float angleunits)
     {
         if (s_AngleUnit == AngleUnit::AU_RADIAN)
-            return angleunits * Math_fRad2Deg;
+            return angleunits * fRad2Deg;
 
         return angleunits;
     }
@@ -94,7 +94,7 @@ namespace Math
     float degreesToAngleUnits(float degrees)
     {
         if (s_AngleUnit == AngleUnit::AU_RADIAN)
-            return degrees * Math_fDeg2Rad;
+            return degrees * fDeg2Rad;
 
         return degrees;
     }
@@ -139,7 +139,7 @@ namespace Math
             return Radian(0.0);
         }
 
-        return Radian(Math_PI);
+        return Radian(PI);
     }
     //-----------------------------------------------------------------------
     Radian asin(float value)
@@ -149,10 +149,10 @@ namespace Math
             if (value < 1.0)
                 return Radian(std::asin(value));
 
-            return Radian(Math_HALF_PI);
+            return Radian(HALF_PI);
         }
 
-        return Radian(-Math_HALF_PI);
+        return Radian(-HALF_PI);
     }
 
     Radian atan(float value)

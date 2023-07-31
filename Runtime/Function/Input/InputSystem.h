@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Runtime/Core/Math/Math.h"
+#include "Runtime/Core/Math/Radian.h"
 
 namespace MarsEngine
 {

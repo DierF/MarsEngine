@@ -11,9 +11,9 @@ namespace MarsEngine
     extern bool                            g_is_editor_mode;
     extern std::unordered_set<std::string> g_editor_tick_component_types;
 
-    class PiccoloEngine
+    class MarsEngine
     {
-        friend class PiccoloEditor;
+        friend class MarsEditor;
 
         static float const s_fps_alpha;
 
@@ -50,5 +50,4 @@ namespace MarsEngine
         int   m_frame_count {0};
         int   m_fps {0};
     };
-
 } // namespace MarsEngine

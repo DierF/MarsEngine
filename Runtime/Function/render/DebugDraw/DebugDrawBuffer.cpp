@@ -293,8 +293,9 @@ namespace MarsEngine
     {
         int32_t param = m_circle_sample_count;
         //radios is 1
-        float _2pi = 2.0f * Math_PI;
-        std::vector<DebugDrawVertex> vertexs((param * 2 + 2) * (param * 2) * 2 + (param * 2 + 1) * (param * 2) * 2);
+        float _2pi = 2.0f * Math::PI;
+        size_t sz = (param * 2 + 2) * (param * 2) * 2 + (param * 2 + 1) * (param * 2) * 2;
+        std::vector<DebugDrawVertex> vertexs(sz);
 
         int32_t current_index = 0;
         for (int32_t i = -param - 1; i < param + 1; i++)
@@ -425,7 +426,7 @@ namespace MarsEngine
 
     void DebugDrawAllocator::loadCapsuleMeshBuffer()
     {
-        int param = m_circle_sample_count;
+        int32_t param = m_circle_sample_count;
         //radios is 1,height is 4
         float _2pi = 2.0f * Math::PI;
         std::vector<DebugDrawVertex> vertexs(2 * param * param * 4 + 2 * param * param * 4 + 2 * param * 2);

@@ -4,6 +4,7 @@
 #include "Runtime/Function/Particle/ParticleManager.h"
 #include "Runtime/Function/Render/RenderPass.h"
 #include "Runtime/Function/Render/RenderResource.h"
+#include "Runtime/Core/Math/Random.h"
 
 namespace MarsEngine
 {
@@ -129,9 +130,9 @@ namespace MarsEngine
         RHIImageView*   m_particle_billboard_texture_image_view = nullptr;
         VmaAllocation m_particle_billboard_texture_vma_allocation;
 
-        RHIImage*       m_piccolo_logo_texture_image = nullptr;
-        RHIImageView*   m_piccolo_logo_texture_image_view = nullptr;
-        VmaAllocation m_piccolo_logo_texture_vma_allocation;
+        RHIImage*       m_mars_logo_texture_image = nullptr;
+        RHIImageView*   m_mars_logo_texture_image_view = nullptr;
+        VmaAllocation m_mars_logo_texture_vma_allocation;
 
         RHIRenderPass* m_render_pass = nullptr;
 
@@ -196,7 +197,7 @@ namespace MarsEngine
         std::vector<ParticleEmitterBufferBatch> m_emitter_buffer_batches;
         std::shared_ptr<ParticleManager>        m_particle_manager;
 
-        DefaultRNG m_random_engine;
+        Math::DefaultRNG m_random_engine;
 
         int m_emitter_count;
 

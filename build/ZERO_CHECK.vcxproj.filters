@@ -81,6 +81,15 @@
     <None Include="D:\Projects\MarsEngine\Editor\CMakeLists.txt">
       <Filter>Buildsystem Input Files\Editor</Filter>
     </None>
+    <None Include="D:\Projects\MarsEngine\MetaParser\CMakeLists.txt">
+      <Filter>Buildsystem Input Files\MetaParser</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Precompile\Precompile.cmake">
+      <Filter>Buildsystem Input Files\Precompile</Filter>
+    </None>
+    <None Include="D:\Projects\MarsEngine\Precompile\Precompile.json.in">
+      <Filter>Buildsystem Input Files\Precompile</Filter>
+    </None>
     <None Include="D:\Projects\MarsEngine\Runtime\CMakeLists.txt">
       <Filter>Buildsystem Input Files\Runtime</Filter>
     </None>
@@ -136,6 +145,12 @@
     </Filter>
     <Filter Include="Buildsystem Input Files\Editor">
       <UniqueIdentifier>{2F00BFCA-74C4-302B-B8A5-906DC7E83C5D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\MetaParser">
+      <UniqueIdentifier>{1467966D-1F47-35F2-975C-87C23179C8F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\Precompile">
+      <UniqueIdentifier>{A86EE190-8B1D-3D66-8C6F-FE937FF0C8B4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Buildsystem Input Files\Runtime">
       <UniqueIdentifier>{928992C3-893E-31C0-A994-788D35721447}</UniqueIdentifier>

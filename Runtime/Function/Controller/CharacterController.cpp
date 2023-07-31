@@ -32,7 +32,7 @@ namespace MarsEngine
 
         Math::Vec3 final_position = current_position + displacement;
 
-        Math::Transform final_transform = Transform(final_position, Math::Quaternion::IDENTITY, Math::Vec3::UNIT_SCALE);
+        Math::Transform final_transform = Math::Transform(final_position, Math::Quaternion::IDENTITY, Math::Vec3::UNIT_SCALE);
 
         if (physics_scene->isOverlap(m_rigidbody_shape, final_transform.getMatrix()))
         {

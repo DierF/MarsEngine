@@ -2,7 +2,7 @@
 # file will be overwritten by the next CMake run. The input file was
 # tinyobjloader.pc.in.
 
-prefix=D:/Projects/MarsEngine/Bin
+prefix=D:/Projects/MarsEngine/bin
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include

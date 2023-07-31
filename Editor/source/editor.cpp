@@ -1,31 +1,29 @@
-#include "editor//include/editor.h"
+#include "Editor/Include/Editor.h"
+#include "Editor/Include/EditorGlobalContext.h"
+#include "Editor/Include/EditorInputManager.h"
+#include "Editor/Include/EditorSceneManager.h"
+#include "Editor/Include/EditorUi.h"
+#include "Runtime/Engine.h"
+#include "Runtime/Function/Global/GlobalContext.h"
+#include "Runtime/Function/Render/RenderCamera.h"
+#include "Runtime/Function/Render/RenderSystem.h"
 
-#include "runtime/engine.h"
-#include "runtime/function/global/global_context.h"
-#include "runtime/function/render/render_camera.h"
-#include "runtime/function/render/render_system.h"
-
-#include "editor/include/editor_global_context.h"
-#include "editor/include/editor_input_manager.h"
-#include "editor/include/editor_scene_manager.h"
-#include "editor/include/editor_ui.h"
-
-namespace Piccolo
+namespace MarsEngine
 {
     void registerEdtorTickComponent(std::string component_type_name)
     {
         g_editor_tick_component_types.insert(component_type_name);
     }
 
-    PiccoloEditor::PiccoloEditor()
+    MarsEditor::MarsEditor()
     {
         registerEdtorTickComponent("TransformComponent");
         registerEdtorTickComponent("MeshComponent");
     }
 
-    PiccoloEditor::~PiccoloEditor() {}
+    MarsEditor::~MarsEditor() {}
 
-    void PiccoloEditor::initialize(PiccoloEngine* engine_runtime)
+    void MarsEditor::initialize(MarsEngine* engine_runtime)
     {
         assert(engine_runtime);
 
@@ -46,9 +44,9 @@ namespace Piccolo
         m_editor_ui->initialize(ui_init_info);
     }
 
-    void PiccoloEditor::clear() { g_editor_global_context.clear(); }
+    void MarsEditor::clear() { g_editor_global_context.clear(); }
 
-    void PiccoloEditor::run()
+    void MarsEditor::run()
     {
         assert(m_engine_runtime);
         assert(m_editor_ui);
@@ -62,4 +60,4 @@ namespace Piccolo
                 return;
         }
     }
-} // namespace Piccolo
+} // namespace MarsEngine

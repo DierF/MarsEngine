@@ -20,6 +20,8 @@ C:/Program Files/CMake/share/cmake-3.27/Modules/Platform/Windows-MSVC.cmake
 C:/Program Files/CMake/share/cmake-3.27/Modules/Platform/Windows.cmake
 C:/Program Files/CMake/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake
 D:/Projects/MarsEngine/CMakeLists.txt
+D:/Projects/MarsEngine/Precompile/Precompile.cmake
+D:/Projects/MarsEngine/Precompile/Precompile.json.in
 D:/Projects/MarsEngine/build/CMakeFiles/3.27.0-rc4/CMakeCCompiler.cmake
 D:/Projects/MarsEngine/build/CMakeFiles/3.27.0-rc4/CMakeCXXCompiler.cmake
 D:/Projects/MarsEngine/build/CMakeFiles/3.27.0-rc4/CMakeRCCompiler.cmake

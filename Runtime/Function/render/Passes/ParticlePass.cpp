@@ -5,6 +5,7 @@
 #include "Runtime/Function/Render/RenderSystem.h"
 #include "Runtime/Function/Global/globalContext.h"
 #include "Runtime/Core/Base/Macro.h"
+#include "Runtime/Core/Math/Vector4.h"
 
 #include <fstream>
 
@@ -345,17 +346,17 @@ namespace MarsEngine
                                      m_particle_billboard_texture_resource->m_format);
         }
 
-        // piccolo texture
+        // mars texture
         {
-            std::shared_ptr<TextureData> m_piccolo_logo_texture_resource = m_render_resource->loadTexture(
-                m_particle_manager->getGlobalParticleRes().m_piccolo_logo_texture_path, true);
-            m_rhi->createGlobalImage(m_piccolo_logo_texture_image,
-                                     m_piccolo_logo_texture_image_view,
-                                     m_piccolo_logo_texture_vma_allocation,
-                                     m_piccolo_logo_texture_resource->m_width,
-                                     m_piccolo_logo_texture_resource->m_height,
-                                     m_piccolo_logo_texture_resource->m_pixels,
-                                     m_piccolo_logo_texture_resource->m_format);
+            std::shared_ptr<TextureData> m_mars_logo_texture_resource = m_render_resource->loadTexture(
+                m_particle_manager->getGlobalParticleRes().m_mars_logo_texture_path, true);
+            m_rhi->createGlobalImage(m_mars_logo_texture_image,
+                                     m_mars_logo_texture_image_view,
+                                     m_mars_logo_texture_vma_allocation,
+                                     m_mars_logo_texture_resource->m_width,
+                                     m_mars_logo_texture_resource->m_height,
+                                     m_mars_logo_texture_resource->m_pixels,
+                                     m_mars_logo_texture_resource->m_format);
         }
 
         m_rhi->createImage(m_rhi->getSwapchainInfo().extent.width,
@@ -892,11 +893,11 @@ namespace MarsEngine
             }
 
             {
-                RHIDescriptorSetLayoutBinding& piccolo_texture_layout_binding = particle_layout_bindings[10];
-                piccolo_texture_layout_binding.binding                        = 10;
-                piccolo_texture_layout_binding.descriptorType  = RHI_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-                piccolo_texture_layout_binding.descriptorCount = 1;
-                piccolo_texture_layout_binding.stageFlags      = RHI_SHADER_STAGE_COMPUTE_BIT;
+                RHIDescriptorSetLayoutBinding& mars_texture_layout_binding = particle_layout_bindings[10];
+                mars_texture_layout_binding.binding                        = 10;
+                mars_texture_layout_binding.descriptorType  = RHI_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+                mars_texture_layout_binding.descriptorCount = 1;
+                mars_texture_layout_binding.stageFlags      = RHI_SHADER_STAGE_COMPUTE_BIT;
             }
 
             RHIDescriptorSetLayoutCreateInfo particle_descriptor_layout_create_info;
@@ -1395,10 +1396,10 @@ namespace MarsEngine
                     throw std::runtime_error("create sampler error");
                 }
 
-                RHIDescriptorImageInfo piccolo_texture_image_info = {};
-                piccolo_texture_image_info.sampler                = sampler;
-                piccolo_texture_image_info.imageView              = m_piccolo_logo_texture_image_view;
-                piccolo_texture_image_info.imageLayout            = RHI_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+                RHIDescriptorImageInfo mars_texture_image_info = {};
+                mars_texture_image_info.sampler                = sampler;
+                mars_texture_image_info.imageView              = m_mars_logo_texture_image_view;
+                mars_texture_image_info.imageLayout            = RHI_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
 
                 {
                     RHIWriteDescriptorSet& descriptorset = computeWriteDescriptorSets[10];
@@ -1406,7 +1407,7 @@ namespace MarsEngine
                     descriptorset.dstSet                 = m_descriptor_infos[eid * 3].descriptor_set;
                     descriptorset.descriptorType         = RHI_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
                     descriptorset.dstBinding             = 10;
-                    descriptorset.pImageInfo             = &piccolo_texture_image_info;
+                    descriptorset.pImageInfo             = &mars_texture_image_info;
                     descriptorset.descriptorCount        = 1;
                 }
 
@@ -1860,7 +1861,7 @@ namespace MarsEngine
         float rnd0        = m_random_engine.uniformDistribution<float>(0, 1000) * 0.001f;
         float rnd1        = m_random_engine.uniformDistribution<float>(0, 1000) * 0.001f;
         float rnd2        = m_random_engine.uniformDistribution<float>(0, 1000) * 0.001f;
-        m_ubo.pack        = Vector4 {rnd0, static_cast<float>(m_rhi->getCurrentFrameIndex()), rnd1, rnd2};
+        m_ubo.pack        = Vec4 {rnd0, static_cast<float>(m_rhi->getCurrentFrameIndex()), rnd1, rnd2};
         m_ubo.xemit_count = 100000;
 
         m_viewport_params = *m_rhi->getSwapchainInfo().viewport;
@@ -1911,7 +1912,7 @@ namespace MarsEngine
         float rnd0 = m_random_engine.uniformDistribution<float>(0, 1000) * 0.001f;
         float rnd1 = m_random_engine.uniformDistribution<float>(0, 1000) * 0.001f;
         float rnd2 = m_random_engine.uniformDistribution<float>(0, 1000) * 0.001f;
-        m_ubo.pack = Vector4 {rnd0, rnd1, rnd2, static_cast<float>(m_rhi->getCurrentFrameIndex())};
+        m_ubo.pack = Vec4 {rnd0, rnd1, rnd2, static_cast<float>(m_rhi->getCurrentFrameIndex())};
 
         m_ubo.viewport.x = m_rhi->getSwapchainInfo().viewport->x;
         m_ubo.viewport.y = m_rhi->getSwapchainInfo().viewport->y;

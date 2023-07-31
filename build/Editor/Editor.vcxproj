@@ -99,14 +99,16 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;_DEBUG;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;_DEBUG;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -120,19 +122,19 @@
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/Bin//resource
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/bin//resource
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/Debug/ D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/Debug/ D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/deployment/Editor.ini D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/build/Editor/Debug/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/development/Editor.ini D:/Projects/MarsEngine/build/Editor/Debug/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -168,16 +170,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -191,19 +195,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/Bin//resource
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/bin//resource
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/Release/ D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/Release/ D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/deployment/Editor.ini D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/build/Editor/Release/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/development/Editor.ini D:/Projects/MarsEngine/build/Editor/Release/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -239,16 +243,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -262,19 +268,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/Bin//resource
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/bin//resource
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/MinSizeRel/ D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/MinSizeRel/ D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/deployment/Editor.ini D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/build/Editor/MinSizeRel/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/development/Editor.ini D:/Projects/MarsEngine/build/Editor/MinSizeRel/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -311,14 +317,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <TreatWarningAsError>false</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PICCOLO_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/Bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MARS_VK_LAYER_PATH=D:/Projects/MarsEngine/3rdParty/VulkanSDK/bin/Win32;ENGINE_ROOT_DIR=D:/Projects/MarsEngine/bin/;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Projects\MarsEngine\3rdParty\stb;D:\Projects\MarsEngine\3rdParty\VulkanSDK\include;D:\Projects\MarsEngine\Shader\generated\cpp;D:\Projects\MarsEngine;D:\Projects\MarsEngine\3rdParty\json11;D:\Projects\MarsEngine\3rdParty\vulkanmemoryallocator\include;D:\Projects\MarsEngine\Runtime;D:\Projects\MarsEngine\Runtime\Function\Render\include;D:\Projects\MarsEngine\3rdParty\spdlog\include;D:\Projects\MarsEngine\3rdParty\glfw\include;D:\Projects\MarsEngine\3rdParty\imgui;D:\Projects\MarsEngine\3rdParty\JoltPhysics\Build\..;D:\Projects\MarsEngine\3rdParty\lua-5.4.4;D:\Projects\MarsEngine\3rdParty\sol2-3.3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -332,19 +340,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/Bin//resource
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/Editor/resource D:/Projects/MarsEngine/bin//resource
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/RelWithDebInfo/ D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine/build/Editor/RelWithDebInfo/ D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/Bin/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/deployment/Editor.ini D:/Projects/MarsEngine/bin/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine//Editor.ini D:/Projects/MarsEngine/build/Editor/RelWithDebInfo/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/Projects/MarsEngine/configs/development/Editor.ini D:/Projects/MarsEngine/build/Editor/RelWithDebInfo/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E remove_directory D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/Bin///Asset
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Projects/MarsEngine//Asset D:/Projects/MarsEngine/bin///Asset
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -425,21 +433,22 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\axis.h" />
-    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor.h" />
-    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_file_service.h" />
-    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_global_context.h" />
-    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_input_manager.h" />
-    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_scene_manager.h" />
-    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\editor_ui.h" />
-    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\axis.cpp" />
-    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor.cpp" />
-    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_file_service.cpp" />
-    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_global_context.cpp" />
-    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_input_manager.cpp" />
-    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_scene_manager.cpp" />
-    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\editor_ui.cpp" />
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\Axis.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\Editor.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\EditorFileService.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\EditorGlobalContext.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\EditorInputManager.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\EditorSceneManager.h" />
+    <ClInclude Include="D:\Projects\MarsEngine\Editor\include\EditorUi.h" />
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\Axis.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\Editor.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\EditorFileService.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\EditorGlobalContext.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\EditorInputManager.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\EditorSceneManager.cpp" />
+    <ClCompile Include="D:\Projects\MarsEngine\Editor\source\EditorUi.cpp" />
     <ClCompile Include="D:\Projects\MarsEngine\Editor\source\main.cpp" />
+    <ResourceCompile Include="D:\Projects\MarsEngine\Editor\resource\PiccoloEditor.rc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Projects\MarsEngine\build\ZERO_CHECK.vcxproj">

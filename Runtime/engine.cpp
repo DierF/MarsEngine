@@ -15,7 +15,7 @@ namespace MarsEngine
     bool                            g_is_editor_mode {false};
     std::unordered_set<std::string> g_editor_tick_component_types {};
 
-    void PiccoloEngine::startEngine(std::string const& config_file_path)
+    void MarsEngine::startEngine(std::string const& config_file_path)
     {
         Reflection::TypeMetaRegister::metaRegister();
 
@@ -24,7 +24,7 @@ namespace MarsEngine
         LOG_INFO("engine start");
     }
 
-    void PiccoloEngine::shutdownEngine()
+    void MarsEngine::shutdownEngine()
     {
         LOG_INFO("engine shutdown");
 
@@ -33,10 +33,10 @@ namespace MarsEngine
         Reflection::TypeMetaRegister::metaUnregister();
     }
 
-    void PiccoloEngine::initialize() {}
-    void PiccoloEngine::clear() {}
+    void MarsEngine::initialize() {}
+    void MarsEngine::clear() {}
 
-    void PiccoloEngine::run()
+    void MarsEngine::run()
     {
         std::shared_ptr<WindowSystem> window_system = g_runtime_global_context.m_window_system;
         ASSERT(window_system);
@@ -48,7 +48,7 @@ namespace MarsEngine
         }
     }
 
-    float PiccoloEngine::calculateDeltaTime()
+    float MarsEngine::calculateDeltaTime()
     {
         float delta_time;
         {
@@ -63,7 +63,7 @@ namespace MarsEngine
         return delta_time;
     }
 
-    bool PiccoloEngine::tickOneFrame(float delta_time)
+    bool MarsEngine::tickOneFrame(float delta_time)
     {
         logicalTick(delta_time);
         calculateFPS(delta_time);
@@ -82,26 +82,26 @@ namespace MarsEngine
 
 
         g_runtime_global_context.m_window_system->setTitle(
-            std::string("Piccolo - " + std::to_string(getFPS()) + " FPS").c_str());
+            std::string("Mars - " + std::to_string(getFPS()) + " FPS").c_str());
 
         bool const should_window_close = g_runtime_global_context.m_window_system->shouldClose();
         return !should_window_close;
     }
 
-    void PiccoloEngine::logicalTick(float delta_time)
+    void MarsEngine::logicalTick(float delta_time)
     {
         g_runtime_global_context.m_world_manager->tick(delta_time);
         g_runtime_global_context.m_input_system->tick();
     }
 
-    bool PiccoloEngine::rendererTick(float delta_time)
+    bool MarsEngine::rendererTick(float delta_time)
     {
         g_runtime_global_context.m_render_system->tick(delta_time);
         return true;
     }
 
-    float const PiccoloEngine::s_fps_alpha = 1.f / 100;
-    void        PiccoloEngine::calculateFPS(float delta_time)
+    float const MarsEngine::s_fps_alpha = 1.f / 100;
+    void        MarsEngine::calculateFPS(float delta_time)
     {
         m_frame_count++;
 

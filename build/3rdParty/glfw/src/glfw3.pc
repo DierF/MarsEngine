@@ -1,7 +1,7 @@
-prefix=D:/Projects/MarsEngine/Bin
+prefix=D:/Projects/MarsEngine/bin
 exec_prefix=${prefix}
-includedir=D:/Projects/MarsEngine/Bin/include
-libdir=D:/Projects/MarsEngine/Bin/lib
+includedir=D:/Projects/MarsEngine/bin/include
+libdir=D:/Projects/MarsEngine/bin/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input

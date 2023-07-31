@@ -87,13 +87,13 @@ endif()
 # EDITOR_HEADERS at Editor/CMakeLists.txt:3 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/Projects/MarsEngine/Editor/include/*.h")
 set(OLD_GLOB
-  "D:/Projects/MarsEngine/Editor/include/axis.h"
-  "D:/Projects/MarsEngine/Editor/include/editor.h"
-  "D:/Projects/MarsEngine/Editor/include/editor_file_service.h"
-  "D:/Projects/MarsEngine/Editor/include/editor_global_context.h"
-  "D:/Projects/MarsEngine/Editor/include/editor_input_manager.h"
-  "D:/Projects/MarsEngine/Editor/include/editor_scene_manager.h"
-  "D:/Projects/MarsEngine/Editor/include/editor_ui.h"
+  "D:/Projects/MarsEngine/Editor/include/Axis.h"
+  "D:/Projects/MarsEngine/Editor/include/Editor.h"
+  "D:/Projects/MarsEngine/Editor/include/EditorFileService.h"
+  "D:/Projects/MarsEngine/Editor/include/EditorGlobalContext.h"
+  "D:/Projects/MarsEngine/Editor/include/EditorInputManager.h"
+  "D:/Projects/MarsEngine/Editor/include/EditorSceneManager.h"
+  "D:/Projects/MarsEngine/Editor/include/EditorUi.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -101,8 +101,9 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
 endif()
 
 # EDITOR_RESOURCE at Editor/CMakeLists.txt:5 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/Projects/MarsEngine/Editor/resource/Editor.rc")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/Projects/MarsEngine/Editor/resource/PiccoloEditor.rc")
 set(OLD_GLOB
+  "D:/Projects/MarsEngine/Editor/resource/PiccoloEditor.rc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -112,13 +113,13 @@ endif()
 # EDITOR_SOURCES at Editor/CMakeLists.txt:4 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/Projects/MarsEngine/Editor/source/*.cpp")
 set(OLD_GLOB
-  "D:/Projects/MarsEngine/Editor/source/axis.cpp"
-  "D:/Projects/MarsEngine/Editor/source/editor.cpp"
-  "D:/Projects/MarsEngine/Editor/source/editor_file_service.cpp"
-  "D:/Projects/MarsEngine/Editor/source/editor_global_context.cpp"
-  "D:/Projects/MarsEngine/Editor/source/editor_input_manager.cpp"
-  "D:/Projects/MarsEngine/Editor/source/editor_scene_manager.cpp"
-  "D:/Projects/MarsEngine/Editor/source/editor_ui.cpp"
+  "D:/Projects/MarsEngine/Editor/source/Axis.cpp"
+  "D:/Projects/MarsEngine/Editor/source/Editor.cpp"
+  "D:/Projects/MarsEngine/Editor/source/EditorFileService.cpp"
+  "D:/Projects/MarsEngine/Editor/source/EditorGlobalContext.cpp"
+  "D:/Projects/MarsEngine/Editor/source/EditorInputManager.cpp"
+  "D:/Projects/MarsEngine/Editor/source/EditorSceneManager.cpp"
+  "D:/Projects/MarsEngine/Editor/source/EditorUi.cpp"
   "D:/Projects/MarsEngine/Editor/source/main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
