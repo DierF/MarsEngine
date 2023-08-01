@@ -29,21 +29,21 @@ namespace MarsEngine
         std::string m_name;
 
         /// Stores the orientation/position/scale of the pNode relative to it's parent.
-        Math::Quaternion m_orientation {Math::Quaternion::IDENTITY};
-        Math::Vec3       m_position    {Math::Vec3::ZERO};
-        Math::Vec3       m_scale       {Math::Vec3::UNIT_SCALE};
+        Quaternion m_orientation {Quaternion::IDENTITY};
+        Vec3       m_position    {Vec3::ZERO};
+        Vec3       m_scale       {Vec3::UNIT_SCALE};
 
         // Cached combined orientation/position/scale.
-        Math::Quaternion m_derived_orientation {Math::Quaternion::IDENTITY};
-        Math::Vec3       m_derived_position    {Math::Vec3::ZERO};
-        Math::Vec3       m_derived_scale       {Math::Vec3::UNIT_SCALE};
+        Quaternion m_derived_orientation {Quaternion::IDENTITY};
+        Vec3       m_derived_position    {Vec3::ZERO};
+        Vec3       m_derived_scale       {Vec3::UNIT_SCALE};
 
         /// The position/orientation/scale to use as a base for keyframe animation
-        Math::Vec3       m_initial_position    {Math::Vec3::ZERO};
-        Math::Quaternion m_initial_orientation {Math::Quaternion::IDENTITY};
-        Math::Vec3       m_initial_scale       {Math::Vec3::UNIT_SCALE};
+        Vec3       m_initial_position    {Vec3::ZERO};
+        Quaternion m_initial_orientation {Quaternion::IDENTITY};
+        Vec3       m_initial_scale       {Vec3::UNIT_SCALE};
 
-        Math::Mat4 m_inverse_Tpose;
+        Mat4 m_inverse_Tpose;
 
         bool m_is_dirty {true};
 
@@ -58,32 +58,32 @@ namespace MarsEngine
         std::string const& getName(void) const;
         virtual Node*      getParent(void) const;
 
-        virtual Math::Quaternion const& getOrientation() const;
+        virtual Quaternion const& getOrientation() const;
 
-        virtual void setOrientation(Math::Quaternion const& q);
+        virtual void setOrientation(Quaternion const& q);
         virtual void resetOrientation(void);
 
-        virtual void           setPosition(Math::Vec3 const& pos);
-        virtual Math::Vec3 const& getPosition(void) const;
+        virtual void           setPosition(Vec3 const& pos);
+        virtual Vec3 const& getPosition(void) const;
 
-        virtual void           setScale(Math::Vec3 const& scale);
-        virtual Math::Vec3 const& getScale(void) const;
+        virtual void           setScale(Vec3 const& scale);
+        virtual Vec3 const& getScale(void) const;
 
-        virtual void scale(Math::Vec3 const& scale);
+        virtual void scale(Vec3 const& scale);
 
         // Triggers the pNode to update it's combined transforms.
         virtual void updateDerivedTransform(void);
 
-        virtual void translate(Math::Vec3 const& d, TransformSpace relativeTo = TransformSpace::AREN);
+        virtual void translate(Vec3 const& d, TransformSpace relativeTo = TransformSpace::AREN);
 
         // Rotate the pNode around an aritrary axis using a Quarternion.
-        virtual void rotate(Math::Quaternion const& q, TransformSpace relativeTo = TransformSpace::LOCAL);
+        virtual void rotate(Quaternion const& q, TransformSpace relativeTo = TransformSpace::LOCAL);
 
         // Gets the orientation of the pNode as derived from all parents.
-        virtual Math::Quaternion const& _getDerivedOrientation(void) const;
-        virtual Math::Vec3 const&    _getDerivedPosition(void) const;
-        virtual Math::Vec3 const&    _getDerivedScale(void) const;
-        virtual Math::Mat4 const&  _getInverseTpose(void) const;
+        virtual Quaternion const& _getDerivedOrientation(void) const;
+        virtual Vec3 const&    _getDerivedPosition(void) const;
+        virtual Vec3 const&    _getDerivedScale(void) const;
+        virtual Mat4 const&  _getInverseTpose(void) const;
 
         // dirty and update
         virtual bool isDirty() const;
@@ -93,9 +93,9 @@ namespace MarsEngine
         virtual void setAsInitialPose(void);
         virtual void resetToInitialPose(void);
 
-        virtual Math::Vec3 const&    getInitialPosition(void) const;
-        virtual Math::Quaternion const& getInitialOrientation(void) const;
-        virtual Math::Vec3 const&    getInitialScale(void) const;
+        virtual Vec3 const&    getInitialPosition(void) const;
+        virtual Quaternion const& getInitialOrientation(void) const;
+        virtual Vec3 const&    getInitialScale(void) const;
     };
 
     class Bone : public Node

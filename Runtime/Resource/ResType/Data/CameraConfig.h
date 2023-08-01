@@ -12,9 +12,9 @@ namespace MarsEngine
         REFLECTION_BODY(CameraPose);
 
     public:
-        Math::Vec3 m_position;
-        Math::Vec3 m_target;
-        Math::Vec3 m_up;
+        Vec3 m_position;
+        Vec3 m_target;
+        Vec3 m_up;
     };
 
     REFLECTION_TYPE(CameraConfig)
@@ -24,7 +24,7 @@ namespace MarsEngine
 
     public:
         CameraPose m_pose;
-        Math::Vec2 m_aspect;
+        Vec2 m_aspect;
         float      m_z_far;
         float      m_z_near;
     };

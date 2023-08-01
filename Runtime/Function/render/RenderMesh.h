@@ -13,24 +13,24 @@ namespace MarsEngine
     {
         struct VulkanMeshVertexPostition
         {
-            Math::Vec3 position;
+            Vec3 position;
         };
 
         struct VulkanMeshVertexVaryingEnableBlending
         {
-            Math::Vec3 normal;
-            Math::Vec3 tangent;
+            Vec3 normal;
+            Vec3 tangent;
         };
 
         struct VulkanMeshVertexVarying
         {
-            Math::Vec2 texcoord;
+            Vec2 texcoord;
         };
 
         struct VulkanMeshVertexJointBinding
         {
             int indices[4];
-            Math::Vec4  weights;
+            Vec4  weights;
         };
 
         static std::array<RHIVertexInputBindingDescription, 3> getBindingDescriptions()

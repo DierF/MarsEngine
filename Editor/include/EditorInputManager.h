@@ -32,7 +32,7 @@ namespace MarsEngine
 
     public:
         void registerInput();
-        void updateCursorOnAxis(Math::Vec2 cursor_uv);
+        void updateCursorOnAxis(Vec2 cursor_uv);
         void processEditorCommand();
         void onKeyInEditorMode(int key, int scancode, int action, int mods);
 
@@ -44,20 +44,20 @@ namespace MarsEngine
         void onMouseButtonClicked(int key, int action);
         void onWindowClosed();
 
-        bool isCursorInRect(Math::Vec2 pos, Math::Vec2 size) const;
+        bool isCursorInRect(Vec2 pos, Vec2 size) const;
 
     public:
-        Math::Vec2 getEngineWindowPos() const { return m_engine_window_pos; };
-        Math::Vec2 getEngineWindowSize() const { return m_engine_window_size; };
+        Vec2 getEngineWindowPos() const { return m_engine_window_pos; };
+        Vec2 getEngineWindowSize() const { return m_engine_window_size; };
         float      getCameraSpeed() const { return m_camera_speed; };
 
-        void setEngineWindowPos (Math::Vec2 new_window_pos) { m_engine_window_pos = new_window_pos; };
-        void setEngineWindowSize(Math::Vec2 new_window_size) { m_engine_window_size = new_window_size; };
+        void setEngineWindowPos (Vec2 new_window_pos) { m_engine_window_pos = new_window_pos; };
+        void setEngineWindowSize(Vec2 new_window_size) { m_engine_window_size = new_window_size; };
         void resetEditorCommand () { m_editor_command = 0; }
 
     private:
-        Math::Vec2 m_engine_window_pos {0.0f, 0.0f};
-        Math::Vec2 m_engine_window_size {1280.0f, 768.0f};
+        Vec2 m_engine_window_pos {0.0f, 0.0f};
+        Vec2 m_engine_window_size {1280.0f, 768.0f};
         float      m_mouse_x {0.0f};
         float      m_mouse_y {0.0f};
         float      m_camera_speed {0.05f};

@@ -18,26 +18,26 @@ namespace MarsEngine
     struct ClusterFrustum
     {
         // we don't consider the near and far plane currently
-        Math::Vec4 m_plane_right;
-        Math::Vec4 m_plane_left;
-        Math::Vec4 m_plane_top;
-        Math::Vec4 m_plane_bottom;
-        Math::Vec4 m_plane_near;
-        Math::Vec4 m_plane_far;
+        Vec4 m_plane_right;
+        Vec4 m_plane_left;
+        Vec4 m_plane_top;
+        Vec4 m_plane_bottom;
+        Vec4 m_plane_near;
+        Vec4 m_plane_far;
     };
 
     struct BoundingBox
     {
-        Math::Vec3 min_bound {std::numeric_limits<float>::max(),
+        Vec3 min_bound {std::numeric_limits<float>::max(),
                               std::numeric_limits<float>::max(),
                               std::numeric_limits<float>::max()};
-        Math::Vec3 max_bound {std::numeric_limits<float>::min(),
+        Vec3 max_bound {std::numeric_limits<float>::min(),
                               std::numeric_limits<float>::min(),
                               std::numeric_limits<float>::min()};
 
         BoundingBox() {}
 
-        BoundingBox(Math::Vec3 const& minv, Math::Vec3 const& maxv)
+        BoundingBox(Vec3 const& minv, Vec3 const& maxv)
         {
             min_bound = minv;
             max_bound = maxv;
@@ -49,7 +49,7 @@ namespace MarsEngine
             max_bound.makeCeil(rhs.max_bound);
         }
 
-        void merge(Math::Vec3 const& point)
+        void merge(Vec3 const& point)
         {
             min_bound.makeFloor(point);
             max_bound.makeCeil(point);
@@ -58,16 +58,16 @@ namespace MarsEngine
 
     struct BoundingSphere
     {
-        Math::Vec3   m_center;
+        Vec3   m_center;
         float        m_radius;
     };
 
     struct FrustumPoints
     {
-        Math::Vec3 m_frustum_points;
+        Vec3 m_frustum_points;
     };
 
-    ClusterFrustum CreateClusterFrustumFromMatrix(Math::Mat4 mat,
+    ClusterFrustum CreateClusterFrustumFromMatrix(Mat4 mat,
                                                   float      x_left,
                                                   float      x_right,
                                                   float      y_top,
@@ -77,9 +77,9 @@ namespace MarsEngine
 
     bool TiledFrustumIntersectBox(ClusterFrustum const& f, BoundingBox const& b);
 
-    BoundingBox BoundingBoxTransform(BoundingBox const& b, Math::Mat4 const& m);
+    BoundingBox BoundingBoxTransform(BoundingBox const& b, Mat4 const& m);
 
     bool BoxIntersectsWithSphere(BoundingBox const& b, BoundingSphere const& s);
 
-    Math::Mat4 CalculateDirectionalLightCamera(RenderScene& scene, RenderCamera& camera);
+    Mat4 CalculateDirectionalLightCamera(RenderScene& scene, RenderCamera& camera);
 } // namespace MarsEngine

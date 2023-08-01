@@ -7,8 +7,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     class Mat3;
     class Mat4;
     class Vec3;
@@ -119,7 +117,7 @@ namespace Math
         }
 
         /// Check whether this quaternion contains valid values
-        bool isNaN() const { return isNan(x) || isNan(y) || isNan(z) || isNan(w); }
+        bool isNaN() const { return Math::isNan(x) || Math::isNan(y) || Math::isNan(z) || Math::isNan(w); }
 
         float getX() const { return x; }
         float getY() const { return y; }
@@ -219,5 +217,4 @@ namespace Math
 
         static const float k_epsilon;
     };
-} // namespace Math
 } // namespace MarsEngine

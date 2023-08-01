@@ -128,10 +128,10 @@ namespace MarsEngine
         }
 
         std::shared_ptr<RenderCamera> render_camera = g_runtime_global_context.m_render_system->getRenderCamera();
-        Math::Vec2 const&             fov           = render_camera->getFOV();
+        Vec2 const&             fov           = render_camera->getFOV();
 
-        Math::Radian cursor_delta_x(Math::degreesToRadians(m_cursor_delta_x));
-        Math::Radian cursor_delta_y(Math::degreesToRadians(m_cursor_delta_y));
+        Radian cursor_delta_x(Math::degreesToRadians(m_cursor_delta_x));
+        Radian cursor_delta_y(Math::degreesToRadians(m_cursor_delta_y));
 
         m_cursor_delta_yaw   = (cursor_delta_x / (float)window_size[0]) * fov.x;
         m_cursor_delta_pitch = -(cursor_delta_y / (float)window_size[1]) * fov.y;

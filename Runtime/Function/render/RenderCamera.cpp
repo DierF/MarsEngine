@@ -8,24 +8,24 @@ namespace MarsEngine
         m_current_camera_type = type;
     }
 
-    void RenderCamera::setMainViewMatrix(Math::Mat4 const& view_matrix, RenderCameraType type)
+    void RenderCamera::setMainViewMatrix(Mat4 const& view_matrix, RenderCameraType type)
     {
         std::lock_guard<std::mutex> lock_guard(m_view_matrix_mutex);
         m_current_camera_type                   = type;
         m_view_matrices[MAIN_VIEW_MATRIX_INDEX] = view_matrix;
 
-        Math::Vec3 s  = Math::Vec3(view_matrix[0][0], view_matrix[0][1], view_matrix[0][2]);
-        Math::Vec3 u  = Math::Vec3(view_matrix[1][0], view_matrix[1][1], view_matrix[1][2]);
-        Math::Vec3 f  = Math::Vec3(-view_matrix[2][0], -view_matrix[2][1], -view_matrix[2][2]);
+        Vec3 s  = Vec3(view_matrix[0][0], view_matrix[0][1], view_matrix[0][2]);
+        Vec3 u  = Vec3(view_matrix[1][0], view_matrix[1][1], view_matrix[1][2]);
+        Vec3 f  = Vec3(-view_matrix[2][0], -view_matrix[2][1], -view_matrix[2][2]);
         m_position = s * (-view_matrix[0][3]) + u * (-view_matrix[1][3]) + f * view_matrix[2][3];
     }
 
-    void RenderCamera::move(Math::Vec3 delta) { m_position += delta; }
+    void RenderCamera::move(Vec3 delta) { m_position += delta; }
 
-    void RenderCamera::rotate(Math::Vec2 delta)
+    void RenderCamera::rotate(Vec2 delta)
     {
         // rotation around x, y axis
-        delta = Math::Vec2((float)Math::Radian(Math::Degree(delta.x)), (float)Math::Radian(Math::Degree(delta.y)));
+        delta = Vec2((float)Radian(Degree(delta.x)), (float)Radian(Degree(delta.y)));
 
         // limit pitch
         float dot = m_up_axis.dotProduct(forward());
@@ -36,9 +36,9 @@ namespace MarsEngine
         // pitch is relative to current sideways rotation
         // yaw happens independently
         // this prevents roll
-        Math::Quaternion pitch, yaw;
-        pitch.fromAngleAxis(Math::Radian(delta.x), X);
-        yaw.fromAngleAxis(Math::Radian(delta.y), Z);
+        Quaternion pitch, yaw;
+        pitch.fromAngleAxis(Radian(delta.x), X);
+        yaw.fromAngleAxis(Radian(delta.y), Z);
 
         m_rotation = pitch * m_rotation * yaw;
 
@@ -51,33 +51,33 @@ namespace MarsEngine
         m_fovx = Math::clamp(m_fovx - offset, MIN_FOV, MAX_FOV);
     }
 
-    void RenderCamera::lookAt(Math::Vec3 const& position, Math::Vec3 const& target, Math::Vec3 const& up)
+    void RenderCamera::lookAt(Vec3 const& position, Vec3 const& target, Vec3 const& up)
     {
         m_position = position;
 
         // model rotation
         // maps vectors to camera space (x, y, z)
-        Math::Vec3 forward = (target - position).normalisedCopy();
+        Vec3 forward = (target - position).normalisedCopy();
         m_rotation      = forward.getRotationTo(Y);
 
         // correct the up vector
         // the cross product of non-orthogonal vectors is not normalized
-        Math::Vec3 right  = forward.crossProduct(up.normalisedCopy()).normalisedCopy();
-        Math::Vec3 orthUp = right.crossProduct(forward);
+        Vec3 right  = forward.crossProduct(up.normalisedCopy()).normalisedCopy();
+        Vec3 orthUp = right.crossProduct(forward);
 
-        Math::Quaternion upRotation = (m_rotation * orthUp).getRotationTo(Z);
+        Quaternion upRotation = (m_rotation * orthUp).getRotationTo(Z);
 
-        m_rotation = Math::Quaternion(upRotation) * m_rotation;
+        m_rotation = Quaternion(upRotation) * m_rotation;
 
         // inverse of the model rotation
         // maps camera space vectors to model vectors
         m_invRotation = m_rotation.conjugate();
     }
 
-    Math::Mat4 RenderCamera::getViewMatrix()
+    Mat4 RenderCamera::getViewMatrix()
     {
         std::lock_guard<std::mutex> lock_guard(m_view_matrix_mutex);
-        auto                        view_matrix = Math::Mat4::IDENTITY;
+        auto                        view_matrix = Mat4::IDENTITY;
         switch (m_current_camera_type)
         {
             case RenderCameraType::Editor:
@@ -92,10 +92,10 @@ namespace MarsEngine
         return view_matrix;
     }
 
-    Math::Mat4 RenderCamera::getPersProjMatrix() const
+    Mat4 RenderCamera::getPersProjMatrix() const
     {
-        Math::Mat4 fix_mat(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        Math::Mat4 proj_mat = fix_mat * Math::makePerspectiveMatrix(Math::Radian(Math::Degree(m_fovy)),
+        Mat4 fix_mat(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        Mat4 proj_mat = fix_mat * Math::makePerspectiveMatrix(Radian(Degree(m_fovy)),
                                                                     m_aspect, m_znear, m_zfar);
 
         return proj_mat;
@@ -109,6 +109,6 @@ namespace MarsEngine
         // 1 / tan(fovy * 0.5) = aspect / tan(fovx * 0.5)
         // tan(fovy * 0.5) = tan(fovx * 0.5) / aspect
 
-        m_fovy = (float)Math::Degree(Math::atan(Math::tan(Math::Radian(Math::Degree(m_fovx) * 0.5f)) / m_aspect) * 2.0f);
+        m_fovy = (float)Degree(Math::atan(Math::tan(Radian(Degree(m_fovx) * 0.5f)) / m_aspect) * 2.0f);
     }
 } // namespace MarsEngine

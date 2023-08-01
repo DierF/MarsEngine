@@ -7,8 +7,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     REFLECTION_TYPE(AxisAlignedBox)
     CLASS(AxisAlignedBox, Fields)
     {
@@ -35,5 +33,4 @@ namespace Math
         Vec3 m_max_corner
         { -std::numeric_limits<float>::max(), -std::numeric_limits<float>::max(), -std::numeric_limits<float>::max() };
     };
-} // namespace Math
 } // namespace MarsEngine

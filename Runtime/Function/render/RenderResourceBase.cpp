@@ -81,7 +81,7 @@ namespace MarsEngine
         return texture;
     }
 
-    RenderMeshData RenderResourceBase::loadMeshData(MeshSourceDesc const& source, Math::AxisAlignedBox& bounding_box)
+    RenderMeshData RenderResourceBase::loadMeshData(MeshSourceDesc const& source, AxisAlignedBox& bounding_box)
     {
         std::shared_ptr<AssetManager> asset_manager = g_runtime_global_context.m_asset_manager;
         ASSERT(asset_manager);
@@ -116,7 +116,7 @@ namespace MarsEngine
                 vertex[i].u  = bind_data->vertex_buffer[i].u;
                 vertex[i].v  = bind_data->vertex_buffer[i].v;
 
-                bounding_box.merge(Math::Vec3(vertex[i].x, vertex[i].y, vertex[i].z));
+                bounding_box.merge(Vec3(vertex[i].x, vertex[i].y, vertex[i].z));
             }
 
             // index buffer
@@ -162,17 +162,17 @@ namespace MarsEngine
         return ret;
     }
 
-    Math::AxisAlignedBox RenderResourceBase::getCachedBoudingBox(MeshSourceDesc const& source) const
+    AxisAlignedBox RenderResourceBase::getCachedBoudingBox(MeshSourceDesc const& source) const
     {
         auto find_it = m_bounding_box_cache_map.find(source);
         if (find_it != m_bounding_box_cache_map.end())
         {
             return find_it->second;
         }
-        return Math::AxisAlignedBox();
+        return AxisAlignedBox();
     }
 
-    StaticMeshData RenderResourceBase::loadStaticMesh(std::string filename, Math::AxisAlignedBox& bounding_box)
+    StaticMeshData RenderResourceBase::loadStaticMesh(std::string filename, AxisAlignedBox& bounding_box)
     {
         StaticMeshData mesh_data;
 
@@ -208,9 +208,9 @@ namespace MarsEngine
                 bool with_normal   = true;
                 bool with_texcoord = true;
 
-                Math::Vec3 vertex[3];
-                Math::Vec3 normal[3];
-                Math::Vec2 uv[3];
+                Vec3 vertex[3];
+                Vec3 normal[3];
+                Vec2 uv[3];
 
                 // only deals with triangle faces
                 if (fv != 3)
@@ -230,7 +230,7 @@ namespace MarsEngine
                     vertex[v].y = static_cast<float>(vy);
                     vertex[v].z = static_cast<float>(vz);
 
-                    bounding_box.merge(Math::Vec3(vertex[v].x, vertex[v].y, vertex[v].z));
+                    bounding_box.merge(Vec3(vertex[v].x, vertex[v].y, vertex[v].z));
 
                     if (idx.normal_index >= 0)
                     {
@@ -264,8 +264,8 @@ namespace MarsEngine
 
                 if (!with_normal)
                 {
-                    Math::Vec3 v0 = vertex[1] - vertex[0];
-                    Math::Vec3 v1 = vertex[2] - vertex[1];
+                    Vec3 v0 = vertex[1] - vertex[0];
+                    Vec3 v1 = vertex[2] - vertex[1];
                     normal[0]  = v0.crossProduct(v1).normalisedCopy();
                     normal[1]  = normal[0];
                     normal[2]  = normal[0];
@@ -273,17 +273,17 @@ namespace MarsEngine
 
                 if (!with_texcoord)
                 {
-                    uv[0] = Math::Vec2(0.5f, 0.5f);
-                    uv[1] = Math::Vec2(0.5f, 0.5f);
-                    uv[2] = Math::Vec2(0.5f, 0.5f);
+                    uv[0] = Vec2(0.5f, 0.5f);
+                    uv[1] = Vec2(0.5f, 0.5f);
+                    uv[2] = Vec2(0.5f, 0.5f);
                 }
 
-                Math::Vec3 tangent {1, 0, 0};
+                Vec3 tangent {1, 0, 0};
                 {
-                    Math::Vec3 edge1    = vertex[1] - vertex[0];
-                    Math::Vec3 edge2    = vertex[2] - vertex[1];
-                    Math::Vec2 deltaUV1 = uv[1] - uv[0];
-                    Math::Vec2 deltaUV2 = uv[2] - uv[1];
+                    Vec3 edge1    = vertex[1] - vertex[0];
+                    Vec3 edge2    = vertex[2] - vertex[1];
+                    Vec2 deltaUV1 = uv[1] - uv[0];
+                    Vec2 deltaUV2 = uv[2] - uv[1];
 
                     auto divide = deltaUV1.x * deltaUV2.y - deltaUV2.x * deltaUV1.y;
                     if (divide >= 0.0f && divide < 0.000001f)

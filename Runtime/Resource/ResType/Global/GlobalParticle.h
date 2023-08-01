@@ -18,7 +18,7 @@ namespace MarsEngine
         int         m_emit_count;
         float       m_time_step;
         float       m_max_life;
-        Math::Vec3  m_gravity;
+        Vec3  m_gravity;
         std::string m_particle_billboard_texture_path;
         std::string m_mars_logo_texture_path;
     };

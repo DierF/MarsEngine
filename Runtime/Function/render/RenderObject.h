@@ -26,7 +26,7 @@ namespace MarsEngine
     STRUCT(SkeletonAnimationResultTransform, WhiteListFields)
     {
         REFLECTION_BODY(SkeletonAnimationResultTransform)
-        Math::Mat4 m_matrix;
+        Mat4 m_matrix;
     };
 
     REFLECTION_TYPE(SkeletonAnimationResult)
@@ -52,7 +52,7 @@ namespace MarsEngine
     STRUCT(GameObjectTransformDesc, WhiteListFields)
     {
         REFLECTION_BODY(GameObjectTransformDesc)
-        Math::Mat4 m_transform_matrix {Math::Mat4::IDENTITY};
+        Mat4 m_transform_matrix {Mat4::IDENTITY};
     };
 
     REFLECTION_TYPE(GameObjectPartDesc)

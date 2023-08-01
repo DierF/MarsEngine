@@ -30,7 +30,7 @@ namespace MarsEngine
         }
     }
 
-    float intersectPlaneRay(Math::Vec3 normal, float d, Math::Vec3 origin, Math::Vec3 dir)
+    float intersectPlaneRay(Vec3 normal, float d, Vec3 origin, Vec3 dir)
     {
         float deno = normal.dotProduct(dir);
         if (fabs(deno) < 0.0001)
@@ -41,15 +41,15 @@ namespace MarsEngine
         return -(normal.dotProduct(origin) + d) / deno;
     }
 
-    size_t EditorSceneManager::updateCursorOnAxis(Math::Vec2 cursor_uv, Math::Vec2 game_engine_window_size)
+    size_t EditorSceneManager::updateCursorOnAxis(Vec2 cursor_uv, Vec2 game_engine_window_size)
     {
 
         float      camera_fov     = m_camera->getFovYDeprecated();
-        Math::Vec3 camera_forward = m_camera->forward();
+        Vec3 camera_forward = m_camera->forward();
 
-        Math::Vec3 camera_up       = m_camera->up();
-        Math::Vec3 camera_right    = m_camera->right();
-        Math::Vec3 camera_position = m_camera->position();
+        Vec3 camera_up       = m_camera->up();
+        Vec3 camera_right    = m_camera->right();
+        Vec3 camera_position = m_camera->position();
 
         if (m_selected_gobject_id == k_invalid_gobject_id)
         {
@@ -63,33 +63,33 @@ namespace MarsEngine
         }
         else
         {
-            Math::Mat4       model_matrix = selected_aixs->m_model_matrix;
-            Math::Vec3       model_scale;
-            Math::Quaternion model_rotation;
-            Math::Vec3       model_translation;
+            Mat4       model_matrix = selected_aixs->m_model_matrix;
+            Vec3       model_scale;
+            Quaternion model_rotation;
+            Vec3       model_translation;
 
             model_matrix.decomposition(model_translation, model_scale, model_rotation);
             float      window_forward   = game_engine_window_size.y / 2.0f / Math::tan(Math::degreesToRadians(camera_fov) / 2.0f);
-            Math::Vec2 screen_center_uv = Math::Vec2(cursor_uv.x, 1 - cursor_uv.y) - Math::Vec2(0.5, 0.5);
-            Math::Vec3 world_ray_dir =
+            Vec2 screen_center_uv = Vec2(cursor_uv.x, 1 - cursor_uv.y) - Vec2(0.5, 0.5);
+            Vec3 world_ray_dir =
                 camera_forward * window_forward +
                 camera_right * (float)game_engine_window_size.x * screen_center_uv.x +
                 camera_up * (float)game_engine_window_size.y * screen_center_uv.y;
 
-            Math::Vec4 local_ray_origin =
-                model_matrix.inverse() * Math::Vec4(camera_position, 1.0f);
-            Math::Vec3 local_ray_origin_xyz = Math::Vec3(local_ray_origin.x, local_ray_origin.y, local_ray_origin.z);
-            Math::Quaternion inversed_rotation = model_rotation.inverse();
+            Vec4 local_ray_origin =
+                model_matrix.inverse() * Vec4(camera_position, 1.0f);
+            Vec3 local_ray_origin_xyz = Vec3(local_ray_origin.x, local_ray_origin.y, local_ray_origin.z);
+            Quaternion inversed_rotation = model_rotation.inverse();
             inversed_rotation.normalise();
-            Math::Vec3 local_ray_dir        = inversed_rotation * world_ray_dir;
+            Vec3 local_ray_dir        = inversed_rotation * world_ray_dir;
 
-            Math::Vec3 plane_normals[3] = { Math::Vec3(1, 0, 0), Math::Vec3(0, 1, 0), Math::Vec3(0, 0, 1)};
+            Vec3 plane_normals[3] = { Vec3(1, 0, 0), Vec3(0, 1, 0), Vec3(0, 0, 1)};
 
             float plane_view_depth[3] = {intersectPlaneRay(plane_normals[0], 0, local_ray_origin_xyz, local_ray_dir),
                                          intersectPlaneRay(plane_normals[1], 0, local_ray_origin_xyz, local_ray_dir),
                                          intersectPlaneRay(plane_normals[2], 0, local_ray_origin_xyz, local_ray_dir)};
 
-            Math::Vec3 intersect_pt[3] = {
+            Vec3 intersect_pt[3] = {
                 local_ray_origin_xyz + plane_view_depth[0] * local_ray_dir, // yoz
                 local_ray_origin_xyz + plane_view_depth[1] * local_ray_dir, // xoz
                 local_ray_origin_xyz + plane_view_depth[2] * local_ray_dir  // xoy
@@ -213,14 +213,14 @@ namespace MarsEngine
         {
             TransformComponent const* transform_component = selected_object->tryGetComponentConst(TransformComponent);
 
-            Math::Vec3       scale;
-            Math::Quaternion rotation;
-            Math::Vec3       translation;
+            Vec3       scale;
+            Quaternion rotation;
+            Vec3       translation;
 
             transform_component->getMatrix().decomposition(translation, scale, rotation);
-            Math::Mat4     translation_matrix = Math::Mat4::getTrans(translation);
-            Math::Mat4     scale_matrix       = Math::Mat4::buildScaleMatrix(1.0f, 1.0f, 1.0f);
-            Math::Mat4     axis_model_matrix  = translation_matrix * scale_matrix;
+            Mat4     translation_matrix = Mat4::getTrans(translation);
+            Mat4     scale_matrix       = Mat4::buildScaleMatrix(1.0f, 1.0f, 1.0f);
+            Mat4     axis_model_matrix  = translation_matrix * scale_matrix;
             RenderEntity*  selected_aixs      = getAxisMeshByType(m_axis_mode);
             if (m_axis_mode == EditorAxisMode::TranslateMode || m_axis_mode == EditorAxisMode::RotateMode)
             {
@@ -228,7 +228,7 @@ namespace MarsEngine
             }
             else if (m_axis_mode == EditorAxisMode::ScaleMode)
             {
-                selected_aixs->m_model_matrix = axis_model_matrix * Math::Mat4(rotation);
+                selected_aixs->m_model_matrix = axis_model_matrix * Mat4(rotation);
             }
 
             g_editor_global_context.m_render_system->setVisibleAxis(*selected_aixs);
@@ -302,10 +302,10 @@ namespace MarsEngine
                                         float      new_mouse_pos_y,
                                         float      last_mouse_pos_x,
                                         float      last_mouse_pos_y,
-                                        Math::Vec2 engine_window_pos,
-                                        Math::Vec2 engine_window_size,
+                                        Vec2 engine_window_pos,
+                                        Vec2 engine_window_size,
                                         size_t     cursor_on_axis,
-                                        Math::Mat4 model_matrix)
+                                        Mat4 model_matrix)
     {
         std::shared_ptr<GObject> selected_object = getSelectedGObject().lock();
         if (selected_object == nullptr)
@@ -313,71 +313,71 @@ namespace MarsEngine
 
         float angularVelocity =
             18.0f / Math::max(engine_window_size.x, engine_window_size.y); // 18 degrees while moving full screen
-        Math::Vec2 delta_mouse_move_uv = {(new_mouse_pos_x - last_mouse_pos_x), (new_mouse_pos_y - last_mouse_pos_y)};
+        Vec2 delta_mouse_move_uv = {(new_mouse_pos_x - last_mouse_pos_x), (new_mouse_pos_y - last_mouse_pos_y)};
 
-        Math::Vec3       model_scale;
-        Math::Quaternion model_rotation;
-        Math::Vec3       model_translation;
+        Vec3       model_scale;
+        Quaternion model_rotation;
+        Vec3       model_translation;
         model_matrix.decomposition(model_translation, model_scale, model_rotation);
 
-        Math::Mat4 axis_model_matrix = Math::Mat4::IDENTITY;
+        Mat4 axis_model_matrix = Mat4::IDENTITY;
         axis_model_matrix.setTrans(model_translation);
 
-        Math::Mat4 view_matrix = m_camera->getLookAtMatrix();
-        Math::Mat4 proj_matrix = m_camera->getPersProjMatrix();
+        Mat4 view_matrix = m_camera->getLookAtMatrix();
+        Mat4 proj_matrix = m_camera->getPersProjMatrix();
 
-        Math::Vec4 model_world_position_4(model_translation, 1.f);
+        Vec4 model_world_position_4(model_translation, 1.f);
 
-        Math::Vec4 model_origin_clip_position = proj_matrix * view_matrix * model_world_position_4;
+        Vec4 model_origin_clip_position = proj_matrix * view_matrix * model_world_position_4;
         model_origin_clip_position /= model_origin_clip_position.w;
-        Math::Vec2 model_origin_clip_uv =
-            Math::Vec2((model_origin_clip_position.x + 1) / 2.0f, (model_origin_clip_position.y + 1) / 2.0f);
+        Vec2 model_origin_clip_uv =
+            Vec2((model_origin_clip_position.x + 1) / 2.0f, (model_origin_clip_position.y + 1) / 2.0f);
 
-        Math::Vec4 axis_x_local_position_4(1, 0, 0, 1);
+        Vec4 axis_x_local_position_4(1, 0, 0, 1);
         if (m_axis_mode == EditorAxisMode::ScaleMode)
         {
-            axis_x_local_position_4 = Math::Mat4(model_rotation) * axis_x_local_position_4;
+            axis_x_local_position_4 = Mat4(model_rotation) * axis_x_local_position_4;
         }
-        Math::Vec4 axis_x_world_position_4 = axis_model_matrix * axis_x_local_position_4;
+        Vec4 axis_x_world_position_4 = axis_model_matrix * axis_x_local_position_4;
         axis_x_world_position_4.w       = 1.0f;
-        Math::Vec4 axis_x_clip_position    = proj_matrix * view_matrix * axis_x_world_position_4;
+        Vec4 axis_x_clip_position    = proj_matrix * view_matrix * axis_x_world_position_4;
         axis_x_clip_position /= axis_x_clip_position.w;
-        Math::Vec2 axis_x_clip_uv((axis_x_clip_position.x + 1) / 2.0f, (axis_x_clip_position.y + 1) / 2.0f);
-        Math::Vec2 axis_x_direction_uv = axis_x_clip_uv - model_origin_clip_uv;
+        Vec2 axis_x_clip_uv((axis_x_clip_position.x + 1) / 2.0f, (axis_x_clip_position.y + 1) / 2.0f);
+        Vec2 axis_x_direction_uv = axis_x_clip_uv - model_origin_clip_uv;
         axis_x_direction_uv.normalise();
 
-        Math::Vec4 axis_y_local_position_4(0, 1, 0, 1);
+        Vec4 axis_y_local_position_4(0, 1, 0, 1);
         if (m_axis_mode == EditorAxisMode::ScaleMode)
         {
-            axis_y_local_position_4 = Math::Mat4(model_rotation) * axis_y_local_position_4;
+            axis_y_local_position_4 = Mat4(model_rotation) * axis_y_local_position_4;
         }
-        Math::Vec4 axis_y_world_position_4 = axis_model_matrix * axis_y_local_position_4;
+        Vec4 axis_y_world_position_4 = axis_model_matrix * axis_y_local_position_4;
         axis_y_world_position_4.w       = 1.0f;
-        Math::Vec4 axis_y_clip_position    = proj_matrix * view_matrix * axis_y_world_position_4;
+        Vec4 axis_y_clip_position    = proj_matrix * view_matrix * axis_y_world_position_4;
         axis_y_clip_position /= axis_y_clip_position.w;
-        Math::Vec2 axis_y_clip_uv((axis_y_clip_position.x + 1) / 2.0f, (axis_y_clip_position.y + 1) / 2.0f);
-        Math::Vec2 axis_y_direction_uv = axis_y_clip_uv - model_origin_clip_uv;
+        Vec2 axis_y_clip_uv((axis_y_clip_position.x + 1) / 2.0f, (axis_y_clip_position.y + 1) / 2.0f);
+        Vec2 axis_y_direction_uv = axis_y_clip_uv - model_origin_clip_uv;
         axis_y_direction_uv.normalise();
 
-        Math::Vec4 axis_z_local_position_4(0, 0, 1, 1);
+        Vec4 axis_z_local_position_4(0, 0, 1, 1);
         if (m_axis_mode == EditorAxisMode::ScaleMode)
         {
-            axis_z_local_position_4 = Math::Mat4(model_rotation) * axis_z_local_position_4;
+            axis_z_local_position_4 = Mat4(model_rotation) * axis_z_local_position_4;
         }
-        Math::Vec4 axis_z_world_position_4 = axis_model_matrix * axis_z_local_position_4;
+        Vec4 axis_z_world_position_4 = axis_model_matrix * axis_z_local_position_4;
         axis_z_world_position_4.w       = 1.0f;
-        Math::Vec4 axis_z_clip_position    = proj_matrix * view_matrix * axis_z_world_position_4;
+        Vec4 axis_z_clip_position    = proj_matrix * view_matrix * axis_z_world_position_4;
         axis_z_clip_position /= axis_z_clip_position.w;
-        Math::Vec2 axis_z_clip_uv((axis_z_clip_position.x + 1) / 2.0f, (axis_z_clip_position.y + 1) / 2.0f);
-        Math::Vec2 axis_z_direction_uv = axis_z_clip_uv - model_origin_clip_uv;
+        Vec2 axis_z_clip_uv((axis_z_clip_position.x + 1) / 2.0f, (axis_z_clip_position.y + 1) / 2.0f);
+        Vec2 axis_z_direction_uv = axis_z_clip_uv - model_origin_clip_uv;
         axis_z_direction_uv.normalise();
 
         TransformComponent* transform_component = selected_object->tryGetComponent(TransformComponent);
 
-        Math::Mat4 new_model_matrix(Math::Mat4::IDENTITY);
+        Mat4 new_model_matrix(Mat4::IDENTITY);
         if (m_axis_mode == EditorAxisMode::TranslateMode) // translate
         {
-            Math::Vec3 move_vector = {0, 0, 0};
+            Vec3 move_vector = {0, 0, 0};
             if (cursor_on_axis == 0)
             {
                 move_vector.x = delta_mouse_move_uv.dotProduct(axis_x_direction_uv) * angularVelocity;
@@ -395,22 +395,22 @@ namespace MarsEngine
                 return;
             }
 
-            Math::Mat4 translate_mat;
-            translate_mat.makeTransform(move_vector, Math::Vec3::UNIT_SCALE, Math::Quaternion::IDENTITY);
+            Mat4 translate_mat;
+            translate_mat.makeTransform(move_vector, Vec3::UNIT_SCALE, Quaternion::IDENTITY);
             new_model_matrix = axis_model_matrix * translate_mat;
 
-            new_model_matrix = new_model_matrix * Math::Mat4(model_rotation);
+            new_model_matrix = new_model_matrix * Mat4(model_rotation);
             new_model_matrix =
-                new_model_matrix * Math::Mat4::buildScaleMatrix(model_scale.x, model_scale.y, model_scale.z);
+                new_model_matrix * Mat4::buildScaleMatrix(model_scale.x, model_scale.y, model_scale.z);
 
-            Math::Vec3    new_scale;
-            Math::Quaternion new_rotation;
-            Math::Vec3    new_translation;
+            Vec3    new_scale;
+            Quaternion new_rotation;
+            Vec3    new_translation;
             new_model_matrix.decomposition(new_translation, new_scale, new_rotation);
 
-            Math::Mat4 translation_matrix = Math::Mat4::getTrans(new_translation);
-            Math::Mat4 scale_matrix       = Math::Mat4::buildScaleMatrix(1.f, 1.f, 1.f);
-            Math::Mat4 axis_model_matrix  = translation_matrix * scale_matrix;
+            Mat4 translation_matrix = Mat4::getTrans(new_translation);
+            Mat4 scale_matrix       = Mat4::buildScaleMatrix(1.f, 1.f, 1.f);
+            Mat4 axis_model_matrix  = translation_matrix * scale_matrix;
 
             m_translation_axis.m_model_matrix = axis_model_matrix;
             m_rotation_axis.m_model_matrix    = axis_model_matrix;
@@ -426,17 +426,17 @@ namespace MarsEngine
         {
             float      last_mouse_u = (last_mouse_pos_x - engine_window_pos.x) / engine_window_size.x;
             float      last_mouse_v = (last_mouse_pos_y - engine_window_pos.y) / engine_window_size.y;
-            Math::Vec2 last_move_vector(last_mouse_u - model_origin_clip_uv.x, last_mouse_v - model_origin_clip_uv.y);
+            Vec2 last_move_vector(last_mouse_u - model_origin_clip_uv.x, last_mouse_v - model_origin_clip_uv.y);
             float      new_mouse_u = (new_mouse_pos_x - engine_window_pos.x) / engine_window_size.x;
             float      new_mouse_v = (new_mouse_pos_y - engine_window_pos.y) / engine_window_size.y;
-            Math::Vec2 new_move_vector(new_mouse_u - model_origin_clip_uv.x, new_mouse_v - model_origin_clip_uv.y);
-            Math::Vec3 delta_mouse_uv_3(delta_mouse_move_uv.x, delta_mouse_move_uv.y, 0);
+            Vec2 new_move_vector(new_mouse_u - model_origin_clip_uv.x, new_mouse_v - model_origin_clip_uv.y);
+            Vec3 delta_mouse_uv_3(delta_mouse_move_uv.x, delta_mouse_move_uv.y, 0);
             float      move_radian;
-            Math::Vec3 axis_of_rotation = {0, 0, 0};
+            Vec3 axis_of_rotation = {0, 0, 0};
             if (cursor_on_axis == 0)
             {
                 move_radian = (delta_mouse_move_uv * angularVelocity).length();
-                if (m_camera->forward().dotProduct(Math::Vec3::UNIT_X) < 0)
+                if (m_camera->forward().dotProduct(Vec3::UNIT_X) < 0)
                 {
                     move_radian = -move_radian;
                 }
@@ -445,7 +445,7 @@ namespace MarsEngine
             else if (cursor_on_axis == 1)
             {
                 move_radian = (delta_mouse_move_uv * angularVelocity).length();
-                if (m_camera->forward().dotProduct(Math::Vec3::UNIT_Y) < 0)
+                if (m_camera->forward().dotProduct(Vec3::UNIT_Y) < 0)
                 {
                     move_radian = -move_radian;
                 }
@@ -454,7 +454,7 @@ namespace MarsEngine
             else if (cursor_on_axis == 2)
             {
                 move_radian = (delta_mouse_move_uv * angularVelocity).length();
-                if (m_camera->forward().dotProduct(Math::Vec3::UNIT_Z) < 0)
+                if (m_camera->forward().dotProduct(Vec3::UNIT_Z) < 0)
                 {
                     move_radian = -move_radian;
                 }
@@ -470,15 +470,15 @@ namespace MarsEngine
                 move_radian = -move_radian;
             }
 
-            Math::Quaternion move_rot;
-            move_rot.fromAngleAxis(Math::Radian(move_radian), axis_of_rotation);
+            Quaternion move_rot;
+            move_rot.fromAngleAxis(Radian(move_radian), axis_of_rotation);
             new_model_matrix = axis_model_matrix * move_rot;
-            new_model_matrix = new_model_matrix * Math::Mat4(model_rotation);
+            new_model_matrix = new_model_matrix * Mat4(model_rotation);
             new_model_matrix =
-                new_model_matrix * Math::Mat4::buildScaleMatrix(model_scale.x, model_scale.y, model_scale.z);
-            Math::Vec3       new_scale;
-            Math::Quaternion new_rotation;
-            Math::Vec3       new_translation;
+                new_model_matrix * Mat4::buildScaleMatrix(model_scale.x, model_scale.y, model_scale.z);
+            Vec3       new_scale;
+            Quaternion new_rotation;
+            Vec3       new_translation;
 
             new_model_matrix.decomposition(new_translation, new_scale, new_rotation);
 
@@ -489,8 +489,8 @@ namespace MarsEngine
         }
         else if (m_axis_mode == EditorAxisMode::ScaleMode) // scale
         {
-            Math::Vec3 delta_scale_vector = {0, 0, 0};
-            Math::Vec3 new_model_scale    = {0, 0, 0};
+            Vec3 delta_scale_vector = {0, 0, 0};
+            Vec3 new_model_scale    = {0, 0, 0};
             if (cursor_on_axis == 0)
             {
                 delta_scale_vector.x = 0.01f;
@@ -520,13 +520,13 @@ namespace MarsEngine
                 return;
             }
             new_model_scale   = model_scale + delta_scale_vector;
-            axis_model_matrix = axis_model_matrix * Math::Mat4(model_rotation);
-            Math::Mat4 scale_mat;
-            scale_mat.makeTransform(Math::Vec3::ZERO, new_model_scale, Math::Quaternion::IDENTITY);
+            axis_model_matrix = axis_model_matrix * Mat4(model_rotation);
+            Mat4 scale_mat;
+            scale_mat.makeTransform(Vec3::ZERO, new_model_scale, Quaternion::IDENTITY);
             new_model_matrix = axis_model_matrix * scale_mat;
-            Math::Vec3       new_scale;
-            Math::Quaternion new_rotation;
-            Math::Vec3       new_translation;
+            Vec3       new_scale;
+            Quaternion new_rotation;
+            Vec3       new_translation;
             new_model_matrix.decomposition(new_translation, new_scale, new_rotation);
 
             transform_component->setPosition(new_translation);
@@ -571,7 +571,7 @@ namespace MarsEngine
             {m_translation_axis.m_mesh_data, m_rotation_axis.m_mesh_data, m_scale_aixs.m_mesh_data});
     }
 
-    size_t EditorSceneManager::getGuidOfPickedMesh(Math::Vec2 const& picked_uv) const
+    size_t EditorSceneManager::getGuidOfPickedMesh(Vec2 const& picked_uv) const
     {
         return g_editor_global_context.m_render_system->getGuidOfPickedMesh(picked_uv);
     }

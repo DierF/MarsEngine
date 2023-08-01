@@ -17,7 +17,7 @@ namespace MarsEngine
         ASSERT(particle_manager);
 
         m_local_transform.makeTransform(
-            m_particle_res.m_local_translation, Math::Vec3::UNIT_SCALE, m_particle_res.m_local_rotation);
+            m_particle_res.m_local_translation, Vec3::UNIT_SCALE, m_particle_res.m_local_rotation);
         computeGlobalTransform();
 
         particle_manager->createParticleEmitter(m_particle_res, m_transform_desc);
@@ -28,10 +28,10 @@ namespace MarsEngine
         TransformComponent* transform_component =
             m_parent_object.lock()->tryGetComponent<TransformComponent>("TransformComponent");
 
-        Math::Mat4 global_transform_matrix = transform_component->getMatrix() * m_local_transform;
+        Mat4 global_transform_matrix = transform_component->getMatrix() * m_local_transform;
 
-        Math::Vec3    position, scale;
-        Math::Quaternion rotation;
+        Vec3    position, scale;
+        Quaternion rotation;
 
         global_transform_matrix.decomposition(position, scale, rotation);
 

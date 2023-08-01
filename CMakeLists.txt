@@ -23,7 +23,7 @@ set(CMAKE_INSTALL_PREFIX "${ENGINE_ROOT_DIR}/bin")
 set(BINARY_ROOT_DIR "${CMAKE_INSTALL_PREFIX}/")
 
 set(THIRD_PARTY_DIR "${ENGINE_ROOT_DIR}/3rdParty")
-set(ENGINE_ASSET_DIR "/Asset")
+set(ENGINE_ASSET_DIR "/asset")
 
 set(DEPLOY_CONFIG_DIR "configs/deployment")
 set(DEVELOP_CONFIG_DIR "configs/development")

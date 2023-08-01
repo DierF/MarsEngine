@@ -26,7 +26,7 @@ namespace MarsEngine
         META(Enable)
         ParticleComponentRes m_particle_res;
 
-        Math::Mat4 m_local_transform;
+        Mat4 m_local_transform;
 
         ParticleEmitterTransformDesc m_transform_desc;
     };

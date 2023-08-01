@@ -37,11 +37,11 @@ namespace MarsEngine
         }
         return offset;
     }
-    void DebugDrawAllocator::cacheUniformObject(Math::Mat4 proj_view_matrix)
+    void DebugDrawAllocator::cacheUniformObject(Mat4 proj_view_matrix)
     {
         m_uniform_buffer_object.proj_view_matrix = proj_view_matrix;
     }
-    size_t DebugDrawAllocator::cacheUniformDynamicObject(std::vector<std::pair<Math::Mat4, Math::Vec4>> const& model_colors)
+    size_t DebugDrawAllocator::cacheUniformDynamicObject(std::vector<std::pair<Mat4, Vec4>> const& model_colors)
     {
         size_t offset = m_uniform_buffer_dynamic_object_cache.size();
         m_uniform_buffer_dynamic_object_cache.resize(offset + model_colors.size());
@@ -123,7 +123,7 @@ namespace MarsEngine
     {
         clearBuffer();
         m_vertex_cache.clear();
-        m_uniform_buffer_object.proj_view_matrix = Math::Mat4::IDENTITY;
+        m_uniform_buffer_object.proj_view_matrix = Mat4::IDENTITY;
         m_uniform_buffer_dynamic_object_cache.clear();
     }
 
@@ -306,25 +306,25 @@ namespace MarsEngine
             float r1 = Math::sqrt(1.0f - h1 * h1);
             for (int32_t j = 0; j < 2 * param; j++)
             {
-                Math::Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h);
-                Math::Vec3 p1(Math::cos(_2pi / (2.0f * param) * j) * r1, Math::sin(_2pi / (2.0f * param) * j) * r1, h1);
+                Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h);
+                Vec3 p1(Math::cos(_2pi / (2.0f * param) * j) * r1, Math::sin(_2pi / (2.0f * param) * j) * r1, h1);
                 vertexs[current_index].pos = p;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
                 vertexs[current_index].pos = p1;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
             }
             if (i != -param - 1)
             {
                 for (int32_t j = 0; j < 2 * param; j++)
                 {
-                    Math::Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h);
-                    Math::Vec3 p1(Math::cos(_2pi / (2.0f * param) * (j + 1)) * r, Math::sin(_2pi / (2.0f * param) * (j + 1)) * r, h);
+                    Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h);
+                    Vec3 p1(Math::cos(_2pi / (2.0f * param) * (j + 1)) * r, Math::sin(_2pi / (2.0f * param) * (j + 1)) * r, h);
                     vertexs[current_index].pos = p;
-                    vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                    vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
                     vertexs[current_index].pos = p1;
-                    vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                    vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
                 }
             }
         }
@@ -366,35 +366,35 @@ namespace MarsEngine
         size_t current_index = 0;
         for (int32_t i = 0; i < 2 * param; i++)
         {
-            Math::Vec3 p(Math::cos(_2pi / (2.0f * param) * i), Math::sin(_2pi / (2.0f * param) * i), 1.0f);
-            Math::Vec3 p_(Math::cos(_2pi / (2.0f * param) * (i + 1)), Math::sin(_2pi / (2.0f * param) * (i + 1)), 1.0f);
-            Math::Vec3 p1(Math::cos(_2pi / (2.0f * param) * i), Math::sin(_2pi / (2.0f * param) * i), -1.0f);
-            Math::Vec3 p1_(Math::cos(_2pi / (2.0f * param) * (i + 1)), Math::sin(_2pi / (2.0f * param) * (i + 1)), -1.0f);
+            Vec3 p(Math::cos(_2pi / (2.0f * param) * i), Math::sin(_2pi / (2.0f * param) * i), 1.0f);
+            Vec3 p_(Math::cos(_2pi / (2.0f * param) * (i + 1)), Math::sin(_2pi / (2.0f * param) * (i + 1)), 1.0f);
+            Vec3 p1(Math::cos(_2pi / (2.0f * param) * i), Math::sin(_2pi / (2.0f * param) * i), -1.0f);
+            Vec3 p1_(Math::cos(_2pi / (2.0f * param) * (i + 1)), Math::sin(_2pi / (2.0f * param) * (i + 1)), -1.0f);
 
             vertexs[current_index].pos = p;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
             vertexs[current_index].pos = p_;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
             vertexs[current_index].pos = p1;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
             vertexs[current_index].pos = p1_;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
         
             vertexs[current_index].pos = p;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
             vertexs[current_index].pos = p1;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
         
             vertexs[current_index].pos = p;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
-            vertexs[current_index].pos = Math::Vec3(0.0f, 0.0f, 1.0f);
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index].pos = Vec3(0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
             vertexs[current_index].pos = p1;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
-            vertexs[current_index].pos = Math::Vec3(0.0f, 0.0f, -1.0f);
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index].pos = Vec3(0.0f, 0.0f, -1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
         }
 
         uint64_t bufferSize = static_cast<uint64_t>(vertexs.size() * sizeof(DebugDrawVertex));
@@ -440,29 +440,29 @@ namespace MarsEngine
             float r1 = Math::sqrt(1 - h1 * h1);
             for (int32_t j = 0; j < 2 * param; j++)
             {
-                Math::Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h + 1.0f);
-                Math::Vec3 p_(Math::cos(_2pi / (2.0f * param) * (j + 1)) * r, Math::sin(_2pi / (2.0f * param) * (j + 1)) * r, h + 1.0f);
-                Math::Vec3 p1(Math::cos(_2pi / (2.0f * param) * j) * r1, Math::sin(_2pi / (2.0f * param) * j) * r1, h1 + 1.0f);
+                Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h + 1.0f);
+                Vec3 p_(Math::cos(_2pi / (2.0f * param) * (j + 1)) * r, Math::sin(_2pi / (2.0f * param) * (j + 1)) * r, h + 1.0f);
+                Vec3 p1(Math::cos(_2pi / (2.0f * param) * j) * r1, Math::sin(_2pi / (2.0f * param) * j) * r1, h1 + 1.0f);
                 vertexs[current_index].pos = p;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
                 vertexs[current_index].pos = p1;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
                 
                 vertexs[current_index].pos = p;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
                 vertexs[current_index].pos = p_;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
             }
         }
 
         for (int32_t j = 0; j < 2 * param; j++)
         {
-            Math::Vec3 p(Math::cos(_2pi / (2.0f * param) * j), Math::sin(_2pi / (2.0f * param) * j), 1.0f);
-            Math::Vec3 p1(Math::cos(_2pi / (2.0f * param) * j), Math::sin(_2pi / (2.0f * param) * j), -1.0f);
+            Vec3 p(Math::cos(_2pi / (2.0f * param) * j), Math::sin(_2pi / (2.0f * param) * j), 1.0f);
+            Vec3 p1(Math::cos(_2pi / (2.0f * param) * j), Math::sin(_2pi / (2.0f * param) * j), -1.0f);
             vertexs[current_index].pos = p;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
             vertexs[current_index].pos = p1;
-            vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+            vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
         }
 
         for (int32_t i = 0; i > -param ; i--)
@@ -473,18 +473,18 @@ namespace MarsEngine
             float r1 = Math::sqrt(1 - h1 * h1);
             for (int32_t j = 0; j < (2 * param); j++)
             {
-                Math::Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h - 1.0f);
-                Math::Vec3 p_(Math::cos(_2pi / (2.0f * param) * (j + 1)) * r, Math::sin(_2pi / (2.0f * param) * (j + 1)) * r, h - 1.0f);
-                Math::Vec3 p1(Math::cos(_2pi / (2.0f * param) * j) * r1, Math::sin(_2pi / (2.0f * param) * j) * r1, h1 - 1.0f);
+                Vec3 p(Math::cos(_2pi / (2.0f * param) * j) * r, Math::sin(_2pi / (2.0f * param) * j) * r, h - 1.0f);
+                Vec3 p_(Math::cos(_2pi / (2.0f * param) * (j + 1)) * r, Math::sin(_2pi / (2.0f * param) * (j + 1)) * r, h - 1.0f);
+                Vec3 p1(Math::cos(_2pi / (2.0f * param) * j) * r1, Math::sin(_2pi / (2.0f * param) * j) * r1, h1 - 1.0f);
                 vertexs[current_index].pos = p;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
                 vertexs[current_index].pos = p1;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
                 vertexs[current_index].pos = p;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
                 vertexs[current_index].pos = p_;
-                vertexs[current_index++].color = Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f);
+                vertexs[current_index++].color = Vec4(1.0f, 0.0f, 0.0f, 1.0f);
             }
         }
 

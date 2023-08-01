@@ -25,7 +25,7 @@ namespace MarsEngine
         void initialize();
         void clear();
 
-        std::weak_ptr<PhysicsScene> createPhysicsScene(Math::Vec3 const& gravity);
+        std::weak_ptr<PhysicsScene> createPhysicsScene(Vec3 const& gravity);
         void                        deletePhysicsScene(std::weak_ptr<PhysicsScene> physics_scene);
 
 #ifdef ENABLE_PHYSICS_DEBUG_RENDERER

@@ -45,7 +45,7 @@ namespace MarsEngine
 
         DebugDrawFont* m_font = nullptr;
 
-        Math::Mat4 m_proj_view_matrix;
+        Mat4 m_proj_view_matrix;
         
         size_t m_point_start_offset;
         size_t m_point_end_offset;

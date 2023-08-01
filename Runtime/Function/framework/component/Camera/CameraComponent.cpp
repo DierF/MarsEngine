@@ -78,19 +78,19 @@ namespace MarsEngine
         if (current_character == nullptr)
             return;
 
-        Math::Quaternion q_yaw, q_pitch;
+        Quaternion q_yaw, q_pitch;
 
-        q_yaw.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_yaw, Math::Vec3::UNIT_Z);
+        q_yaw.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_yaw, Vec3::UNIT_Z);
         q_pitch.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_pitch, m_left);
 
         float const offset  = static_cast<FirstPersonCameraParameter*>(m_camera_res.m_parameter)->m_vertical_offset;
-        m_position = current_character->getPosition() + offset * Math::Vec3::UNIT_Z;
+        m_position = current_character->getPosition() + offset * Vec3::UNIT_Z;
 
         m_forward = q_yaw * q_pitch * m_forward;
         m_left    = q_yaw * q_pitch * m_left;
         m_up      = m_forward.crossProduct(m_left);
 
-        Math::Mat4 desired_mat = Math::makeLookAtMatrix(m_position, m_position + m_forward, m_up);
+        Mat4 desired_mat = Math::makeLookAtMatrix(m_position, m_position + m_forward, m_up);
 
         RenderSwapContext& swap_context = g_runtime_global_context.m_render_system->getSwapContext();
         CameraSwapData     camera_swap_data;
@@ -98,10 +98,10 @@ namespace MarsEngine
         camera_swap_data.m_view_matrix                     = desired_mat;
         swap_context.getLogicSwapData().m_camera_swap_data = camera_swap_data;
 
-        Math::Vec3    object_facing = m_forward - m_forward.dotProduct(Math::Vec3::UNIT_Z) * Math::Vec3::UNIT_Z;
-        Math::Vec3    object_left   = Math::Vec3::UNIT_Z.crossProduct(object_facing);
-        Math::Quaternion object_rotation;
-        object_rotation.fromAxes(object_left, -object_facing, Math::Vec3::UNIT_Z);
+        Vec3    object_facing = m_forward - m_forward.dotProduct(Vec3::UNIT_Z) * Vec3::UNIT_Z;
+        Vec3    object_left   = Vec3::UNIT_Z.crossProduct(object_facing);
+        Quaternion object_rotation;
+        object_rotation.fromAxes(object_left, -object_facing, Vec3::UNIT_Z);
         current_character->setRotation(object_rotation);
     }
 
@@ -114,28 +114,28 @@ namespace MarsEngine
 
         ThirdPersonCameraParameter* param = static_cast<ThirdPersonCameraParameter*>(m_camera_res.m_parameter);
 
-        Math::Quaternion q_yaw, q_pitch;
+        Quaternion q_yaw, q_pitch;
 
-        q_yaw.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_yaw, Math::Vec3::UNIT_Z);
-        q_pitch.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_pitch, Math::Vec3::UNIT_X);
+        q_yaw.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_yaw, Vec3::UNIT_Z);
+        q_pitch.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_pitch, Vec3::UNIT_X);
 
         param->m_cursor_pitch = q_pitch * param->m_cursor_pitch;
 
         float const vertical_offset   = param->m_vertical_offset;
         float const horizontal_offset = param->m_horizontal_offset;
-        Math::Vec3     offset            = Math::Vec3(0, horizontal_offset, vertical_offset);
+        Vec3     offset            = Vec3(0, horizontal_offset, vertical_offset);
 
-        Math::Vec3 center_pos = current_character->getPosition() + Math::Vec3::UNIT_Z * vertical_offset;
+        Vec3 center_pos = current_character->getPosition() + Vec3::UNIT_Z * vertical_offset;
         m_position =
             current_character->getRotation() * param->m_cursor_pitch * offset + current_character->getPosition();
 
         m_forward = center_pos - m_position;
-        m_up = current_character->getRotation() * param->m_cursor_pitch * Math::Vec3::UNIT_Z;
+        m_up = current_character->getRotation() * param->m_cursor_pitch * Vec3::UNIT_Z;
         m_left = m_up.crossProduct(m_forward);
 
         current_character->setRotation(q_yaw * current_character->getRotation());
 
-        Math::Mat4 desired_mat = Math::makeLookAtMatrix(m_position, m_position + m_forward, m_up);
+        Mat4 desired_mat = Math::makeLookAtMatrix(m_position, m_position + m_forward, m_up);
 
         RenderSwapContext& swap_context = g_runtime_global_context.m_render_system->getSwapContext();
         CameraSwapData     camera_swap_data;
@@ -154,9 +154,9 @@ namespace MarsEngine
         if (current_character == nullptr)
             return;
 
-        Math::Quaternion q_yaw, q_pitch;
+        Quaternion q_yaw, q_pitch;
 
-        q_yaw.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_yaw, Math::Vec3::UNIT_Z);
+        q_yaw.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_yaw, Vec3::UNIT_Z);
         q_pitch.fromAngleAxis(g_runtime_global_context.m_input_system->m_cursor_delta_pitch, m_left);
 
         m_forward = q_yaw * q_pitch * m_forward;
@@ -167,7 +167,7 @@ namespace MarsEngine
                                  (unsigned int)GameCommand::left | (unsigned int)GameCommand::right) & command;
         if (has_move_command)
         {
-            Math::Vec3 move_direction = Math::Vec3::ZERO;
+            Vec3 move_direction = Vec3::ZERO;
 
             if ((unsigned int)GameCommand::forward & command)
             {
@@ -192,7 +192,7 @@ namespace MarsEngine
             m_position += move_direction * 2.0f * delta_time;
         }
 
-        Math::Mat4 desired_mat = Math::makeLookAtMatrix(m_position, m_position + m_forward, m_up);
+        Mat4 desired_mat = Math::makeLookAtMatrix(m_position, m_position + m_forward, m_up);
 
         RenderSwapContext& swap_context = g_runtime_global_context.m_render_system->getSwapContext();
         CameraSwapData     camera_swap_data;

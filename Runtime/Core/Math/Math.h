@@ -6,8 +6,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     class Radian;
     class Degree;
     class Vec3;
@@ -41,6 +39,8 @@ namespace Math
     // angle units used by the api
     static AngleUnit s_AngleUnit;
 
+namespace Math
+{
     float const POS_INFINITY = std::numeric_limits<float>::infinity();
     float const NEG_INFINITY = -std::numeric_limits<float>::infinity();
     float const PI = 3.14159265358979323846264338327950288f;

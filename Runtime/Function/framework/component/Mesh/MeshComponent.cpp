@@ -66,12 +66,12 @@ namespace MarsEngine
         {
             std::vector<GameObjectPartDesc> dirty_mesh_parts;
             SkeletonAnimationResult         animation_result;
-            animation_result.m_transforms.push_back({Math::Mat4::IDENTITY});
+            animation_result.m_transforms.push_back({Mat4::IDENTITY});
             if (animation_component != nullptr)
             {
                 for (auto& node : animation_component->getResult().node)
                 {
-                    animation_result.m_transforms.push_back({Math::Mat4(node.transform)});
+                    animation_result.m_transforms.push_back({Mat4(node.transform)});
                 }
             }
             for (GameObjectPartDesc& mesh_part : m_raw_meshes)
@@ -82,7 +82,7 @@ namespace MarsEngine
                     mesh_part.m_skeleton_animation_result                     = animation_result;
                     mesh_part.m_skeleton_binding_desc.m_skeleton_binding_file = mesh_part.m_mesh_desc.m_mesh_file;
                 }
-                Math::Mat4 object_transform_matrix = mesh_part.m_transform_desc.m_transform_matrix;
+                Mat4 object_transform_matrix = mesh_part.m_transform_desc.m_transform_matrix;
 
                 mesh_part.m_transform_desc.m_transform_matrix =
                     transform_component->getMatrix() * object_transform_matrix;

@@ -9,9 +9,9 @@ namespace MarsEngine
 {
     struct PointLight
     {
-        Math::Vec3 m_position;
+        Vec3 m_position;
         // radiant flux in W
-        Math::Vec3 m_flux;
+        Vec3 m_flux;
 
         // calculate an appropriate radius for light culling
         // a windowing function in the shader will perform a smooth transition to zero
@@ -21,8 +21,8 @@ namespace MarsEngine
             // radius = where attenuation would lead to an intensity of 1W/m^2
             float const INTENSITY_CUTOFF = 1.0f;
             float const ATTENTUATION_CUTOFF = 0.05f;
-            Math::Vec3     intensity           = m_flux / (4.0f * Math::PI);
-            float       maxIntensity        = Math::Vec3::getMaxElement(intensity);
+            Vec3     intensity           = m_flux / (4.0f * Math::PI);
+            float       maxIntensity        = Vec3::getMaxElement(intensity);
             float       attenuation = Math::max(INTENSITY_CUTOFF, ATTENTUATION_CUTOFF * maxIntensity) / maxIntensity;
             return 1.0f / sqrtf(attenuation);
         }
@@ -30,13 +30,13 @@ namespace MarsEngine
 
     struct AmbientLight
     {
-        Math::Vec3 m_irradiance;
+        Vec3 m_irradiance;
     };
 
     struct PDirectionalLight
     {
-        Math::Vec3 m_direction;
-        Math::Vec3 m_color;
+        Vec3 m_direction;
+        Vec3 m_color;
     };
 
     struct LightList
@@ -44,11 +44,11 @@ namespace MarsEngine
         // vertex buffers seem to be aligned to 16 bytes
         struct PointLightVertex
         {
-            Math::Vec3 m_position;
+            Vec3 m_position;
             float   m_padding;
             // radiant intensity in W/sr
             // can be calculated from radiant flux
-            Math::Vec3 m_intensity;
+            Vec3 m_intensity;
             float   m_radius;
         };
     };

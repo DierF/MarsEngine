@@ -20,8 +20,8 @@ namespace MarsEngine
         void clearBuffer();
         
         size_t cacheVertexs(std::vector<DebugDrawVertex> const& vertexs);
-        void cacheUniformObject(Math::Mat4 proj_view_matrix);
-        size_t cacheUniformDynamicObject(std::vector<std::pair<Math::Mat4, Math::Vec4>> const& model_colors);
+        void cacheUniformObject(Mat4 proj_view_matrix);
+        size_t cacheUniformDynamicObject(std::vector<std::pair<Mat4, Vec4>> const& model_colors);
 
         size_t getVertexCacheOffset() const;
         size_t getUniformDynamicCacheOffset() const;
@@ -46,13 +46,13 @@ namespace MarsEngine
         std::shared_ptr<RHI> m_rhi;
         struct UniformBufferObject
         {
-            Math::Mat4 proj_view_matrix;
+            Mat4 proj_view_matrix;
         };
 
         struct alignas(256) UniformBufferDynamicObject
         {
-            Math::Mat4 model_matrix;
-            Math::Vec4 color;
+            Mat4 model_matrix;
+            Vec4 color;
         };
 
         struct Resource

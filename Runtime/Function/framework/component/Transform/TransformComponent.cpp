@@ -12,14 +12,14 @@ namespace MarsEngine
         m_is_dirty            = true;
     }
 
-    void TransformComponent::setPosition(Math::Vec3 const& new_translation)
+    void TransformComponent::setPosition(Vec3 const& new_translation)
     {
         m_transform_buffer[m_next_index].m_position = new_translation;
         m_transform.m_position                      = new_translation;
         m_is_dirty                                  = true;
     }
 
-    void TransformComponent::setScale(Math::Vec3 const& new_scale)
+    void TransformComponent::setScale(Vec3 const& new_scale)
     {
         m_transform_buffer[m_next_index].m_scale = new_scale;
         m_transform.m_scale                      = new_scale;
@@ -27,7 +27,7 @@ namespace MarsEngine
         m_is_scale_dirty                         = true;
     }
 
-    void TransformComponent::setRotation(Math::Quaternion const& new_rotation)
+    void TransformComponent::setRotation(Quaternion const& new_rotation)
     {
         m_transform_buffer[m_next_index].m_rotation = new_rotation;
         m_transform.m_rotation                      = new_rotation;

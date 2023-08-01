@@ -25,8 +25,8 @@ namespace MarsEngine
 
     struct PhysicsHitInfo
     {
-        Math::Vec3  hit_position;
-        Math::Vec3  hit_normal;
+        Vec3  hit_position;
+        Vec3  hit_normal;
         float    hit_distance {0.f};
         uint32_t body_id {s_invalid_rigidbody_id};
     };
@@ -45,16 +45,16 @@ namespace MarsEngine
         };
 
     public:
-        PhysicsScene(Math::Vec3 const& gravity);
+        PhysicsScene(Vec3 const& gravity);
         virtual ~PhysicsScene();
 
-        Math::Vec3 const& getGravity() const { return m_config.m_gravity; }
+        Vec3 const& getGravity() const { return m_config.m_gravity; }
 
-        uint32_t createRigidBody(Math::Transform const& global_transform,
+        uint32_t createRigidBody(Transform const& global_transform,
                                  RigidBodyComponentRes const& rigidbody_actor_res);
         void     removeRigidBody(uint32_t body_id);
 
-        void updateRigidBodyGlobalTransform(uint32_t body_id, Math::Transform const& global_transform);
+        void updateRigidBodyGlobalTransform(uint32_t body_id, Transform const& global_transform);
 
         void tick(float delta_time);
 
@@ -65,8 +65,8 @@ namespace MarsEngine
         /// @out_hits: the found hits, sorted by distance
         /// @return: true if any hits found, else false
         bool
-        raycast(Math::Vec3 ray_origin,
-                Math::Vec3 ray_direction,
+        raycast(Vec3 ray_origin,
+                Vec3 ray_direction,
                 float ray_length,
                 std::vector<PhysicsHitInfo>& out_hits);
 
@@ -78,18 +78,18 @@ namespace MarsEngine
         /// @out_hits: the found hits, sorted by distance
         /// @return: true if any hits found, else false
         bool sweep(RigidBodyShape const&        shape,
-                   Math::Mat4 const&             shape_transform,
-                   Math::Vec3                      sweep_direction,
+                   Mat4 const&             shape_transform,
+                   Vec3                      sweep_direction,
                    float                        sweep_length,
                    std::vector<PhysicsHitInfo>& out_hits);
 
         /// overlap test
         /// @shape: rigidbody shape
         /// @return: true if overlapped with any rigidbodies
-        bool isOverlap(RigidBodyShape const& shape, Math::Mat4 const& global_transform);
+        bool isOverlap(RigidBodyShape const& shape, Mat4 const& global_transform);
 
         void getShapeBoundingBoxes(uint32_t body_id,
-                                   std::vector<Math::AxisAlignedBox>& out_bounding_boxes) const;
+                                   std::vector<AxisAlignedBox>& out_bounding_boxes) const;
 
 #ifdef ENABLE_PHYSICS_DEBUG_RENDERER
         void drawPhysicsScene(JPH::DebugRenderer* debug_renderer);

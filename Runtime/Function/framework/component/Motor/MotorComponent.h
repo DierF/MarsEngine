@@ -33,7 +33,7 @@ namespace MarsEngine
         void tick(float delta_time) override;
         void tickPlayerMotor(float delta_time);
 
-        const Math::Vec3& getTargetPosition() const { return m_target_position; }
+        const Vec3& getTargetPosition() const { return m_target_position; }
 
         float getSpeedRatio() const { return m_move_speed_ratio; }
         bool  getIsMoving() const { return m_is_moving; }
@@ -44,9 +44,9 @@ namespace MarsEngine
     private:
         void calculatedDesiredHorizontalMoveSpeed(unsigned int command, float delta_time);
         void calculatedDesiredVerticalMoveSpeed(unsigned int command, float delta_time);
-        void calculatedDesiredMoveDirection(unsigned int command, Math::Quaternion const& object_rotation);
+        void calculatedDesiredMoveDirection(unsigned int command, Quaternion const& object_rotation);
         void calculateDesiredDisplacement(float delta_time);
-        void calculateTargetPosition(Math::Vec3 const&& current_position);
+        void calculateTargetPosition(Vec3 const&& current_position);
 
         META(Enable)
         MotorComponentRes m_motor_res;
@@ -55,10 +55,10 @@ namespace MarsEngine
         float m_vertical_move_speed {0.f};
         float m_jump_horizontal_speed_ratio {0.f};
 
-        Math::Vec3 m_desired_displacement;
-        Math::Vec3 m_desired_horizontal_move_direction;
-        Math::Vec3 m_jump_initial_velocity;
-        Math::Vec3 m_target_position;
+        Vec3 m_desired_displacement;
+        Vec3 m_desired_horizontal_move_direction;
+        Vec3 m_jump_initial_velocity;
+        Vec3 m_target_position;
 
         MotorState m_motor_state {MotorState::moving};
         JumpState  m_jump_state {JumpState::idle};

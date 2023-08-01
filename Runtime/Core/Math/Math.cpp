@@ -5,18 +5,18 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     Angle::operator Radian() const
     {
-        return Radian(angleUnitsToRadians(m_angle));
+        return Radian(Math::angleUnitsToRadians(m_angle));
     }
 
     Angle::operator Degree() const
     {
-        return Degree(angleUnitsToDegrees(m_angle));
+        return Degree(Math::angleUnitsToDegrees(m_angle));
     }
 
+namespace Math
+{
     float abs(float value)
     {
         return std::fabs(value);

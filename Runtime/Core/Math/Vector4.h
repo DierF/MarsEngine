@@ -6,8 +6,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     REFLECTION_TYPE(Vec4)
     CLASS(Vec4, Fields)
     {
@@ -189,11 +187,10 @@ namespace Math
         float dotProduct(Vec4 const& vec) const { return x * vec.x + y * vec.y + z * vec.z + w * vec.w; }
 
         /// Check whether this vector contains valid values
-        bool isNaN() const { return isNan(x) || isNan(y) || isNan(z) || isNan(w); }
+        bool isNaN() const { return Math::isNan(x) || Math::isNan(y) || Math::isNan(z) || Math::isNan(w); }
 
         // special
         static const Vec4 ZERO;
         static const Vec4 UNIT_SCALE;
     };
-} // namespace Math
 } // namespace MarsEngine

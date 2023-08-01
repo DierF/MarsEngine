@@ -83,11 +83,11 @@ namespace MarsEngine
                     current_frame_high = channel.rotation_keys.size() - 1;
                 }
                 current_frame_low = (current_frame_low < current_frame_high) ? current_frame_low : current_frame_high;
-                Math::Vec3 position  = Math::Vec3::lerp(
+                Vec3 position  = Vec3::lerp(
                     channel.position_keys[current_frame_low], channel.position_keys[current_frame_high], lerp_ratio);
-                Math::Vec3 scaling = Math::Vec3::lerp(
+                Vec3 scaling = Vec3::lerp(
                     channel.scaling_keys[current_frame_low], channel.scaling_keys[current_frame_high], lerp_ratio);
-                Math::Quaternion rotation = Math::Quaternion::nLerp(lerp_ratio,
+                Quaternion rotation = Quaternion::nLerp(lerp_ratio,
                                                         channel.rotation_keys[current_frame_low],
                                                         channel.rotation_keys[current_frame_high],
                                                         true);
@@ -102,15 +102,15 @@ namespace MarsEngine
                 }
             }
         }
-        // bones[77].rotate(Math::Quaternion{ {},1,0,0,1 });
-        // bones[18].translate(Math::Vec3{ {},0,1,0 });
-        // bones[0].setScale(Math::Vec3{ {},0,1,0.01 });
+        // bones[77].rotate(Quaternion{ {},1,0,0,1 });
+        // bones[18].translate(Vec3{ {},0,1,0 });
+        // bones[0].setScale(Vec3{ {},0,1,0.01 });
         for (size_t i = 0; i < m_bone_count; i++)
         {
             m_bones[i].update();
         }
 #ifdef _DEBUG
-        // bones[107].m_derived_position += Math::Vec3{ {},10, 0, 0 };
+        // bones[107].m_derived_position += Vec3{ {},10, 0, 0 };
 #endif
     }
 
@@ -123,12 +123,12 @@ namespace MarsEngine
                 std::make_shared<AnimationResultElement>();
             Bone* bone                      = &m_bones[i];
             animation_result_element->index = bone->getID() + 1;
-            Math::Vec3 temp_translation        = bone->_getDerivedPosition();
+            Vec3 temp_translation        = bone->_getDerivedPosition();
 
             // TODO: the unit of the joint matrices is wrong
-            Math::Vec3 temp_scale = bone->_getDerivedScale();
+            Vec3 temp_scale = bone->_getDerivedScale();
 
-            Math::Quaternion temp_rotation = bone->_getDerivedOrientation();
+            Quaternion temp_rotation = bone->_getDerivedOrientation();
 
             // auto scale = bone->_getDerivedTScale();
             // scale.x = 1.f / scale.x;
@@ -141,7 +141,7 @@ namespace MarsEngine
             //	conjugate( bone->_getDerivedTOrientation())
             //);
             auto objMat =
-                Math::Transform(bone->_getDerivedPosition(), bone->_getDerivedOrientation(), bone->_getDerivedScale())
+                Transform(bone->_getDerivedPosition(), bone->_getDerivedOrientation(), bone->_getDerivedScale())
                     .getMatrix();
 
             auto resMat = objMat * bone->_getInverseTpose();

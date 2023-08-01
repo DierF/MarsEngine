@@ -28,11 +28,11 @@ namespace MarsEngine
     std::vector<std::pair<std::string, bool>> g_editor_node_state_array;
     int                                       g_node_depth = -1;
     void                                      DrawVecControl(std::string const& label,
-                                                             Math::Vec3&        values,
+                                                             Vec3&        values,
                                                              float              resetValue  = 0.0f,
                                                              float              columnWidth = 100.0f);
     void                                      DrawVecControl(std::string const& label,
-                                                             Math::Quaternion&  values,
+                                                             Quaternion&  values,
                                                              float              resetValue  = 0.0f,
                                                              float              columnWidth = 100.0f);
 
@@ -75,13 +75,13 @@ namespace MarsEngine
         {
             if (g_editor_node_state_array[g_node_depth].second)
             {
-                Math::Transform* trans_ptr = static_cast<Math::Transform*>(value_ptr);
+                Transform* trans_ptr = static_cast<Transform*>(value_ptr);
 
-                Math::Vec3 degrees_val;
+                Vec3 degrees_val;
 
-                degrees_val.x = (float)Math::Degree(trans_ptr->m_rotation.getPitch(false));
-                degrees_val.y = (float)Math::Degree(trans_ptr->m_rotation.getRoll(false));
-                degrees_val.z = (float)Math::Degree(trans_ptr->m_rotation.getYaw(false));
+                degrees_val.x = (float)Degree(trans_ptr->m_rotation.getPitch(false));
+                degrees_val.y = (float)Degree(trans_ptr->m_rotation.getRoll(false));
+                degrees_val.z = (float)Degree(trans_ptr->m_rotation.getYaw(false));
 
                 DrawVecControl("Position", trans_ptr->m_position);
                 DrawVecControl("Rotation", degrees_val);
@@ -173,9 +173,9 @@ namespace MarsEngine
                 }
             }
         };
-        m_editor_ui_creator["Math::Vec3"] = [this](std::string const& name, void* value_ptr) -> void
+        m_editor_ui_creator["Vec3"] = [this](std::string const& name, void* value_ptr) -> void
         {
-            Math::Vec3* vec_ptr = static_cast<Math::Vec3*>(value_ptr);
+            Vec3* vec_ptr = static_cast<Vec3*>(value_ptr);
             float       val[3]  = {vec_ptr->x, vec_ptr->y, vec_ptr->z};
             if (g_node_depth == -1)
             {
@@ -197,9 +197,9 @@ namespace MarsEngine
             vec_ptr->y = val[1];
             vec_ptr->z = val[2];
         };
-        m_editor_ui_creator["Math::Quaternion"] = [this](std::string const& name, void* value_ptr) -> void
+        m_editor_ui_creator["Quaternion"] = [this](std::string const& name, void* value_ptr) -> void
         {
-            Math::Quaternion* qua_ptr = static_cast<Math::Quaternion*>(value_ptr);
+            Quaternion* qua_ptr = static_cast<Quaternion*>(value_ptr);
             float             val[4]  = {qua_ptr->x, qua_ptr->y, qua_ptr->z, qua_ptr->w};
             if (g_node_depth == -1)
             {
@@ -743,8 +743,8 @@ namespace MarsEngine
         //                        |                                            |
         //                        O--------------------------------------------O
 
-        Math::Vec2 render_target_window_pos = { 0.0f, 0.0f };
-        Math::Vec2 render_target_window_size = { 0.0f, 0.0f };
+        Vec2 render_target_window_pos = { 0.0f, 0.0f };
+        Vec2 render_target_window_size = { 0.0f, 0.0f };
 
         auto menu_bar_rect = ImGui::GetCurrentWindow()->MenuBarRect();
 
@@ -986,7 +986,7 @@ namespace MarsEngine
 
     void EditorUI::preRender() { showEditorUI(); }
 
-    void DrawVecControl(std::string const& label, Math::Vec3& values, float resetValue, float columnWidth)
+    void DrawVecControl(std::string const& label, Vec3& values, float resetValue, float columnWidth)
     {
         ImGui::PushID(label.c_str());
 
@@ -1042,7 +1042,7 @@ namespace MarsEngine
         ImGui::PopID();
     }
 
-    void DrawVecControl(std::string const& label, Math::Quaternion& values, float resetValue, float columnWidth)
+    void DrawVecControl(std::string const& label, Quaternion& values, float resetValue, float columnWidth)
     {
         ImGui::PushID(label.c_str());
 

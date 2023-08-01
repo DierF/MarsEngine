@@ -8,8 +8,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     REFLECTION_TYPE(Vec2)
     CLASS(Vec2, Fields)
     {
@@ -309,7 +307,7 @@ namespace Math
         bool isZeroLength(void) const
         {
             float sqlen = (x * x) + (y * y);
-            return (sqlen < (Float_EPSILON * Float_EPSILON));
+            return (sqlen < (Math::Float_EPSILON * Math::Float_EPSILON));
         }
 
         /** As normalise, except that this vector is unaffected and the
@@ -342,5 +340,4 @@ namespace Math
         static const Vec2 NEGATIVE_UNIT_Y;
         static const Vec2 UNIT_SCALE;
     };
-} // namespace Math
 } // namespace MarsEngine

@@ -2103,8 +2103,8 @@ namespace MarsEngine
     {
         struct MeshNode
         {
-            Math::Mat4 const* model_matrix{ nullptr };
-            Math::Mat4 const* joint_matrices {nullptr};
+            Mat4 const* model_matrix{ nullptr };
+            Mat4 const* joint_matrices {nullptr};
             uint32_t          joint_count {0};
         };
 
@@ -2376,8 +2376,8 @@ namespace MarsEngine
     {
         struct MeshNode
         {
-            Math::Mat4 const* model_matrix{ nullptr };
-            Math::Mat4 const* joint_matrices {nullptr};
+            Mat4 const* model_matrix{ nullptr };
+            Mat4 const* joint_matrices {nullptr};
             uint32_t         joint_count {0};
         };
 

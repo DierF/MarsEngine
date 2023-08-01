@@ -128,11 +128,11 @@ namespace MarsEngine
          */
         RHIImage*       m_particle_billboard_texture_image = nullptr;
         RHIImageView*   m_particle_billboard_texture_image_view = nullptr;
-        VmaAllocation m_particle_billboard_texture_vma_allocation;
+        VmaAllocation   m_particle_billboard_texture_vma_allocation;
 
         RHIImage*       m_mars_logo_texture_image = nullptr;
         RHIImageView*   m_mars_logo_texture_image_view = nullptr;
-        VmaAllocation m_mars_logo_texture_vma_allocation;
+        VmaAllocation   m_mars_logo_texture_vma_allocation;
 
         RHIRenderPass* m_render_pass = nullptr;
 
@@ -157,22 +157,22 @@ namespace MarsEngine
             int        xemit_count;
             float      max_life;
             float      time_step;
-            Math::Vec4 pack; // randomness 3 | frame index 1
-            Math::Vec3 gravity;
+            Vec4 pack; // randomness 3 | frame index 1
+            Vec3 gravity;
             float      padding;
             uvec4      viewport; // x, y, width, height
-            Math::Vec4 extent;   // width, height, near, far
+            Vec4 extent;   // width, height, near, far
         } m_ubo;
 
         struct Particle
         {
-            Math::Vec3 pos;
+            Vec3 pos;
             float      life;
-            Math::Vec3 vel;
+            Vec3 vel;
             float      size_x;
-            Math::Vec3 acc;
+            Vec3 acc;
             float      size_y;
-            Math::Vec4 color;
+            Vec4 color;
         };
 
         // indirect dispath parameter offset
@@ -197,7 +197,7 @@ namespace MarsEngine
         std::vector<ParticleEmitterBufferBatch> m_emitter_buffer_batches;
         std::shared_ptr<ParticleManager>        m_particle_manager;
 
-        Math::DefaultRNG m_random_engine;
+        DefaultRNG m_random_engine;
 
         int m_emitter_count;
 

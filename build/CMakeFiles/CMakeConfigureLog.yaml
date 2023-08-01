@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-      Build started 2023/7/31 15:00:55.
+      Build started 2023/8/1 16:48:28.
       Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
       
       Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\3.27.0-rc4\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
@@ -52,7 +52,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.48
+      Time Elapsed 00:00:00.50
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -78,7 +78,7 @@ events:
       The output was:
       0
       MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-      Build started 2023/7/31 15:00:56.
+      Build started 2023/8/1 16:48:28.
       Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
       
       Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\3.27.0-rc4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
@@ -125,8 +125,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-g714tk"
-      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-g714tk"
+      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-i4tz9c"
+      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-i4tz9c"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -134,39 +134,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-g714tk'
+        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-i4tz9c'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0c648.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9fdcb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-        Build started 2023/7/31 15:00:56.
+        Build started 2023/8/1 16:48:29.
         Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
         
-        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g714tk\\cmTC_0c648.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4tz9c\\cmTC_9fdcb.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_0c648.dir\\Debug\\".
-          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g714tk\\Debug\\".
-          Creating directory "cmTC_0c648.dir\\Debug\\cmTC_0c648.tlog\\".
+          Creating directory "cmTC_9fdcb.dir\\Debug\\".
+          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4tz9c\\Debug\\".
+          Creating directory "cmTC_9fdcb.dir\\Debug\\cmTC_9fdcb.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_0c648.dir\\Debug\\cmTC_0c648.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_9fdcb.dir\\Debug\\cmTC_9fdcb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0c648.dir\\Debug\\\\" /Fd"cmTC_0c648.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9fdcb.dir\\Debug\\\\" /Fd"cmTC_9fdcb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
           ?? x64 ? Microsoft (R) C/C++ ????? 19.34.31944 ?
-          ????(C) Microsoft Corporation????????
           CMakeCCompilerABI.c
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0c648.dir\\Debug\\\\" /Fd"cmTC_0c648.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          ????(C) Microsoft Corporation????????
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9fdcb.dir\\Debug\\\\" /Fd"cmTC_9fdcb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g714tk\\Debug\\cmTC_0c648.exe" /INCREMENTAL /ILK:"cmTC_0c648.dir\\Debug\\cmTC_0c648.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-g714tk/Debug/cmTC_0c648.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-g714tk/Debug/cmTC_0c648.lib" /MACHINE:X64  /machine:x64 cmTC_0c648.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_0c648.vcxproj -> D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g714tk\\Debug\\cmTC_0c648.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4tz9c\\Debug\\cmTC_9fdcb.exe" /INCREMENTAL /ILK:"cmTC_9fdcb.dir\\Debug\\cmTC_9fdcb.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-i4tz9c/Debug/cmTC_9fdcb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-i4tz9c/Debug/cmTC_9fdcb.lib" /MACHINE:X64  /machine:x64 cmTC_9fdcb.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_9fdcb.vcxproj -> D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4tz9c\\Debug\\cmTC_9fdcb.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_0c648.dir\\Debug\\cmTC_0c648.tlog\\unsuccessfulbuild".
-          Touching "cmTC_0c648.dir\\Debug\\cmTC_0c648.tlog\\cmTC_0c648.lastbuildstate".
-        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g714tk\\cmTC_0c648.vcxproj" (default targets).
+          Deleting file "cmTC_9fdcb.dir\\Debug\\cmTC_9fdcb.tlog\\unsuccessfulbuild".
+          Touching "cmTC_9fdcb.dir\\Debug\\cmTC_9fdcb.tlog\\cmTC_9fdcb.lastbuildstate".
+        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4tz9c\\cmTC_9fdcb.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.36
+        Time Elapsed 00:00:00.35
         
       exitCode: 0
   -
@@ -178,8 +178,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-c1ltho"
-      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-c1ltho"
+      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-24mebx"
+      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-24mebx"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -187,33 +187,33 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-c1ltho'
+        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-24mebx'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_36e81.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_436d7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-        Build started 2023/7/31 15:00:57.
+        Build started 2023/8/1 16:48:29.
         Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
         
-        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c1ltho\\cmTC_36e81.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-24mebx\\cmTC_436d7.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_36e81.dir\\Debug\\".
-          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c1ltho\\Debug\\".
-          Creating directory "cmTC_36e81.dir\\Debug\\cmTC_36e81.tlog\\".
+          Creating directory "cmTC_436d7.dir\\Debug\\".
+          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-24mebx\\Debug\\".
+          Creating directory "cmTC_436d7.dir\\Debug\\cmTC_436d7.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_36e81.dir\\Debug\\cmTC_36e81.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_436d7.dir\\Debug\\cmTC_436d7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_36e81.dir\\Debug\\\\" /Fd"cmTC_36e81.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_436d7.dir\\Debug\\\\" /Fd"cmTC_436d7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
           ?? x64 ? Microsoft (R) C/C++ ????? 19.34.31944 ?
           CMakeCXXCompilerABI.cpp
           ????(C) Microsoft Corporation????????
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_36e81.dir\\Debug\\\\" /Fd"cmTC_36e81.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_436d7.dir\\Debug\\\\" /Fd"cmTC_436d7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c1ltho\\Debug\\cmTC_36e81.exe" /INCREMENTAL /ILK:"cmTC_36e81.dir\\Debug\\cmTC_36e81.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-c1ltho/Debug/cmTC_36e81.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-c1ltho/Debug/cmTC_36e81.lib" /MACHINE:X64  /machine:x64 cmTC_36e81.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_36e81.vcxproj -> D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c1ltho\\Debug\\cmTC_36e81.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-24mebx\\Debug\\cmTC_436d7.exe" /INCREMENTAL /ILK:"cmTC_436d7.dir\\Debug\\cmTC_436d7.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-24mebx/Debug/cmTC_436d7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-24mebx/Debug/cmTC_436d7.lib" /MACHINE:X64  /machine:x64 cmTC_436d7.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_436d7.vcxproj -> D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-24mebx\\Debug\\cmTC_436d7.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_36e81.dir\\Debug\\cmTC_36e81.tlog\\unsuccessfulbuild".
-          Touching "cmTC_36e81.dir\\Debug\\cmTC_36e81.tlog\\cmTC_36e81.lastbuildstate".
-        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c1ltho\\cmTC_36e81.vcxproj" (default targets).
+          Deleting file "cmTC_436d7.dir\\Debug\\cmTC_436d7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_436d7.dir\\Debug\\cmTC_436d7.tlog\\cmTC_436d7.lastbuildstate".
+        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-24mebx\\cmTC_436d7.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
@@ -233,8 +233,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-8dxxty"
-      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-8dxxty"
+      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-yaayke"
+      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-yaayke"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -244,34 +244,34 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-8dxxty'
+        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-yaayke'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_76ffc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_31a47.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-        Build started 2023/7/31 15:00:57.
+        Build started 2023/8/1 16:48:30.
         Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
         
-        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\cmTC_76ffc.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\cmTC_31a47.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_76ffc.dir\\Debug\\".
-          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\Debug\\".
-          Creating directory "cmTC_76ffc.dir\\Debug\\cmTC_76ffc.tlog\\".
+          Creating directory "cmTC_31a47.dir\\Debug\\".
+          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\Debug\\".
+          Creating directory "cmTC_31a47.dir\\Debug\\cmTC_31a47.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_76ffc.dir\\Debug\\cmTC_76ffc.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_31a47.dir\\Debug\\cmTC_31a47.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_76ffc.dir\\Debug\\\\" /Fd"cmTC_76ffc.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_31a47.dir\\Debug\\\\" /Fd"cmTC_31a47.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\src.c"
           ?? x64 ? Microsoft (R) C/C++ ????? 19.34.31944 ?
           src.c
           ????(C) Microsoft Corporation????????
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_76ffc.dir\\Debug\\\\" /Fd"cmTC_76ffc.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\src.c"
-        D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\src.c(1,10): fatal  error C1083: ????????: "pthread.h": No such file or directory [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\cmTC_76ffc.vcxproj]
-        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\cmTC_76ffc.vcxproj" (default targets) -- FAILED.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_31a47.dir\\Debug\\\\" /Fd"cmTC_31a47.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\src.c"
+        D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\src.c(1,10): fatal  error C1083: ????????: "pthread.h": No such file or directory [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\cmTC_31a47.vcxproj]
+        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\cmTC_31a47.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\cmTC_76ffc.vcxproj" (default target) (1) ->
+        "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\cmTC_31a47.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\src.c(1,10): fatal  error C1083: ????????: "pthread.h": No such file or directory [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dxxty\\cmTC_76ffc.vcxproj]
+          D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\src.c(1,10): fatal  error C1083: ????????: "pthread.h": No such file or directory [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yaayke\\cmTC_31a47.vcxproj]
         
             0 Warning(s)
             1 Error(s)
@@ -289,8 +289,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-se8z5y"
-      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-se8z5y"
+      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-q6i167"
+      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-q6i167"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -300,41 +300,41 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-se8z5y'
+        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-q6i167'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f398f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e5931.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-        Build started 2023/7/31 15:00:58.
+        Build started 2023/8/1 16:48:30.
         Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
         
-        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\cmTC_f398f.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\cmTC_e5931.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_f398f.dir\\Debug\\".
-          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\Debug\\".
-          Creating directory "cmTC_f398f.dir\\Debug\\cmTC_f398f.tlog\\".
+          Creating directory "cmTC_e5931.dir\\Debug\\".
+          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\Debug\\".
+          Creating directory "cmTC_e5931.dir\\Debug\\cmTC_e5931.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_f398f.dir\\Debug\\cmTC_f398f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_e5931.dir\\Debug\\cmTC_e5931.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f398f.dir\\Debug\\\\" /Fd"cmTC_f398f.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e5931.dir\\Debug\\\\" /Fd"cmTC_e5931.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\CheckFunctionExists.c"
           ?? x64 ? Microsoft (R) C/C++ ????? 19.34.31944 ?
           CheckFunctionExists.c
           ????(C) Microsoft Corporation????????
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f398f.dir\\Debug\\\\" /Fd"cmTC_f398f.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\CheckFunctionExists.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e5931.dir\\Debug\\\\" /Fd"cmTC_e5931.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\CheckFunctionExists.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\Debug\\cmTC_f398f.exe" /INCREMENTAL /ILK:"cmTC_f398f.dir\\Debug\\cmTC_f398f.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-se8z5y/Debug/cmTC_f398f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-se8z5y/Debug/cmTC_f398f.lib" /MACHINE:X64  /machine:x64 cmTC_f398f.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: ??????"pthreads.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\cmTC_f398f.vcxproj]
-        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\cmTC_f398f.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\Debug\\cmTC_e5931.exe" /INCREMENTAL /ILK:"cmTC_e5931.dir\\Debug\\cmTC_e5931.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-q6i167/Debug/cmTC_e5931.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-q6i167/Debug/cmTC_e5931.lib" /MACHINE:X64  /machine:x64 cmTC_e5931.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: ??????"pthreads.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\cmTC_e5931.vcxproj]
+        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\cmTC_e5931.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\cmTC_f398f.vcxproj" (default target) (1) ->
+        "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\cmTC_e5931.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: ??????"pthreads.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-se8z5y\\cmTC_f398f.vcxproj]
+          LINK : fatal error LNK1104: ??????"pthreads.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q6i167\\cmTC_e5931.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.30
+        Time Elapsed 00:00:00.29
         
       exitCode: 1
   -
@@ -347,8 +347,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-mg7u5d"
-      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-mg7u5d"
+      source: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-t21nt5"
+      binary: "D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-t21nt5"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -358,36 +358,36 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-mg7u5d'
+        Change Dir: 'D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-t21nt5'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6db07.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c48a2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-        Build started 2023/7/31 15:00:58.
+        Build started 2023/8/1 16:48:31.
         Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
         
-        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\cmTC_6db07.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\cmTC_c48a2.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_6db07.dir\\Debug\\".
-          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\Debug\\".
-          Creating directory "cmTC_6db07.dir\\Debug\\cmTC_6db07.tlog\\".
+          Creating directory "cmTC_c48a2.dir\\Debug\\".
+          Creating directory "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\Debug\\".
+          Creating directory "cmTC_c48a2.dir\\Debug\\cmTC_c48a2.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_6db07.dir\\Debug\\cmTC_6db07.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_c48a2.dir\\Debug\\cmTC_c48a2.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6db07.dir\\Debug\\\\" /Fd"cmTC_6db07.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c48a2.dir\\Debug\\\\" /Fd"cmTC_c48a2.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\CheckFunctionExists.c"
           ?? x64 ? Microsoft (R) C/C++ ????? 19.34.31944 ?
           CheckFunctionExists.c
           ????(C) Microsoft Corporation????????
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6db07.dir\\Debug\\\\" /Fd"cmTC_6db07.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\CheckFunctionExists.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c48a2.dir\\Debug\\\\" /Fd"cmTC_c48a2.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\CheckFunctionExists.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\Debug\\cmTC_6db07.exe" /INCREMENTAL /ILK:"cmTC_6db07.dir\\Debug\\cmTC_6db07.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-mg7u5d/Debug/cmTC_6db07.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-mg7u5d/Debug/cmTC_6db07.lib" /MACHINE:X64  /machine:x64 cmTC_6db07.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: ??????"pthread.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\cmTC_6db07.vcxproj]
-        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\cmTC_6db07.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\Debug\\cmTC_c48a2.exe" /INCREMENTAL /ILK:"cmTC_c48a2.dir\\Debug\\cmTC_c48a2.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-t21nt5/Debug/cmTC_c48a2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/MarsEngine/build/CMakeFiles/CMakeScratch/TryCompile-t21nt5/Debug/cmTC_c48a2.lib" /MACHINE:X64  /machine:x64 cmTC_c48a2.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: ??????"pthread.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\cmTC_c48a2.vcxproj]
+        Done Building Project "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\cmTC_c48a2.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\cmTC_6db07.vcxproj" (default target) (1) ->
+        "D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\cmTC_c48a2.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: ??????"pthread.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mg7u5d\\cmTC_6db07.vcxproj]
+          LINK : fatal error LNK1104: ??????"pthread.lib" [D:\\Projects\\MarsEngine\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t21nt5\\cmTC_c48a2.vcxproj]
         
             0 Warning(s)
             1 Error(s)

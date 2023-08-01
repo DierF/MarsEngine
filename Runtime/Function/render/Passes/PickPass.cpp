@@ -420,7 +420,7 @@ namespace MarsEngine
         setupFramebuffer();
     }
 
-    uint32_t PickPass::pick(Math::Vec2 const& picked_uv)
+    uint32_t PickPass::pick(Vec2 const& picked_uv)
     {
         uint32_t pixel_x =
             static_cast<uint32_t>(picked_uv.x * m_rhi->getSwapchainInfo().viewport->width + m_rhi->getSwapchainInfo().viewport->x);
@@ -432,8 +432,8 @@ namespace MarsEngine
 
         struct MeshNode
         {
-            Math::Mat4 const* model_matrix{ nullptr };
-            Math::Mat4 const* joint_matrices {nullptr};
+            Mat4 const* model_matrix{ nullptr };
+            Mat4 const* joint_matrices {nullptr};
             uint32_t         joint_count {0};
             uint32_t         node_id;
         };

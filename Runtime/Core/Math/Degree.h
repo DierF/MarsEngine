@@ -2,8 +2,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     class Radian;
 
     /** Wrapper class which indicates a given angle value is in Degrees.
@@ -65,5 +63,4 @@ namespace Math
         float m_degree;
     };
 
-} // namespace Math
 } // namespace MarsEngine

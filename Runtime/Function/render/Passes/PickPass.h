@@ -20,7 +20,7 @@ namespace MarsEngine
         void preparePassData(std::shared_ptr<RenderResourceBase> render_resource) override final;
         void draw() override final;
 
-        uint32_t pick(Math::Vec2 const& picked_uv);
+        uint32_t pick(Vec2 const& picked_uv);
         void     recreateFramebuffer();
 
         MeshInefficientPickPerframeStorageBufferObject _mesh_inefficient_pick_perframe_storage_buffer_object;

@@ -2,8 +2,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     AxisAlignedBox::AxisAlignedBox(Vec3 const& center, Vec3 const& half_extent) { update(center, half_extent); }
 
     void AxisAlignedBox::merge(Vec3 const& new_point)
@@ -22,5 +20,4 @@ namespace Math
         m_min_corner = center - half_extent;
         m_max_corner = center + half_extent;
     }
-} // namespace Math
 } // namespace MarsEngine

@@ -4,27 +4,24 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
 	Degree::Degree(Radian const& r)
-		: m_degree(radiansToDegrees(float(r)))
+		: m_degree(Math::radiansToDegrees(float(r)))
 	{
 	}
 
 	Degree& Degree::operator=(Radian const& r)
 	{
-		m_degree = radiansToDegrees(float(r));
+        m_degree = Math::radiansToDegrees(float(r));
 		return *this;
 	}
 
 	Degree::operator Radian() const
 	{
-		return Radian(degreesToRadians(m_degree));
+		return Radian(Math::degreesToRadians(m_degree));
 	}
 
 	float Degree::toAngleUnits() const
 	{
-		return degreesToAngleUnits(m_degree);
+		return Math::degreesToAngleUnits(m_degree);
 	}
-} // namespace Math
 } // namespace MarsEngine

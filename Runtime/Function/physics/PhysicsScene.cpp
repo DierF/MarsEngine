@@ -26,7 +26,7 @@
 
 namespace MarsEngine
 {
-    PhysicsScene::PhysicsScene(Math::Vec3 const& gravity)
+    PhysicsScene::PhysicsScene(Vec3 const& gravity)
     {
         static_assert(s_invalid_rigidbody_id == JPH::BodyID::cInvalidBodyID);
 
@@ -69,7 +69,7 @@ namespace MarsEngine
         JPH::Factory::sInstance = nullptr;
     }
 
-    uint32_t PhysicsScene::createRigidBody(Math::Transform const&       global_transform,
+    uint32_t PhysicsScene::createRigidBody(Transform const&       global_transform,
                                            RigidBodyComponentRes const& rigidbody_actor_res)
     {
         JPH::BodyInterface& body_interface = m_physics.m_jolt_physics_system->GetBodyInterface();
@@ -77,10 +77,10 @@ namespace MarsEngine
         struct JPHShapeData
         {
             JPH::Shape*       shape {nullptr};
-            Math::Transform   local_transform;
-            Math::Vec3        global_position;
-            Math::Vec3        global_scale;
-            Math::Quaternion  global_rotation;
+            Transform   local_transform;
+            Vec3        global_position;
+            Vec3        global_scale;
+            Quaternion  global_rotation;
         };
 
         std::vector<JPHShapeData> jph_shapes;
@@ -89,11 +89,11 @@ namespace MarsEngine
         {
             RigidBodyShape const& shape = rigidbody_actor_res.m_shapes[shape_index];
 
-            Math::Mat4 const shape_global_transform = global_transform.getMatrix()
+            Mat4 const shape_global_transform = global_transform.getMatrix()
                 * shape.m_local_transform.getMatrix();
 
-            Math::Vec3       global_position, global_scale;
-            Math::Quaternion global_rotation;
+            Vec3       global_position, global_scale;
+            Quaternion global_rotation;
 
             shape_global_transform.decomposition(global_position, global_scale, global_rotation);
 
@@ -149,7 +149,7 @@ namespace MarsEngine
 
     void PhysicsScene::removeRigidBody(uint32_t body_id) { m_pending_remove_bodies.push_back(body_id); }
 
-    void PhysicsScene::updateRigidBodyGlobalTransform(uint32_t body_id, Math::Transform const& global_transform)
+    void PhysicsScene::updateRigidBodyGlobalTransform(uint32_t body_id, Transform const& global_transform)
     {
         JPH::BodyInterface& body_interface = m_physics.m_jolt_physics_system->GetBodyInterface();
 
@@ -179,8 +179,8 @@ namespace MarsEngine
         m_pending_remove_bodies.clear();
     }
 
-    bool PhysicsScene::raycast(Math::Vec3                   ray_origin,
-                               Math::Vec3                   ray_directory,
+    bool PhysicsScene::raycast(Vec3                   ray_origin,
+                               Vec3                   ray_directory,
                                float                        ray_length,
                                std::vector<PhysicsHitInfo>& out_hits)
     {
@@ -229,17 +229,17 @@ namespace MarsEngine
     }
 
     bool PhysicsScene::sweep(RigidBodyShape const&        shape,
-                             Math::Mat4 const&            shape_transform,
-                             Math::Vec3                   sweep_direction,
+                             Mat4 const&            shape_transform,
+                             Vec3                   sweep_direction,
                              float                        sweep_length,
                              std::vector<PhysicsHitInfo>& out_hits)
     {
         JPH::NarrowPhaseQuery const& scene_query = m_physics.m_jolt_physics_system->GetNarrowPhaseQuery();
 
-        Math::Mat4 const shape_global_transform = shape_transform * shape.m_local_transform.getMatrix();
+        Mat4 const shape_global_transform = shape_transform * shape.m_local_transform.getMatrix();
 
-        Math::Vec3       global_position, global_scale;
-        Math::Quaternion global_rotation;
+        Vec3       global_position, global_scale;
+        Quaternion global_rotation;
 
         shape_global_transform.decomposition(global_position, global_scale, global_rotation);
 
@@ -284,14 +284,14 @@ namespace MarsEngine
         return true;
     }
 
-    bool PhysicsScene::isOverlap(RigidBodyShape const& shape, Math::Mat4 const& global_transform)
+    bool PhysicsScene::isOverlap(RigidBodyShape const& shape, Mat4 const& global_transform)
     {
         JPH::NarrowPhaseQuery const& scene_query = m_physics.m_jolt_physics_system->GetNarrowPhaseQuery();
 
-        Math::Mat4 const shape_global_transform = global_transform * shape.m_local_transform.getMatrix();
+        Mat4 const shape_global_transform = global_transform * shape.m_local_transform.getMatrix();
 
-        Math::Vec3       global_position, global_scale;
-        Math::Quaternion global_rotation;
+        Vec3       global_position, global_scale;
+        Quaternion global_rotation;
 
         shape_global_transform.decomposition(global_position, global_scale, global_rotation);
 
@@ -313,7 +313,7 @@ namespace MarsEngine
     }
 
     void PhysicsScene::getShapeBoundingBoxes(uint32_t body_id,
-                                             std::vector<Math::AxisAlignedBox>& out_bounding_boxes) const
+                                             std::vector<AxisAlignedBox>& out_bounding_boxes) const
     {
         JPH::BodyLockRead body_lock(m_physics.m_jolt_physics_system->GetBodyLockInterface(), JPH::BodyID(body_id));
         JPH::Body const&  body = body_lock.GetBody();
@@ -339,8 +339,8 @@ namespace MarsEngine
             RigidBodyShape rigid_body_shape;
 
             JPH::AABox jph_bounding_box = ts.GetWorldSpaceBounds();
-            Math::Vec3    center           = toVec3(jph_bounding_box.GetCenter());
-            Math::Vec3    extent           = toVec3(jph_bounding_box.GetExtent());
+            Vec3    center           = toVec3(jph_bounding_box.GetCenter());
+            Vec3    extent           = toVec3(jph_bounding_box.GetExtent());
 
             out_bounding_boxes.emplace_back(center, extent);
         }

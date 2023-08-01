@@ -28,8 +28,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     /** A 3x3 matrix which can represent rotations around axes.
     @par
     The coordinate system is assumed to be <b>right-handed</b>.
@@ -366,5 +364,4 @@ namespace Math
         static const Mat3 ZERO;
         static const Mat3 IDENTITY;
     };
-} // namespace Math
 } // namespace MarsEngine

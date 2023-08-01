@@ -24,9 +24,9 @@ namespace MarsEngine
 
     public:
         std::string             name;
-        std::vector<Math::Vec3>    position_keys;
-        std::vector<Math::Quaternion> rotation_keys;
-        std::vector<Math::Vec3>    scaling_keys;
+        std::vector<Vec3>    position_keys;
+        std::vector<Quaternion> rotation_keys;
+        std::vector<Vec3>    scaling_keys;
     };
 
     REFLECTION_TYPE(AnimationClip)

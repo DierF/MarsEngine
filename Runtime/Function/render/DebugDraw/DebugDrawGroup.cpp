@@ -34,7 +34,7 @@ namespace MarsEngine
 
     std::string const& DebugDrawGroup::getName() const {return m_name;}
 
-    void DebugDrawGroup::addPoint(Math::Vec3 const& position, Math::Vec4 const& color, float const life_time, bool const no_depth_test)
+    void DebugDrawGroup::addPoint(Vec3 const& position, Vec4 const& color, float const life_time, bool const no_depth_test)
     {
         std::lock_guard<std::mutex> guard(m_mutex);
         DebugDrawPoint point;
@@ -46,10 +46,10 @@ namespace MarsEngine
         m_points.push_back(point);
     }
 
-    void DebugDrawGroup::addLine(Math::Vec3 const& point0, 
-                                 Math::Vec3 const& point1,
-                                 Math::Vec4 const& color0, 
-                                 Math::Vec4 const& color1, 
+    void DebugDrawGroup::addLine(Vec3 const& point0, 
+                                 Vec3 const& point1,
+                                 Vec4 const& color0, 
+                                 Vec4 const& color1, 
                                  float const       life_time,
                                  bool const        no_depth_test)
     {
@@ -68,12 +68,12 @@ namespace MarsEngine
         m_lines.push_back(line);
     }
 
-    void DebugDrawGroup::addTriangle(Math::Vec3 const& point0,
-                                     Math::Vec3 const& point1,
-                                     Math::Vec3 const& point2,
-                                     Math::Vec4 const& color0,
-                                     Math::Vec4 const& color1,
-                                     Math::Vec4 const& color2,
+    void DebugDrawGroup::addTriangle(Vec3 const& point0,
+                                     Vec3 const& point1,
+                                     Vec3 const& point2,
+                                     Vec4 const& color0,
+                                     Vec4 const& color1,
+                                     Vec4 const& color2,
                                      float const       life_time,
                                      bool const        no_depth_test,
                                      FillMode const    fillmod)
@@ -98,14 +98,14 @@ namespace MarsEngine
 
     }
 
-    void DebugDrawGroup::addQuad(Math::Vec3 const& point0,
-                                 Math::Vec3 const& point1,
-                                 Math::Vec3 const& point2,
-                                 Math::Vec3 const& point3,
-                                 Math::Vec4 const& color0,
-                                 Math::Vec4 const& color1,
-                                 Math::Vec4 const& color2,
-                                 Math::Vec4 const& color3,
+    void DebugDrawGroup::addQuad(Vec3 const& point0,
+                                 Vec3 const& point1,
+                                 Vec3 const& point2,
+                                 Vec3 const& point3,
+                                 Vec4 const& color0,
+                                 Vec4 const& color1,
+                                 Vec4 const& color2,
+                                 Vec4 const& color3,
                                  float const       life_time,
                                  bool const        no_depth_test,
                                  FillMode const    fillmode)
@@ -157,10 +157,10 @@ namespace MarsEngine
         }
     }
 
-    void DebugDrawGroup::addBox(Math::Vec3 const& center_point,
-                                Math::Vec3 const& half_extends,
-                                Math::Vec4 const& rotate,
-                                Math::Vec4 const& color,
+    void DebugDrawGroup::addBox(Vec3 const& center_point,
+                                Vec3 const& half_extends,
+                                Vec4 const& rotate,
+                                Vec4 const& color,
                                 float const       life_time,
                                 bool const        no_depth_test)
     {
@@ -176,9 +176,9 @@ namespace MarsEngine
         m_boxes.push_back(box);
     }
 
-    void DebugDrawGroup::addSphere(Math::Vec3 const& center,
+    void DebugDrawGroup::addSphere(Vec3 const& center,
                                    float const       radius,
-                                   Math::Vec4 const& color,
+                                   Vec4 const& color,
                                    float const       life_time,
                                    bool const        no_depth_test)
     {
@@ -193,11 +193,11 @@ namespace MarsEngine
         m_spheres.push_back(sphere);
     }
 
-    void DebugDrawGroup::addCylinder(Math::Vec3 const& center, 
+    void DebugDrawGroup::addCylinder(Vec3 const& center, 
                                      float const       radius, 
                                      float const       height, 
-                                     Math::Vec4 const& rotate,
-                                     Math::Vec4 const& color, 
+                                     Vec4 const& rotate,
+                                     Vec4 const& color, 
                                      float const       life_time, 
                                      bool const        no_depth_test)
     {
@@ -214,12 +214,12 @@ namespace MarsEngine
         m_cylinders.push_back(cylinder);
     }
 
-    void DebugDrawGroup::addCapsule(Math::Vec3 const& center,
-                                    Math::Vec4 const& rotation,
-                                    Math::Vec3 const& scale, 
+    void DebugDrawGroup::addCapsule(Vec3 const& center,
+                                    Vec4 const& rotation,
+                                    Vec3 const& scale, 
                                     float const       radius, 
                                     float const       height, 
-                                    Math::Vec4 const& color, 
+                                    Vec4 const& color, 
                                     float const       life_time,
                                     bool const        no_depth_test)
     {
@@ -238,8 +238,8 @@ namespace MarsEngine
     }
 
     void DebugDrawGroup::addText(std::string const& content,
-                                 Math::Vec4 const&  color,
-                                 Math::Vec3 const&  coordinate,
+                                 Vec4 const&  color,
+                                 Vec3 const&  coordinate,
                                  int const          size,
                                  bool const         is_screen_text,
                                  float const        life_time)
@@ -467,9 +467,9 @@ namespace MarsEngine
                 float f[2] = { -1.0f,1.0f };
                 for (size_t i = 0; i < 8; i++)
                 {
-                    Math::Vec3 v(f[i & 1] * box.m_half_extents.x, f[(i >> 1) & 1] * box.m_half_extents.y, f[(i >> 2) & 1] * box.m_half_extents.z);
-                    Math::Vec3 uv, uuv;
-                    Math::Vec3 qvec(box.m_rotate.x, box.m_rotate.y, box.m_rotate.z);
+                    Vec3 v(f[i & 1] * box.m_half_extents.x, f[(i >> 1) & 1] * box.m_half_extents.y, f[(i >> 2) & 1] * box.m_half_extents.z);
+                    Vec3 uv, uuv;
+                    Vec3 qvec(box.m_rotate.x, box.m_rotate.y, box.m_rotate.z);
                     uv = qvec.crossProduct(v);
                     uuv = qvec.crossProduct(uv);
                     uv *= (2.0f * box.m_rotate.w);
@@ -503,7 +503,7 @@ namespace MarsEngine
         }
     }
 
-    void DebugDrawGroup::writeTextData(std::vector<DebugDrawVertex>& vertexs, DebugDrawFont* font, Math::Mat4 m_proj_view_matrix)
+    void DebugDrawGroup::writeTextData(std::vector<DebugDrawVertex>& vertexs, DebugDrawFont* font, Mat4 m_proj_view_matrix)
     {
         RHISwapChainDesc swapChainDesc = g_runtime_global_context.m_render_system->getRHI()->getSwapchainInfo();
         uint32_t screenWidth = swapChainDesc.viewport->width;
@@ -517,12 +517,12 @@ namespace MarsEngine
         {
             float absoluteW = text.m_size, absoluteH = text.m_size * 2;
             float w = absoluteW / (1.0f * screenWidth / 2.0f), h = absoluteH / (1.0f * screenHeight / 2.0f);
-            Math::Vec3 coordinate = text.m_coordinate;
+            Vec3 coordinate = text.m_coordinate;
             if (!text.m_is_screen_text)
             {
-                Math::Vec4 tempCoord(coordinate.x, coordinate.y, coordinate.z, 1.0f);
+                Vec4 tempCoord(coordinate.x, coordinate.y, coordinate.z, 1.0f);
                 tempCoord = m_proj_view_matrix * tempCoord;
-                coordinate = Math::Vec3(tempCoord.x / tempCoord.w, tempCoord.y / tempCoord.w, 0.0f);
+                coordinate = Vec3(tempCoord.x / tempCoord.w, tempCoord.y / tempCoord.w, 0.0f);
             }
             float x = coordinate.x, y = coordinate.y;
             for (unsigned char character : text.m_content)
@@ -541,29 +541,29 @@ namespace MarsEngine
                     cx1 = 0 + x; cx2 = w + x;
                     cy1 = 0 + y; cy2 = h + y;
 
-                    vertexs[current_index].pos = Math::Vec3(cx1, cy1, 0.0f);
+                    vertexs[current_index].pos = Vec3(cx1, cy1, 0.0f);
                     vertexs[current_index].color = text.m_color;
-                    vertexs[current_index++].texcoord = Math::Vec2(x1, y1);
+                    vertexs[current_index++].texcoord = Vec2(x1, y1);
 
-                    vertexs[current_index].pos = Math::Vec3(cx1, cy2, 0.0f);
+                    vertexs[current_index].pos = Vec3(cx1, cy2, 0.0f);
                     vertexs[current_index].color = text.m_color;
-                    vertexs[current_index++].texcoord = Math::Vec2(x1, y2);
+                    vertexs[current_index++].texcoord = Vec2(x1, y2);
 
-                    vertexs[current_index].pos = Math::Vec3(cx2, cy2, 0.0f);
+                    vertexs[current_index].pos = Vec3(cx2, cy2, 0.0f);
                     vertexs[current_index].color = text.m_color;
-                    vertexs[current_index++].texcoord = Math::Vec2(x2, y2);
+                    vertexs[current_index++].texcoord = Vec2(x2, y2);
 
-                    vertexs[current_index].pos = Math::Vec3(cx1, cy1, 0.0f);
+                    vertexs[current_index].pos = Vec3(cx1, cy1, 0.0f);
                     vertexs[current_index].color = text.m_color;
-                    vertexs[current_index++].texcoord = Math::Vec2(x1, y1);
+                    vertexs[current_index++].texcoord = Vec2(x1, y1);
 
-                    vertexs[current_index].pos = Math::Vec3(cx2, cy2, 0.0f);
+                    vertexs[current_index].pos = Vec3(cx2, cy2, 0.0f);
                     vertexs[current_index].color = text.m_color;
-                    vertexs[current_index++].texcoord = Math::Vec2(x2, y2);
+                    vertexs[current_index++].texcoord = Vec2(x2, y2);
 
-                    vertexs[current_index].pos = Math::Vec3(cx2, cy1, 0.0f);
+                    vertexs[current_index].pos = Vec3(cx2, cy1, 0.0f);
                     vertexs[current_index].color = text.m_color;
-                    vertexs[current_index++].texcoord = Math::Vec2(x2, y1);
+                    vertexs[current_index++].texcoord = Vec2(x2, y1);
 
                     x += w;
                 }
@@ -571,7 +571,7 @@ namespace MarsEngine
         }
     }
 
-    void DebugDrawGroup::writeUniformDynamicDataToCache(std::vector<std::pair<Math::Mat4, Math::Vec4>>& datas)
+    void DebugDrawGroup::writeUniformDynamicDataToCache(std::vector<std::pair<Mat4, Vec4>>& datas)
     {
         // cache uniformDynamic data ,first has_depth_test ,second no_depth_test
         size_t data_count = getUniformDynamicDataCount() * 3;
@@ -587,12 +587,12 @@ namespace MarsEngine
             {
                 if (sphere.m_no_depth_test == no_depth_test)
                 {
-                    Math::Mat4 model = Math::Mat4::IDENTITY;
+                    Mat4 model = Mat4::IDENTITY;
 
-                    Math::Mat4 tmp = Math::Mat4::IDENTITY;
+                    Mat4 tmp = Mat4::IDENTITY;
                     tmp.makeTrans(sphere.m_center);
                     model = model * tmp;
-                    tmp = Math::Mat4::buildScaleMatrix(sphere.m_radius, sphere.m_radius, sphere.m_radius);
+                    tmp = Mat4::buildScaleMatrix(sphere.m_radius, sphere.m_radius, sphere.m_radius);
                     model = model * tmp;
                     datas[current_index++] = std::make_pair(model, sphere.m_color);
                 }
@@ -601,21 +601,21 @@ namespace MarsEngine
             {
                 if (cylinder.m_no_depth_test == no_depth_test)
                 {
-                    Math::Mat4 model = Math::Mat4::IDENTITY;
+                    Mat4 model = Mat4::IDENTITY;
 
                     //rolate
                     float w = cylinder.m_rotate.x;
                     float x = cylinder.m_rotate.y;
                     float y = cylinder.m_rotate.z;
                     float z = cylinder.m_rotate.w;
-                    Math::Mat4 tmp = Math::Mat4::IDENTITY;
+                    Mat4 tmp = Mat4::IDENTITY;
                     tmp.makeTrans(cylinder.m_center);
                     model = model * tmp;
                     
-                    tmp = Math::Mat4::buildScaleMatrix(cylinder.m_radius, cylinder.m_radius, cylinder.m_height / 2.0f);
+                    tmp = Mat4::buildScaleMatrix(cylinder.m_radius, cylinder.m_radius, cylinder.m_height / 2.0f);
                     model = model * tmp;
             
-                    Math::Mat4 ro = Math::Mat4::IDENTITY;
+                    Mat4 ro = Mat4::IDENTITY;
                     ro[0][0] = 1.0f - 2.0f * y * y - 2.0f * z * z; ro[0][1] = 2.0f * x * y + 2.0f * w * z;        ro[0][2] = 2.0f * x * z - 2.0f * w * y;
                     ro[1][0] = 2.0f * x * y - 2.0f * w * z;        ro[1][1] = 1.0f - 2.0f * x * x - 2.0f * z * z; ro[1][2] = 2.0f * y * z + 2.0f * w * x;
                     ro[2][0] = 2.0f * x * z + 2.0f * w * y;        ro[2][1] = 2.0f * y * z - 2.0f * w * x;        ro[2][2] = 1.0f - 2.0f * x * x - 2.0f * y * y;
@@ -628,17 +628,17 @@ namespace MarsEngine
             {
                 if (capsule.m_no_depth_test == no_depth_test)
                 {
-                    Math::Mat4 model1 = Math::Mat4::IDENTITY;
-                    Math::Mat4 model2 = Math::Mat4::IDENTITY;
-                    Math::Mat4 model3 = Math::Mat4::IDENTITY;
+                    Mat4 model1 = Mat4::IDENTITY;
+                    Mat4 model2 = Mat4::IDENTITY;
+                    Mat4 model3 = Mat4::IDENTITY;
 
-                    Math::Mat4 tmp = Math::Mat4::IDENTITY;
+                    Mat4 tmp = Mat4::IDENTITY;
                     tmp.makeTrans(capsule.m_center);
                     model1 = model1 * tmp;
                     model2 = model2 * tmp;
                     model3 = model3 * tmp;
 
-                    tmp = Math::Mat4::buildScaleMatrix(capsule.m_scale.x, capsule.m_scale.y, capsule.m_scale.z);
+                    tmp = Mat4::buildScaleMatrix(capsule.m_scale.x, capsule.m_scale.y, capsule.m_scale.z);
                     model1 = model1 * tmp;
                     model2 = model2 * tmp;
                     model3 = model3 * tmp;
@@ -648,7 +648,7 @@ namespace MarsEngine
                     float x = capsule.m_rotation.y;
                     float y = capsule.m_rotation.z;
                     float z = capsule.m_rotation.w;
-                    Math::Mat4 ro = Math::Mat4::IDENTITY;
+                    Mat4 ro = Mat4::IDENTITY;
                     ro[0][0] = 1.0f - 2.0f * y * y - 2.0f * z * z; ro[0][1] = 2.0f * x * y + 2.0f * w * z;        ro[0][2] = 2.0f * x * z - 2.0f * w * y;
                     ro[1][0] = 2.0f * x * y - 2.0f * w * z;        ro[1][1] = 1.0f - 2.0f * x * x - 2.0f * z * z; ro[1][2] = 2.0f * y * z + 2.0f * w * x;
                     ro[2][0] = 2.0f * x * z + 2.0f * w * y;        ro[2][1] = 2.0f * y * z - 2.0f * w * x;        ro[2][2] = 1.0f - 2.0f * x * x - 2.0f * y * y;
@@ -656,16 +656,16 @@ namespace MarsEngine
                     model2 = model2 * ro;
                     model3 = model3 * ro;
 
-                    tmp.makeTrans(Math::Vec3(0.0f, 0.0f, capsule.m_height / 2.0f - capsule.m_radius));
+                    tmp.makeTrans(Vec3(0.0f, 0.0f, capsule.m_height / 2.0f - capsule.m_radius));
                     model1 = model1 * tmp;
 
-                    tmp = Math::Mat4::buildScaleMatrix(1.0f, 1.0f, capsule.m_height / (capsule.m_radius * 2.0f));
+                    tmp = Mat4::buildScaleMatrix(1.0f, 1.0f, capsule.m_height / (capsule.m_radius * 2.0f));
                     model2 = model2 * tmp;
 
-                    tmp.makeTrans(Math::Vec3(0.0f, 0.0f, -(capsule.m_height / 2.0f - capsule.m_radius)));
+                    tmp.makeTrans(Vec3(0.0f, 0.0f, -(capsule.m_height / 2.0f - capsule.m_radius)));
                     model3 = model3 * tmp;
 
-                    tmp = Math::Mat4::buildScaleMatrix(capsule.m_radius, capsule.m_radius, capsule.m_radius);
+                    tmp = Mat4::buildScaleMatrix(capsule.m_radius, capsule.m_radius, capsule.m_radius);
                     model1 = model1 * tmp;
                     model2 = model2 * tmp;
                     model3 = model3 * tmp;

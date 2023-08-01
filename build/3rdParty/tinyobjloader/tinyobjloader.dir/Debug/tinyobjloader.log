@@ -1,1 +1,3 @@
-﻿  tinyobjloader.vcxproj -> D:\Projects\MarsEngine\build\3rdParty\tinyobjloader\Debug\tinyobjloader.lib
+﻿  Building Custom Rule D:/Projects/MarsEngine/3rdParty/tinyobjloader/CMakeLists.txt
+  tiny_obj_loader.cc
+  tinyobjloader.vcxproj -> D:\Projects\MarsEngine\build\3rdParty\tinyobjloader\Debug\tinyobjloader.lib

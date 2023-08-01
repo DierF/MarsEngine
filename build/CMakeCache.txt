@@ -349,9 +349,6 @@ MarsEngine_SOURCE_DIR:STATIC=D:/Projects/MarsEngine
 //Dependencies for the target
 MarsRuntime_LIB_DEPENDS:STATIC=general;spdlog::spdlog;general;tinyobjloader;general;glfw;general;imgui;general;Jolt;general;lua_static;general;D:/Projects/MarsEngine/3rdParty/VulkanSDK/lib/Win32/vulkan-1.lib;
 
-//Dependencies for the target
-Runtime_LIB_DEPENDS:STATIC=general;spdlog::spdlog;general;tinyobjloader;general;glfw;general;imgui;general;Jolt;general;lua_static;general;D:/Projects/MarsEngine/3rdParty/VulkanSDK/lib/Win32/vulkan-1.lib;
-
 //Name of the computer/site where compile is being run
 SITE:STRING=DESKTOP-305JUFS
 

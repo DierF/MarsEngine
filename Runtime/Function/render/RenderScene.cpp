@@ -87,7 +87,7 @@ namespace MarsEngine
     void RenderScene::updateVisibleObjectsDirectionalLight(std::shared_ptr<RenderResource> render_resource,
                                                            std::shared_ptr<RenderCamera>   camera)
     {
-        Math::Mat4 directional_light_proj_view = CalculateDirectionalLightCamera(*this, *camera);
+        Mat4 directional_light_proj_view = CalculateDirectionalLightCamera(*this, *camera);
 
         render_resource->m_mesh_perframe_storage_buffer_object.directional_light_proj_view =
             directional_light_proj_view;
@@ -188,9 +188,9 @@ namespace MarsEngine
     {
         m_main_camera_visible_mesh_nodes.clear();
 
-        Math::Mat4 view_matrix      = camera->getViewMatrix();
-        Math::Mat4 proj_matrix      = camera->getPersProjMatrix();
-        Math::Mat4 proj_view_matrix = proj_matrix * view_matrix;
+        Mat4 view_matrix      = camera->getViewMatrix();
+        Mat4 proj_matrix      = camera->getPersProjMatrix();
+        Mat4 proj_view_matrix = proj_matrix * view_matrix;
 
         ClusterFrustum f = CreateClusterFrustumFromMatrix(proj_view_matrix, -1.0, 1.0, -1.0, 1.0, 0.0, 1.0);
 

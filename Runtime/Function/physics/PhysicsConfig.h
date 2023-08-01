@@ -20,7 +20,7 @@ namespace MarsEngine
         uint32_t m_max_barrier_count {8};
         uint32_t m_max_concurrent_job_count {4};
 
-        Math::Vec3 m_gravity {0.f, 0.f, -9.8f};
+        Vec3 m_gravity {0.f, 0.f, -9.8f};
 
         float m_update_frequency {60.f};
     };

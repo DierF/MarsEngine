@@ -70,19 +70,19 @@ namespace MarsEngine
     /// Function that determines if two broadphase layers can collide
     bool BroadPhaseCanCollide(JPH::ObjectLayer inLayer1, JPH::BroadPhaseLayer inLayer2);
 
-    inline JPH::Vec3 toVec3(Math::Vec3 v) { return {v.x, v.y, v.z}; }
-    inline Math::Vec3 toVec3(JPH::Vec3 v) { return {v.GetX(), v.GetY(), v.GetZ()}; }
+    inline JPH::Vec3 toVec3(Vec3 v) { return {v.x, v.y, v.z}; }
+    inline Vec3 toVec3(JPH::Vec3 v) { return {v.GetX(), v.GetY(), v.GetZ()}; }
 
-    inline JPH::Vec4 toVec4(Math::Vec4 v) { return {v.x, v.y, v.z, v.w}; }
-    inline Math::Vec4 toVec4(JPH::Vec4 v) { return {v.GetX(), v.GetY(), v.GetZ(), v.GetW()}; }
+    inline JPH::Vec4 toVec4(Vec4 v) { return {v.x, v.y, v.z, v.w}; }
+    inline Vec4 toVec4(JPH::Vec4 v) { return {v.GetX(), v.GetY(), v.GetZ(), v.GetW()}; }
 
-    inline JPH::Quat toQuat(Math::Quaternion q) { return {q.x, q.y, q.z, q.w}; }
-    inline Math::Quaternion toQuat(JPH::Quat q) { return {q.GetW(), q.GetX(), q.GetY(), q.GetZ()}; }
+    inline JPH::Quat toQuat(Quaternion q) { return {q.x, q.y, q.z, q.w}; }
+    inline Quaternion toQuat(JPH::Quat q) { return {q.GetW(), q.GetX(), q.GetY(), q.GetZ()}; }
 
-    JPH::Mat44 toMat44(Math::Mat4 const& m);
+    JPH::Mat44 toMat44(Mat4 const& m);
 
-    Math::Mat4 toMat44(JPH::Mat44 const& m);
+    Mat4 toMat44(JPH::Mat44 const& m);
 
-    JPH::Shape* toShape(RigidBodyShape const& shape, Math::Vec3 const& scale);
+    JPH::Shape* toShape(RigidBodyShape const& shape, Vec3 const& scale);
 
 } // namespace MarsEngine

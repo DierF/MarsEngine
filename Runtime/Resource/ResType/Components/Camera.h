@@ -35,8 +35,8 @@ namespace MarsEngine
         float m_horizontal_offset {3.f};
         META(Enable)
         float      m_vertical_offset {2.5f};
-        Math::Quaternion m_cursor_pitch;
-        Math::Quaternion m_cursor_yaw;
+        Quaternion m_cursor_pitch;
+        Quaternion m_cursor_yaw;
     };
 
     REFLECTION_TYPE(FreeCameraParameter)

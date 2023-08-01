@@ -16,8 +16,8 @@ namespace MarsEngine
     public:
         std::string     name;
         int             index;
-        Math::Transform binding_pose;
-        Math::Mat4_     tpose_matrix;
+        Transform binding_pose;
+        Mat4_     tpose_matrix;
         int             parent_index;
     };
 

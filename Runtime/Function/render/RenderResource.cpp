@@ -110,13 +110,13 @@ namespace MarsEngine
     void RenderResource::updatePerFrameBuffer(std::shared_ptr<RenderScene>  render_scene,
         std::shared_ptr<RenderCamera> camera)
     {
-        Math::Mat4 view_matrix      = camera->getViewMatrix();
-        Math::Mat4 proj_matrix      = camera->getPersProjMatrix();
-        Math::Vec3 camera_position  = camera->position();
-        Math::Mat4 proj_view_matrix = proj_matrix * view_matrix;
+        Mat4 view_matrix      = camera->getViewMatrix();
+        Mat4 proj_matrix      = camera->getPersProjMatrix();
+        Vec3 camera_position  = camera->position();
+        Mat4 proj_view_matrix = proj_matrix * view_matrix;
 
         // ambient light
-        Math::Vec3  ambient_light   = render_scene->m_ambient_light.m_irradiance;
+        Vec3  ambient_light   = render_scene->m_ambient_light.m_irradiance;
         uint32_t    point_light_num = static_cast<uint32_t>(render_scene->m_point_light_list.m_lights.size());
 
         // set ubo data
@@ -134,8 +134,8 @@ namespace MarsEngine
         // point lights
         for (uint32_t i = 0; i < point_light_num; i++)
         {
-            Math::Vec3 point_light_position  = render_scene->m_point_light_list.m_lights[i].m_position;
-            Math::Vec3 point_light_intensity =
+            Vec3 point_light_position  = render_scene->m_point_light_list.m_lights[i].m_position;
+            Vec3 point_light_intensity =
                 render_scene->m_point_light_list.m_lights[i].m_flux / (4.0f * Math::PI);
 
             float radius = render_scene->m_point_light_list.m_lights[i].calculateRadius();
@@ -145,7 +145,7 @@ namespace MarsEngine
             m_mesh_perframe_storage_buffer_object.scene_point_lights[i].intensity = point_light_intensity;
 
             m_mesh_point_light_shadow_perframe_storage_buffer_object.point_lights_position_and_radius[i] =
-                Math::Vec4(point_light_position, radius);
+                Vec4(point_light_position, radius);
         }
 
         // directional light
@@ -678,14 +678,14 @@ namespace MarsEngine
 
             for (uint32_t vertex_index = 0; vertex_index < vertex_count; ++vertex_index)
             {
-                Math::Vec3 normal = Math::Vec3(vertex_buffer_data[vertex_index].nx,
+                Vec3 normal = Vec3(vertex_buffer_data[vertex_index].nx,
                     vertex_buffer_data[vertex_index].ny,
                     vertex_buffer_data[vertex_index].nz);
-                Math::Vec3 tangent = Math::Vec3(vertex_buffer_data[vertex_index].tx,
+                Vec3 tangent = Vec3(vertex_buffer_data[vertex_index].tx,
                     vertex_buffer_data[vertex_index].ty,
                     vertex_buffer_data[vertex_index].tz);
 
-                mesh_vertex_positions[vertex_index].position = Math::Vec3(vertex_buffer_data[vertex_index].x,
+                mesh_vertex_positions[vertex_index].position = Vec3(vertex_buffer_data[vertex_index].x,
                     vertex_buffer_data[vertex_index].y,
                     vertex_buffer_data[vertex_index].z);
 
@@ -693,7 +693,7 @@ namespace MarsEngine
                 mesh_vertex_blending_varyings[vertex_index].tangent = tangent;
 
                 mesh_vertex_varyings[vertex_index].texcoord =
-                    Math::Vec2(vertex_buffer_data[vertex_index].u, vertex_buffer_data[vertex_index].v);
+                    Vec2(vertex_buffer_data[vertex_index].u, vertex_buffer_data[vertex_index].v);
             }
 
             for (uint32_t index_index = 0; index_index < index_count; ++index_index)
@@ -715,7 +715,7 @@ namespace MarsEngine
                 inv_total_weight = (inv_total_weight != 0.0) ? 1 / inv_total_weight : 1.0;
 
                 mesh_vertex_joint_binding[index_index].weights =
-                    Math::Vec4(joint_binding_buffer_data[vertex_buffer_index].m_weight0 * inv_total_weight,
+                    Vec4(joint_binding_buffer_data[vertex_buffer_index].m_weight0 * inv_total_weight,
                         joint_binding_buffer_data[vertex_buffer_index].m_weight1 * inv_total_weight,
                         joint_binding_buffer_data[vertex_buffer_index].m_weight2 * inv_total_weight,
                         joint_binding_buffer_data[vertex_buffer_index].m_weight3 * inv_total_weight);
@@ -880,14 +880,14 @@ namespace MarsEngine
 
             for (uint32_t vertex_index = 0; vertex_index < vertex_count; ++vertex_index)
             {
-                Math::Vec3 normal = Math::Vec3(vertex_buffer_data[vertex_index].nx,
+                Vec3 normal = Vec3(vertex_buffer_data[vertex_index].nx,
                     vertex_buffer_data[vertex_index].ny,
                     vertex_buffer_data[vertex_index].nz);
-                Math::Vec3 tangent = Math::Vec3(vertex_buffer_data[vertex_index].tx,
+                Vec3 tangent = Vec3(vertex_buffer_data[vertex_index].tx,
                     vertex_buffer_data[vertex_index].ty,
                     vertex_buffer_data[vertex_index].tz);
 
-                mesh_vertex_positions[vertex_index].position = Math::Vec3(vertex_buffer_data[vertex_index].x,
+                mesh_vertex_positions[vertex_index].position = Vec3(vertex_buffer_data[vertex_index].x,
                     vertex_buffer_data[vertex_index].y,
                     vertex_buffer_data[vertex_index].z);
 
@@ -895,7 +895,7 @@ namespace MarsEngine
                 mesh_vertex_blending_varyings[vertex_index].tangent = tangent;
 
                 mesh_vertex_varyings[vertex_index].texcoord =
-                    Math::Vec2(vertex_buffer_data[vertex_index].u, vertex_buffer_data[vertex_index].v);
+                    Vec2(vertex_buffer_data[vertex_index].u, vertex_buffer_data[vertex_index].v);
             }
 
             rhi->unmapMemory(inefficient_staging_buffer_memory);

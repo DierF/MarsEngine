@@ -6,8 +6,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     template<typename NumericType>
     using uniform_distribution = typename std::conditional<std::is_integral<NumericType>::value,
         std::uniform_int_distribution<NumericType>,
@@ -99,5 +97,4 @@ namespace Math
     };
 
     using DefaultRNG = RandomNumberGenerator<std::mt19937>;
-} // namespace Math
 } // namespace MarsEngine

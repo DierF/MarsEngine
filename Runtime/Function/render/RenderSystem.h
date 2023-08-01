@@ -52,7 +52,7 @@ namespace MarsEngine
         void      setRenderPipelineType(RENDER_PIPELINE_TYPE pipeline_type);
         void      initializeUIRenderBackend(WindowUI* window_ui);
         void      updateEngineContentViewport(float offset_x, float offset_y, float width, float height);
-        uint32_t  getGuidOfPickedMesh(Math::Vec2 const& picked_uv);
+        uint32_t  getGuidOfPickedMesh(Vec2 const& picked_uv);
         GObjectID getGObjectIDByMeshID(uint32_t mesh_id) const;
 
         EngineContentViewport getEngineContentViewport() const;

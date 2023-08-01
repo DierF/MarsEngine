@@ -2,8 +2,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     Mat3 const Mat3::ZERO(0, 0, 0, 0, 0, 0, 0, 0, 0);
     Mat3 const Mat3::IDENTITY(1, 0, 0, 0, 1, 0, 0, 0, 1);
 
@@ -151,7 +149,7 @@ namespace Math
 
         if (radian > Radian(0.0))
         {
-            if (radian < Radian(PI))
+            if (radian < Radian(Math::PI))
             {
                 axis.x = m_mat[2][1] - m_mat[1][2];
                 axis.y = m_mat[0][2] - m_mat[2][0];
@@ -239,5 +237,4 @@ namespace Math
         m_mat[2][1] = yzm + x_sin_v;
         m_mat[2][2] = z2 * one_minus_cos + cos_v;
     }
-} // namespace Math
 } // namespace MarsEngine

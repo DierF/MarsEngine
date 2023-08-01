@@ -34,7 +34,7 @@ namespace MarsEngine
         virtual void deferredRender(std::shared_ptr<RHI> rhi, std::shared_ptr<RenderResourceBase> render_resource);
 
         void             initializeUIRenderBackend(WindowUI* window_ui);
-        virtual uint32_t getGuidOfPickedMesh(Math::Vec2 const& picked_uv) = 0;
+        virtual uint32_t getGuidOfPickedMesh(Vec2 const& picked_uv) = 0;
 
     protected:
         std::shared_ptr<RHI> m_rhi;

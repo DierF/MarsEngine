@@ -17,7 +17,7 @@ namespace MarsEngine
 
         void passUpdateAfterRecreateSwapchain();
 
-        virtual uint32_t getGuidOfPickedMesh(Math::Vec2 const& picked_uv) override final;
+        virtual uint32_t getGuidOfPickedMesh(Vec2 const& picked_uv) override final;
 
         void setAxisVisibleState(bool state);
 

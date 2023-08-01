@@ -7,8 +7,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     REFLECTION_TYPE(Transform)
     CLASS(Transform, Fields)
     {
@@ -32,5 +30,4 @@ namespace Math
             return temp;
         }
     };
-} // namespace Math
 } // namespace MarsEngine

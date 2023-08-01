@@ -113,13 +113,13 @@ endif()
 # EDITOR_SOURCES at Editor/CMakeLists.txt:4 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/Projects/MarsEngine/Editor/source/*.cpp")
 set(OLD_GLOB
-  "D:/Projects/MarsEngine/Editor/source/Axis.cpp"
   "D:/Projects/MarsEngine/Editor/source/Editor.cpp"
   "D:/Projects/MarsEngine/Editor/source/EditorFileService.cpp"
   "D:/Projects/MarsEngine/Editor/source/EditorGlobalContext.cpp"
   "D:/Projects/MarsEngine/Editor/source/EditorInputManager.cpp"
   "D:/Projects/MarsEngine/Editor/source/EditorSceneManager.cpp"
   "D:/Projects/MarsEngine/Editor/source/EditorUi.cpp"
+  "D:/Projects/MarsEngine/Editor/source/axis.cpp"
   "D:/Projects/MarsEngine/Editor/source/main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

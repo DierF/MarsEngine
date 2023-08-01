@@ -46,7 +46,7 @@ namespace MarsEngine
 #endif
     }
 
-    std::weak_ptr<PhysicsScene> PhysicsManager::createPhysicsScene(Math::Vec3 const& gravity)
+    std::weak_ptr<PhysicsScene> PhysicsManager::createPhysicsScene(Vec3 const& gravity)
     {
         std::shared_ptr<PhysicsScene> physics_scene = std::make_shared<PhysicsScene>(gravity);
 

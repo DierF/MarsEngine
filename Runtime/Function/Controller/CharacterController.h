@@ -19,7 +19,7 @@ namespace MarsEngine
     public:
         virtual ~Controller() = default;
 
-        virtual Math::Vec3 move(Math::Vec3 const& current_position, Math::Vec3 const& displacement) = 0;
+        virtual Vec3 move(Vec3 const& current_position, Vec3 const& displacement) = 0;
     };
 
     class CharacterController : public Controller
@@ -28,7 +28,7 @@ namespace MarsEngine
         CharacterController(Capsule const& capsule);
         ~CharacterController() = default;
 
-        Math::Vec3 move(Math::Vec3 const& current_position, Math::Vec3 const& displacement) override;
+        Vec3 move(Vec3 const& current_position, Vec3 const& displacement) override;
 
     private:
         Capsule        m_capsule;

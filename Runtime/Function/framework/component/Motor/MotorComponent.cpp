@@ -65,7 +65,7 @@ namespace MarsEngine
         TransformComponent* transform_component =
             m_parent_object.lock()->tryGetComponent<TransformComponent>("TransformComponent");
 
-        Math::Radian turn_angle_yaw = g_runtime_global_context.m_input_system->m_cursor_delta_yaw;
+        Radian turn_angle_yaw = g_runtime_global_context.m_input_system->m_cursor_delta_yaw;
 
         unsigned int command = g_runtime_global_context.m_input_system->getGameCommand();
 
@@ -150,16 +150,16 @@ namespace MarsEngine
         }
     }
 
-    void MotorComponent::calculatedDesiredMoveDirection(unsigned int command, Math::Quaternion const& object_rotation)
+    void MotorComponent::calculatedDesiredMoveDirection(unsigned int command, Quaternion const& object_rotation)
     {
         if (m_jump_state == JumpState::idle)
         {
-            Math::Vec3 forward_dir = object_rotation * Math::Vec3::NEGATIVE_UNIT_Y;
-            Math::Vec3 left_dir    = object_rotation * Math::Vec3::UNIT_X;
+            Vec3 forward_dir = object_rotation * Vec3::NEGATIVE_UNIT_Y;
+            Vec3 left_dir    = object_rotation * Vec3::UNIT_X;
 
             if (command > 0)
             {
-                m_desired_horizontal_move_direction = Math::Vec3::ZERO;
+                m_desired_horizontal_move_direction = Vec3::ZERO;
             }
 
             if ((unsigned int)GameCommand::forward & command)
@@ -192,12 +192,12 @@ namespace MarsEngine
             m_jump_state == JumpState::idle ? m_move_speed_ratio : m_jump_horizontal_speed_ratio;
         m_desired_displacement =
             m_desired_horizontal_move_direction * m_motor_res.m_move_speed * horizontal_speed_ratio * delta_time +
-            Math::Vec3::UNIT_Z * m_vertical_move_speed * delta_time;
+            Vec3::UNIT_Z * m_vertical_move_speed * delta_time;
     }
 
-    void MotorComponent::calculateTargetPosition(Math::Vec3 const&& current_position)
+    void MotorComponent::calculateTargetPosition(Vec3 const&& current_position)
     {
-        Math::Vec3 final_position;
+        Vec3 final_position;
 
         switch (m_controller_type)
         {

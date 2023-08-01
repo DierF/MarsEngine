@@ -36,7 +36,7 @@ namespace MarsEngine
     {
         std::optional<float>            m_fov_x;
         std::optional<RenderCameraType> m_camera_type;
-        std::optional<Math::Mat4>        m_view_matrix;
+        std::optional<Mat4>        m_view_matrix;
     };
 
     struct GameObjectResourceDesc

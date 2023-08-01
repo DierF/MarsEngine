@@ -19,24 +19,24 @@ namespace MarsEngine
         void      setObject(std::shared_ptr<GObject> gobject);
         std::weak_ptr<GObject> getObject() const { return m_character_object; }
 
-        void setPosition(Math::Vec3 const& position) { m_position = position; }
-        void setRotation(Math::Quaternion const& rotation) { m_rotation = rotation; }
+        void setPosition(Vec3 const& position) { m_position = position; }
+        void setRotation(Quaternion const& rotation) { m_rotation = rotation; }
 
-        Math::Vec3 const&    getPosition() const { return m_position; }
-        Math::Quaternion const& getRotation() const { return m_rotation; }
+        Vec3 const&    getPosition() const { return m_position; }
+        Quaternion const& getRotation() const { return m_rotation; }
 
         void tick(float delta_time);
 
     private:
         void toggleFreeCamera();
 
-        Math::Vec3       m_position;
-        Math::Quaternion m_rotation;
+        Vec3       m_position;
+        Quaternion m_rotation;
 
         std::shared_ptr<GObject> m_character_object;
 
         // hack for setting rotation frame buffer
-        Math::Quaternion m_rotation_buffer;
+        Quaternion m_rotation_buffer;
         bool       m_rotation_dirty {false};
 
         CameraMode m_original_camera_mode;

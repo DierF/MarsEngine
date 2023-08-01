@@ -233,7 +233,7 @@ namespace MarsEngine
         particle_pass.updateAfterFramebufferRecreate();
         g_runtime_global_context.m_debugdraw_manager->updateAfterRecreateSwapchain();
     }
-    uint32_t RenderPipeline::getGuidOfPickedMesh(Math::Vec2 const& picked_uv)
+    uint32_t RenderPipeline::getGuidOfPickedMesh(Vec2 const& picked_uv)
     {
         PickPass& pick_pass = *(static_cast<PickPass*>(m_pick_pass.get()));
         return pick_pass.pick(picked_uv);

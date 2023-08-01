@@ -26,14 +26,14 @@ namespace MarsEngine
         {
             TransformComponent const* transform_component =
                 m_character_object->tryGetComponentConst(TransformComponent);
-            Math::Transform const& transform = transform_component->getTransformConst();
+            Transform const& transform = transform_component->getTransformConst();
             m_position                 = transform.m_position;
             m_rotation                 = transform.m_rotation;
         }
         else
         {
-            m_position = Math::Vec3::ZERO;
-            m_rotation = Math::Quaternion::IDENTITY;
+            m_position = Vec3::ZERO;
+            m_rotation = Quaternion::IDENTITY;
         }
     }
 
@@ -72,7 +72,7 @@ namespace MarsEngine
             m_rotation_dirty = true;
         }
 
-        Math::Vec3 const& new_position = motor_component->getTargetPosition();
+        Vec3 const& new_position = motor_component->getTargetPosition();
 
         m_position = new_position;
 

@@ -2,8 +2,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     Mat4 const Mat4::ZERO(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
     Mat4 const Mat4::ZEROAFFINE(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
@@ -187,5 +185,4 @@ namespace Math
             v.x * mat[0][2] + v.y * mat[1][2] + v.z * mat[2][2] + v.w * mat[3][2],
             v.x * mat[0][3] + v.y * mat[1][3] + v.z * mat[2][3] + v.w * mat[3][3]);
     }
-} // namespace Math
 } // namespace MarsEngine

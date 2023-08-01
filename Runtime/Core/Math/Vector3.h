@@ -9,8 +9,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     REFLECTION_TYPE(Vec3)
     CLASS(Vec3, Fields)
     {
@@ -371,7 +369,7 @@ namespace Math
                 if (fallback_axis != Vec3::ZERO)
                 {
                     // rotate 180 degrees about the fall back axis
-                    q.fromAngleAxis(Radian(PI), fallback_axis);
+                    q.fromAngleAxis(Radian(Math::PI), fallback_axis);
                 }
                 else
                 {
@@ -380,7 +378,7 @@ namespace Math
                     if (axis.isZeroLength()) // pick another if collinear
                         axis = Vec3::UNIT_Y.crossProduct(*this);
                     axis.normalise();
-                    q.fromAngleAxis(Radian(PI), axis);
+                    q.fromAngleAxis(Radian(Math::PI), axis);
                 }
             }
             else
@@ -453,5 +451,4 @@ namespace Math
         static Vec3 const NEGATIVE_UNIT_Z;
         static Vec3 const UNIT_SCALE;
     };
-} // namespace Math
 } // namespace MarsEngine

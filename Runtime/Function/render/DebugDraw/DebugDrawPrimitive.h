@@ -39,10 +39,10 @@ namespace MarsEngine
 
     struct DebugDrawVertex
     {
-        Math::Vec3 pos;
-        Math::Vec4 color;
-        Math::Vec2 texcoord;
-        DebugDrawVertex() { pos = Math::Vec3(-1.0f, -1.0f, -1.0f); color = Math::Vec4(-1.0f, -1.0f, -1.0f, -1.0f); texcoord = Math::Vec2(-1.0f, -1.0f); }
+        Vec3 pos;
+        Vec4 color;
+        Vec2 texcoord;
+        DebugDrawVertex() { pos = Vec3(-1.0f, -1.0f, -1.0f); color = Vec4(-1.0f, -1.0f, -1.0f, -1.0f); texcoord = Vec2(-1.0f, -1.0f); }
 
         static std::array<RHIVertexInputBindingDescription, 1> getBindingDescriptions()
         {
@@ -128,10 +128,10 @@ namespace MarsEngine
     class DebugDrawBox : public DebugDrawPrimitive
     {
     public:
-        Math::Vec3 m_center_point;
-        Math::Vec3 m_half_extents;
-        Math::Vec4 m_color;
-        Math::Vec4 m_rotate;
+        Vec3 m_center_point;
+        Vec3 m_half_extents;
+        Vec4 m_color;
+        Vec4 m_rotate;
 
         static DebugDrawPrimitiveType const k_type_enum_value = _debug_draw_primitive_type_draw_box;
     };
@@ -139,20 +139,20 @@ namespace MarsEngine
     class DebugDrawCylinder : public DebugDrawPrimitive
     {
     public:
-        Math::Vec3 m_center;
-        Math::Vec4 m_rotate;
+        Vec3 m_center;
+        Vec4 m_rotate;
         float      m_radius{ 0.f };
         float      m_height{ 0.f };
-        Math::Vec4 m_color;
+        Vec4 m_color;
 
         static DebugDrawPrimitiveType const k_type_enum_value = _debug_draw_primitive_type_cylinder;
     };
     class DebugDrawSphere : public DebugDrawPrimitive
     {
     public:
-        Math::Vec3 m_center;
+        Vec3 m_center;
         float      m_radius{ 0.f };
-        Math::Vec4 m_color;
+        Vec4 m_color;
 
         static DebugDrawPrimitiveType const k_type_enum_value = _debug_draw_primitive_type_sphere;
     };
@@ -160,12 +160,12 @@ namespace MarsEngine
     class DebugDrawCapsule : public DebugDrawPrimitive
     {
     public:
-        Math::Vec3 m_center;
-        Math::Vec4 m_rotation;
-        Math::Vec3 m_scale;
+        Vec3 m_center;
+        Vec4 m_rotation;
+        Vec3 m_scale;
         float      m_radius{ 0.f };
         float      m_height{ 0.f };
-        Math::Vec4 m_color;
+        Vec4 m_color;
 
         static DebugDrawPrimitiveType const k_type_enum_value = _debug_draw_primitive_type_capsule;
     };
@@ -174,8 +174,8 @@ namespace MarsEngine
     {
     public:
         std::string m_content;
-        Math::Vec4  m_color;
-        Math::Vec3  m_coordinate;
+        Vec4  m_color;
+        Vec3  m_coordinate;
         int         m_size;
         bool        m_is_screen_text;
 

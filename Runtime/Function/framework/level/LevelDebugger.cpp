@@ -104,7 +104,7 @@ namespace MarsEngine
         DebugDrawGroup* debug_draw_group =
             g_runtime_global_context.m_debugdraw_manager->tryGetOrCreateDebugDrawGroup("bone");
 
-        Math::Mat4 object_matrix = Math::Transform(transform_component->getPosition(),
+        Mat4 object_matrix = Transform(transform_component->getPosition(),
                                             transform_component->getRotation(),
                                             transform_component->getScale())
                                       .getMatrix();
@@ -117,32 +117,32 @@ namespace MarsEngine
             if (bones[bone_index].getParent() == nullptr || bone_index == 1)
                 continue;
 
-            Math::Mat4 bone_matrix = Math::Transform(bones[bone_index]._getDerivedPosition(),
+            Mat4 bone_matrix = Transform(bones[bone_index]._getDerivedPosition(),
                                               bones[bone_index]._getDerivedOrientation(),
                                               bones[bone_index]._getDerivedScale())
                                         .getMatrix();
-            Math::Vec4 bone_position(0.0f, 0.0f, 0.0f, 1.0f);
+            Vec4 bone_position(0.0f, 0.0f, 0.0f, 1.0f);
             bone_position = object_matrix * bone_matrix * bone_position;
             bone_position /= bone_position[3];
 
             Node*     parent_bone        = bones[bone_index].getParent();
-            Math::Mat4 parent_bone_matrix = Math::Transform(parent_bone->_getDerivedPosition(),
+            Mat4 parent_bone_matrix = Transform(parent_bone->_getDerivedPosition(),
                                                      parent_bone->_getDerivedOrientation(),
                                                      parent_bone->_getDerivedScale())
                                                .getMatrix();
-            Math::Vec4 parent_bone_position(0.0f, 0.0f, 0.0f, 1.0f);
+            Vec4 parent_bone_position(0.0f, 0.0f, 0.0f, 1.0f);
             parent_bone_position = object_matrix * parent_bone_matrix * parent_bone_position;
             parent_bone_position /= parent_bone_position[3];
 
-            debug_draw_group->addLine(Math::Vec3(bone_position.x, bone_position.y, bone_position.z),
-                                      Math::Vec3(parent_bone_position.x, parent_bone_position.y, parent_bone_position.z),
-                                      Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f),
-                                      Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f),
+            debug_draw_group->addLine(Vec3(bone_position.x, bone_position.y, bone_position.z),
+                                      Vec3(parent_bone_position.x, parent_bone_position.y, parent_bone_position.z),
+                                      Vec4(1.0f, 0.0f, 0.0f, 1.0f),
+                                      Vec4(1.0f, 0.0f, 0.0f, 1.0f),
                                       0.0f,
                                       true);
-            debug_draw_group->addSphere(Math::Vec3(bone_position.x, bone_position.y, bone_position.z),
+            debug_draw_group->addSphere(Vec3(bone_position.x, bone_position.y, bone_position.z),
                                         0.015f,
-                                        Math::Vec4(0.0f, 0.0f, 1.0f, 1.0f),
+                                        Vec4(0.0f, 0.0f, 1.0f, 1.0f),
                                         0.0f,
                                         true);
         }
@@ -161,7 +161,7 @@ namespace MarsEngine
         DebugDrawGroup* debug_draw_group =
             g_runtime_global_context.m_debugdraw_manager->tryGetOrCreateDebugDrawGroup("bone name");
 
-        Math::Mat4 object_matrix = Math::Transform(transform_component->getPosition(),
+        Mat4 object_matrix = Transform(transform_component->getPosition(),
                                             transform_component->getRotation(),
                                             transform_component->getScale())
                                       .getMatrix();
@@ -174,17 +174,17 @@ namespace MarsEngine
             if (bones[bone_index].getParent() == nullptr || bone_index == 1)
                 continue;
 
-            Math::Mat4 bone_matrix = Math::Transform(bones[bone_index]._getDerivedPosition(),
+            Mat4 bone_matrix = Transform(bones[bone_index]._getDerivedPosition(),
                                               bones[bone_index]._getDerivedOrientation(),
                                               bones[bone_index]._getDerivedScale())
                                         .getMatrix();
-            Math::Vec4 bone_position(0.0f, 0.0f, 0.0f, 1.0f);
+            Vec4 bone_position(0.0f, 0.0f, 0.0f, 1.0f);
             bone_position = object_matrix * bone_matrix * bone_position;
             bone_position /= bone_position[3];
 
             debug_draw_group->addText(bones[bone_index].getName(),
-                                      Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f),
-                                      Math::Vec3(bone_position.x, bone_position.y, bone_position.z),
+                                      Vec4(1.0f, 0.0f, 0.0f, 1.0f),
+                                      Vec3(bone_position.x, bone_position.y, bone_position.z),
                                       8,
                                       false);
         }
@@ -197,20 +197,20 @@ namespace MarsEngine
         if (rigidbody_component == nullptr)
             return;
 
-        std::vector<Math::AxisAlignedBox> bounding_boxes;
+        std::vector<AxisAlignedBox> bounding_boxes;
         rigidbody_component->getShapeBoundingBoxes(bounding_boxes);
         for (size_t bounding_box_index = 0; bounding_box_index < bounding_boxes.size(); bounding_box_index++)
         {
-            Math::AxisAlignedBox  bounding_box = bounding_boxes[bounding_box_index];
+            AxisAlignedBox  bounding_box = bounding_boxes[bounding_box_index];
             DebugDrawGroup* debug_draw_group =
                 g_runtime_global_context.m_debugdraw_manager->tryGetOrCreateDebugDrawGroup("bounding box");
-            Math::Vec3 center =
-                Math::Vec3(bounding_box.getCenter().x, bounding_box.getCenter().y, bounding_box.getCenter().z);
-            Math::Vec3 halfExtent =
-                Math::Vec3(bounding_box.getHalfExtent().x, bounding_box.getHalfExtent().y, bounding_box.getHalfExtent().z);
+            Vec3 center =
+                Vec3(bounding_box.getCenter().x, bounding_box.getCenter().y, bounding_box.getCenter().z);
+            Vec3 halfExtent =
+                Vec3(bounding_box.getHalfExtent().x, bounding_box.getHalfExtent().y, bounding_box.getHalfExtent().z);
 
             debug_draw_group->addBox(
-                center, halfExtent, Math::Vec4(1.0f, 0.0f, 0.0f, 0.0f), Math::Vec4(0.0f, 1.0f, 0.0f, 1.0f));
+                center, halfExtent, Vec4(1.0f, 0.0f, 0.0f, 0.0f), Vec4(0.0f, 1.0f, 0.0f, 1.0f));
         }
     }
 
@@ -242,11 +242,11 @@ namespace MarsEngine
         }
         buffer << std::endl;
 
-        Math::Vec3 position  = camera_component->getPosition();
-        Math::Vec3 forward   = camera_component->getForward();
-        Math::Vec3 direction = forward - position;
+        Vec3 position  = camera_component->getPosition();
+        Vec3 forward   = camera_component->getForward();
+        Vec3 direction = forward - position;
         buffer << "camera position: (" << position.x << "," << position.y << "," << position.z << ")" << std::endl;
         buffer << "camera direction : (" << direction.x << "," << direction.y << "," << direction.z << ")";
-        debug_draw_group->addText(buffer.str(), Math::Vec4(1.0f, 0.0f, 0.0f, 1.0f), Math::Vec3(-1.0f, -0.2f, 0.0f), 10, true);
+        debug_draw_group->addText(buffer.str(), Vec4(1.0f, 0.0f, 0.0f, 1.0f), Vec3(-1.0f, -0.2f, 0.0f), 10, true);
     }
 } // namespace MarsEngine

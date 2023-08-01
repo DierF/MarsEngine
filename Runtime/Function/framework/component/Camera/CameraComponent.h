@@ -30,8 +30,8 @@ namespace MarsEngine
 
         CameraMode getCameraMode() const { return m_camera_mode; }
         void setCameraMode(CameraMode mode) { m_camera_mode = mode; }
-        Math::Vec3 getPosition() const { return m_position; }
-        Math::Vec3 getForward() const { return m_forward; }
+        Vec3 getPosition() const { return m_position; }
+        Vec3 getForward() const { return m_forward; }
 
     private:
         void tickFirstPersonCamera(float delta_time);
@@ -43,10 +43,10 @@ namespace MarsEngine
 
         CameraMode m_camera_mode {CameraMode::invalid};
 
-        Math::Vec3 m_position;
+        Vec3 m_position;
 
-        Math::Vec3 m_forward {Math::Vec3::NEGATIVE_UNIT_Y};
-        Math::Vec3 m_up {Math::Vec3::UNIT_Z};
-        Math::Vec3 m_left {Math::Vec3::UNIT_X};
+        Vec3 m_forward {Vec3::NEGATIVE_UNIT_Y};
+        Vec3 m_up {Vec3::UNIT_Z};
+        Vec3 m_left {Vec3::UNIT_X};
     };
 } // namespace MarsEngine

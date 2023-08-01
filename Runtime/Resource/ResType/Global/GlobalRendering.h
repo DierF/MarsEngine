@@ -41,7 +41,7 @@ namespace MarsEngine
         REFLECTION_BODY(DirectionalLight);
 
     public:
-        Math::Vec3 m_direction;
+        Vec3 m_direction;
         Color      m_color;
     };
 

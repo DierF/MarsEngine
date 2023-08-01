@@ -89,7 +89,7 @@ namespace MarsEngine
         }
     }
 
-    JPH::Mat44 toMat44(Math::Mat4 const& m)
+    JPH::Mat44 toMat44(Mat4 const& m)
     {
         JPH::Vec4 cols[4];
         for (int i = 0; i < 4; i++)
@@ -100,18 +100,18 @@ namespace MarsEngine
         return {cols[0], cols[1], cols[2], cols[3]};
     }
 
-    Math::Mat4 toMat44(JPH::Mat44 const& m)
+    Mat4 toMat44(JPH::Mat44 const& m)
     {
-        Math::Vec4 cols[4];
+        Vec4 cols[4];
         for (int i = 0; i < 4; i++)
         {
             cols[i] = toVec4(m.GetColumn4(i));
         }
 
-        return Math::Mat4(cols[0], cols[1], cols[2], cols[3]).transpose();
+        return Mat4(cols[0], cols[1], cols[2], cols[3]).transpose();
     }
 
-    JPH::Shape* toShape(RigidBodyShape const& shape, Math::Vec3 const& scale)
+    JPH::Shape* toShape(RigidBodyShape const& shape, Vec3 const& scale)
     {
         JPH::Shape* jph_shape = nullptr;
 

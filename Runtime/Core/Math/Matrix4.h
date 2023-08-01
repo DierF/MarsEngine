@@ -9,8 +9,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     /** Class encapsulating a standard 4x4 homogeneous matrix.
     @remarks
     CHAOS uses column vectors when applying matrix multiplications,
@@ -768,13 +766,13 @@ namespace Math
         {
             // check magnitude of column vectors (==local axes)
             float t = m_mat[0][0] * m_mat[0][0] + m_mat[1][0] * m_mat[1][0] + m_mat[2][0] * m_mat[2][0];
-            if (!realEqual(t, 1.0, (float)1e-04))
+            if (!Math::realEqual(t, 1.0, (float)1e-04))
                 return true;
             t = m_mat[0][1] * m_mat[0][1] + m_mat[1][1] * m_mat[1][1] + m_mat[2][1] * m_mat[2][1];
-            if (!realEqual(t, 1.0, (float)1e-04))
+            if (!Math::realEqual(t, 1.0, (float)1e-04))
                 return true;
             t = m_mat[0][2] * m_mat[0][2] + m_mat[1][2] * m_mat[1][2] + m_mat[2][2] * m_mat[2][2];
-            return !realEqual(t, 1.0, (float)1e-04);
+            return !Math::realEqual(t, 1.0, (float)1e-04);
         }
 
         /** Determines if this matrix involves a negative scaling. */
@@ -976,5 +974,5 @@ namespace Math
     };
 
     Vec4 operator*(Vec4 const& v, Mat4 const& mat);
-} // namespace Math
+
 } // namespace MarsEngine

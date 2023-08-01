@@ -16,11 +16,11 @@ namespace MarsEngine
         void postLoadResource(std::weak_ptr<GObject> parent_object) override;
 
         void tick(float delta_time) override {}
-        void updateGlobalTransform(Math::Transform const& transform, bool is_scale_dirty);
-        void getShapeBoundingBoxes(std::vector<Math::AxisAlignedBox>& out_boudning_boxes) const;
+        void updateGlobalTransform(Transform const& transform, bool is_scale_dirty);
+        void getShapeBoundingBoxes(std::vector<AxisAlignedBox>& out_boudning_boxes) const;
 
     protected:
-        void createRigidBody(Math::Transform const& global_transform);
+        void createRigidBody(Transform const& global_transform);
         void removeRigidBody();
 
         META(Enable)

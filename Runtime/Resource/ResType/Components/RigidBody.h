@@ -21,12 +21,12 @@ namespace MarsEngine
         REFLECTION_BODY(RigidBodyShape);
 
     public:
-        Math::Transform      m_global_transform;
-        Math::AxisAlignedBox m_bounding_box;
+        Transform      m_global_transform;
+        AxisAlignedBox m_bounding_box;
         RigidBodyShapeType   m_type {RigidBodyShapeType::invalid};
 
         META(Enable)
-        Math::Transform m_local_transform;
+        Transform m_local_transform;
         META(Enable)
         Reflection::ReflectionPtr<Geometry> m_geometry;
 

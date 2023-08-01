@@ -22,7 +22,7 @@ namespace MarsEngine
     public:
         ~Box() override {}
 
-        Math::Vec3 m_half_extents {0.5f, 0.5f, 0.5f};
+        Vec3 m_half_extents {0.5f, 0.5f, 0.5f};
     };
 
     REFLECTION_TYPE(Sphere)

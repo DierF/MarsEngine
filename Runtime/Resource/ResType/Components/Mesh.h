@@ -12,7 +12,7 @@ namespace MarsEngine
 
     public:
         std::string     m_obj_file_ref;
-        Math::Transform m_transform;
+        Transform m_transform;
         std::string     m_material;
     };
 

@@ -22,26 +22,26 @@ namespace MarsEngine
 
     struct VulkanSceneDirectionalLight
     {
-        Math::Vec3 direction;
+        Vec3 direction;
         float      _padding_direction;
-        Math::Vec3 color;
+        Vec3 color;
         float      _padding_color;
     };
 
     struct VulkanScenePointLight
     {
-        Math::Vec3 position;
+        Vec3 position;
         float      radius;
-        Math::Vec3 intensity;
+        Vec3 intensity;
         float      _padding_intensity;
     };
 
     struct MeshPerframeStorageBufferObject
     {
-        Math::Mat4                  proj_view_matrix;
-        Math::Vec3                  camera_position;
+        Mat4                  proj_view_matrix;
+        Vec3                  camera_position;
         float                       _padding_camera_position;
-        Math::Vec3                  ambient_light;
+        Vec3                  ambient_light;
         float                       _padding_ambient_light;
         uint32_t                    point_light_num;
         uint32_t                    _padding_point_light_num_1;
@@ -49,7 +49,7 @@ namespace MarsEngine
         uint32_t                    _padding_point_light_num_3;
         VulkanScenePointLight       scene_point_lights[s_max_point_light_count];
         VulkanSceneDirectionalLight scene_directional_light;
-        Math::Mat4                  directional_light_proj_view;
+        Mat4                  directional_light_proj_view;
     };
 
     struct VulkanMeshInstance
@@ -58,7 +58,7 @@ namespace MarsEngine
         float      _padding_enable_vertex_blending_1;
         float      _padding_enable_vertex_blending_2;
         float      _padding_enable_vertex_blending_3;
-        Math::Mat4 model_matrix;
+        Mat4 model_matrix;
     };
 
     struct MeshPerdrawcallStorageBufferObject
@@ -68,19 +68,19 @@ namespace MarsEngine
 
     struct MeshPerdrawcallVertexBlendingStorageBufferObject
     {
-        Math::Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
+        Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
     };
 
     struct MeshPerMaterialUniformBufferObject
     {
-        Math::Vec4 baseColorFactor {0.0f, 0.0f, 0.0f, 0.0f};
+        Vec4 baseColorFactor {0.0f, 0.0f, 0.0f, 0.0f};
 
         float metallicFactor    = 0.0f;
         float roughnessFactor   = 0.0f;
         float normalScale       = 0.0f;
         float occlusionStrength = 0.0f;
 
-        Math::Vec3  emissiveFactor  = {0.0f, 0.0f, 0.0f};
+        Vec3  emissiveFactor  = {0.0f, 0.0f, 0.0f};
         uint32_t    is_blend        = 0;
         uint32_t    is_double_sided = 0;
     };
@@ -91,7 +91,7 @@ namespace MarsEngine
         uint32_t    _padding_point_light_num_1;
         uint32_t    _padding_point_light_num_2;
         uint32_t    _padding_point_light_num_3;
-        Math::Vec4  point_lights_position_and_radius[s_max_point_light_count];
+        Vec4  point_lights_position_and_radius[s_max_point_light_count];
     };
 
     struct MeshPointLightShadowPerdrawcallStorageBufferObject
@@ -101,12 +101,12 @@ namespace MarsEngine
 
     struct MeshPointLightShadowPerdrawcallVertexBlendingStorageBufferObject
     {
-        Math::Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
+        Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
     };
 
     struct MeshDirectionalLightShadowPerframeStorageBufferObject
     {
-        Math::Mat4 light_proj_view;
+        Mat4 light_proj_view;
     };
 
     struct MeshDirectionalLightShadowPerdrawcallStorageBufferObject
@@ -116,31 +116,31 @@ namespace MarsEngine
 
     struct MeshDirectionalLightShadowPerdrawcallVertexBlendingStorageBufferObject
     {
-        Math::Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
+        Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
     };
 
     struct AxisStorageBufferObject
     {
-        Math::Mat4 model_matrix  = Math::Mat4::IDENTITY;
+        Mat4 model_matrix  = Mat4::IDENTITY;
         uint32_t   selected_axis = 3;
     };
 
     struct ParticleBillboardPerframeStorageBufferObject
     {
-        Math::Mat4 proj_view_matrix;
-        Math::Vec3 right_direction;
+        Mat4 proj_view_matrix;
+        Vec3 right_direction;
         float      _padding_right_position;
-        Math::Vec3 up_direction;
+        Vec3 up_direction;
         float      _padding_up_direction;
-        Math::Vec3 foward_direction;
+        Vec3 foward_direction;
         float      _padding_forward_position;
     };
 
     struct ParticleCollisionPerframeStorageBufferObject
     {
-        Math::Mat4 view_matrix;
-        Math::Mat4 proj_view_matrix;
-        Math::Mat4 proj_inv_matrix;
+        Mat4 view_matrix;
+        Mat4 proj_view_matrix;
+        Mat4 proj_inv_matrix;
     };
 
     // TODO: 4096 may not be the best
@@ -148,28 +148,28 @@ namespace MarsEngine
 
     struct ParticleBillboardPerdrawcallStorageBufferObject
     {
-        Math::Vec4 positions[s_particle_billboard_buffer_size];
-        Math::Vec4 sizes[s_particle_billboard_buffer_size];
-        Math::Vec4 colors[s_particle_billboard_buffer_size];
+        Vec4 positions[s_particle_billboard_buffer_size];
+        Vec4 sizes[s_particle_billboard_buffer_size];
+        Vec4 colors[s_particle_billboard_buffer_size];
     };
 
     struct MeshInefficientPickPerframeStorageBufferObject
     {
-        Math::Mat4 proj_view_matrix;
+        Mat4 proj_view_matrix;
         uint32_t   rt_width;
         uint32_t   rt_height;
     };
 
     struct MeshInefficientPickPerdrawcallStorageBufferObject
     {
-        Math::Mat4 model_matrices[s_mesh_per_drawcall_max_instance_count];
+        Mat4 model_matrices[s_mesh_per_drawcall_max_instance_count];
         uint32_t   node_ids[s_mesh_per_drawcall_max_instance_count];
         float      enable_vertex_blendings[s_mesh_per_drawcall_max_instance_count];
     };
 
     struct MeshInefficientPickPerdrawcallVertexBlendingStorageBufferObject
     {
-        Math::Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
+        Mat4 joint_matrices[s_mesh_vertex_blending_max_joint_count * s_mesh_per_drawcall_max_instance_count];
     };
 
     // mesh
@@ -231,8 +231,8 @@ namespace MarsEngine
     // nodes
     struct RenderMeshNode
     {
-        Math::Mat4 const*  model_matrix {nullptr};
-        Math::Mat4 const*  joint_matrices {nullptr};
+        Mat4 const*  model_matrix {nullptr};
+        Mat4 const*  joint_matrices {nullptr};
         uint32_t           joint_count {0};
         VulkanMesh*        ref_mesh {nullptr};
         VulkanPBRMaterial* ref_material {nullptr};
@@ -242,7 +242,7 @@ namespace MarsEngine
 
     struct RenderAxisNode
     {
-        Math::Mat4  model_matrix {Math::Mat4::IDENTITY};
+        Mat4  model_matrix {Mat4::IDENTITY};
         VulkanMesh* ref_mesh {nullptr};
         uint32_t    node_id;
         bool        enable_vertex_blending {false};

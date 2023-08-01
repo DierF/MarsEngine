@@ -180,7 +180,7 @@ namespace MarsEngine
         return {x, y, width, height};
     }
 
-    uint32_t RenderSystem::getGuidOfPickedMesh(Math::Vec2 const& picked_uv)
+    uint32_t RenderSystem::getGuidOfPickedMesh(Vec2 const& picked_uv)
     {
         return m_render_pipeline->getGuidOfPickedMesh(picked_uv);
     }

@@ -34,73 +34,73 @@ namespace MarsEngine
         void setName(const std::string& name);
         const std::string& getName() const;
         
-        void addPoint(Math::Vec3 const& position, 
-                      Math::Vec4 const& color, 
+        void addPoint(Vec3 const& position, 
+                      Vec4 const& color, 
                       float const       life_time = k_debug_draw_one_frame, 
                       bool const        no_depth_test = true);
 
-        void addLine(Math::Vec3 const& point0,
-                     Math::Vec3 const& point1,
-                     Math::Vec4 const& color0,
-                     Math::Vec4 const& color1,
+        void addLine(Vec3 const& point0,
+                     Vec3 const& point1,
+                     Vec4 const& color0,
+                     Vec4 const& color1,
                      float const       life_time = k_debug_draw_one_frame,
                      bool const        no_depth_test = true);
 
-        void addTriangle(Math::Vec3 const& point0,
-                         Math::Vec3 const& point1,
-                         Math::Vec3 const& point2,
-                         Math::Vec4 const& color0,
-                         Math::Vec4 const& color1,
-                         Math::Vec4 const& color2,
+        void addTriangle(Vec3 const& point0,
+                         Vec3 const& point1,
+                         Vec3 const& point2,
+                         Vec4 const& color0,
+                         Vec4 const& color1,
+                         Vec4 const& color2,
                          float const       life_time = k_debug_draw_one_frame,
                          bool const        no_depth_test = true,
                          FillMode const    fillmod = _FillMode_wireframe);
 
-        void addQuad(Math::Vec3 const& point0,
-                     Math::Vec3 const& point1,
-                     Math::Vec3 const& point2,
-                     Math::Vec3 const& point3,
-                     Math::Vec4 const& color0,
-                     Math::Vec4 const& color1,
-                     Math::Vec4 const& color2,
-                     Math::Vec4 const& color3,
+        void addQuad(Vec3 const& point0,
+                     Vec3 const& point1,
+                     Vec3 const& point2,
+                     Vec3 const& point3,
+                     Vec4 const& color0,
+                     Vec4 const& color1,
+                     Vec4 const& color2,
+                     Vec4 const& color3,
                      float const       life_time = k_debug_draw_one_frame,
                      bool const        no_depth_test = true,
                      FillMode const    fillmode = _FillMode_wireframe);
 
-        void addBox(Math::Vec3 const& center_point,
-                    Math::Vec3 const& half_extends,
-                    Math::Vec4 const& rotate,
-                    Math::Vec4 const& color,
+        void addBox(Vec3 const& center_point,
+                    Vec3 const& half_extends,
+                    Vec4 const& rotate,
+                    Vec4 const& color,
                     float const       life_time = k_debug_draw_one_frame,
                     bool const        no_depth_test = true);
 
-        void addSphere(Math::Vec3 const& center, 
+        void addSphere(Vec3 const& center, 
                        float const       radius,
-                       Math::Vec4 const& color, 
+                       Vec4 const& color, 
                        float const       life_time, 
                        bool const        no_depth_test = true);
 
-        void addCylinder(Math::Vec3 const& center,
+        void addCylinder(Vec3 const& center,
                          float const       radius,
                          float const       height,
-                         Math::Vec4 const& rotate,
-                         Math::Vec4 const& color,
+                         Vec4 const& rotate,
+                         Vec4 const& color,
                          float const       life_time = k_debug_draw_one_frame, 
                          bool const        no_depth_test = true);
 
-        void addCapsule(Math::Vec3 const& center,
-                        Math::Vec4 const& rotation,
-                        Math::Vec3 const& scale,
+        void addCapsule(Vec3 const& center,
+                        Vec4 const& rotation,
+                        Vec3 const& scale,
                         float const       radius,
                         float const       height,
-                        Math::Vec4 const& color,
+                        Vec4 const& color,
                         float const       life_time = k_debug_draw_one_frame,
                         bool const        no_depth_test = true);
 
         void addText(std::string const& content,
-                     Math::Vec4 const&  color,
-                     Math::Vec3 const&  coordinate,
+                     Vec4 const&  color,
+                     Vec3 const&  coordinate,
                      int const          size,
                      bool const         is_screen_text,
                      float const        life_time = k_debug_draw_one_frame);
@@ -116,8 +116,8 @@ namespace MarsEngine
         void writePointData(std::vector<DebugDrawVertex>& vertexs, bool no_depth_test);
         void writeLineData(std::vector<DebugDrawVertex>& vertexs, bool no_depth_test);
         void writeTriangleData(std::vector<DebugDrawVertex>& vertexs, bool no_depth_test);
-        void writeUniformDynamicDataToCache(std::vector<std::pair<Math::Mat4, Math::Vec4> >& datas);
-        void writeTextData(std::vector<DebugDrawVertex>& vertexs, DebugDrawFont* font, Math::Mat4 m_proj_view_matrix);
+        void writeUniformDynamicDataToCache(std::vector<std::pair<Mat4, Vec4> >& datas);
+        void writeTextData(std::vector<DebugDrawVertex>& vertexs, DebugDrawFont* font, Mat4 m_proj_view_matrix);
 
         size_t getSphereCount(bool no_depth_test) const;
         size_t getCylinderCount(bool no_depth_test) const;

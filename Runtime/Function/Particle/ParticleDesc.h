@@ -12,21 +12,21 @@ namespace MarsEngine
     struct ParticleEmitterTransformDesc
     {
         ParticleEmitterID m_id;
-        Math::Vec4        m_position;
-        Math::Mat4        m_rotation;
+        Vec4        m_position;
+        Mat4        m_rotation;
     };
 
     struct ParticleEmitterDesc
     {
-        Math::Vec4   m_position;
-        Math::Mat4   m_rotation;
-        Math::Vec4   m_velocity;
-        Math::Vec4   m_acceleration;
-        Math::Vec3   m_size;
+        Vec4   m_position;
+        Mat4   m_rotation;
+        Vec4   m_velocity;
+        Vec4   m_acceleration;
+        Vec3   m_size;
         int          m_emitter_type;
-        Math::Vec2   m_life;
-        Math::Vec2   m_padding;
-        Math::Vec4   m_color;
+        Vec2   m_life;
+        Vec2   m_padding;
+        Vec4   m_color;
 
         ParticleEmitterDesc() = default;
 

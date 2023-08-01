@@ -42,13 +42,13 @@ namespace MarsEngine
         // TODO: data caching
         std::shared_ptr<TextureData> loadTextureHDR(std::string file, int desired_channels = 4);
         std::shared_ptr<TextureData> loadTexture(std::string file, bool is_srgb = false);
-        RenderMeshData               loadMeshData(MeshSourceDesc const& source, Math::AxisAlignedBox& bounding_box);
+        RenderMeshData               loadMeshData(MeshSourceDesc const& source, AxisAlignedBox& bounding_box);
         RenderMaterialData           loadMaterialData(MaterialSourceDesc const& source);
-        Math::AxisAlignedBox               getCachedBoudingBox(MeshSourceDesc const& source) const;
+        AxisAlignedBox               getCachedBoudingBox(MeshSourceDesc const& source) const;
 
     private:
-        StaticMeshData loadStaticMesh(std::string mesh_file, Math::AxisAlignedBox& bounding_box);
+        StaticMeshData loadStaticMesh(std::string mesh_file, AxisAlignedBox& bounding_box);
 
-        std::unordered_map<MeshSourceDesc, Math::AxisAlignedBox> m_bounding_box_cache_map;
+        std::unordered_map<MeshSourceDesc, AxisAlignedBox> m_bounding_box_cache_map;
     };
 } // namespace MarsEngine

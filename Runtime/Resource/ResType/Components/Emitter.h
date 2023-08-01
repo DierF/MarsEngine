@@ -13,13 +13,13 @@ namespace MarsEngine
         REFLECTION_BODY(ParticleComponentRes);
 
     public:
-        Math::Vec3       m_local_translation; // local translation
-        Math::Quaternion m_local_rotation;    // local rotation
-        Math::Vec4       m_velocity;          // velocity base & variance
-        Math::Vec4       m_acceleration;      // acceleration base & variance
-        Math::Vec3       m_size;              // size base & variance
+        Vec3       m_local_translation; // local translation
+        Quaternion m_local_rotation;    // local rotation
+        Vec4       m_velocity;          // velocity base & variance
+        Vec4       m_acceleration;      // acceleration base & variance
+        Vec3       m_size;              // size base & variance
         int              m_emitter_type;
-        Math::Vec2       m_life;  // life base & variance
-        Math::Vec4       m_color; // color rgba
+        Vec2       m_life;  // life base & variance
+        Vec4       m_color; // color rgba
     };
 } // namespace MarsEngine

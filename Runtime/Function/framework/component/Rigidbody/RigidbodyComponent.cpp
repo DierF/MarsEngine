@@ -36,7 +36,7 @@ namespace MarsEngine
         physics_scene->removeRigidBody(m_rigidbody_id);
     }
 
-    void RigidBodyComponent::createRigidBody(Math::Transform const& global_transform)
+    void RigidBodyComponent::createRigidBody(Transform const& global_transform)
     {
         std::shared_ptr<PhysicsScene> physics_scene =
             g_runtime_global_context.m_world_manager->getCurrentActivePhysicsScene().lock();
@@ -54,7 +54,7 @@ namespace MarsEngine
         physics_scene->removeRigidBody(m_rigidbody_id);
     }
 
-    void RigidBodyComponent::updateGlobalTransform(Math::Transform const& transform, bool is_scale_dirty)
+    void RigidBodyComponent::updateGlobalTransform(Transform const& transform, bool is_scale_dirty)
     {
         if (is_scale_dirty)
         {
@@ -72,7 +72,7 @@ namespace MarsEngine
         }
     }
 
-    void RigidBodyComponent::getShapeBoundingBoxes(std::vector<Math::AxisAlignedBox>& out_bounding_boxes) const
+    void RigidBodyComponent::getShapeBoundingBoxes(std::vector<AxisAlignedBox>& out_bounding_boxes) const
     {
         std::shared_ptr<PhysicsScene> physics_scene =
             g_runtime_global_context.m_world_manager->getCurrentActivePhysicsScene().lock();

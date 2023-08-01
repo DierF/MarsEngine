@@ -38,11 +38,11 @@ namespace MarsEngine
                                                                              std::placeholders::_4));
     }
 
-    void EditorInputManager::updateCursorOnAxis(Math::Vec2 cursor_uv)
+    void EditorInputManager::updateCursorOnAxis(Vec2 cursor_uv)
     {
         if (g_editor_global_context.m_scene_manager->getEditorCamera())
         {
-            Math::Vec2 window_size(m_engine_window_size.x, m_engine_window_size.y);
+            Vec2 window_size(m_engine_window_size.x, m_engine_window_size.y);
             m_cursor_on_axis = g_editor_global_context.m_scene_manager->updateCursorOnAxis(cursor_uv, window_size);
         }
     }
@@ -51,32 +51,32 @@ namespace MarsEngine
     {
         float            camera_speed  = m_camera_speed;
         std::shared_ptr  editor_camera = g_editor_global_context.m_scene_manager->getEditorCamera();
-        Math::Quaternion camera_rotate = editor_camera->rotation().inverse();
-        Math::Vec3       camera_relative_pos(0, 0, 0);
+        Quaternion camera_rotate = editor_camera->rotation().inverse();
+        Vec3       camera_relative_pos(0, 0, 0);
 
         if ((unsigned int)EditorCommand::camera_foward & m_editor_command)
         {
-            camera_relative_pos += camera_rotate * Math::Vec3{0, camera_speed, 0};
+            camera_relative_pos += camera_rotate * Vec3{0, camera_speed, 0};
         }
         if ((unsigned int)EditorCommand::camera_back & m_editor_command)
         {
-            camera_relative_pos += camera_rotate * Math::Vec3{0, -camera_speed, 0};
+            camera_relative_pos += camera_rotate * Vec3{0, -camera_speed, 0};
         }
         if ((unsigned int)EditorCommand::camera_left & m_editor_command)
         {
-            camera_relative_pos += camera_rotate * Math::Vec3{-camera_speed, 0, 0};
+            camera_relative_pos += camera_rotate * Vec3{-camera_speed, 0, 0};
         }
         if ((unsigned int)EditorCommand::camera_right & m_editor_command)
         {
-            camera_relative_pos += camera_rotate * Math::Vec3{camera_speed, 0, 0};
+            camera_relative_pos += camera_rotate * Vec3{camera_speed, 0, 0};
         }
         if ((unsigned int)EditorCommand::camera_up & m_editor_command)
         {
-            camera_relative_pos += Math::Vec3{0, 0, camera_speed};
+            camera_relative_pos += Vec3{0, 0, camera_speed};
         }
         if ((unsigned int)EditorCommand::camera_down & m_editor_command)
         {
-            camera_relative_pos += Math::Vec3{0, 0, -camera_speed};
+            camera_relative_pos += Vec3{0, 0, -camera_speed};
         }
         if ((unsigned int)EditorCommand::delete_object & m_editor_command)
         {
@@ -196,7 +196,7 @@ namespace MarsEngine
                 glfwSetInputMode(
                     g_editor_global_context.m_window_system->getWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
                 g_editor_global_context.m_scene_manager->getEditorCamera()->rotate(
-                    Math::Vec2(ypos - m_mouse_y, xpos - m_mouse_x) * angularVelocity);
+                    Vec2(ypos - m_mouse_y, xpos - m_mouse_x) * angularVelocity);
             }
             else if (g_editor_global_context.m_window_system->isMouseButtonDown(GLFW_MOUSE_BUTTON_LEFT))
             {
@@ -217,7 +217,7 @@ namespace MarsEngine
 
                 if (isCursorInRect(m_engine_window_pos, m_engine_window_size))
                 {
-                    Math::Vec2 cursor_uv = Math::Vec2((m_mouse_x - m_engine_window_pos.x) / m_engine_window_size.x,
+                    Vec2 cursor_uv = Vec2((m_mouse_x - m_engine_window_pos.x) / m_engine_window_size.x,
                                                 (m_mouse_y - m_engine_window_pos.y) / m_engine_window_size.y);
                     updateCursorOnAxis(cursor_uv);
                 }
@@ -278,7 +278,7 @@ namespace MarsEngine
         {
             if (key == GLFW_MOUSE_BUTTON_LEFT)
             {
-                Math::Vec2 picked_uv((m_mouse_x - m_engine_window_pos.x) / m_engine_window_size.x,
+                Vec2 picked_uv((m_mouse_x - m_engine_window_pos.x) / m_engine_window_size.x,
                                   (m_mouse_y - m_engine_window_pos.y) / m_engine_window_size.y);
                 size_t  select_mesh_id = g_editor_global_context.m_scene_manager->getGuidOfPickedMesh(picked_uv);
 
@@ -290,7 +290,7 @@ namespace MarsEngine
 
     void EditorInputManager::onWindowClosed() { g_editor_global_context.m_engine_runtime->shutdownEngine(); }
 
-    bool EditorInputManager::isCursorInRect(Math::Vec2 pos, Math::Vec2 size) const
+    bool EditorInputManager::isCursorInRect(Vec2 pos, Vec2 size) const
     {
         return pos.x <= m_mouse_x && m_mouse_x <= pos.x + size.x && pos.y <= m_mouse_y && m_mouse_y <= pos.y + size.y;
     }

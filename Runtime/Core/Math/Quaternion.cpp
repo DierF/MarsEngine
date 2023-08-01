@@ -6,8 +6,6 @@
 
 namespace MarsEngine
 {
-namespace Math
-{
     Quaternion const Quaternion::ZERO(0, 0, 0, 0);
     Quaternion const Quaternion::IDENTITY(1, 0, 0, 0);
 
@@ -128,11 +126,11 @@ namespace Math
         // The quaternion representing the rotation is
         //   q = cos(A/2)+sin(A/2)*(x*i+y*j+z*k)
         Radian half_angle(angle * 0.5);
-        float  sin_v = sin(half_angle);
-        w = cos(half_angle);
-        x = sin_v * axis.x;
-        y = sin_v * axis.y;
-        z = sin_v * axis.z;
+        float  sin_v = Math::sin(half_angle);
+        w            = Math::cos(half_angle);
+        x            = sin_v * axis.x;
+        y            = sin_v * axis.y;
+        z            = sin_v * axis.z;
     }
 
     Quaternion Quaternion::getQuaternionFromAngleAxis(Radian const& angle, Vec3 const& axis)
@@ -169,8 +167,8 @@ namespace Math
         float sqr_len = x * x + y * y + z * z;
         if (sqr_len > 0.0)
         {
-            angle = acos(w) * 2.0;
-            float inv_len = invSqrt(sqr_len);
+            angle         = Math::acos(w) * 2.0;
+            float inv_len = Math::invSqrt(sqr_len);
             axis.x = x * inv_len;
             axis.y = y * inv_len;
             axis.z = z * inv_len;
@@ -369,11 +367,11 @@ namespace Math
         if (abs(cos_v) < 1 - k_epsilon)
         {
             // Standard case (slerp)
-            float  sin_v = sqrt(1 - sqr(cos_v));
-            Radian angle = atan2(sin_v, cos_v);
+            float  sin_v   = Math::sqrt(1 - Math::sqr(cos_v));
+            Radian angle   = Math::atan2(sin_v, cos_v);
             float  inv_sin = 1.0f / sin_v;
-            float  coeff0 = sin(angle * (1.0f - t)) * inv_sin;
-            float  coeff1 = sin(angle * t) * inv_sin;
+            float  coeff0  = Math::sin(angle * (1.0f - t)) * inv_sin;
+            float  coeff1  = Math::sin(angle * t) * inv_sin;
             return coeff0 * kp + coeff1 * kt;
         }
         else
@@ -406,5 +404,4 @@ namespace Math
         result.normalise();
         return result;
     }
-} // namespace Math
 } // namespace MarsEngine

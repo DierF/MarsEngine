@@ -135,7 +135,7 @@ namespace MarsEngine
 
         m_buffer_allocator->cacheUniformObject(m_proj_view_matrix);
 
-        std::vector<std::pair<Math::Mat4, Math::Vec4> > dynamicObject = { std::make_pair(Math::Mat4::IDENTITY,Math::Vec4(0,0,0,0)) };
+        std::vector<std::pair<Mat4, Vec4> > dynamicObject = { std::make_pair(Mat4::IDENTITY,Vec4(0,0,0,0)) };
         m_buffer_allocator->cacheUniformDynamicObject(dynamicObject);//cache the first model matrix as Identity matrix, color as empty color. (default object)
 
         m_debug_draw_group_for_render.writeUniformDynamicDataToCache(dynamicObject);
