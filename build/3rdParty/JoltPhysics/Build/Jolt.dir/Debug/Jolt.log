@@ -1,0 +1,985 @@
+﻿  Building Custom Rule D:/Projects/MarsEngine/3rdParty/JoltPhysics/Build/CMakeLists.txt
+  pch.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xlocale(2010): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xlocale(2007): note: 可能失败的语句位于此处
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xlocale(2210): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xlocale(2207): note: 可能失败的语句位于此处
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(917): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(916): note: 可能失败的语句位于此处
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(912): note: 在编译 类 模板 成员函数“void std::_Atomic_storage<_Ty,4>::store(const long,const std::memory_order) noexcept”时
+          with
+          [
+              _Ty=long
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(2767): note: 查看对正在编译的函数 模板 实例化“void std::_Atomic_storage<_Ty,4>::store(const long,const std::memory_order) noexcept”的引用
+          with
+          [
+              _Ty=long
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1417): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_storage<_Ty,4>”的引用
+          with
+          [
+              _Ty=long
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1607): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral<_Ty,4>”的引用
+          with
+          [
+              _Ty=long
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(2085): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral_facade<_Ty>”的引用
+          with
+          [
+              _Ty=long
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(2803): note: 查看对正在编译的 类 模板 实例化“std::atomic<long>”的引用
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xthreads.h(44): warning C5264: “_Mtx_internal_imp_alignment”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xthreads.h(45): warning C5264: “_Cnd_internal_imp_size”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xthreads.h(43): warning C5264: “_Mtx_internal_imp_size”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xthreads.h(46): warning C5264: “_Cnd_internal_imp_alignment”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2037): warning C5264: “std::placeholders::_4”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2035): warning C5264: “std::placeholders::_2”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2036): warning C5264: “std::placeholders::_3”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2034): warning C5264: “std::placeholders::_1”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2051): warning C5264: “std::placeholders::_18”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2038): warning C5264: “std::placeholders::_5”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2052): warning C5264: “std::placeholders::_19”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2047): warning C5264: “std::placeholders::_14”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2040): warning C5264: “std::placeholders::_7”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2046): warning C5264: “std::placeholders::_13”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2045): warning C5264: “std::placeholders::_12”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2042): warning C5264: “std::placeholders::_9”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2041): warning C5264: “std::placeholders::_8”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2049): warning C5264: “std::placeholders::_16”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2044): warning C5264: “std::placeholders::_11”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2053): warning C5264: “std::placeholders::_20”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2043): warning C5264: “std::placeholders::_10”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2048): warning C5264: “std::placeholders::_15”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2039): warning C5264: “std::placeholders::_6”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\functional(2050): warning C5264: “std::placeholders::_17”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(127): warning C5264: “std::allocator_arg”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\random(65): warning C5264: “std::_Two32”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\random(63): warning C5264: “std::_Pi”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<float>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<int>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<JPH::uint32>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<const char*>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<std::error_condition>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<std::error_code>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<std::system_error>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\system_error(44): warning C5264: “std::is_error_code_enum_v<JPH::Vec4>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(2054): warning C5264: “std::_Is_trivially_swappable_v<std::byte>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(670): warning C5264: “std::in_place”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtr1common(179): warning C5264: “std::is_integral_v<double>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtr1common(179): warning C5264: “std::is_integral_v<float>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtr1common(179): warning C5264: “std::is_integral_v<const char*>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtr1common(179): warning C5264: “std::is_integral_v<JPH::Vec4>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(4822): warning C5264: “std::_Lex_compare_memcmp_classify_elements<std::byte,std::byte>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(4505): warning C5264: “std::_Can_memcmp_elements<std::byte,std::byte,false>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\algorithm(117): warning C5264: “std::_ISORT_MAX”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(812): warning C5264: “std::?$_Is_iterator_v@$RBAAB@$$Yvoid_t@std@@$std:?$iterator_traits@$RBAAB@:iterator_category:<wchar_t*,void>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(812): warning C5264: “std::?$_Is_iterator_v@$RBAAB@$$Yvoid_t@std@@$std:?$iterator_traits@$RBAAB@:iterator_category:<char*,void>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2281): warning C5264: “std::_VBITS”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\random(66): warning C5264: “std::_Two31”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\new(39): warning C5264: “std::hardware_destructive_interference_size”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtr1common(196): warning C5264: “std::is_arithmetic_v<double>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtr1common(196): warning C5264: “std::is_arithmetic_v<float>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\random(72): warning C5264: “std::_Nwords”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\new(38): warning C5264: “std::hardware_constructive_interference_size”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\random(64): warning C5264: “std::_Exp1”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(667): warning C5264: “std::is_move_constructible_v<std::ios_base::iostate>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(667): warning C5264: “std::is_move_constructible_v<std::streamsize>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(667): warning C5264: “std::is_move_constructible_v<std::ios_base::_Iosarray*>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(667): warning C5264: “std::is_move_constructible_v<std::ios_base::_Fnarray*>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(667): warning C5264: “std::is_move_constructible_v<std::locale*>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(667): warning C5264: “std::is_move_constructible_v<std::default_delete<std::_Facet_base>>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(114): warning C5264: “std::piecewise_construct”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\tuple(132): warning C5264: “std::ignore”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(716): warning C5264: “std::is_move_assignable_v<std::ios_base::iostate>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(716): warning C5264: “std::is_move_assignable_v<std::streamsize>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(716): warning C5264: “std::is_move_assignable_v<std::ios_base::_Iosarray*>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(716): warning C5264: “std::is_move_assignable_v<std::ios_base::_Fnarray*>”: 未使用“const”变量
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\type_traits(716): warning C5264: “std::is_move_assignable_v<std::locale*>”: 未使用“const”变量
+  AABBTreeBuilder.cpp
+  Color.cpp
+  Factory.cpp
+  IssueReporting.cpp
+  JobSystemThreadPool.cpp
+  LinearCurve.cpp
+  Memory.cpp
+  Profiler.cpp
+  RTTI.cpp
+  StringTools.cpp
+  TickCounter.cpp
+  ConvexHullBuilder.cpp
+  ConvexHullBuilder2D.cpp
+  Indexify.cpp
+  OrientedBox.cpp
+  UVec4.cpp
+  Vec3.cpp
+  ObjectStream.cpp
+  ObjectStreamBinaryIn.cpp
+  ObjectStreamBinaryOut.cpp
+  ObjectStreamIn.cpp
+  ObjectStreamOut.cpp
+  ObjectStreamTextIn.cpp
+  ObjectStreamTextOut.cpp
+  SerializableObject.cpp
+  TypeDeclarations.cpp
+  Body.cpp
+  BodyAccess.cpp
+  BodyCreationSettings.cpp
+  BodyInterface.cpp
+  BodyManager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\fstream(746): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\fstream(744): note: 可能失败的语句位于此处 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\fstream(729): note: 在编译 类 模板 成员函数“bool std::basic_filebuf<char,std::char_traits<char>>::_Endwrite(void)”时 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\fstream(661): note: 查看对正在编译的函数 模板 实例化“bool std::basic_filebuf<char,std::char_traits<char>>::_Endwrite(void)”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\fstream(1164): note: 查看对正在编译的 类 模板 实例化“std::basic_filebuf<char,std::char_traits<char>>”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp(181): note: 查看对正在编译的 类 模板 实例化“std::basic_ofstream<char,std::char_traits<char>>”的引用
+  MassProperties.cpp
+  MotionProperties.cpp
+  Character.cpp
+  CharacterBase.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(917): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(916): note: 可能失败的语句位于此处 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(912): note: 在编译 类 模板 成员函数“void std::_Atomic_storage<_Ty,4>::store(const unsigned int,const std::memory_order) noexcept”时
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\FixedSizeFreeList.inl(78): note: 查看对正在编译的函数 模板 实例化“void std::_Atomic_storage<_Ty,4>::store(const unsigned int,const std::memory_order) noexcept”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1417): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_storage<_Ty,4>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1607): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral<_Ty,4>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(2085): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral_facade<_Ty>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Reference.h(78): note: 查看对正在编译的 类 模板 实例化“std::atomic<unsigned int>”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Reference.h(79): note: 查看对正在编译的 类 模板 实例化“JPH::RefTarget<T>”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+  CharacterVirtual.cpp
+  BroadPhase.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\Profiler.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\JobSystemThreadPool.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhase.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhase.cpp)
+  BroadPhaseBruteForce.cpp
+  BroadPhaseQuadTree.cpp
+  QuadTree.cpp
+  CastConvexVsTriangles.cpp
+  CastSphereVsTriangles.cpp
+  CollideConvexVsTriangles.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterBase.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterBase.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterBase.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\Body.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyInterface.cpp)
+  CollideSphereVsTriangles.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyCreationSettings.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyCreationSettings.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyCreationSettings.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyCreationSettings.cpp)
+  CollisionDispatch.cpp
+  CollisionGroup.cpp
+  GroupFilter.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Body\BodyManager.cpp)
+  GroupFilterTable.cpp
+  ManifoldBetweenTwoFaces.cpp
+  NarrowPhaseQuery.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+  NarrowPhaseStats.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseBruteForce.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastSphereVsTriangles.cpp)
+  PhysicsMaterial.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseQuadTree.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseQuadTree.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseQuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseQuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseQuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseQuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseQuadTree.cpp)
+  PhysicsMaterialSimple.cpp
+  BoxShape.cpp
+  CapsuleShape.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(917): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(916): note: 可能失败的语句位于此处 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(912): note: 在编译 类 模板 成员函数“void std::_Atomic_storage<_Ty,4>::store(const unsigned int,const std::memory_order) noexcept”时
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\FixedSizeFreeList.inl(183): note: 查看对正在编译的函数 模板 实例化“void std::_Atomic_storage<_Ty,4>::store(const unsigned int,const std::memory_order) noexcept”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1417): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_storage<_Ty,4>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1607): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral<_Ty,4>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(2085): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral_facade<_Ty>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\FixedSizeFreeList.h(35): note: 查看对正在编译的 类 模板 实例化“std::atomic<unsigned int>”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\FixedSizeFreeList.h(27): note: 查看对正在编译的 类 模板 实例化“JPH::FixedSizeFreeList<Object>::ObjectStorage”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Core\FixedSizeFreeList.h(123): note: 查看对正在编译的 类 模板 实例化“JPH::FixedSizeFreeList<Object>”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\QuadTree.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollisionDispatch.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollisionDispatch.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollisionDispatch.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollisionDispatch.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollisionDispatch.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollisionDispatch.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollisionDispatch.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseStats.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseStats.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseStats.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideConvexVsTriangles.cpp)
+  CompoundShape.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+  ConvexHullShape.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CastConvexVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\Character.cpp)
+  ConvexShape.cpp
+  CylinderShape.cpp
+  DecoratedShape.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\CollideSphereVsTriangles.cpp)
+  HeightFieldShape.cpp
+  MeshShape.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Character\CharacterVirtual.cpp)
+  MutableCompoundShape.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\NarrowPhaseQuery.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ManifoldBetweenTwoFaces.cpp)
+  OffsetCenterOfMassShape.cpp
+  RotatedTranslatedShape.cpp
+  ScaledShape.cpp
+  Shape.cpp
+  SphereShape.cpp
+  StaticCompoundShape.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\BoxShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\OffsetCenterOfMassShape.cpp)
+  TaperedCapsuleShape.cpp
+  TriangleShape.cpp
+  TransformedShape.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\DecoratedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\DecoratedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ScaledShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\DecoratedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CylinderShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\RotatedTranslatedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\RotatedTranslatedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\RotatedTranslatedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\RotatedTranslatedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\RotatedTranslatedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\RotatedTranslatedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\RotatedTranslatedShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MutableCompoundShape.cpp)
+  ConeConstraint.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\CompoundShape.cpp)
+  Constraint.cpp
+  ConstraintManager.cpp
+  ContactConstraintManager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexShape.cpp)
+  DistanceConstraint.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\ConvexHullShape.cpp)
+  FixedConstraint.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(30): warning C5264: “JPH::HalfFloatConversion::FLOAT_EXPONENT_AND_MANTISSA_MASK”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(18): warning C5264: “JPH::HALF_FLT_NANQ_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(17): warning C5264: “JPH::HALF_FLT_NANQ”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(16): warning C5264: “JPH::HALF_FLT_INF_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(15): warning C5264: “JPH::HALF_FLT_INF”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(14): warning C5264: “JPH::HALF_FLT_MAX_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(13): warning C5264: “JPH::HALF_FLT_MAX”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\SphereShape.cpp)
+  HingeConstraint.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(30): warning C5264: “JPH::HalfFloatConversion::FLOAT_EXPONENT_AND_MANTISSA_MASK”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(18): warning C5264: “JPH::HALF_FLT_NANQ_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(17): warning C5264: “JPH::HALF_FLT_NANQ”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(16): warning C5264: “JPH::HALF_FLT_INF_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(15): warning C5264: “JPH::HALF_FLT_INF”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(14): warning C5264: “JPH::HALF_FLT_MAX_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\StaticCompoundShape.cpp)
+  MotorSettings.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TriangleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TriangleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TriangleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TriangleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TriangleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TriangleShape.cpp)
+  PathConstraint.cpp
+  PathConstraintPath.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\TransformedShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\TaperedCapsuleShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(30): warning C5264: “JPH::HalfFloatConversion::FLOAT_EXPONENT_AND_MANTISSA_MASK”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(18): warning C5264: “JPH::HALF_FLT_NANQ_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(17): warning C5264: “JPH::HALF_FLT_NANQ”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(16): warning C5264: “JPH::HALF_FLT_INF_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(15): warning C5264: “JPH::HALF_FLT_INF”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(14): warning C5264: “JPH::HALF_FLT_MAX_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+  PathConstraintPathHermite.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\MeshShape.cpp)
+  PointConstraint.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConstraintManager.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConstraintManager.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConstraintManager.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConstraintManager.cpp)
+  SixDOFConstraint.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ConeConstraint.cpp)
+  SliderConstraint.cpp
+  SwingTwistConstraint.cpp
+  TwoBodyConstraint.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\DistanceConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\FixedConstraint.cpp)
+  IslandBuilder.cpp
+  PhysicsLock.cpp
+  PhysicsScene.cpp
+  PhysicsSystem.cpp
+  PhysicsUpdateContext.cpp
+  Ragdoll.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsLock.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsLock.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsLock.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsLock.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\HingeConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraintPathHermite.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraintPathHermite.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraintPathHermite.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraintPathHermite.cpp)
+  StateRecorderImpl.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PointConstraint.cpp)
+  TrackedVehicleController.cpp
+  VehicleAntiRollBar.cpp
+  VehicleCollisionTester.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsUpdateContext.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsUpdateContext.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsUpdateContext.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsUpdateContext.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsUpdateContext.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsUpdateContext.cpp)
+  VehicleConstraint.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\PathConstraint.cpp)
+  VehicleController.cpp
+  VehicleDifferential.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SliderConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(917): warning C5262: 此处发生隐式失败；是否缺少中断语句? 当在事例之间有意省略中断语句时，请使用 [[fallthrough]] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(916): note: 可能失败的语句位于此处 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(912): note: 在编译 类 模板 成员函数“void std::_Atomic_storage<_Ty,4>::store(const unsigned int,const std::memory_order) noexcept”时
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp(38): note: 查看对正在编译的函数 模板 实例化“void std::_Atomic_storage<_Ty,4>::store(const unsigned int,const std::memory_order) noexcept”的引用
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1417): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_storage<_Ty,4>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(1607): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral<_Ty,4>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\atomic(2085): note: 查看对正在编译的 类 模板 实例化“std::_Atomic_integral_facade<_Ty>”的引用
+          with
+          [
+              _Ty=unsigned int
+          ] (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+  D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.h(77): note: 查看对正在编译的 类 模板 实例化“std::atomic<unsigned int>”的引用 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+  VehicleEngine.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\ContactConstraintManager.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SwingTwistConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\IslandBuilder.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\SixDOFConstraint.cpp)
+  VehicleTrack.cpp
+  VehicleTransmission.cpp
+  Wheel.cpp
+  WheeledVehicleController.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Constraints\TwoBodyConstraint.cpp)
+  RegisterTypes.cpp
+  DebugRenderer.cpp
+  DebugRendererPlayback.cpp
+  DebugRendererRecorder.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleController.cpp)
+  SkeletalAnimation.cpp
+  Skeleton.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\Wheel.cpp)
+  SkeletonPose.cpp
+  TriangleGrouperClosestCentroid.cpp
+  TriangleGrouperMorton.cpp
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSystem.cpp)
+  TriangleSplitter.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererRecorder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererRecorder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererRecorder.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererRecorder.cpp)
+  TriangleSplitterBinning.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererPlayback.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererPlayback.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererPlayback.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRendererPlayback.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRenderer.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRenderer.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRenderer.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Renderer\DebugRenderer.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleCollisionTester.cpp)
+  TriangleSplitterFixedLeafSize.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+  TriangleSplitterLongestAxis.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\VehicleConstraint.cpp)
+  TriangleSplitterMean.cpp
+  TriangleSplitterMorton.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Ragdoll\Ragdoll.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsScene.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\TrackedVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(30): warning C5264: “JPH::HalfFloatConversion::FLOAT_EXPONENT_AND_MANTISSA_MASK”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(18): warning C5264: “JPH::HALF_FLT_NANQ_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(17): warning C5264: “JPH::HALF_FLT_NANQ”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(16): warning C5264: “JPH::HALF_FLT_INF_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(15): warning C5264: “JPH::HALF_FLT_INF”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(14): warning C5264: “JPH::HALF_FLT_MAX_NEGATIVE”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Math\HalfFloat.h(13): warning C5264: “JPH::HALF_FLT_MAX”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.h(33): warning C5264: “JPH::HeightFieldShapeConstants::cMaxHeightValue16”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.h(29): warning C5264: “JPH::HeightFieldShapeConstants::cLevelShift”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.h(28): warning C5264: “JPH::HeightFieldShapeConstants::cMaskBitsXY”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.h(24): warning C5264: “JPH::HeightFieldShapeConstants::cStackSize”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\HeightFieldShape.h(21): warning C5264: “JPH::HeightFieldShapeConstants::cNoCollisionValue”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\RegisterTypes.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(534): warning C5264: “std::_Init_once_init_failed”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(122): warning C5264: “std::try_to_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(121): warning C5264: “std::defer_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\mutex(120): warning C5264: “std::adopt_lock”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\BroadPhase\BroadPhaseLayer.h(51): warning C5264: “JPH::cBroadPhaseLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\ObjectLayer.h(14): warning C5264: “JPH::cObjectLayerInvalid”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(106): warning C5264: “JPH::sDecoratorSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(105): warning C5264: “JPH::sCompoundSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Collision\Shape\Shape.h(104): warning C5264: “JPH::sConvexSubShapeTypes”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(24): warning C5264: “JPH::cMaxPhysicsBarriers”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(21): warning C5264: “JPH::cMaxPhysicsJobs”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(18): warning C5264: “JPH::cCapsuleProjectionSlop”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(15): warning C5264: “JPH::cDefaultConvexRadius”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(12): warning C5264: “JPH::cDefaultPenetrationTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\PhysicsSettings.h(9): warning C5264: “JPH::cDefaultCollisionTolerance”: 未使用“const”变量 (编译源文件 D:\Projects\MarsEngine\3rdParty\JoltPhysics\Jolt\Physics\Vehicle\WheeledVehicleController.cpp)
+  Jolt.vcxproj -> D:\Projects\MarsEngine\build\3rdParty\JoltPhysics\Build\Debug\Jolt.lib

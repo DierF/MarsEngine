@@ -1,0 +1,10 @@
+^D:\PROJECTS\MARSENGINE\BUILD\CMAKEFILES\C7474B35E784416591C19EA5AE34A70F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/MarsEngine -BD:/Projects/MarsEngine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Projects/MarsEngine/build/MarsEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,4 +1,9 @@
 
 .vs
 bin/
-bin-int/
+binprecompile/
+build/
+generated/
+_generated/
+reflection_gen/
+serializer_gen/

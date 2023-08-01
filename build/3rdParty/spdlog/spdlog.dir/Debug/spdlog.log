@@ -1,0 +1,9 @@
+﻿  Building Custom Rule D:/Projects/MarsEngine/3rdParty/spdlog/CMakeLists.txt
+  spdlog.cpp
+  stdout_sinks.cpp
+  color_sinks.cpp
+  file_sinks.cpp
+  async.cpp
+  cfg.cpp
+  fmt.cpp
+  spdlog.vcxproj -> D:\Projects\MarsEngine\build\3rdParty\spdlog\Debug\spdlogd.lib
