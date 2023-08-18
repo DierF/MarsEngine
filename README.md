@@ -1,3 +1,5 @@
-# Mars Engine
-A game engine built for practice.
+# MarsEngine
+A game engine built for learning.
 Stage#1:up to commit e53238d
+Reference: https://github.com/TheCherno/Hazel
+           https://github.com/BoomingTech/Piccolo
